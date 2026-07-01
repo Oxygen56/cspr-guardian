@@ -1,4 +1,4 @@
-import { spawn } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 import {
   generateHighestPrizeUnlock,
   writeHighestPrizeUnlock
@@ -6,6 +6,10 @@ import {
 
 const unlock = await generateHighestPrizeUnlock();
 await writeHighestPrizeUnlock(unlock);
+
+const copyRequested =
+  process.argv.includes("--copy-public-key") || process.env.COPY_PUBLIC_KEY === "true";
+const copiedPublicKey = copyRequested ? copyPublicKey(unlock.testnet.publicKeyHex) : false;
 
 if (process.argv.includes("--open-faucet") || process.env.OPEN_FAUCET === "true") {
   openFaucet(unlock.faucet.url);
@@ -20,6 +24,7 @@ console.log(
       readyForAnchor: unlock.testnet.readyForAnchor,
       missingGates: unlock.remainingGates.map((gate) => gate.name),
       faucetUrl: unlock.faucet.url,
+      publicKeyCopiedToClipboard: copiedPublicKey,
       nextAction: unlock.nextAction
     },
     null,
@@ -40,4 +45,32 @@ function openFaucet(url) {
     stdio: "ignore"
   });
   child.unref();
+}
+
+function copyPublicKey(publicKeyHex) {
+  if (!publicKeyHex) return false;
+
+  const candidates =
+    process.platform === "darwin"
+      ? [["pbcopy"]]
+      : process.platform === "win32"
+        ? [["clip"]]
+        : [
+            ["wl-copy"],
+            ["xclip", "-selection", "clipboard"],
+            ["xsel", "--clipboard", "--input"]
+          ];
+
+  for (const [command, ...args] of candidates) {
+    const result = spawnSync(command, args, {
+      input: publicKeyHex,
+      encoding: "utf8",
+      stdio: ["pipe", "ignore", "ignore"]
+    });
+    if (result.status === 0) {
+      return true;
+    }
+  }
+
+  return false;
 }

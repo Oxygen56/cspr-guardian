@@ -82,6 +82,7 @@ export async function generateHighestPrizeUnlock({
     remainingGates: gates.filter((gate) => !gate.complete),
     gates,
     commands: {
+      faucetHelper: "pnpm fund:testnet",
       afterFunding: [
         "pnpm check:testnet",
         "pnpm preflight:testnet",
@@ -265,6 +266,13 @@ ${unlock.faucet.url}
 Faucet checks: wallet required = ${unlock.faucet.walletRequired}, reCAPTCHA required = ${unlock.faucet.recaptchaRequired}, faucet enabled = ${unlock.faucet.faucetEnabled}
 
 Required motes: ${unlock.testnet.requiredMotes || "unknown"}
+
+## Manual Faucet Steps
+
+1. Run \`${unlock.commands.faucetHelper || "pnpm fund:testnet"}\` to copy the prepared public key and open the faucet page.
+2. In CSPR.live, connect Casper Wallet on Casper testnet.
+3. Request faucet funds for the copied public key.
+4. Return here after the account appears on testnet and run the commands below.
 
 ## Public Links
 

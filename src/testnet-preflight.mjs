@@ -98,7 +98,7 @@ Next step:
 \`\`\`bash
 pnpm check:testnet
 pnpm preflight:testnet
-pnpm finalize:testnet
+pnpm seal:submission
 \`\`\`
 `;
 }

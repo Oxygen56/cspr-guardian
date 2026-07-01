@@ -98,7 +98,7 @@ export async function generateJudgeProofPack({
       status: prizeReadiness.highestPrizeGate ? "pass" : "blocked",
       evidence: prizeReadiness.highestPrizeGate
         ? "Real CSPR.live deploy evidence is present"
-        : "Fund testnet key and rerun pnpm finalize:testnet"
+        : "Fund testnet key and rerun pnpm seal:submission"
     }
   ];
 
@@ -306,7 +306,7 @@ The remaining highest-prize gate is a real Casper testnet deploy.
 After funding, run:
 
 \`\`\`bash
-pnpm finalize:testnet
+pnpm seal:submission
 \`\`\`
 `;
 }

@@ -45,11 +45,17 @@ Faucet:
 
 ${faucetUrl}
 
+One-command helper:
+
+\`\`\`bash
+pnpm fund:testnet
+\`\`\`
+
 After funding, run:
 
 \`\`\`bash
 CASPER_PRIVATE_KEY_FILE=${keyFile} pnpm check:testnet
-CASPER_PRIVATE_KEY_FILE=${keyFile} pnpm anchor:testnet
+CASPER_PRIVATE_KEY_FILE=${keyFile} pnpm seal:submission
 \`\`\`
 
 Do not commit or upload \`${keyFile}\`.
@@ -66,9 +72,9 @@ console.log(
       fundingInstructions: instructionsFile,
       faucetUrl,
       nextSteps: [
-        "Open the faucet and fund publicKeyHex.",
+        "Run pnpm fund:testnet to copy publicKeyHex and open the faucet.",
         `Run CASPER_PRIVATE_KEY_FILE=${keyFile} pnpm check:testnet.`,
-        `Run CASPER_PRIVATE_KEY_FILE=${keyFile} pnpm anchor:testnet after the balance appears.`
+        `Run CASPER_PRIVATE_KEY_FILE=${keyFile} pnpm seal:submission after the balance appears.`
       ]
     },
     null,

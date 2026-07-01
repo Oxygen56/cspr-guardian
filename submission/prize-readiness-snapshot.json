@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T14:09:33.679Z",
+  "generatedAt": "2026-07-01T14:27:55.247Z",
   "status": "final-gate",
   "score": 80,
   "maxScore": 100,
@@ -43,7 +43,7 @@
       "weight": 20,
       "status": "blocked",
       "value": "needs funding",
-      "evidence": "Fund testnet key and run pnpm finalize:testnet"
+      "evidence": "Fund testnet key and run pnpm seal:submission"
     },
     {
       "id": "submission-assets",
@@ -55,9 +55,9 @@
     }
   ],
   "blockers": [
-    "Fund testnet key and run pnpm finalize:testnet",
+    "Fund testnet key and run pnpm seal:submission",
     "Fund public key 011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2 on Casper testnet",
-    "Rerun pnpm finalize:testnet to replace mock deploy evidence"
+    "After funding, run pnpm seal:submission to replace mock deploy evidence"
   ],
   "testnet": {
     "rpcStatus": "ok",
@@ -68,13 +68,13 @@
     "faucetUrl": "https://testnet.cspr.live/tools/faucet"
   },
   "currentEvidence": {
-    "runId": "run-5013f3f1-838b-4bc9-a103-5887e66f1414",
-    "receiptHash": "b88aa71ec174083f54052219034195fd1475980b24bedfdef98cb69d082e56c5",
-    "explorerUrl": "https://testnet.cspr.live/deploy/mock-casper-receipt-b88aa71ec174083f54052219034195fd1475980b24bedfde",
+    "runId": "run-a32be99e-f52c-418c-9fc4-518bfda7c42f",
+    "receiptHash": "3f34131c983f923e0a35a7b2e8177ff3baf92be0bd36b3922c309ba183db6996",
+    "explorerUrl": "https://testnet.cspr.live/deploy/mock-casper-receipt-3f34131c983f923e0a35a7b2e8177ff3baf92be0bd36b392",
     "anchorMode": "mock",
     "reportHashes": {
       "risk": "81d06f2499c1f01b1fba7f6aac0ab04fe5148aedf206d96ea7e1ce6cb8cc2880",
-      "kyb": "b99574b6c9279bf9c32e0a8302b6d76ac04641dc6da63e994331e76a21c19958",
+      "kyb": "745f587dc98fe552b5bbd64eb14e4e1181e1ce28f60ede7e73495d11104d0fa6",
       "liquidity": "6d25b444e94b8c58497524c0f642433bdb7ebf923257496d05adedd869538fe3",
       "covenant": "8267de9604c0ee1dc20389da7a2503c8a7c3358072738d77ccaf66e11f6380a1"
     }

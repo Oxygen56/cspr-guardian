@@ -78,6 +78,12 @@ next commands:
 pnpm unlock:highest-prize
 ```
 
+Open the CSPR.live faucet and copy the prepared public key to the clipboard:
+
+```bash
+pnpm fund:testnet
+```
+
 Build and sign the real Casper transfer deploy without broadcasting it:
 
 ```bash
@@ -166,14 +172,16 @@ final submission pack:
 pnpm seal:submission
 ```
 
-After funding the printed public key on Casper testnet, run a real receipt
-anchor:
+After funding the printed public key on Casper testnet, `pnpm seal:submission`
+is the one-command final gate. The lower-level real receipt anchor remains
+available for debugging:
 
 ```bash
 CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json pnpm anchor:testnet
 ```
 
-Generate the final post-funding submission evidence file:
+Generate only the final post-funding evidence file without rebuilding the whole
+submission pack:
 
 ```bash
 CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json pnpm finalize:testnet
@@ -285,7 +293,6 @@ pnpm check:deploy <deploy-hash>
 - Run `pnpm audit:submission` and confirm the only blocked items, before
   funding and public-link upload, are `highest_prize_gate` and
   `public_submission_fields`.
-- Run `pnpm finalize:testnet` and paste the generated explorer link into the demo.
 - After funding, run `pnpm seal:submission` to regenerate final evidence, judge
   proof, source zip, submission pack, and final seal in one pass.
 - Run `pnpm audit:submission` again and confirm it says

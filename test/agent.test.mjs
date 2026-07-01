@@ -507,6 +507,7 @@ test("highest prize unlock report separates faucet funding and public links", as
     gates,
     nextAction: "Open faucet",
     commands: {
+      faucetHelper: "pnpm fund:testnet",
       afterFunding: ["pnpm seal:submission"],
       afterPublicLinks: ["pnpm export:buidl"]
     }
@@ -517,6 +518,8 @@ test("highest prize unlock report separates faucet funding and public links", as
   assert.equal(faucetConfig.withFaucet, true);
   assert.equal(deriveHighestPrizeUnlockStatus(gates), "needs_funding_and_public_links");
   assert.match(markdown, /wallet required = true/);
+  assert.match(markdown, /Manual Faucet Steps/);
+  assert.match(markdown, /pnpm fund:testnet/);
   assert.match(markdown, /repoUrl, demoUrl, videoUrl/);
   assert.equal(JSON.stringify(unlock).includes("privateKeyHex"), false);
 });

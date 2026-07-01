@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-01T14:09:21.665Z",
+  "generatedAt": "2026-07-01T14:27:51.510Z",
   "project": "CSPR Guardian",
   "status": "needs_funding",
   "testnet": {
@@ -115,6 +115,7 @@
     }
   ],
   "commands": {
+    "faucetHelper": "pnpm fund:testnet",
     "afterFunding": [
       "pnpm check:testnet",
       "pnpm preflight:testnet",

@@ -20,7 +20,7 @@ Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 
 | Prize Signal | What To Show | Artifact |
 | --- | --- | --- |
-| Casper-native trust layer | Real receipt deploy hash and CSPR.live explorer URL | `pnpm anchor:testnet`, Casper Receipt panel |
+| Casper-native trust layer | Real receipt deploy hash and CSPR.live explorer URL | `pnpm seal:submission`, Casper Receipt panel |
 | Agent-to-agent commerce | Four paid tools earning CSPR per run | Provider Ledger panel |
 | x402-style payment flow | HTTP 402 challenge, signed payment proof, nonce replay rejection | `/api/oracle/*`, tests, Evidence Bundle |
 | MCP-style tool discovery | Agent discovers paid RWA tools before calling them | Agent Trace, `/mcp/tools` |
@@ -95,8 +95,8 @@ Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
   working.
 - Current RPC endpoint is verified: `https://node.testnet.casper.network/rpc`.
 - A local testnet key is prepared and waiting for faucet funding.
-- `pnpm finalize:testnet` is ready to produce final explorer evidence after
-  funding.
+- `pnpm seal:submission` is ready to produce final explorer evidence and rebuild
+  the final submission pack after funding.
 - `pnpm audit:submission` is ready to verify the pack and currently should show
   only the remaining real funded testnet deploy gate as blocked after the public
   repo, hosted demo, and walkthrough video URLs are exported.
