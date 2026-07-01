@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSPR Guardian Judge Demo</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17202a;
+        --muted: #5c6b7a;
+        --line: #d7dee7;
+        --panel: #ffffff;
+        --bg: #f3f6f8;
+        --accent: #cc1f2f;
+        --accent-soft: #ffe8ea;
+        --ok: #157f54;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.5;
+      }
+
+      header {
+        background: #111827;
+        color: white;
+        padding: 48px 24px 32px;
+      }
+
+      header div,
+      main {
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 1.02;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+        font-size: 1.45rem;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      a {
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      main {
+        padding: 28px 24px 56px;
+      }
+
+      .summary {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .metric,
+      section {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+
+      .metric {
+        padding: 16px;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.35rem;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      section {
+        margin-top: 18px;
+        padding: 20px;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .flow li {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px;
+        min-height: 96px;
+        background: #fbfcfd;
+      }
+
+      .flow strong {
+        display: block;
+        color: var(--accent);
+      }
+
+      .shots {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      figure {
+        margin: 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        background: white;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      figcaption {
+        padding: 12px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .status {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 16px;
+      }
+
+      .pill {
+        display: inline-block;
+        margin: 0 8px 8px 0;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: #941421;
+        font-weight: 700;
+        font-size: 0.88rem;
+      }
+
+      .ok {
+        background: #e6f5ee;
+        color: var(--ok);
+      }
+
+      code {
+        display: block;
+        margin-top: 10px;
+        padding: 12px;
+        overflow-wrap: anywhere;
+        border-radius: 8px;
+        background: #101827;
+        color: #e6edf5;
+      }
+
+      @media (max-width: 880px) {
+        .summary,
+        .flow,
+        .shots,
+        .status {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>CSPR Guardian</h1>
+        <p>
+          Casper payment and audit receipts for autonomous RWA treasury agents.
+          This judge demo walks through the agent flow, proof artifacts, and the
+          final Casper testnet gate.
+        </p>
+        <div class="summary">
+          <div class="metric"><strong>4</strong><span>paid x402 tools</span></div>
+          <div class="metric"><strong>0.62 CSPR</strong><span>provider revenue per run</span></div>
+          <div class="metric"><strong>34/34</strong><span>evidence checks passing</span></div>
+          <div class="metric"><strong>80/100</strong><span>before final funding gate</span></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>End-To-End Flow</h2>
+        <ol class="flow">
+          <li><strong>Discover</strong>MCP-style paid RWA tools are listed before the agent calls them.</li>
+          <li><strong>Pay</strong>Each oracle returns HTTP 402, then unlocks with an Ed25519 x402-Casper proof.</li>
+          <li><strong>Analyze</strong>Risk, KYB, liquidity, and covenant reports are gathered for the RWA asset.</li>
+          <li><strong>Decide</strong>The agent makes a capped allocation decision with policy constraints.</li>
+          <li><strong>Prove</strong>Evidence hashes, payment proofs, and receipt metadata verify independently.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Proof Screens</h2>
+        <div class="shots">
+          <figure>
+            <img src="assets/cspr-guardian-dashboard.png" alt="CSPR Guardian dashboard" />
+            <figcaption>Full product dashboard after a successful agent run.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/cspr-guardian-prize-readiness.png" alt="Prize readiness score" />
+            <figcaption>Prize scorecard showing the remaining real Casper deploy gate.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/cspr-guardian-judge-proof.png" alt="Judge proof pack" />
+            <figcaption>Judge proof pack: 402 challenge, signed payment, replay rejection, verifier.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/cspr-guardian-evidence-verification.png" alt="Evidence verification" />
+            <figcaption>Independent evidence verification with all checks passing.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/cspr-guardian-testnet-preflight.png" alt="Casper testnet preflight" />
+            <figcaption>Real Casper deploy preflight: signed locally, not broadcast.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="status">
+        <div>
+          <h2>Current Submission State</h2>
+          <span class="pill ok">Repo published</span>
+          <span class="pill ok">CI ready</span>
+          <span class="pill ok">x402 settlement preflight verified</span>
+          <span class="pill">Needs faucet funding</span>
+          <span class="pill">Needs walkthrough video URL</span>
+          <p>
+            The prepared Casper testnet key can already build signed receipt and
+            x402 settlement deploys. The last on-chain step is funding the key,
+            then running the final seal command to broadcast the receipt.
+          </p>
+        </div>
+        <div>
+          <h2>Links</h2>
+          <p><a href="https://github.com/Oxygen56/cspr-guardian">Public source repository</a></p>
+          <p><a href="https://testnet.cspr.live/tools/faucet">Casper testnet faucet</a></p>
+          <code>011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2</code>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

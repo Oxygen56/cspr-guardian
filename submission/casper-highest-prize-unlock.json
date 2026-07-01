@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-01T13:04:10.823Z",
+  "generatedAt": "2026-07-01T13:11:35.797Z",
   "project": "CSPR Guardian",
   "status": "needs_funding_and_public_links",
   "testnet": {
@@ -28,15 +28,14 @@
     "status": "missing_public_links",
     "complete": false,
     "missing": [
-      "repoUrl",
       "demoUrl",
       "videoUrl"
     ],
     "items": [
       {
         "name": "repoUrl",
-        "value": "<paste repository URL>",
-        "complete": false
+        "value": "https://github.com/Oxygen56/cspr-guardian",
+        "complete": true
       },
       {
         "name": "demoUrl",
@@ -66,11 +65,6 @@
         "requiredMotes": "100000001",
         "balanceMotes": null
       }
-    },
-    {
-      "name": "publish_public_repo",
-      "complete": false,
-      "detail": "Publish the source repository and export SUBMISSION_REPO_URL."
     },
     {
       "name": "publish_hosted_demo",
@@ -108,8 +102,8 @@
     },
     {
       "name": "publish_public_repo",
-      "complete": false,
-      "detail": "Publish the source repository and export SUBMISSION_REPO_URL."
+      "complete": true,
+      "detail": "Public repository URL is configured."
     },
     {
       "name": "publish_hosted_demo",

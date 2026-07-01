@@ -1,6 +1,6 @@
 # Casper Highest Prize Unlock
 
-Generated: 2026-07-01T13:04:10.823Z
+Generated: 2026-07-01T13:11:35.797Z
 
 Status: needs_funding_and_public_links
 
@@ -24,14 +24,14 @@ Required motes: 100000001
 
 ## Public Links
 
-Missing: repoUrl, demoUrl, videoUrl
+Missing: demoUrl, videoUrl
 
 ## Gates
 
 | Gate | Status | Detail |
 | --- | --- | --- |
 | fund_testnet_key | open | Fund the prepared Casper testnet public key through the CSPR.live faucet. |
-| publish_public_repo | open | Publish the source repository and export SUBMISSION_REPO_URL. |
+| publish_public_repo | pass | Public repository URL is configured. |
 | publish_hosted_demo | open | Deploy the demo and export SUBMISSION_DEMO_URL. |
 | publish_demo_video | open | Record the walkthrough and export SUBMISSION_VIDEO_URL. |
 | real_casper_receipt_deploy | open | Waiting for a funded testnet key before broadcasting the real receipt deploy. |
