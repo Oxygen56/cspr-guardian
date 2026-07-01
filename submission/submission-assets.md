@@ -6,6 +6,7 @@ Public links already prepared:
 
 - Repository: https://github.com/Oxygen56/cspr-guardian
 - Hosted judge demo: https://oxygen56.github.io/cspr-guardian/
+- Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 
 | Asset | Purpose |
 | --- | --- |
@@ -44,9 +45,9 @@ Current screenshot capture state:
 - Final Seal external output: `needs_funding`, missing required files `0`.
 - Highest Prize Unlock external output: faucet/wallet funding gate, public link
   gate, and post-funding commands are machine-readable.
-- Submission Audit external output: `ready_except_external_submission_gates`
-  before funding/public links, then `ready_for_highest_prize_submission` after
-  final seal and public repo/demo/video URLs.
+- Submission Audit external output: `ready_except_real_testnet_gate` after
+  public repo/demo/video URLs, then `ready_for_highest_prize_submission` after
+  faucet funding and final real deploy evidence.
 - Evidence verification: `Verified`.
 - Checks passed: `34/34`.
 - Paid tools: `4`.
@@ -59,10 +60,9 @@ Final prize-readiness caveat:
   pipeline is ready.
 - The generated testnet account still needs faucet funding before the app can
   publish a real receipt deploy and CSPR.live explorer URL.
-- The BUIDL page should be re-exported with `SUBMISSION_REPO_URL`,
-  `SUBMISSION_DEMO_URL`, and `SUBMISSION_VIDEO_URL` once those public links are
-  available. Repository and hosted demo URLs are already available; the public
-  walkthrough video URL still needs to be uploaded.
+- Repository, hosted demo, and walkthrough video URLs are now available and can
+  be exported into the BUIDL page with `SUBMISSION_REPO_URL`,
+  `SUBMISSION_DEMO_URL`, and `SUBMISSION_VIDEO_URL`.
 - The public demo can be hosted from the included `Dockerfile` and
   `render.yaml`; `pnpm check:public-demo` writes the handoff.
 - The public repository can run `.github/workflows/submission-readiness.yml`;

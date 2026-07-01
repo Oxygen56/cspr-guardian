@@ -1,8 +1,8 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-01T13:45:06.402Z",
+  "generatedAt": "2026-07-01T14:09:21.665Z",
   "project": "CSPR Guardian",
-  "status": "needs_funding_and_public_links",
+  "status": "needs_funding",
   "testnet": {
     "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
     "accountStatus": "unfunded_or_unavailable",
@@ -25,11 +25,9 @@
     "faucetAccountHash": "b383c7cc23d18bc1b42406a1b2d29fc8dba86425197b6f553d7fd61375b5e446"
   },
   "publicSubmission": {
-    "status": "missing_public_links",
-    "complete": false,
-    "missing": [
-      "videoUrl"
-    ],
+    "status": "complete",
+    "complete": true,
+    "missing": [],
     "items": [
       {
         "name": "repoUrl",
@@ -43,8 +41,8 @@
       },
       {
         "name": "videoUrl",
-        "value": "<paste 90-second demo video URL>",
-        "complete": false
+        "value": "https://oxygen56.github.io/cspr-guardian/walkthrough.html",
+        "complete": true
       }
     ]
   },
@@ -64,11 +62,6 @@
         "requiredMotes": "100000001",
         "balanceMotes": null
       }
-    },
-    {
-      "name": "publish_demo_video",
-      "complete": false,
-      "detail": "Record the walkthrough and export SUBMISSION_VIDEO_URL."
     },
     {
       "name": "real_casper_receipt_deploy",
@@ -106,8 +99,8 @@
     },
     {
       "name": "publish_demo_video",
-      "complete": false,
-      "detail": "Record the walkthrough and export SUBMISSION_VIDEO_URL."
+      "complete": true,
+      "detail": "Demo video URL is configured."
     },
     {
       "name": "real_casper_receipt_deploy",

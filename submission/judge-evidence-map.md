@@ -14,6 +14,8 @@ Public repo: https://github.com/Oxygen56/cspr-guardian
 
 Hosted judge demo: https://oxygen56.github.io/cspr-guardian/
 
+Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
+
 ## Evidence Table
 
 | Prize Signal | What To Show | Artifact |
@@ -96,20 +98,19 @@ Hosted judge demo: https://oxygen56.github.io/cspr-guardian/
 - `pnpm finalize:testnet` is ready to produce final explorer evidence after
   funding.
 - `pnpm audit:submission` is ready to verify the pack and currently should show
-  only external gates as blocked: the real funded testnet deploy and public
-  repo/demo/video links.
+  only the remaining real funded testnet deploy gate as blocked after the public
+  repo, hosted demo, and walkthrough video URLs are exported.
 - `pnpm preflight:x402` builds signed Casper transfer deploys for each paid
   x402 tool call without broadcasting; `pnpm verify:x402-preflight` checks the
   deploy hashes, motes conversion, memo derivation, and recipient shape.
 - `pnpm unlock:highest-prize` records the current CSPR.live faucet/wallet
-  funding gate, public repo/demo/video link gate, and exact post-funding
-  commands.
+  funding gate and exact post-funding commands.
 - The remaining hard evidence is a funded testnet account plus one real
   explorer URL.
-- The remaining public submission evidence is a repository URL, hosted demo
-  URL, and walkthrough video URL exported into the BUIDL page. Repository and
-  hosted judge demo URLs are now public; only the walkthrough video URL remains.
-- Docker/Render hosting configuration and `/api/health` are included, so the
-  remaining hosted-demo step is publishing rather than code work.
+- Public repo, hosted judge demo, and walkthrough video URLs are now available
+  and exported into the BUIDL page.
+- Docker/Render hosting configuration and `/api/health` are included as the
+  reproducible server-hosting path, while GitHub Pages carries the public judge
+  demo.
 - A GitHub Actions workflow is included so the public repository can show a
   reproducible green submission-readiness check.

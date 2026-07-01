@@ -7,6 +7,8 @@ policy decision, and anchors an audit receipt to Casper.
 
 Public judge demo: https://oxygen56.github.io/cspr-guardian/
 
+Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
+
 The current version is a local demo with a mock Casper payment/deploy adapter.
 It is deliberately structured so the mock adapter can be replaced with a real
 Casper testnet signer before submission.
