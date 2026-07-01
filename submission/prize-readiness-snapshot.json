@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T14:27:55.247Z",
+  "generatedAt": "2026-07-01T14:46:01.342Z",
   "status": "final-gate",
   "score": 80,
   "maxScore": 100,
@@ -68,13 +68,13 @@
     "faucetUrl": "https://testnet.cspr.live/tools/faucet"
   },
   "currentEvidence": {
-    "runId": "run-a32be99e-f52c-418c-9fc4-518bfda7c42f",
-    "receiptHash": "3f34131c983f923e0a35a7b2e8177ff3baf92be0bd36b3922c309ba183db6996",
-    "explorerUrl": "https://testnet.cspr.live/deploy/mock-casper-receipt-3f34131c983f923e0a35a7b2e8177ff3baf92be0bd36b392",
+    "runId": "run-361edab0-d19e-495e-808d-2a2df79e404f",
+    "receiptHash": "267fb06735e20e6cc60bb1b3d2bffb41abfd3cd2f0213d109ea0d97de543f203",
+    "explorerUrl": "https://testnet.cspr.live/deploy/mock-casper-receipt-267fb06735e20e6cc60bb1b3d2bffb41abfd3cd2f0213d10",
     "anchorMode": "mock",
     "reportHashes": {
       "risk": "81d06f2499c1f01b1fba7f6aac0ab04fe5148aedf206d96ea7e1ce6cb8cc2880",
-      "kyb": "745f587dc98fe552b5bbd64eb14e4e1181e1ce28f60ede7e73495d11104d0fa6",
+      "kyb": "b79381e41734c78f10e60e213e6cc28515f6f18de23891224115875d35b91b8b",
       "liquidity": "6d25b444e94b8c58497524c0f642433bdb7ebf923257496d05adedd869538fe3",
       "covenant": "8267de9604c0ee1dc20389da7a2503c8a7c3358072738d77ccaf66e11f6380a1"
     }

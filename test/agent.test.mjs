@@ -40,6 +40,11 @@ import {
   renderSubmissionAuditMarkdown,
   summarizeChecks
 } from "../src/submission-audit.mjs";
+import {
+  buildFundingWatchReport,
+  parseFundingWatchOptions,
+  renderFundingWatchMarkdown
+} from "../src/testnet-funding-watch.mjs";
 import { getTestnetReadiness } from "../src/testnet-readiness.mjs";
 import { verifyTestnetPreflight } from "../src/testnet-preflight-verifier.mjs";
 import { verifyX402SettlementPreflight } from "../src/x402-settlement-preflight-verifier.mjs";
@@ -508,6 +513,7 @@ test("highest prize unlock report separates faucet funding and public links", as
     nextAction: "Open faucet",
     commands: {
       faucetHelper: "pnpm fund:testnet",
+      waitForFunding: "pnpm wait:testnet",
       afterFunding: ["pnpm seal:submission"],
       afterPublicLinks: ["pnpm export:buidl"]
     }
@@ -520,8 +526,45 @@ test("highest prize unlock report separates faucet funding and public links", as
   assert.match(markdown, /wallet required = true/);
   assert.match(markdown, /Manual Faucet Steps/);
   assert.match(markdown, /pnpm fund:testnet/);
+  assert.match(markdown, /pnpm wait:testnet/);
   assert.match(markdown, /repoUrl, demoUrl, videoUrl/);
   assert.equal(JSON.stringify(unlock).includes("privateKeyHex"), false);
+});
+
+test("testnet funding watcher reports pending faucet state without secrets", () => {
+  const options = parseFundingWatchOptions(["--once", "--no-seal", "--interval-ms=1000"], {});
+  const report = buildFundingWatchReport({
+    status: "needs_funding",
+    readiness: {
+      rpcStatus: "ok",
+      chain: "casper-test",
+      accountStatus: "unfunded_or_unavailable",
+      readyForAnchor: false,
+      publicKeyHex: "01abc",
+      requiredMotes: "100000001",
+      faucetUrl: "https://testnet.cspr.live/tools/faucet",
+      balanceError: "Code: -32026, err: Purse not found",
+      latestBlock: 123
+    },
+    attempts: [
+      {
+        checkedAt: "2026-07-01T00:00:00.000Z",
+        accountStatus: "unfunded_or_unavailable",
+        readyForAnchor: false,
+        latestBlock: 123
+      }
+    ],
+    options,
+    generatedAt: "2026-07-01T00:00:00.000Z"
+  });
+  const markdown = renderFundingWatchMarkdown(report);
+
+  assert.equal(options.once, true);
+  assert.equal(options.seal, false);
+  assert.equal(report.status, "needs_funding");
+  assert.match(markdown, /Casper Testnet Funding Watch/);
+  assert.match(markdown, /pnpm fund:testnet/);
+  assert.equal(JSON.stringify(report).includes("PRIVATE KEY"), false);
 });
 
 test("highest prize unlock recognizes funded state ready for final seal", () => {

@@ -49,6 +49,7 @@ One-command helper:
 
 \`\`\`bash
 pnpm fund:testnet
+pnpm wait:testnet
 \`\`\`
 
 After funding, run:
@@ -73,6 +74,7 @@ console.log(
       faucetUrl,
       nextSteps: [
         "Run pnpm fund:testnet to copy publicKeyHex and open the faucet.",
+        "Run pnpm wait:testnet to poll until funds arrive and then seal the submission.",
         `Run CASPER_PRIVATE_KEY_FILE=${keyFile} pnpm check:testnet.`,
         `Run CASPER_PRIVATE_KEY_FILE=${keyFile} pnpm seal:submission after the balance appears.`
       ]

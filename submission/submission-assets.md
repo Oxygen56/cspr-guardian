@@ -24,6 +24,8 @@ Public links already prepared:
 | `submission/casper-x402-settlement-preflight.md` | Human-readable x402 settlement preflight |
 | `submission/casper-highest-prize-unlock.json` | Machine-readable highest-prize unlock gate report for faucet funding, public links, and final seal commands |
 | `submission/casper-highest-prize-unlock.md` | Human-readable highest-prize unlock checklist |
+| `casper-testnet-funding-watch.json` | Machine-readable faucet funding watcher status; optional until the account is funded |
+| `casper-testnet-funding-watch.md` | Human-readable watcher status for `pnpm wait:testnet` |
 | `casper-buidl-submission.md` | Copy-ready BUIDL page fields, proof summary, and demo flow |
 | `casper-buidl-submission.json` | Machine-readable BUIDL page source data |
 | `casper-submission-audit.md` | External pre-submit audit proving evidence, preflight, pack, BUIDL, seal, leak-scan, and zip checks |

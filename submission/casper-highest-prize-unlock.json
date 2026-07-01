@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-01T14:27:51.510Z",
+  "generatedAt": "2026-07-01T14:45:56.464Z",
   "project": "CSPR Guardian",
   "status": "needs_funding",
   "testnet": {
@@ -116,6 +116,7 @@
   ],
   "commands": {
     "faucetHelper": "pnpm fund:testnet",
+    "waitForFunding": "pnpm wait:testnet",
     "afterFunding": [
       "pnpm check:testnet",
       "pnpm preflight:testnet",
@@ -136,5 +137,5 @@
       "pnpm verify:x402-preflight"
     ]
   },
-  "nextAction": "Open https://testnet.cspr.live/tools/faucet, fund the public key, then run pnpm seal:submission."
+  "nextAction": "Run pnpm fund:testnet, complete the faucet request at https://testnet.cspr.live/tools/faucet, then run pnpm wait:testnet."
 }

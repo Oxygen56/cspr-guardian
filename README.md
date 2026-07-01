@@ -84,6 +84,13 @@ Open the CSPR.live faucet and copy the prepared public key to the clipboard:
 pnpm fund:testnet
 ```
 
+Wait for the faucet transfer, then automatically run the final seal once the
+account is funded:
+
+```bash
+pnpm wait:testnet
+```
+
 Build and sign the real Casper transfer deploy without broadcasting it:
 
 ```bash

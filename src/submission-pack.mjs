@@ -102,6 +102,8 @@ function submissionFiles({ projectDir, outputDir }) {
     outputFile("casper-x402-settlement-preflight.md", "proof/casper-x402-settlement-preflight.md"),
     outputFile("casper-highest-prize-unlock.json", "proof/casper-highest-prize-unlock.json"),
     outputFile("casper-highest-prize-unlock.md", "proof/casper-highest-prize-unlock.md"),
+    outputFile("casper-testnet-funding-watch.json", "proof/casper-testnet-funding-watch.json", false),
+    outputFile("casper-testnet-funding-watch.md", "proof/casper-testnet-funding-watch.md", false),
     outputFile("casper-final-testnet-evidence.json", "proof/casper-final-testnet-evidence.json", false),
     outputFile("casper-final-testnet-evidence.md", "proof/casper-final-testnet-evidence.md", false),
     outputFile("casper-submission-assets.md", "writeup/casper-submission-assets.md"),
