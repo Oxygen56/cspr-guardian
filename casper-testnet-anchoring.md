@@ -30,7 +30,7 @@ CASPER_PRIVATE_KEY_ALGORITHM=ED25519
 CASPER_PRIVATE_KEY_HEX=<funded testnet private key>
 CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json
 CASPER_RECEIPT_SINK_PUBLIC_KEY=<recipient public key, optional>
-CASPER_RECEIPT_TRANSFER_MOTES=1
+CASPER_RECEIPT_TRANSFER_MOTES=2500000000
 CASPER_RECEIPT_PAYMENT_MOTES=100000000
 ```
 
@@ -138,7 +138,7 @@ Then run the dashboard scenario. The `Casper Receipt` panel should show:
 - `status: "submitted"`
 - a real `deployHash`
 - an explorer URL
-- `memo` equal to `uint64(first_16_hex_chars(receiptHash))`
+- `memo` equal to `uint53(first_13_hex_chars(receiptHash))`
 
 You can also run the flow without the browser:
 
