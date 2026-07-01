@@ -270,7 +270,7 @@ Required motes: ${unlock.testnet.requiredMotes || "unknown"}
 
 ## Manual Faucet Steps
 
-1. Run \`${unlock.commands.faucetHelper || "pnpm fund:testnet"}\` to copy the prepared public key and open the faucet page.
+1. Run \`${unlock.commands.faucetHelper || "pnpm fund:testnet"}\` to copy the prepared public key and open the funding guide plus faucet page.
 2. In CSPR.live, connect Casper Wallet on Casper testnet.
 3. Request faucet funds for the copied public key.
 4. Run \`${unlock.commands.waitForFunding || "pnpm wait:testnet"}\`; it waits for the balance and then runs the final seal.

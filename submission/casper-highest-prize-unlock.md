@@ -1,6 +1,6 @@
 # Casper Highest Prize Unlock
 
-Generated: 2026-07-01T14:45:56.464Z
+Generated: 2026-07-01T15:03:05.573Z
 
 Status: needs_funding
 
@@ -24,7 +24,7 @@ Required motes: 100000001
 
 ## Manual Faucet Steps
 
-1. Run `pnpm fund:testnet` to copy the prepared public key and open the faucet page.
+1. Run `pnpm fund:testnet` to copy the prepared public key and open the funding guide plus faucet page.
 2. In CSPR.live, connect Casper Wallet on Casper testnet.
 3. Request faucet funds for the copied public key.
 4. Run `pnpm wait:testnet`; it waits for the balance and then runs the final seal.

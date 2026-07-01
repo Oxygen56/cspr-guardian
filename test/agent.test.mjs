@@ -567,6 +567,15 @@ test("testnet funding watcher reports pending faucet state without secrets", () 
   assert.equal(JSON.stringify(report).includes("PRIVATE KEY"), false);
 });
 
+test("public funding handoff page includes the prepared key and watcher command", async () => {
+  const html = await fs.readFile(path.resolve("docs/funding.html"), "utf8");
+
+  assert.match(html, /011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2/);
+  assert.match(html, /https:\/\/testnet\.cspr\.live\/tools\/faucet/);
+  assert.match(html, /pnpm wait:testnet/);
+  assert.equal(html.includes("PRIVATE KEY"), false);
+});
+
 test("highest prize unlock recognizes funded state ready for final seal", () => {
   const fields = buildSubmissionFields({
     env: {

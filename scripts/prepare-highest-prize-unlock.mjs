@@ -4,6 +4,9 @@ import {
   writeHighestPrizeUnlock
 } from "../src/highest-prize-unlock.mjs";
 
+const FUNDING_GUIDE_URL =
+  process.env.SUBMISSION_FUNDING_GUIDE_URL ||
+  "https://oxygen56.github.io/cspr-guardian/funding.html";
 const unlock = await generateHighestPrizeUnlock();
 await writeHighestPrizeUnlock(unlock);
 
@@ -11,8 +14,12 @@ const copyRequested =
   process.argv.includes("--copy-public-key") || process.env.COPY_PUBLIC_KEY === "true";
 const copiedPublicKey = copyRequested ? copyPublicKey(unlock.testnet.publicKeyHex) : false;
 
+if (process.argv.includes("--open-guide") || process.env.OPEN_FUNDING_GUIDE === "true") {
+  openUrl(FUNDING_GUIDE_URL);
+}
+
 if (process.argv.includes("--open-faucet") || process.env.OPEN_FAUCET === "true") {
-  openFaucet(unlock.faucet.url);
+  openUrl(unlock.faucet.url);
 }
 
 console.log(
@@ -24,6 +31,7 @@ console.log(
       readyForAnchor: unlock.testnet.readyForAnchor,
       missingGates: unlock.remainingGates.map((gate) => gate.name),
       faucetUrl: unlock.faucet.url,
+      fundingGuideUrl: FUNDING_GUIDE_URL,
       publicKeyCopiedToClipboard: copiedPublicKey,
       nextAction: unlock.nextAction
     },
@@ -32,7 +40,7 @@ console.log(
   )
 );
 
-function openFaucet(url) {
+function openUrl(url) {
   const opener =
     process.platform === "darwin"
       ? "open"
