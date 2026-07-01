@@ -19,6 +19,6 @@ services:
       - key: CASPER_PRIVATE_KEY_FILE
         value: .local/casper-testnet-key.json
       - key: CASPER_RECEIPT_TRANSFER_MOTES
-        value: "1"
+        value: "2500000000"
       - key: CASPER_RECEIPT_PAYMENT_MOTES
         value: "100000000"

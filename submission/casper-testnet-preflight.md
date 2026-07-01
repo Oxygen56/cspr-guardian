@@ -1,6 +1,6 @@
 # Casper Testnet Preflight
 
-Status: needs_funding
+Status: ready_to_anchor
 
 Deploy build: ok
 
@@ -15,25 +15,25 @@ Signer:
 Receipt hash:
 
 ```text
-f11dac5e96824865297a9f32a1cf53e615a5bcb6fcf59a426241c98521d8704b
+3a0972e49f9b8cb2d4366d8eac5f7e9e37813f7f727301cf53837630916db651
 ```
 
 Transfer memo:
 
 ```text
-17374232459717265509
+1020996107237816
 ```
 
 Memo derivation:
 
 ```text
-uint64(first_16_hex_chars(receiptHash)); source=f11dac5e96824865; bits=64
+uint53(first_13_hex_chars(receiptHash)); source=3a0972e49f9b8; bits=52
 ```
 
 Account status:
 
 ```text
-unfunded_or_unavailable
+funded
 ```
 
 Next step:
@@ -41,5 +41,5 @@ Next step:
 ```bash
 npm run check:testnet
 npm run preflight:testnet
-npm run finalize:testnet
+npm run seal:submission
 ```

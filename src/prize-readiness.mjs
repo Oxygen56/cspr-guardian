@@ -13,7 +13,7 @@ const REQUIRED_PAID_TOOLS = [
 ];
 
 export async function getPrizeReadiness() {
-  const [tools, evidence, verification, providerLedger, runLedger, readiness, assetsReady] =
+  const [tools, evidence, verification, providerLedger, runLedger, readiness, assetsReady, finalEvidence] =
     await Promise.all([
       listTools(),
       getLatestEvidenceBundle(),
@@ -21,7 +21,8 @@ export async function getPrizeReadiness() {
       getProviderLedger(),
       getRunLedger(),
       getTestnetReadiness(),
-      hasSubmissionAssets()
+      hasSubmissionAssets(),
+      readFinalTestnetEvidence()
     ]);
 
   const paidTools = tools.filter((tool) => tool.payment === "x402-casper");
@@ -36,12 +37,21 @@ export async function getPrizeReadiness() {
         ?.reduce((sum, payment) => sum + Number(payment.amount || 0), 0)
         .toFixed(2)
     : providerLedger.totalCSPR;
-  const realCasperDeploy =
+  const evidenceCasperDeploy =
     evidenceReady &&
     evidence.anchor?.mode === "real" &&
     evidence.anchor?.deployHash &&
     !String(evidence.anchor.deployHash).startsWith("mock-") &&
     evidence.anchor?.explorerUrl?.includes("cspr.live");
+  const finalCasperDeploy =
+    finalEvidence?.status === "ready_for_submission" &&
+    finalEvidence.anchor?.mode === "real" &&
+    finalEvidence.anchor?.deployHash &&
+    !String(finalEvidence.anchor.deployHash).startsWith("mock-") &&
+    finalEvidence.anchor?.explorerUrl?.includes("cspr.live");
+  const realCasperDeploy = Boolean(evidenceCasperDeploy || finalCasperDeploy);
+  const realCasperExplorerUrl =
+    finalCasperDeploy ? finalEvidence.anchor.explorerUrl : evidence.anchor?.explorerUrl;
 
   const criteria = [
     criterion({
@@ -103,7 +113,7 @@ export async function getPrizeReadiness() {
           ? "ready to anchor"
           : "needs funding",
       evidence: realCasperDeploy
-        ? evidence.anchor.explorerUrl
+        ? realCasperExplorerUrl
         : "Fund testnet key and run npm run seal:submission"
     }),
     criterion({
@@ -146,9 +156,12 @@ export async function getPrizeReadiness() {
     currentEvidence: evidenceReady
       ? {
           runId: evidence.run.id,
-          receiptHash: evidence.verification.receiptHash,
-          explorerUrl: evidence.anchor?.explorerUrl || evidence.verification.explorerUrl,
-          anchorMode: evidence.anchor?.mode,
+          receiptHash: finalCasperDeploy
+            ? finalEvidence.anchor.receiptHash
+            : evidence.verification.receiptHash,
+          explorerUrl:
+            realCasperExplorerUrl || evidence.anchor?.explorerUrl || evidence.verification.explorerUrl,
+          anchorMode: finalCasperDeploy ? finalEvidence.anchor.mode : evidence.anchor?.mode,
           reportHashes
         }
       : null
@@ -190,4 +203,21 @@ async function hasSubmissionAssets() {
   } catch {
     return false;
   }
+}
+
+async function readFinalTestnetEvidence() {
+  const candidates = [
+    path.resolve(process.cwd(), "../../outputs/casper-final-testnet-evidence.json"),
+    path.resolve(process.cwd(), "submission/casper-final-testnet-evidence.json")
+  ];
+
+  for (const candidate of candidates) {
+    try {
+      return JSON.parse(await fs.readFile(candidate, "utf8"));
+    } catch {
+      // Try the next conventional location.
+    }
+  }
+
+  return null;
 }

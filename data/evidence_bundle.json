@@ -1,12 +1,12 @@
 {
   "version": "0.2",
-  "generatedAt": "2026-07-01T16:15:18.498Z",
+  "generatedAt": "2026-07-01T18:00:39.228Z",
   "project": "CSPR Guardian",
   "run": {
-    "id": "run-8849e64f-ec9e-4f46-817b-9b1899e76107",
-    "startedAt": "2026-07-01T16:15:18.488Z",
+    "id": "run-aebd4c54-0b99-43a5-b8d0-07d436408c0e",
+    "startedAt": "2026-07-01T18:00:39.223Z",
     "objective": "Autonomously screen an RWA allocation, pay for risk intelligence, and anchor a Casper audit receipt.",
-    "completedAt": "2026-07-01T16:15:18.490Z"
+    "completedAt": "2026-07-01T18:00:39.226Z"
   },
   "paymentRequirements": [
     {
@@ -24,8 +24,8 @@
           "extra": {
             "tool": "rwa.risk_score",
             "assetId": "invoice-usdc-7d",
-            "nonce": "3c196772-f976-405b-9f28-f3c36fe17a29",
-            "expiresAt": "2026-07-01T16:20:18.489Z"
+            "nonce": "46e7bae7-2710-41ab-a669-b31a1244cc8a",
+            "expiresAt": "2026-07-01T18:05:39.223Z"
           }
         }
       ]
@@ -45,8 +45,8 @@
           "extra": {
             "tool": "rwa.kyb_screen",
             "assetId": "invoice-usdc-7d",
-            "nonce": "1b0e5349-7c27-479d-9ad0-5313c64cea0d",
-            "expiresAt": "2026-07-01T16:20:18.489Z"
+            "nonce": "af1f47a2-f5d8-409f-8058-7e8fbc712f27",
+            "expiresAt": "2026-07-01T18:05:39.224Z"
           }
         }
       ]
@@ -66,8 +66,8 @@
           "extra": {
             "tool": "rwa.liquidity_depth",
             "assetId": "invoice-usdc-7d",
-            "nonce": "bd3161d6-3783-4634-a545-91d5c717fef5",
-            "expiresAt": "2026-07-01T16:20:18.489Z"
+            "nonce": "ef09aee6-375f-4d4f-b73c-83d2fbbc7c34",
+            "expiresAt": "2026-07-01T18:05:39.225Z"
           }
         }
       ]
@@ -87,8 +87,8 @@
           "extra": {
             "tool": "rwa.covenant_monitor",
             "assetId": "invoice-usdc-7d",
-            "nonce": "b4268c32-cd92-4226-b706-f3864c27af78",
-            "expiresAt": "2026-07-01T16:20:18.489Z"
+            "nonce": "2e8eda5c-5ce3-4c7f-905f-e39cde570a21",
+            "expiresAt": "2026-07-01T18:05:39.226Z"
           }
         }
       ]
@@ -103,10 +103,10 @@
       "network": "casper-test",
       "payTo": "demo-casper-treasury",
       "agentId": "cspr-guardian-alpha",
-      "nonce": "3c196772-f976-405b-9f28-f3c36fe17a29",
-      "txHash": "mock-casper-pay-c687359d8eb0d7e6670b944dfc9996974ba10b0ea4df7523",
+      "nonce": "46e7bae7-2710-41ab-a669-b31a1244cc8a",
+      "txHash": "mock-casper-pay-fd09d9f657814029f77c7a4921ed06176038b3e767b03ea1",
       "explorerUrl": null,
-      "signature": "h_S8cBmaHSlQwHSpf8b9bW2VdVrf4dSvd0d8Q1bFmzSTVPs9JLZBkj0zmspbcfS4KOTDbym7m1TmEgWBNEMuBw",
+      "signature": "zsVJcjRvwMvKg6sh5FQp09QW6uBj_Hi63WoDcXpriLLM9RgduaE_32Rk_7phLT_phmgKw-MfkAxIQ5As-OuTBA",
       "authorization": {
         "x402Version": 1,
         "scheme": "exact-casper-receipt-v1",
@@ -117,12 +117,12 @@
         "resource": "/api/oracle/rwa-risk?assetId=invoice-usdc-7d",
         "tool": "rwa.risk_score",
         "assetId": "invoice-usdc-7d",
-        "nonce": "3c196772-f976-405b-9f28-f3c36fe17a29",
-        "validBefore": "2026-07-01T16:20:18.489Z",
+        "nonce": "46e7bae7-2710-41ab-a669-b31a1244cc8a",
+        "validBefore": "2026-07-01T18:05:39.223Z",
         "agentId": "cspr-guardian-alpha",
-        "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAi3JZM9Cev06appB1LNic3Z6JKeD4s/OJcj/+VgZBOUY=\n-----END PUBLIC KEY-----\n"
+        "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA2WVyU09bDKDonun9XUjSMEGIN+HYLvBiKiMC9a4qFYE=\n-----END PUBLIC KEY-----\n"
       },
-      "authorizationHash": "3173c6e9b944710b823395fee52ffa341c8fe80ce1141960c562a9ac980481fd"
+      "authorizationHash": "f6bcf528755f0ed66ab0ed340a5b116a1cbcbe425230e3b6ac39d943c8c7a427"
     },
     {
       "status": "settled",
@@ -132,10 +132,10 @@
       "network": "casper-test",
       "payTo": "demo-casper-treasury",
       "agentId": "cspr-guardian-alpha",
-      "nonce": "1b0e5349-7c27-479d-9ad0-5313c64cea0d",
-      "txHash": "mock-casper-pay-8213f548a157b59075acb6121e2f0c3e6350946dfc5ca7f6",
+      "nonce": "af1f47a2-f5d8-409f-8058-7e8fbc712f27",
+      "txHash": "mock-casper-pay-da920b8b70b148d12f952261c7576a3268a99c6458b413e9",
       "explorerUrl": null,
-      "signature": "ZSLb-3P7HdCsc64owrjVcGtiFUMsZb5zjDirLm2ePcMfArNxHiF9gFo5Iar-MKzoCWLldlpWo6Ah5LVj66RVCA",
+      "signature": "w-vHXiU6L1pJRFcKTApPj7fFARvMZ6nhkFm91MVJaFBeyBAQqpogtrV-E8pnjxBQ7cjC2RAbHI-F4Jg3I8gKDw",
       "authorization": {
         "x402Version": 1,
         "scheme": "exact-casper-receipt-v1",
@@ -146,12 +146,12 @@
         "resource": "/api/oracle/kyb-screen?assetId=invoice-usdc-7d",
         "tool": "rwa.kyb_screen",
         "assetId": "invoice-usdc-7d",
-        "nonce": "1b0e5349-7c27-479d-9ad0-5313c64cea0d",
-        "validBefore": "2026-07-01T16:20:18.489Z",
+        "nonce": "af1f47a2-f5d8-409f-8058-7e8fbc712f27",
+        "validBefore": "2026-07-01T18:05:39.224Z",
         "agentId": "cspr-guardian-alpha",
-        "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAi3JZM9Cev06appB1LNic3Z6JKeD4s/OJcj/+VgZBOUY=\n-----END PUBLIC KEY-----\n"
+        "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA2WVyU09bDKDonun9XUjSMEGIN+HYLvBiKiMC9a4qFYE=\n-----END PUBLIC KEY-----\n"
       },
-      "authorizationHash": "b99dd34b3d8ca6b6d436008ea202e116b3a53c15e2e377d3869c859cf7d2cb05"
+      "authorizationHash": "df418b24bf86b47b1ac5eca6ef70335f475042fbe022ee673be9253bf4e0523c"
     },
     {
       "status": "settled",
@@ -161,10 +161,10 @@
       "network": "casper-test",
       "payTo": "demo-casper-treasury",
       "agentId": "cspr-guardian-alpha",
-      "nonce": "bd3161d6-3783-4634-a545-91d5c717fef5",
-      "txHash": "mock-casper-pay-f34e22c994429e1a2713440e5f5fb6819ea2a5d421d0eac7",
+      "nonce": "ef09aee6-375f-4d4f-b73c-83d2fbbc7c34",
+      "txHash": "mock-casper-pay-b462ab0ad8b355ca6a19b962671a4fe674b1f4e6141669a8",
       "explorerUrl": null,
-      "signature": "AXsW7bkqX0FEbY_m6m8XHVp9RmJ2LXEZpD5MKkgJ8Y_mEqEI8JvSSszUBKmLfAOVsy1xRKwpKGo_jFVD9X7vAA",
+      "signature": "8JlBz_F3DYRK06EaslbxES80wFjXAFalfL5_IQEwzQQRD0kGDoFRpwQZ3_gEhbCqFgqiEwSlg36hTMcOf0f7Ag",
       "authorization": {
         "x402Version": 1,
         "scheme": "exact-casper-receipt-v1",
@@ -175,12 +175,12 @@
         "resource": "/api/oracle/liquidity-depth?assetId=invoice-usdc-7d",
         "tool": "rwa.liquidity_depth",
         "assetId": "invoice-usdc-7d",
-        "nonce": "bd3161d6-3783-4634-a545-91d5c717fef5",
-        "validBefore": "2026-07-01T16:20:18.489Z",
+        "nonce": "ef09aee6-375f-4d4f-b73c-83d2fbbc7c34",
+        "validBefore": "2026-07-01T18:05:39.225Z",
         "agentId": "cspr-guardian-alpha",
-        "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAi3JZM9Cev06appB1LNic3Z6JKeD4s/OJcj/+VgZBOUY=\n-----END PUBLIC KEY-----\n"
+        "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA2WVyU09bDKDonun9XUjSMEGIN+HYLvBiKiMC9a4qFYE=\n-----END PUBLIC KEY-----\n"
       },
-      "authorizationHash": "da75ff6ca8864244e6f0a39c952eff7f4d29d5c5d1f5b3514f4f3ba81c65db65"
+      "authorizationHash": "865975a5fcfaca5a5b70c1495fbe9f385a7f98e83b8e0722f22f2647cc58cb9c"
     },
     {
       "status": "settled",
@@ -190,10 +190,10 @@
       "network": "casper-test",
       "payTo": "demo-casper-treasury",
       "agentId": "cspr-guardian-alpha",
-      "nonce": "b4268c32-cd92-4226-b706-f3864c27af78",
-      "txHash": "mock-casper-pay-585cb2dfc0ca3fc10e7c0839705d0f5b379974c4fc2c972f",
+      "nonce": "2e8eda5c-5ce3-4c7f-905f-e39cde570a21",
+      "txHash": "mock-casper-pay-0f24854ca2fa0d73a3579e46f41e4192be3849807ae7daad",
       "explorerUrl": null,
-      "signature": "bhg-_-mua8ZeavSuVOIf6NHKFAdf4CuJBExcoqyOY5Owoya7hAOrY2DlTb4hye4a5_ADe9xHSG-vBNK-Rh4ODA",
+      "signature": "iVYFhXd0r-cKOf-Rv8NHLn8NIh5WclFp6XQ41y6GZhNSdcXS1ZvXeEwrXBi4rZVv_NQ_kMFFKbQrUITkdqEYCQ",
       "authorization": {
         "x402Version": 1,
         "scheme": "exact-casper-receipt-v1",
@@ -204,12 +204,12 @@
         "resource": "/api/oracle/covenant-monitor?assetId=invoice-usdc-7d",
         "tool": "rwa.covenant_monitor",
         "assetId": "invoice-usdc-7d",
-        "nonce": "b4268c32-cd92-4226-b706-f3864c27af78",
-        "validBefore": "2026-07-01T16:20:18.489Z",
+        "nonce": "2e8eda5c-5ce3-4c7f-905f-e39cde570a21",
+        "validBefore": "2026-07-01T18:05:39.226Z",
         "agentId": "cspr-guardian-alpha",
-        "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAi3JZM9Cev06appB1LNic3Z6JKeD4s/OJcj/+VgZBOUY=\n-----END PUBLIC KEY-----\n"
+        "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA2WVyU09bDKDonun9XUjSMEGIN+HYLvBiKiMC9a4qFYE=\n-----END PUBLIC KEY-----\n"
       },
-      "authorizationHash": "f82a5c5efa22f372853c5674ab86636635d81df4c0a4e0269f4824c5f22e5b03"
+      "authorizationHash": "bcdbad34c5480150973d185a139e6f7514736e9b2772b60dabd47a46e3c6fc8f"
     }
   ],
   "reports": {
@@ -270,7 +270,7 @@
       "jurisdiction": "US",
       "jurisdictionRisk": "low",
       "policyResult": "pass",
-      "reviewedAt": "2026-07-01T16:15:18.489Z",
+      "reviewedAt": "2026-07-01T18:00:39.225Z",
       "flags": []
     },
     "liquidity": {
@@ -343,7 +343,7 @@
       "label": "Settle paid tools",
       "status": "complete",
       "detail": "0.62 CSPR settled across risk, KYB, liquidity, and covenant providers.",
-      "txHash": "mock-casper-pay-c687359d8eb0d7e6670b944dfc9996974ba10b0ea4df7523 | mock-casper-pay-8213f548a157b59075acb6121e2f0c3e6350946dfc5ca7f6 | mock-casper-pay-f34e22c994429e1a2713440e5f5fb6819ea2a5d421d0eac7 | mock-casper-pay-585cb2dfc0ca3fc10e7c0839705d0f5b379974c4fc2c972f"
+      "txHash": "mock-casper-pay-fd09d9f657814029f77c7a4921ed06176038b3e767b03ea1 | mock-casper-pay-da920b8b70b148d12f952261c7576a3268a99c6458b413e9 | mock-casper-pay-b462ab0ad8b355ca6a19b962671a4fe674b1f4e6141669a8 | mock-casper-pay-0f24854ca2fa0d73a3579e46f41e4192be3849807ae7daad"
     },
     {
       "label": "Call paid risk oracle",
@@ -373,21 +373,21 @@
     {
       "label": "Anchor Casper receipt",
       "status": "complete",
-      "detail": "Receipt hash 49de3781bf0ddd39... anchored.",
-      "txHash": "mock-casper-receipt-49de3781bf0ddd390adc2740dc0ac4c70e4cb25b790c3ad2"
+      "detail": "Receipt hash 8532515578bd5101... anchored.",
+      "txHash": "mock-casper-receipt-8532515578bd5101d6584a0f5b547f99deace6d89fc4919b"
     }
   ],
   "anchor": {
     "mode": "mock",
     "status": "anchored",
-    "deployHash": "mock-casper-receipt-49de3781bf0ddd390adc2740dc0ac4c70e4cb25b790c3ad2",
+    "deployHash": "mock-casper-receipt-8532515578bd5101d6584a0f5b547f99deace6d89fc4919b",
     "network": "casper-test",
-    "explorerUrl": "https://testnet.cspr.live/deploy/mock-casper-receipt-49de3781bf0ddd390adc2740dc0ac4c70e4cb25b790c3ad2",
+    "explorerUrl": "https://testnet.cspr.live/deploy/mock-casper-receipt-8532515578bd5101d6584a0f5b547f99deace6d89fc4919b",
     "receipt": {
       "version": "0.1",
       "network": "casper-test",
       "project": "CSPR Guardian",
-      "agentRunId": "run-8849e64f-ec9e-4f46-817b-9b1899e76107",
+      "agentRunId": "run-aebd4c54-0b99-43a5-b8d0-07d436408c0e",
       "tools": [
         "rwa.risk_score",
         "rwa.kyb_screen",
@@ -395,23 +395,23 @@
         "rwa.covenant_monitor"
       ],
       "paymentHashes": [
-        "mock-casper-pay-c687359d8eb0d7e6670b944dfc9996974ba10b0ea4df7523",
-        "mock-casper-pay-8213f548a157b59075acb6121e2f0c3e6350946dfc5ca7f6",
-        "mock-casper-pay-f34e22c994429e1a2713440e5f5fb6819ea2a5d421d0eac7",
-        "mock-casper-pay-585cb2dfc0ca3fc10e7c0839705d0f5b379974c4fc2c972f"
+        "mock-casper-pay-fd09d9f657814029f77c7a4921ed06176038b3e767b03ea1",
+        "mock-casper-pay-da920b8b70b148d12f952261c7576a3268a99c6458b413e9",
+        "mock-casper-pay-b462ab0ad8b355ca6a19b962671a4fe674b1f4e6141669a8",
+        "mock-casper-pay-0f24854ca2fa0d73a3579e46f41e4192be3849807ae7daad"
       ],
       "riskReportHash": "81d06f2499c1f01b1fba7f6aac0ab04fe5148aedf206d96ea7e1ce6cb8cc2880",
-      "kybReportHash": "7a3664880ab24cd22c2d3ee634dcf38b796972cba8f6ba69989fda071d422121",
+      "kybReportHash": "2d4dc8a9b07540ab414f3a55a4c0aba7abff17f8d23606c03b7aae662cc6b2d8",
       "liquidityReportHash": "6d25b444e94b8c58497524c0f642433bdb7ebf923257496d05adedd869538fe3",
       "covenantReportHash": "8267de9604c0ee1dc20389da7a2503c8a7c3358072738d77ccaf66e11f6380a1",
       "decisionHash": "932afdd16cd834c38222029c0e03f17fcf68d4b5b786e3e50e9b276a49fbbb06",
-      "createdAt": "2026-07-01T16:15:18.490Z",
-      "receiptHash": "49de3781bf0ddd390adc2740dc0ac4c70e4cb25b790c3ad2d251b85c63fd6e82"
+      "createdAt": "2026-07-01T18:00:39.226Z",
+      "receiptHash": "8532515578bd5101d6584a0f5b547f99deace6d89fc4919b128faa042a2eafcc"
     }
   },
   "ledgerEntry": {
-    "id": "run-8849e64f-ec9e-4f46-817b-9b1899e76107",
-    "completedAt": "2026-07-01T16:15:18.490Z",
+    "id": "run-aebd4c54-0b99-43a5-b8d0-07d436408c0e",
+    "completedAt": "2026-07-01T18:00:39.226Z",
     "assetId": "invoice-usdc-7d",
     "assetName": "USDC invoice financing pool",
     "action": "approve",
@@ -425,30 +425,30 @@
           "tool": "rwa.risk_score",
           "amount": "0.25",
           "currency": "CSPR",
-          "txHash": "mock-casper-pay-c687359d8eb0d7e6670b944dfc9996974ba10b0ea4df7523"
+          "txHash": "mock-casper-pay-fd09d9f657814029f77c7a4921ed06176038b3e767b03ea1"
         },
         {
           "tool": "rwa.kyb_screen",
           "amount": "0.10",
           "currency": "CSPR",
-          "txHash": "mock-casper-pay-8213f548a157b59075acb6121e2f0c3e6350946dfc5ca7f6"
+          "txHash": "mock-casper-pay-da920b8b70b148d12f952261c7576a3268a99c6458b413e9"
         },
         {
           "tool": "rwa.liquidity_depth",
           "amount": "0.15",
           "currency": "CSPR",
-          "txHash": "mock-casper-pay-f34e22c994429e1a2713440e5f5fb6819ea2a5d421d0eac7"
+          "txHash": "mock-casper-pay-b462ab0ad8b355ca6a19b962671a4fe674b1f4e6141669a8"
         },
         {
           "tool": "rwa.covenant_monitor",
           "amount": "0.12",
           "currency": "CSPR",
-          "txHash": "mock-casper-pay-585cb2dfc0ca3fc10e7c0839705d0f5b379974c4fc2c972f"
+          "txHash": "mock-casper-pay-0f24854ca2fa0d73a3579e46f41e4192be3849807ae7daad"
         }
       ]
     },
-    "receiptHash": "49de3781bf0ddd390adc2740dc0ac4c70e4cb25b790c3ad2d251b85c63fd6e82",
-    "deployHash": "mock-casper-receipt-49de3781bf0ddd390adc2740dc0ac4c70e4cb25b790c3ad2",
+    "receiptHash": "8532515578bd5101d6584a0f5b547f99deace6d89fc4919b128faa042a2eafcc",
+    "deployHash": "mock-casper-receipt-8532515578bd5101d6584a0f5b547f99deace6d89fc4919b",
     "anchorMode": "mock",
     "tools": [
       "rwa.risk_score",
@@ -461,10 +461,10 @@
     "x402Proofs": [
       {
         "tool": "rwa.risk_score",
-        "txHash": "mock-casper-pay-c687359d8eb0d7e6670b944dfc9996974ba10b0ea4df7523",
-        "signature": "h_S8cBmaHSlQwHSpf8b9bW2VdVrf4dSvd0d8Q1bFmzSTVPs9JLZBkj0zmspbcfS4KOTDbym7m1TmEgWBNEMuBw",
-        "nonce": "3c196772-f976-405b-9f28-f3c36fe17a29",
-        "authorizationHash": "3173c6e9b944710b823395fee52ffa341c8fe80ce1141960c562a9ac980481fd",
+        "txHash": "mock-casper-pay-fd09d9f657814029f77c7a4921ed06176038b3e767b03ea1",
+        "signature": "zsVJcjRvwMvKg6sh5FQp09QW6uBj_Hi63WoDcXpriLLM9RgduaE_32Rk_7phLT_phmgKw-MfkAxIQ5As-OuTBA",
+        "nonce": "46e7bae7-2710-41ab-a669-b31a1244cc8a",
+        "authorizationHash": "f6bcf528755f0ed66ab0ed340a5b116a1cbcbe425230e3b6ac39d943c8c7a427",
         "authorization": {
           "x402Version": 1,
           "scheme": "exact-casper-receipt-v1",
@@ -475,18 +475,18 @@
           "resource": "/api/oracle/rwa-risk?assetId=invoice-usdc-7d",
           "tool": "rwa.risk_score",
           "assetId": "invoice-usdc-7d",
-          "nonce": "3c196772-f976-405b-9f28-f3c36fe17a29",
-          "validBefore": "2026-07-01T16:20:18.489Z",
+          "nonce": "46e7bae7-2710-41ab-a669-b31a1244cc8a",
+          "validBefore": "2026-07-01T18:05:39.223Z",
           "agentId": "cspr-guardian-alpha",
-          "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAi3JZM9Cev06appB1LNic3Z6JKeD4s/OJcj/+VgZBOUY=\n-----END PUBLIC KEY-----\n"
+          "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA2WVyU09bDKDonun9XUjSMEGIN+HYLvBiKiMC9a4qFYE=\n-----END PUBLIC KEY-----\n"
         }
       },
       {
         "tool": "rwa.kyb_screen",
-        "txHash": "mock-casper-pay-8213f548a157b59075acb6121e2f0c3e6350946dfc5ca7f6",
-        "signature": "ZSLb-3P7HdCsc64owrjVcGtiFUMsZb5zjDirLm2ePcMfArNxHiF9gFo5Iar-MKzoCWLldlpWo6Ah5LVj66RVCA",
-        "nonce": "1b0e5349-7c27-479d-9ad0-5313c64cea0d",
-        "authorizationHash": "b99dd34b3d8ca6b6d436008ea202e116b3a53c15e2e377d3869c859cf7d2cb05",
+        "txHash": "mock-casper-pay-da920b8b70b148d12f952261c7576a3268a99c6458b413e9",
+        "signature": "w-vHXiU6L1pJRFcKTApPj7fFARvMZ6nhkFm91MVJaFBeyBAQqpogtrV-E8pnjxBQ7cjC2RAbHI-F4Jg3I8gKDw",
+        "nonce": "af1f47a2-f5d8-409f-8058-7e8fbc712f27",
+        "authorizationHash": "df418b24bf86b47b1ac5eca6ef70335f475042fbe022ee673be9253bf4e0523c",
         "authorization": {
           "x402Version": 1,
           "scheme": "exact-casper-receipt-v1",
@@ -497,18 +497,18 @@
           "resource": "/api/oracle/kyb-screen?assetId=invoice-usdc-7d",
           "tool": "rwa.kyb_screen",
           "assetId": "invoice-usdc-7d",
-          "nonce": "1b0e5349-7c27-479d-9ad0-5313c64cea0d",
-          "validBefore": "2026-07-01T16:20:18.489Z",
+          "nonce": "af1f47a2-f5d8-409f-8058-7e8fbc712f27",
+          "validBefore": "2026-07-01T18:05:39.224Z",
           "agentId": "cspr-guardian-alpha",
-          "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAi3JZM9Cev06appB1LNic3Z6JKeD4s/OJcj/+VgZBOUY=\n-----END PUBLIC KEY-----\n"
+          "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA2WVyU09bDKDonun9XUjSMEGIN+HYLvBiKiMC9a4qFYE=\n-----END PUBLIC KEY-----\n"
         }
       },
       {
         "tool": "rwa.liquidity_depth",
-        "txHash": "mock-casper-pay-f34e22c994429e1a2713440e5f5fb6819ea2a5d421d0eac7",
-        "signature": "AXsW7bkqX0FEbY_m6m8XHVp9RmJ2LXEZpD5MKkgJ8Y_mEqEI8JvSSszUBKmLfAOVsy1xRKwpKGo_jFVD9X7vAA",
-        "nonce": "bd3161d6-3783-4634-a545-91d5c717fef5",
-        "authorizationHash": "da75ff6ca8864244e6f0a39c952eff7f4d29d5c5d1f5b3514f4f3ba81c65db65",
+        "txHash": "mock-casper-pay-b462ab0ad8b355ca6a19b962671a4fe674b1f4e6141669a8",
+        "signature": "8JlBz_F3DYRK06EaslbxES80wFjXAFalfL5_IQEwzQQRD0kGDoFRpwQZ3_gEhbCqFgqiEwSlg36hTMcOf0f7Ag",
+        "nonce": "ef09aee6-375f-4d4f-b73c-83d2fbbc7c34",
+        "authorizationHash": "865975a5fcfaca5a5b70c1495fbe9f385a7f98e83b8e0722f22f2647cc58cb9c",
         "authorization": {
           "x402Version": 1,
           "scheme": "exact-casper-receipt-v1",
@@ -519,18 +519,18 @@
           "resource": "/api/oracle/liquidity-depth?assetId=invoice-usdc-7d",
           "tool": "rwa.liquidity_depth",
           "assetId": "invoice-usdc-7d",
-          "nonce": "bd3161d6-3783-4634-a545-91d5c717fef5",
-          "validBefore": "2026-07-01T16:20:18.489Z",
+          "nonce": "ef09aee6-375f-4d4f-b73c-83d2fbbc7c34",
+          "validBefore": "2026-07-01T18:05:39.225Z",
           "agentId": "cspr-guardian-alpha",
-          "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAi3JZM9Cev06appB1LNic3Z6JKeD4s/OJcj/+VgZBOUY=\n-----END PUBLIC KEY-----\n"
+          "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA2WVyU09bDKDonun9XUjSMEGIN+HYLvBiKiMC9a4qFYE=\n-----END PUBLIC KEY-----\n"
         }
       },
       {
         "tool": "rwa.covenant_monitor",
-        "txHash": "mock-casper-pay-585cb2dfc0ca3fc10e7c0839705d0f5b379974c4fc2c972f",
-        "signature": "bhg-_-mua8ZeavSuVOIf6NHKFAdf4CuJBExcoqyOY5Owoya7hAOrY2DlTb4hye4a5_ADe9xHSG-vBNK-Rh4ODA",
-        "nonce": "b4268c32-cd92-4226-b706-f3864c27af78",
-        "authorizationHash": "f82a5c5efa22f372853c5674ab86636635d81df4c0a4e0269f4824c5f22e5b03",
+        "txHash": "mock-casper-pay-0f24854ca2fa0d73a3579e46f41e4192be3849807ae7daad",
+        "signature": "iVYFhXd0r-cKOf-Rv8NHLn8NIh5WclFp6XQ41y6GZhNSdcXS1ZvXeEwrXBi4rZVv_NQ_kMFFKbQrUITkdqEYCQ",
+        "nonce": "2e8eda5c-5ce3-4c7f-905f-e39cde570a21",
+        "authorizationHash": "bcdbad34c5480150973d185a139e6f7514736e9b2772b60dabd47a46e3c6fc8f",
         "authorization": {
           "x402Version": 1,
           "scheme": "exact-casper-receipt-v1",
@@ -541,22 +541,22 @@
           "resource": "/api/oracle/covenant-monitor?assetId=invoice-usdc-7d",
           "tool": "rwa.covenant_monitor",
           "assetId": "invoice-usdc-7d",
-          "nonce": "b4268c32-cd92-4226-b706-f3864c27af78",
-          "validBefore": "2026-07-01T16:20:18.489Z",
+          "nonce": "2e8eda5c-5ce3-4c7f-905f-e39cde570a21",
+          "validBefore": "2026-07-01T18:05:39.226Z",
           "agentId": "cspr-guardian-alpha",
-          "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAi3JZM9Cev06appB1LNic3Z6JKeD4s/OJcj/+VgZBOUY=\n-----END PUBLIC KEY-----\n"
+          "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA2WVyU09bDKDonun9XUjSMEGIN+HYLvBiKiMC9a4qFYE=\n-----END PUBLIC KEY-----\n"
         }
       }
     ],
     "reportHashes": {
       "risk": "81d06f2499c1f01b1fba7f6aac0ab04fe5148aedf206d96ea7e1ce6cb8cc2880",
-      "kyb": "7a3664880ab24cd22c2d3ee634dcf38b796972cba8f6ba69989fda071d422121",
+      "kyb": "2d4dc8a9b07540ab414f3a55a4c0aba7abff17f8d23606c03b7aae662cc6b2d8",
       "liquidity": "6d25b444e94b8c58497524c0f642433bdb7ebf923257496d05adedd869538fe3",
       "covenant": "8267de9604c0ee1dc20389da7a2503c8a7c3358072738d77ccaf66e11f6380a1"
     },
     "decisionHash": "932afdd16cd834c38222029c0e03f17fcf68d4b5b786e3e50e9b276a49fbbb06",
-    "receiptHash": "49de3781bf0ddd390adc2740dc0ac4c70e4cb25b790c3ad2d251b85c63fd6e82",
-    "explorerUrl": "https://testnet.cspr.live/deploy/mock-casper-receipt-49de3781bf0ddd390adc2740dc0ac4c70e4cb25b790c3ad2"
+    "receiptHash": "8532515578bd5101d6584a0f5b547f99deace6d89fc4919b128faa042a2eafcc",
+    "explorerUrl": "https://testnet.cspr.live/deploy/mock-casper-receipt-8532515578bd5101d6584a0f5b547f99deace6d89fc4919b"
   },
-  "evidenceHash": "b144a235a3b9f02ec12371e9e90aa902c7cd39746e4fea2686a089a0da5fad19"
+  "evidenceHash": "aaced809f0f75c3497627d189ced16503e79feca6a10948024369f70ff049b82"
 }

@@ -6,19 +6,39 @@ const { HttpHandler, RpcClient } = sdk;
 
 export async function checkCasperDeploy(deployHash, { rpcUrl = DEFAULT_RPC_URL } = {}) {
   if (!deployHash) {
-    throw new Error("Deploy hash is required.");
+    throw new Error("Deploy or transaction hash is required.");
   }
 
   const rpcClient = new RpcClient(new HttpHandler(rpcUrl));
-  const deploy = await rpcClient.getDeploy(deployHash);
+  try {
+    const deploy = await rpcClient.getDeploy(deployHash);
 
-  return {
-    status: "found",
-    deployHash,
-    rpcUrl,
-    explorerUrl: `https://testnet.cspr.live/deploy/${deployHash}`,
-    apiVersion: deploy.apiVersion || deploy.rawJSON?.api_version || null
-  };
+    return {
+      status: "found",
+      transactionType: "deploy",
+      deployHash,
+      rpcUrl,
+      explorerUrl: `https://testnet.cspr.live/deploy/${deployHash}`,
+      apiVersion: deploy.apiVersion || deploy.rawJSON?.api_version || null
+    };
+  } catch (deployError) {
+    try {
+      const transaction = await rpcClient.getTransactionByTransactionHash(deployHash);
+      return {
+        status: "found",
+        transactionType: "transaction_v1",
+        deployHash,
+        transactionHash: deployHash,
+        rpcUrl,
+        explorerUrl: `https://testnet.cspr.live/transaction/${deployHash}`,
+        apiVersion: transaction.apiVersion || transaction.rawJSON?.api_version || null
+      };
+    } catch (transactionError) {
+      throw new Error(
+        `Deploy or transaction ${deployHash} was not queryable: deploy=${deployError.message}; transaction=${transactionError.message}`
+      );
+    }
+  }
 }
 
 export async function waitForCasperDeploy(
@@ -42,7 +62,7 @@ export async function waitForCasperDeploy(
   }
 
   throw new Error(
-    `Deploy ${deployHash} was not queryable after ${timeoutMs}ms: ${lastError?.message || "unknown error"}`
+    `Deploy or transaction ${deployHash} was not queryable after ${timeoutMs}ms: ${lastError?.message || "unknown error"}`
   );
 }
 

@@ -94,20 +94,18 @@ Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 - Local demo, tests, provider ledger, run history, and evidence bundle are
   working.
 - Current RPC endpoint is verified: `https://node.testnet.casper.network/rpc`.
-- A local testnet key is prepared and waiting for faucet funding.
-- `npm run seal:submission` is ready to produce final explorer evidence and rebuild
-  the final submission pack after funding.
-- `npm run audit:submission` is ready to verify the pack and currently should show
-  only the remaining real funded testnet deploy gate as blocked after the public
-  repo, hosted demo, and walkthrough video URLs are exported.
+- A local testnet key is funded and has published the final receipt transaction.
+- `npm run seal:submission` is now idempotent: it reuses the existing final
+  evidence and refreshes the final submission pack without rebroadcasting.
+- `npm run audit:submission` verifies the pack as
+  `ready_for_highest_prize_submission` with `14/14` checks passed.
 - `npm run preflight:x402` builds signed Casper transfer deploys for each paid
   x402 tool call without broadcasting; `npm run verify:x402-preflight` checks the
   deploy hashes, motes conversion, memo derivation, and recipient shape.
-- `npm run unlock:highest-prize` records the current CSPR.live faucet/wallet
-  funding gate and exact post-funding commands.
-- The remaining hard evidence is a funded testnet account plus one real
-  explorer URL.
-- Public repo, hosted judge demo, and walkthrough video URLs are now available
+- `npm run unlock:highest-prize` records zero remaining gates and the final
+  Casper explorer URL.
+- Public repo, hosted judge demo, walkthrough video, and the real Casper
+  explorer URL are now available
   and exported into the BUIDL page.
 - Docker/Render hosting configuration and `/api/health` are included as the
   reproducible server-hosting path, while GitHub Pages carries the public judge

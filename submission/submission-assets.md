@@ -11,9 +11,9 @@ Public links already prepared:
 | Asset | Purpose |
 | --- | --- |
 | `submission/assets/cspr-guardian-dashboard.png` | Main product screenshot showing the end-to-end CSPR Guardian dashboard |
-| `submission/assets/cspr-guardian-prize-readiness.png` | Prize-readiness screenshot showing `80/100`, passed buildathon signals, and the final Casper deploy gate |
-| `submission/assets/cspr-guardian-judge-proof.png` | Judge proof screenshot showing `6/7`, replay `402`, and verifier `34/34` |
-| `submission/assets/cspr-guardian-testnet-preflight.png` | Testnet preflight screenshot showing deploy build `ok`, broadcast `false`, and memo bits `64` |
+| `submission/assets/cspr-guardian-prize-readiness.png` | Prize-readiness screenshot captured before final funding; machine-readable proof now shows `100/100` |
+| `submission/assets/cspr-guardian-judge-proof.png` | Judge proof screenshot captured before final funding; regenerated judge proof now shows final gate `pass` |
+| `submission/assets/cspr-guardian-testnet-preflight.png` | Testnet preflight screenshot; regenerated preflight shows deploy build `ok`, broadcast `false`, and safe memo bits `52` |
 | `submission/assets/cspr-guardian-evidence-verification.png` | Technical proof screenshot showing `Verified` and `34/34` checks |
 | `submission/prize-readiness-snapshot.json` | Machine-readable `/api/prize-readiness` snapshot |
 | `submission/judge-proof-pack.json` | Machine-readable proof of MCP discovery, x402 payment flow, replay rejection, verifier status, and prize-readiness gate |
@@ -41,30 +41,29 @@ Public links already prepared:
 Current screenshot capture state:
 
 - Decision: `approve`.
-- Prize Readiness: `80/100`, `Final Gate`.
-- Judge Proof Pack: `6/7` assertions, replay result `402`.
-- Testnet Preflight: deploy build `ok`, broadcast `false`, memo bits `64`.
-- Final Seal external output: `needs_funding`, missing required files `0`.
-- Highest Prize Unlock external output: faucet/wallet funding gate, public link
-  gate, and post-funding commands are machine-readable.
-- Submission Audit external output: `ready_except_real_testnet_gate` after
-  public repo/demo/video URLs, then `ready_for_highest_prize_submission` after
-  faucet funding and final real deploy evidence.
+- Static screenshots were captured before final faucet funding.
+- Regenerated Prize Readiness: `100/100`, `highest-prize-ready`.
+- Regenerated Judge Proof Pack: final gate `pass`, replay result `402`.
+- Regenerated Testnet Preflight: deploy build `ok`, broadcast `false`, memo bits `52`.
+- Final Seal external output: `ready_for_highest_prize_submission`.
+- Highest Prize Unlock external output: `ready_for_highest_prize_submission`
+  with zero remaining gates.
+- Submission Audit external output: `ready_for_highest_prize_submission`,
+  `14/14` checks passed, `0` blocked, `0` failed.
+- Casper explorer URL:
+  `https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a`.
 - Evidence verification: `Verified`.
 - Checks passed: `34/34`.
 - Paid tools: `4`.
 - Provider revenue: `0.62 CSPR`.
 - Page private-key leak check: clear.
 
-Final prize-readiness caveat:
+Final prize-readiness status:
 
-- The local Casper testnet key is generated, RPC is healthy, and the finalization
-  pipeline is ready.
-- The generated testnet account still needs faucet funding before the app can
-  publish a real receipt deploy and CSPR.live explorer URL.
-- Repository, hosted demo, and walkthrough video URLs are now available and can
-  be exported into the BUIDL page with `SUBMISSION_REPO_URL`,
-  `SUBMISSION_DEMO_URL`, and `SUBMISSION_VIDEO_URL`.
+- The local Casper testnet key is funded, RPC is healthy, and the final
+  receipt transaction is published on Casper testnet.
+- Repository, hosted demo, walkthrough video, and Casper explorer URLs are
+  exported into the BUIDL page.
 - The public demo can be hosted from the included `Dockerfile` and
   `render.yaml`; `npm run check:public-demo` writes the handoff.
 - The public repository can run `.github/workflows/submission-readiness.yml`;

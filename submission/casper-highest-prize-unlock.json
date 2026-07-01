@@ -1,14 +1,14 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-01T16:21:31.624Z",
+  "generatedAt": "2026-07-01T18:00:40.659Z",
   "project": "CSPR Guardian",
-  "status": "needs_funding",
+  "status": "ready_for_highest_prize_submission",
   "testnet": {
     "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
-    "accountStatus": "unfunded_or_unavailable",
-    "readyForAnchor": false,
-    "balanceMotes": null,
-    "requiredMotes": "100000001",
+    "accountStatus": "funded",
+    "readyForAnchor": true,
+    "balanceMotes": "4900000000",
+    "requiredMotes": "2600000000",
     "chain": "casper-test",
     "rpcStatus": "ok",
     "rpcUrl": "https://node.testnet.casper.network/rpc"
@@ -47,44 +47,21 @@
     ]
   },
   "finalSeal": {
-    "status": "needs_funding",
-    "explorerUrl": null,
-    "deployHash": null
+    "status": "ready_for_highest_prize_submission",
+    "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
+    "deployHash": "7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a"
   },
-  "remainingGates": [
-    {
-      "name": "fund_testnet_key",
-      "complete": false,
-      "detail": "Fund the prepared Casper testnet public key through the CSPR.live faucet.",
-      "evidence": {
-        "accountStatus": "unfunded_or_unavailable",
-        "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
-        "requiredMotes": "100000001",
-        "balanceMotes": null
-      }
-    },
-    {
-      "name": "real_casper_receipt_deploy",
-      "complete": false,
-      "readyToComplete": false,
-      "detail": "Waiting for a funded testnet key before broadcasting the real receipt deploy.",
-      "evidence": {
-        "sealStatus": "needs_funding",
-        "explorerUrl": null,
-        "deployHash": null
-      }
-    }
-  ],
+  "remainingGates": [],
   "gates": [
     {
       "name": "fund_testnet_key",
-      "complete": false,
-      "detail": "Fund the prepared Casper testnet public key through the CSPR.live faucet.",
+      "complete": true,
+      "detail": "Prepared Casper testnet key is funded and ready to anchor.",
       "evidence": {
-        "accountStatus": "unfunded_or_unavailable",
+        "accountStatus": "funded",
         "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
-        "requiredMotes": "100000001",
-        "balanceMotes": null
+        "requiredMotes": "2600000000",
+        "balanceMotes": "4900000000"
       }
     },
     {
@@ -104,13 +81,13 @@
     },
     {
       "name": "real_casper_receipt_deploy",
-      "complete": false,
+      "complete": true,
       "readyToComplete": false,
-      "detail": "Waiting for a funded testnet key before broadcasting the real receipt deploy.",
+      "detail": "Final seal contains a public CSPR.live deploy URL.",
       "evidence": {
-        "sealStatus": "needs_funding",
-        "explorerUrl": null,
-        "deployHash": null
+        "sealStatus": "ready_for_highest_prize_submission",
+        "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
+        "deployHash": "7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a"
       }
     }
   ],
@@ -137,5 +114,5 @@
       "npm run verify:x402-preflight"
     ]
   },
-  "nextAction": "Run npm run fund:testnet, complete the faucet request at https://testnet.cspr.live/tools/faucet, then run npm run wait:testnet."
+  "nextAction": "Submit the final pack with the public repo, hosted demo, video, and Casper explorer URL."
 }

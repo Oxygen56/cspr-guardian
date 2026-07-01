@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-01T10:29:56.298Z",
+  "generatedAt": "2026-07-01T17:53:58.543Z",
   "project": "CSPR Guardian",
   "assetId": "invoice-usdc-7d",
   "requestedAmountUsd": 250000,
@@ -36,9 +36,19 @@
       "evidence": "34/34 checks passed"
     },
     {
+      "id": "real-deploy-preflight",
+      "status": "pass",
+      "evidence": "11/11 real deploy preflight checks passed"
+    },
+    {
+      "id": "x402-settlement-preflight",
+      "status": "pass",
+      "evidence": "28/28 signed x402 settlement transfer checks passed"
+    },
+    {
       "id": "casper-final-gate",
-      "status": "blocked",
-      "evidence": "Fund testnet key and rerun npm run finalize:testnet"
+      "status": "pass",
+      "evidence": "Real CSPR.live deploy evidence is present"
     }
   ],
   "mcp": {
@@ -86,8 +96,8 @@
             "extra": {
               "tool": "rwa.risk_score",
               "assetId": "invoice-usdc-7d",
-              "nonce": "fd999e4f-ab87-4fb3-b500-d3c3dddc8427",
-              "expiresAt": "2026-07-01T10:34:54.047Z"
+              "nonce": "bc327260-d817-42f2-9bb1-997f30ecb701",
+              "expiresAt": "2026-07-01T17:58:56.357Z"
             }
           }
         ]
@@ -99,14 +109,14 @@
       "agentId": "judge-proof-agent",
       "amount": "0.25",
       "network": "casper-test",
-      "nonce": "fd999e4f-ab87-4fb3-b500-d3c3dddc8427",
-      "authorizationHash": "a16d281bfad3814902670559f52039811de912311d25e1328a4d9d3c1b1e8b12",
-      "publicKeyFingerprint": "c9b1c682e40bc3d77239c35e",
-      "signature": "0rB6esHG_EFCw6Fx26KXYCCb5uh4QcnQuZSC4lrObudBM2YgtG5e8pWhmYTmp3NOPeTsYTY33yYrxq9Iizx7Dw"
+      "nonce": "bc327260-d817-42f2-9bb1-997f30ecb701",
+      "authorizationHash": "0a54c1827a81529a091b15cd22a8880a3fb616e4a3feded567934151beb48b87",
+      "publicKeyFingerprint": "40a7363cfe027a40ea3c66f8",
+      "signature": "DbdfLKUEQQvM_CXs4flB7e3J-4S2HsTAZcsJe4Rr0zvqz5LfwcKgIDOw8vNasGK1Fc5XRzyGM8LhSJ-jinbiDA"
     },
     "settlement": {
       "status": "settled",
-      "txHash": "mock-casper-pay-f6f9de9aa2f3a8a55bd5d2de88bc40602dd346fe84fc6275",
+      "txHash": "mock-casper-pay-769b093d35fcc560d4905d5d34d9113869ea7e30e70ceb13",
       "amount": "0.25",
       "currency": "CSPR"
     },
@@ -116,7 +126,7 @@
     }
   },
   "scenario": {
-    "runId": "run-24d9a21f-7597-4531-904d-b3f3b8dc72be",
+    "runId": "run-2e2467c9-ca2a-4a45-9636-7b82c3664009",
     "decision": "approve",
     "approvedAmountUsd": 207452,
     "providerRevenue": "0.62",
@@ -126,10 +136,10 @@
       "rwa.liquidity_depth",
       "rwa.covenant_monitor"
     ],
-    "receiptHash": "b80b0e46be735a9f64c7349acc53143144486f9a140aa6d10791ef18d4ed0b02",
+    "receiptHash": "a021954542101de36c65d2b9e701bff7347b6555839a127150698014ae9881ab",
     "anchorMode": "mock",
-    "deployHash": "mock-casper-receipt-b80b0e46be735a9f64c7349acc53143144486f9a140aa6d1",
-    "explorerUrl": "https://testnet.cspr.live/deploy/mock-casper-receipt-b80b0e46be735a9f64c7349acc53143144486f9a140aa6d1"
+    "deployHash": "mock-casper-receipt-a021954542101de36c65d2b9e701bff7347b6555839a1271",
+    "explorerUrl": "https://testnet.cspr.live/deploy/mock-casper-receipt-a021954542101de36c65d2b9e701bff7347b6555839a1271"
   },
   "evidenceVerification": {
     "status": "verified",
@@ -140,13 +150,13 @@
     "failedChecks": [],
     "signatureChecks": 4,
     "hashChecks": 17,
-    "evidenceHash": "84eb65c97b1c5f855c30906255db635f7c291d73dbb41ebf3d81ea24dfb5d056"
+    "evidenceHash": "5b318790dea084e64ab298bfe1d5641ae7bd5b2ebdabbefec94cf416c8048967"
   },
   "prizeReadiness": {
-    "status": "final-gate",
-    "score": 80,
+    "status": "highest-prize-ready",
+    "score": 100,
     "maxScore": 100,
-    "highestPrizeGate": false,
+    "highestPrizeGate": true,
     "criteria": [
       {
         "id": "x402-paid-tools",
@@ -184,9 +194,9 @@
         "id": "casper-receipt",
         "label": "Casper receipt",
         "weight": 20,
-        "status": "blocked",
-        "value": "needs funding",
-        "evidence": "Fund testnet key and run npm run finalize:testnet"
+        "status": "pass",
+        "value": "real testnet deploy",
+        "evidence": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a"
       },
       {
         "id": "submission-assets",
@@ -197,18 +207,32 @@
         "evidence": "Dashboard screenshot, verifier screenshot, copy-ready submission notes"
       }
     ],
-    "blockers": [
-      "Fund testnet key and run npm run finalize:testnet",
-      "Fund public key 011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2 on Casper testnet",
-      "Rerun npm run finalize:testnet to replace mock deploy evidence"
-    ]
+    "blockers": []
   },
   "testnet": {
     "rpcStatus": "ok",
     "chain": "casper-test",
-    "accountStatus": "unfunded_or_unavailable",
-    "readyForAnchor": false,
+    "accountStatus": "funded",
+    "readyForAnchor": true,
     "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
-    "faucetUrl": "https://testnet.cspr.live/tools/faucet"
+    "faucetUrl": "https://testnet.cspr.live/tools/faucet",
+    "preflightVerification": {
+      "status": "verified",
+      "sourceFile": "/Users/oxygen/Documents/Codex/2026-07-01/z-2/outputs/casper-testnet-preflight.json",
+      "summary": {
+        "passed": 11,
+        "total": 11
+      },
+      "failedChecks": []
+    },
+    "x402SettlementPreflight": {
+      "status": "verified",
+      "sourceFile": "/Users/oxygen/Documents/Codex/2026-07-01/z-2/outputs/casper-x402-settlement-preflight.json",
+      "summary": {
+        "passed": 28,
+        "total": 28
+      },
+      "failedChecks": []
+    }
   }
 }

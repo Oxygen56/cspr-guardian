@@ -1,8 +1,8 @@
 # Casper Highest Prize Unlock
 
-Generated: 2026-07-01T16:21:31.624Z
+Generated: 2026-07-01T18:00:40.659Z
 
-Status: needs_funding
+Status: ready_for_highest_prize_submission
 
 ## Testnet Funding
 
@@ -20,7 +20,7 @@ https://testnet.cspr.live/tools/faucet
 
 Faucet checks: wallet required = true, reCAPTCHA required = true, faucet enabled = true
 
-Required motes: 100000001
+Required motes: 2600000000
 
 ## Manual Faucet Steps
 
@@ -37,15 +37,15 @@ Missing: none
 
 | Gate | Status | Detail |
 | --- | --- | --- |
-| fund_testnet_key | open | Fund the prepared Casper testnet public key through the CSPR.live faucet. |
+| fund_testnet_key | pass | Prepared Casper testnet key is funded and ready to anchor. |
 | publish_public_repo | pass | Public repository URL is configured. |
 | publish_hosted_demo | pass | Hosted demo URL is configured. |
 | publish_demo_video | pass | Demo video URL is configured. |
-| real_casper_receipt_deploy | open | Waiting for a funded testnet key before broadcasting the real receipt deploy. |
+| real_casper_receipt_deploy | pass | Final seal contains a public CSPR.live deploy URL. |
 
 ## Next Action
 
-Run npm run fund:testnet, complete the faucet request at https://testnet.cspr.live/tools/faucet, then run npm run wait:testnet.
+Submit the final pack with the public repo, hosted demo, video, and Casper explorer URL.
 
 ## Commands After Funding
 

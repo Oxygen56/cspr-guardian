@@ -95,7 +95,7 @@ export function verifyX402SettlementPreflight(preflight) {
         settlement.memo === memo.memo &&
         settlement.memoSource === memo.memoSource &&
         settlement.memoBits === memo.memoBits &&
-        settlement.memoDerivation === "uint64(first_16_hex_chars(authorizationHash))",
+        settlement.memoDerivation === "uint53(first_13_hex_chars(authorizationHash))",
       `${settlement.tool} memo is deterministically derived from the x402 authorization hash.`
     );
     add(

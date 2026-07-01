@@ -174,14 +174,14 @@ test("judge proof pack captures x402, replay, verifier, and prize gate", async (
   assert.equal(JSON.stringify(proof).includes("BEGIN PRIVATE KEY"), false);
 });
 
-test("real Casper receipt memo is a valid uint64 derived from receipt hash", () => {
+test("real Casper receipt memo is a safe deterministic transfer id", () => {
   const receiptHash = "abcd000000000000ffffffffffffffffffffffffffffffffffffffffffffffff";
   const memo = deriveTransferMemo(receiptHash);
 
-  assert.equal(memo.memoSource, "abcd000000000000");
-  assert.equal(memo.memoBits, 64);
-  assert.equal(memo.memo, BigInt("0xabcd000000000000").toString());
-  assert.ok(BigInt(memo.memo) <= 2n ** 64n - 1n);
+  assert.equal(memo.memoSource, "abcd000000000");
+  assert.equal(memo.memoBits, 52);
+  assert.equal(memo.memo, BigInt("0xabcd000000000").toString());
+  assert.ok(Number.isSafeInteger(Number(memo.memo)));
   assert.equal(csprToMotes("0.25"), "250000000");
   assert.equal(csprToMotes("1.000000001"), "1000000001");
 });
@@ -199,7 +199,7 @@ test("testnet preflight verifier checks real deploy memo and leak safety", () =>
     },
     preflight: {
       mode: "real",
-      status: "prepared",
+      status: "build_ready",
       deployHash: "88baa2326ad7f124eab1335a08a44bc765214ff6b65d3d0a4316904000e8de5b",
       network: "casper-test",
       signerPublicKeyHex: publicKeyHex,
@@ -209,7 +209,7 @@ test("testnet preflight verifier checks real deploy memo and leak safety", () =>
       memo: memo.memo,
       memoSource: memo.memoSource,
       memoBits: memo.memoBits,
-      memoDerivation: "uint64(first_16_hex_chars(receiptHash))",
+      memoDerivation: "uint53(first_13_hex_chars(receiptHash))",
       receiptHash,
       deployBuild: {
         status: "ok",
@@ -242,7 +242,7 @@ test("x402 settlement preflight verifier checks signed Casper payment transfer p
     memo: memo.memo,
     memoSource: memo.memoSource,
     memoBits: memo.memoBits,
-    memoDerivation: "uint64(first_16_hex_chars(authorizationHash))",
+    memoDerivation: "uint53(first_13_hex_chars(authorizationHash))",
     authorizationHash,
     paymentTxHash: "mock-casper-pay-" + "a".repeat(48),
     deployBuild: {
@@ -311,7 +311,7 @@ test("final submission seal only marks highest-prize ready with real final evide
         explorerUrl: "https://testnet.cspr.live/deploy/" + "a".repeat(64),
         receiptHash: "b".repeat(64),
         memo: "1",
-        memoDerivation: "uint64(first_16_hex_chars(receiptHash))"
+        memoDerivation: "uint53(first_13_hex_chars(receiptHash))"
       },
       evidence: {
         verificationStatus: "verified",

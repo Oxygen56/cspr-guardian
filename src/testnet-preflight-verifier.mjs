@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { deriveTransferMemo } from "./casper-real-adapter.mjs";
 
-const MEMO_DERIVATION = "uint64(first_16_hex_chars(receiptHash))";
+const MEMO_DERIVATION = "uint53(first_13_hex_chars(receiptHash))";
 const PRIVATE_KEY_PATTERN = /BEGIN [A-Z ]*PRIVATE KEY|"privateKey(?:Hex|Pem)?"\s*:/i;
 
 export function verifyTestnetPreflight(preflight) {
@@ -40,7 +40,7 @@ export function verifyTestnetPreflight(preflight) {
   );
   add(
     "real_deploy_mode",
-    deploy.mode === "real" && deploy.status === "prepared",
+    deploy.mode === "real" && deploy.status === "build_ready",
     "Preflight was built through the real Casper deploy adapter.",
     { mode: deploy.mode, status: deploy.status }
   );
@@ -53,7 +53,7 @@ export function verifyTestnetPreflight(preflight) {
   add(
     "deploy_hash_shape",
     /^[0-9a-f]{64}$/i.test(deploy.deployHash || ""),
-    "Deploy hash is a 64-character Casper deploy hash.",
+    "Deploy or transaction hash is 64 hexadecimal characters.",
     { deployHash: deploy.deployHash }
   );
   add(
@@ -109,8 +109,8 @@ export function verifyTestnetPreflight(preflight) {
     );
     add(
       "memo_uint64",
-      isUint64String(deploy.memo),
-      "Transfer memo fits Casper transfer id uint64 constraints.",
+      isSafeTransferIdString(deploy.memo),
+      "Transfer memo fits Casper transfer id constraints and the SDK safe-integer boundary.",
       { memo: deploy.memo }
     );
   }
@@ -202,8 +202,8 @@ function isPositiveIntegerString(value) {
   return /^[1-9][0-9]*$/.test(String(value || ""));
 }
 
-function isUint64String(value) {
+function isSafeTransferIdString(value) {
   if (!/^[0-9]+$/.test(String(value || ""))) return false;
   const memo = BigInt(value);
-  return memo >= 0n && memo <= 2n ** 64n - 1n;
+  return memo >= 0n && memo <= BigInt(Number.MAX_SAFE_INTEGER);
 }

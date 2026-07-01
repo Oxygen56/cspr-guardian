@@ -5,6 +5,7 @@ import sdk from "casper-js-sdk";
 const DEFAULT_RPC_URL = "https://node.testnet.casper.network/rpc";
 const DEFAULT_KEY_FILE = ".local/casper-testnet-key.json";
 const DEFAULT_FAUCET_URL = "https://testnet.cspr.live/tools/faucet";
+const DEFAULT_RECEIPT_TRANSFER_MOTES = "2500000000";
 
 const {
   HttpHandler,
@@ -17,7 +18,9 @@ const {
 export async function getTestnetReadiness() {
   const rpcUrl = process.env.CASPER_NODE_RPC || DEFAULT_RPC_URL;
   const keyFile = process.env.CASPER_PRIVATE_KEY_FILE || DEFAULT_KEY_FILE;
-  const transferMotes = BigInt(process.env.CASPER_RECEIPT_TRANSFER_MOTES || "1");
+  const transferMotes = BigInt(
+    process.env.CASPER_RECEIPT_TRANSFER_MOTES || DEFAULT_RECEIPT_TRANSFER_MOTES
+  );
   const paymentMotes = BigInt(process.env.CASPER_RECEIPT_PAYMENT_MOTES || "100000000");
   const requiredMotes = BigInt(
     process.env.CASPER_REQUIRED_BALANCE_MOTES || String(transferMotes + paymentMotes)

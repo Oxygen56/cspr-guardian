@@ -1,10 +1,10 @@
 # Judge Proof Pack
 
-Generated: 2026-07-01T10:29:56.298Z
+Generated: 2026-07-01T17:53:58.543Z
 
 Project: CSPR Guardian
 
-Prize readiness: 80/100 (final-gate)
+Prize readiness: 100/100 (highest-prize-ready)
 
 ## Assertions
 
@@ -16,13 +16,15 @@ Prize readiness: 80/100 (final-gate)
 | nonce-replay-protection | pass | Reusing the same signed payment proof is rejected |
 | agentic-rwa-run | pass | Agent buys four signals, decides under policy, and records provider revenue |
 | independent-verifier | pass | 34/34 checks passed |
-| casper-final-gate | blocked | Fund testnet key and rerun npm run finalize:testnet |
+| real-deploy-preflight | pass | 11/11 real deploy preflight checks passed |
+| x402-settlement-preflight | pass | 28/28 signed x402 settlement transfer checks passed |
+| casper-final-gate | pass | Real CSPR.live deploy evidence is present |
 
 ## x402 Payment Flow
 
 - Before payment: oracle returned 402 with PAYMENT-REQUIRED header.
-- Signed authorization hash: a16d281bfad3814902670559f52039811de912311d25e1328a4d9d3c1b1e8b12
-- Mock Casper settlement hash: mock-casper-pay-f6f9de9aa2f3a8a55bd5d2de88bc40602dd346fe84fc6275
+- Signed authorization hash: 0a54c1827a81529a091b15cd22a8880a3fb616e4a3feded567934151beb48b87
+- Mock Casper settlement hash: mock-casper-pay-769b093d35fcc560d4905d5d34d9113869ea7e30e70ceb13
 - Replay attempt: 402, Payment nonce already used
 
 ## MCP Paid Tools
@@ -36,13 +38,13 @@ Prize readiness: 80/100 (final-gate)
 
 ## Agent Run
 
-- Run id: run-24d9a21f-7597-4531-904d-b3f3b8dc72be
+- Run id: run-2e2467c9-ca2a-4a45-9636-7b82c3664009
 - Decision: approve
 - Approved amount: $207,452
 - Provider revenue: 0.62 CSPR
-- Receipt hash: b80b0e46be735a9f64c7349acc53143144486f9a140aa6d10791ef18d4ed0b02
+- Receipt hash: a021954542101de36c65d2b9e701bff7347b6555839a127150698014ae9881ab
 - Anchor mode: mock
-- Explorer URL: https://testnet.cspr.live/deploy/mock-casper-receipt-b80b0e46be735a9f64c7349acc53143144486f9a140aa6d1
+- Explorer URL: https://testnet.cspr.live/deploy/mock-casper-receipt-a021954542101de36c65d2b9e701bff7347b6555839a1271
 
 ## Evidence Verification
 
@@ -50,7 +52,7 @@ Prize readiness: 80/100 (final-gate)
 - Checks: 34/34
 - Signature checks: 4
 - Hash checks: 17
-- Evidence hash: 84eb65c97b1c5f855c30906255db635f7c291d73dbb41ebf3d81ea24dfb5d056
+- Evidence hash: 5b318790dea084e64ab298bfe1d5641ae7bd5b2ebdabbefec94cf416c8048967
 
 ## Prize Readiness Criteria
 
@@ -60,7 +62,7 @@ Prize readiness: 80/100 (final-gate)
 | MCP tool discovery | pass | 7 discoverable tools | 15 |
 | Agentic RWA workflow | pass | 0.62 CSPR/run | 20 |
 | Independent verifier | pass | 34/34 | 15 |
-| Casper receipt | blocked | needs funding | 20 |
+| Casper receipt | pass | real testnet deploy | 20 |
 | Submission assets | pass | screenshots ready | 10 |
 
 ## Current Final Gate
@@ -68,12 +70,13 @@ Prize readiness: 80/100 (final-gate)
 The remaining highest-prize gate is a real Casper testnet deploy.
 
 - Public key: 011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2
-- Account status: unfunded_or_unavailable
-- Ready for anchor: false
+- Account status: funded
+- Ready for anchor: true
+- Deploy preflight verification: verified (11/11)
 - Faucet: https://testnet.cspr.live/tools/faucet
 
 After funding, run:
 
 ```bash
-npm run finalize:testnet
+npm run seal:submission
 ```

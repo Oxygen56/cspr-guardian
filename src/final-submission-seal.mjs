@@ -96,6 +96,10 @@ export async function writeFinalSubmissionSeal(seal, outputDir) {
 }
 
 export function renderFinalSubmissionSealMarkdown(seal) {
+  const finalGate = seal.finalGate || {};
+  const verification = seal.verification || {};
+  const submissionPack = seal.submissionPack || {};
+
   if (seal.status === "needs_funding") {
     return `# Casper Final Submission Seal
 
@@ -104,19 +108,19 @@ Status: needs funding
 Public key:
 
 \`\`\`text
-${seal.finalGate.publicKeyHex || "missing"}
+${finalGate.publicKeyHex || "missing"}
 \`\`\`
 
 Faucet:
 
 \`\`\`text
-${seal.finalGate.faucetUrl}
+${finalGate.faucetUrl || "missing"}
 \`\`\`
 
 Required motes:
 
 \`\`\`text
-${seal.finalGate.requiredMotes || "unknown"}
+${finalGate.requiredMotes || "unknown"}
 \`\`\`
 
 After funding:
@@ -128,7 +132,7 @@ npm run seal:submission
 Current pack:
 
 \`\`\`text
-${seal.submissionPack?.zipPath || "missing"}
+${submissionPack.zipPath || "missing"}
 \`\`\`
 `;
   }
@@ -140,37 +144,37 @@ Status: ${seal.status}
 Prize readiness:
 
 \`\`\`text
-${seal.finalGate.prizeScore ?? "unknown"}/100 (${seal.finalGate.prizeStatus})
+${finalGate.prizeScore ?? "unknown"}/100 (${finalGate.prizeStatus || "unknown"})
 \`\`\`
 
 Explorer:
 
 \`\`\`text
-${seal.finalGate.explorerUrl || "missing"}
+${finalGate.explorerUrl || "missing"}
 \`\`\`
 
 Deploy hash:
 
 \`\`\`text
-${seal.finalGate.deployHash || "missing"}
+${finalGate.deployHash || "missing"}
 \`\`\`
 
 Receipt hash:
 
 \`\`\`text
-${seal.finalGate.receiptHash || "missing"}
+${finalGate.receiptHash || "missing"}
 \`\`\`
 
 Evidence verification:
 
 \`\`\`text
-${seal.verification.checksPassed ?? "?"}/${seal.verification.checksTotal ?? "?"} checks passed
+${verification.checksPassed ?? "?"}/${verification.checksTotal ?? "?"} checks passed
 \`\`\`
 
 Submission pack:
 
 \`\`\`text
-${seal.submissionPack?.zipPath || "missing"}
+${submissionPack.zipPath || "missing"}
 \`\`\`
 `;
 }
