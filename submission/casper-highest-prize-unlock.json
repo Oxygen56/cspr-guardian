@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-01T13:11:35.797Z",
+  "generatedAt": "2026-07-01T13:21:40.617Z",
   "project": "CSPR Guardian",
   "status": "needs_funding_and_public_links",
   "testnet": {
@@ -28,7 +28,6 @@
     "status": "missing_public_links",
     "complete": false,
     "missing": [
-      "demoUrl",
       "videoUrl"
     ],
     "items": [
@@ -39,8 +38,8 @@
       },
       {
         "name": "demoUrl",
-        "value": "<paste hosted demo URL>",
-        "complete": false
+        "value": "https://oxygen56.github.io/cspr-guardian/",
+        "complete": true
       },
       {
         "name": "videoUrl",
@@ -65,11 +64,6 @@
         "requiredMotes": "100000001",
         "balanceMotes": null
       }
-    },
-    {
-      "name": "publish_hosted_demo",
-      "complete": false,
-      "detail": "Deploy the demo and export SUBMISSION_DEMO_URL."
     },
     {
       "name": "publish_demo_video",
@@ -107,8 +101,8 @@
     },
     {
       "name": "publish_hosted_demo",
-      "complete": false,
-      "detail": "Deploy the demo and export SUBMISSION_DEMO_URL."
+      "complete": true,
+      "detail": "Hosted demo URL is configured."
     },
     {
       "name": "publish_demo_video",

@@ -1,6 +1,150 @@
 {
   "runs": [
     {
+      "id": "run-4f6cf2bb-c684-4a48-a675-60b1f5a16c7e",
+      "completedAt": "2026-07-01T13:21:39.100Z",
+      "assetId": "invoice-usdc-7d",
+      "assetName": "USDC invoice financing pool",
+      "action": "approve",
+      "approvedAmountUsd": 207452,
+      "riskScore": 91,
+      "riskTier": "A",
+      "providerRevenue": {
+        "totalCSPR": "0.62",
+        "providers": [
+          {
+            "tool": "rwa.risk_score",
+            "amount": "0.25",
+            "currency": "CSPR",
+            "txHash": "mock-casper-pay-9a485ed817579adedca1168593c231502ea8722a8f222b4e"
+          },
+          {
+            "tool": "rwa.kyb_screen",
+            "amount": "0.10",
+            "currency": "CSPR",
+            "txHash": "mock-casper-pay-96884eed6e1d81faf661d21207cfa2fa27903cb997e07658"
+          },
+          {
+            "tool": "rwa.liquidity_depth",
+            "amount": "0.15",
+            "currency": "CSPR",
+            "txHash": "mock-casper-pay-4ef2c05910f3c37361ae4b273cfadee2c88fa62cfeac334e"
+          },
+          {
+            "tool": "rwa.covenant_monitor",
+            "amount": "0.12",
+            "currency": "CSPR",
+            "txHash": "mock-casper-pay-d2a4837c5a00a026b43f8a0a7abbd0799ce24ac32ba72418"
+          }
+        ]
+      },
+      "receiptHash": "7cdad05125a74fe392490b57bce631ff19bd17934117bafe5abcb55ba4402151",
+      "deployHash": "mock-casper-receipt-7cdad05125a74fe392490b57bce631ff19bd17934117bafe",
+      "anchorMode": "mock",
+      "tools": [
+        "rwa.risk_score",
+        "rwa.kyb_screen",
+        "rwa.liquidity_depth",
+        "rwa.covenant_monitor"
+      ]
+    },
+    {
+      "id": "run-1b5d734f-6b1f-41ff-9b33-54ff4f5f2a04",
+      "completedAt": "2026-07-01T13:21:38.450Z",
+      "assetId": "invoice-usdc-7d",
+      "assetName": "USDC invoice financing pool",
+      "action": "approve",
+      "approvedAmountUsd": 207452,
+      "riskScore": 91,
+      "riskTier": "A",
+      "providerRevenue": {
+        "totalCSPR": "0.62",
+        "providers": [
+          {
+            "tool": "rwa.risk_score",
+            "amount": "0.25",
+            "currency": "CSPR",
+            "txHash": "mock-casper-pay-b34f837134a7bee185eea4fd0e974f7cf8dc06506ab231fc"
+          },
+          {
+            "tool": "rwa.kyb_screen",
+            "amount": "0.10",
+            "currency": "CSPR",
+            "txHash": "mock-casper-pay-d984a713c3fbf87e78d5a2d9e118308ec165bc81454777fb"
+          },
+          {
+            "tool": "rwa.liquidity_depth",
+            "amount": "0.15",
+            "currency": "CSPR",
+            "txHash": "mock-casper-pay-fbe784b1da6e37d944f5e7ed41943aa88f7556cde2d8ee7d"
+          },
+          {
+            "tool": "rwa.covenant_monitor",
+            "amount": "0.12",
+            "currency": "CSPR",
+            "txHash": "mock-casper-pay-f2abd2f0e496eb5cb3b6a3a8a62c71316c8908a7e68c731a"
+          }
+        ]
+      },
+      "receiptHash": "f653ff393d0cc15434155b551a52fbd071b8a4d100515a79d1d39ad2b2d49c40",
+      "deployHash": "mock-casper-receipt-f653ff393d0cc15434155b551a52fbd071b8a4d100515a79",
+      "anchorMode": "mock",
+      "tools": [
+        "rwa.risk_score",
+        "rwa.kyb_screen",
+        "rwa.liquidity_depth",
+        "rwa.covenant_monitor"
+      ]
+    },
+    {
+      "id": "run-f61b5392-a42e-4e33-9cab-2982552a25e0",
+      "completedAt": "2026-07-01T13:21:36.841Z",
+      "assetId": "invoice-usdc-7d",
+      "assetName": "USDC invoice financing pool",
+      "action": "approve",
+      "approvedAmountUsd": 207452,
+      "riskScore": 91,
+      "riskTier": "A",
+      "providerRevenue": {
+        "totalCSPR": "0.62",
+        "providers": [
+          {
+            "tool": "rwa.risk_score",
+            "amount": "0.25",
+            "currency": "CSPR",
+            "txHash": "mock-casper-pay-30f33a2dc3ec23d3b0a3f7e0fd018934dc62faa355a8a53e"
+          },
+          {
+            "tool": "rwa.kyb_screen",
+            "amount": "0.10",
+            "currency": "CSPR",
+            "txHash": "mock-casper-pay-51951779899942fd63789808ff082f840461ba592ab80ea6"
+          },
+          {
+            "tool": "rwa.liquidity_depth",
+            "amount": "0.15",
+            "currency": "CSPR",
+            "txHash": "mock-casper-pay-6173090eb2fadbcfa1efb1ccc637d3a60634c3f1b3ada956"
+          },
+          {
+            "tool": "rwa.covenant_monitor",
+            "amount": "0.12",
+            "currency": "CSPR",
+            "txHash": "mock-casper-pay-f7a5326241097b899e5c451ad5dbea12ec37be63f9d90cd4"
+          }
+        ]
+      },
+      "receiptHash": "dd662f7f6f632852b494fd58cca2e93d8c274994417b591c7c1d7b0ecfe0021c",
+      "deployHash": "mock-casper-receipt-dd662f7f6f632852b494fd58cca2e93d8c274994417b591c",
+      "anchorMode": "mock",
+      "tools": [
+        "rwa.risk_score",
+        "rwa.kyb_screen",
+        "rwa.liquidity_depth",
+        "rwa.covenant_monitor"
+      ]
+    },
+    {
       "id": "run-e1ff8c2a-f29f-43c1-a9a5-219a94382b7a",
       "completedAt": "2026-07-01T13:11:34.238Z",
       "assetId": "invoice-usdc-7d",
@@ -1048,150 +1192,6 @@
       },
       "receiptHash": "45e989c193b0fff3f8784f3584742e61cfe59b7daf1168a4a151181b9c3b4449",
       "deployHash": "mock-casper-receipt-45e989c193b0fff3f8784f3584742e61cfe59b7daf1168a4",
-      "anchorMode": "mock",
-      "tools": [
-        "rwa.risk_score",
-        "rwa.kyb_screen",
-        "rwa.liquidity_depth",
-        "rwa.covenant_monitor"
-      ]
-    },
-    {
-      "id": "run-ae52bc96-368f-40f8-bb57-9f3b80281536",
-      "completedAt": "2026-07-01T12:49:23.607Z",
-      "assetId": "invoice-usdc-7d",
-      "assetName": "USDC invoice financing pool",
-      "action": "approve",
-      "approvedAmountUsd": 207452,
-      "riskScore": 91,
-      "riskTier": "A",
-      "providerRevenue": {
-        "totalCSPR": "0.62",
-        "providers": [
-          {
-            "tool": "rwa.risk_score",
-            "amount": "0.25",
-            "currency": "CSPR",
-            "txHash": "mock-casper-pay-e2a805dc756fa8ab56136dd86f483d2c25138896ee75f5ce"
-          },
-          {
-            "tool": "rwa.kyb_screen",
-            "amount": "0.10",
-            "currency": "CSPR",
-            "txHash": "mock-casper-pay-9477534e865c9b803a178264409859bf813c5d1cb8ce9df9"
-          },
-          {
-            "tool": "rwa.liquidity_depth",
-            "amount": "0.15",
-            "currency": "CSPR",
-            "txHash": "mock-casper-pay-c117d3d599fee8ba7e246f2de0b411383bf93f6b7bb30696"
-          },
-          {
-            "tool": "rwa.covenant_monitor",
-            "amount": "0.12",
-            "currency": "CSPR",
-            "txHash": "mock-casper-pay-bef8d47239270e2193205ca530bcaae94dd3501234ed54f1"
-          }
-        ]
-      },
-      "receiptHash": "b4c8585cad4c5d14d33a2bf41d825b4ab8285f56e53bfbd72f69321716696f89",
-      "deployHash": "mock-casper-receipt-b4c8585cad4c5d14d33a2bf41d825b4ab8285f56e53bfbd7",
-      "anchorMode": "mock",
-      "tools": [
-        "rwa.risk_score",
-        "rwa.kyb_screen",
-        "rwa.liquidity_depth",
-        "rwa.covenant_monitor"
-      ]
-    },
-    {
-      "id": "run-3ded3c74-76bb-4448-9bcf-fbcc5bde683c",
-      "completedAt": "2026-07-01T12:28:49.556Z",
-      "assetId": "invoice-usdc-7d",
-      "assetName": "USDC invoice financing pool",
-      "action": "approve",
-      "approvedAmountUsd": 207452,
-      "riskScore": 91,
-      "riskTier": "A",
-      "providerRevenue": {
-        "totalCSPR": "0.62",
-        "providers": [
-          {
-            "tool": "rwa.risk_score",
-            "amount": "0.25",
-            "currency": "CSPR",
-            "txHash": "mock-casper-pay-284e87b57afd9595d49fc0fec8c96a243f19552c8d5ef59d"
-          },
-          {
-            "tool": "rwa.kyb_screen",
-            "amount": "0.10",
-            "currency": "CSPR",
-            "txHash": "mock-casper-pay-4a1e958df90704d5cdcd82f8b166fcaf162df10c7dd78454"
-          },
-          {
-            "tool": "rwa.liquidity_depth",
-            "amount": "0.15",
-            "currency": "CSPR",
-            "txHash": "mock-casper-pay-f6f7c7ed56cd893e68887cf889d77ec9b8cdaa096b81eb7e"
-          },
-          {
-            "tool": "rwa.covenant_monitor",
-            "amount": "0.12",
-            "currency": "CSPR",
-            "txHash": "mock-casper-pay-05bff05e24e35afea60708502a44721ba10c8dfedf77b0d6"
-          }
-        ]
-      },
-      "receiptHash": "a9294bb669e79e0ec5726ff3acdac876ef6fc9c47fdc3377d2e34734b1a435eb",
-      "deployHash": "mock-casper-receipt-a9294bb669e79e0ec5726ff3acdac876ef6fc9c47fdc3377",
-      "anchorMode": "mock",
-      "tools": [
-        "rwa.risk_score",
-        "rwa.kyb_screen",
-        "rwa.liquidity_depth",
-        "rwa.covenant_monitor"
-      ]
-    },
-    {
-      "id": "run-b868ed3b-16c3-48e8-8599-8452918a1714",
-      "completedAt": "2026-07-01T12:28:48.907Z",
-      "assetId": "invoice-usdc-7d",
-      "assetName": "USDC invoice financing pool",
-      "action": "approve",
-      "approvedAmountUsd": 207452,
-      "riskScore": 91,
-      "riskTier": "A",
-      "providerRevenue": {
-        "totalCSPR": "0.62",
-        "providers": [
-          {
-            "tool": "rwa.risk_score",
-            "amount": "0.25",
-            "currency": "CSPR",
-            "txHash": "mock-casper-pay-ba26952f7da1b12412a4a6c6bff1281f564e2e6bcf7e7c15"
-          },
-          {
-            "tool": "rwa.kyb_screen",
-            "amount": "0.10",
-            "currency": "CSPR",
-            "txHash": "mock-casper-pay-3acacec5c5f1d9fd63c9165507f21d37ad6dab013ce3e372"
-          },
-          {
-            "tool": "rwa.liquidity_depth",
-            "amount": "0.15",
-            "currency": "CSPR",
-            "txHash": "mock-casper-pay-7f17d54ca9ef7adacc6e100563b8e8cb440e0a7128d5fe3d"
-          },
-          {
-            "tool": "rwa.covenant_monitor",
-            "amount": "0.12",
-            "currency": "CSPR",
-            "txHash": "mock-casper-pay-1001d57cc136c9337f1d7e0ce742a64ab50af0ffbdc9d904"
-          }
-        ]
-      },
-      "receiptHash": "0e2f334d4060c29fbdec341dfd407cfb301dabf22c0005d272e4ef9b9e0dec71",
-      "deployHash": "mock-casper-receipt-0e2f334d4060c29fbdec341dfd407cfb301dabf22c0005d2",
       "anchorMode": "mock",
       "tools": [
         "rwa.risk_score",

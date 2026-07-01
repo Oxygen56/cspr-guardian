@@ -2,6 +2,11 @@
 
 Use these files when preparing the DoraHacks or ETHGlobal project page.
 
+Public links already prepared:
+
+- Repository: https://github.com/Oxygen56/cspr-guardian
+- Hosted judge demo: https://oxygen56.github.io/cspr-guardian/
+
 | Asset | Purpose |
 | --- | --- |
 | `submission/assets/cspr-guardian-dashboard.png` | Main product screenshot showing the end-to-end CSPR Guardian dashboard |
@@ -56,7 +61,8 @@ Final prize-readiness caveat:
   publish a real receipt deploy and CSPR.live explorer URL.
 - The BUIDL page should be re-exported with `SUBMISSION_REPO_URL`,
   `SUBMISSION_DEMO_URL`, and `SUBMISSION_VIDEO_URL` once those public links are
-  available.
+  available. Repository and hosted demo URLs are already available; the public
+  walkthrough video URL still needs to be uploaded.
 - The public demo can be hosted from the included `Dockerfile` and
   `render.yaml`; `pnpm check:public-demo` writes the handoff.
 - The public repository can run `.github/workflows/submission-readiness.yml`;
