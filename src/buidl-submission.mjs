@@ -3,6 +3,7 @@ import path from "node:path";
 import { readJsonIfExists, resolveOutputDir } from "./final-submission-seal.mjs";
 import {
   buildSubmissionFields,
+  isPublicUrl,
   summarizePublicSubmissionFields
 } from "./submission-profile.mjs";
 
@@ -10,16 +11,18 @@ const PRIVATE_KEY_PATTERN = /BEGIN [A-Z ]*PRIVATE KEY|"privateKey(?:Hex|Pem)?"\s
 
 export async function generateBuidlSubmissionPage({ outputDir } = {}) {
   const resolvedOutputDir = outputDir || (await resolveOutputDir(process.cwd()));
-  const [prizeReadiness, judgeProof, preflight, finalSeal, finalEvidence] =
+  const [prizeReadiness, judgeProof, preflight, finalSeal, finalEvidence, existingBuidl] =
     await Promise.all([
       readJsonIfExists(path.join(resolvedOutputDir, "casper-prize-readiness.json")),
       readJsonIfExists(path.join(resolvedOutputDir, "casper-judge-proof-pack.json")),
       readJsonIfExists(path.join(resolvedOutputDir, "casper-testnet-preflight.json")),
       readJsonIfExists(path.join(resolvedOutputDir, "casper-final-submission-seal.json")),
-      readJsonIfExists(path.join(resolvedOutputDir, "casper-final-testnet-evidence.json"))
+      readJsonIfExists(path.join(resolvedOutputDir, "casper-final-testnet-evidence.json")),
+      readJsonIfExists(path.join(resolvedOutputDir, "casper-buidl-submission.json"))
     ]);
 
   const submissionFields = buildSubmissionFields({
+    env: stableSubmissionEnv(existingBuidl?.submissionFields),
     casperExplorerUrl: finalSeal?.finalGate?.explorerUrl || finalEvidence?.anchor?.explorerUrl
   });
   const publicSubmissionFields = summarizePublicSubmissionFields(submissionFields);
@@ -254,4 +257,19 @@ function assertNoPrivateKeyLeak(value) {
   if (PRIVATE_KEY_PATTERN.test(JSON.stringify(value))) {
     throw new Error("BUIDL submission page would leak private key material.");
   }
+}
+
+function stableSubmissionEnv(existingFields = {}) {
+  return {
+    ...process.env,
+    SUBMISSION_REPO_URL: process.env.SUBMISSION_REPO_URL || publicUrl(existingFields.repoUrl),
+    SUBMISSION_DEMO_URL: process.env.SUBMISSION_DEMO_URL || publicUrl(existingFields.demoUrl),
+    SUBMISSION_VIDEO_URL: process.env.SUBMISSION_VIDEO_URL || publicUrl(existingFields.videoUrl),
+    SUBMISSION_CASPER_EXPLORER_URL:
+      process.env.SUBMISSION_CASPER_EXPLORER_URL || publicUrl(existingFields.casperExplorerUrl)
+  };
+}
+
+function publicUrl(value) {
+  return isPublicUrl(value) ? value : "";
 }

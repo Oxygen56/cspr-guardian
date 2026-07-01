@@ -2,7 +2,7 @@
 
 Status: needs_funding
 
-Run id: run-3ded3c74-76bb-4448-9bcf-fbcc5bde683c
+Run id: run-f750dcbe-f80d-44a7-a263-88b799065c15
 
 Total: 0.62 CSPR (620000000 motes)
 
@@ -18,10 +18,10 @@ Public key:
 
 | Tool | CSPR | Motes | Build | Recipient | Deploy hash |
 | --- | --- | --- | --- | --- | --- |
-| rwa.risk_score | 0.25 | 250000000 | ok | self_fallback_invalid_pay_to | 557e33cf21f2149acf8c7aaf673d891e174fca3869fa0a0db754e16b6dad6d65 |
-| rwa.kyb_screen | 0.10 | 100000000 | ok | self_fallback_invalid_pay_to | 8ec0e7a23f945518bcdb01f4e0b39c1873fba14e89ffcf9b04ffd424f6957035 |
-| rwa.liquidity_depth | 0.15 | 150000000 | ok | self_fallback_invalid_pay_to | 088a8c3e092a87899be0ea2d1988dce1f5e2d00d641d73bcac49e571d07980d6 |
-| rwa.covenant_monitor | 0.12 | 120000000 | ok | self_fallback_invalid_pay_to | 365bd32ad8e090292de92cbeee4c37f7b5e81d54aa4c1f6dc09404b83ca40fcb |
+| rwa.risk_score | 0.25 | 250000000 | ok | self_fallback_invalid_pay_to | 7f11eeb95334cae8eb80a2d2fe005b413fe874cb632ef401dc6249a8e1e5770e |
+| rwa.kyb_screen | 0.10 | 100000000 | ok | self_fallback_invalid_pay_to | 538d864748ef0696305419a62003c25750efccbec5d4144dbd5d0c5f46a74712 |
+| rwa.liquidity_depth | 0.15 | 150000000 | ok | self_fallback_invalid_pay_to | 65b509c5f066692d9faa84ce88f406640400af63f60251ba8979eb6ea81d8206 |
+| rwa.covenant_monitor | 0.12 | 120000000 | ok | self_fallback_invalid_pay_to | bda63761ba842c9bf991881cb78f8cf4b576f2fed1c040442504b4a1890dfd39 |
 
 Recipient note: when `CASPER_TREASURY_PUBLIC_KEY` is not a Casper public key,
 the preflight uses the signer public key as a non-broadcast recipient so the

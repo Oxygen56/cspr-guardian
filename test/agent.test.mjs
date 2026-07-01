@@ -1,5 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import fs from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
 import {
   callPaidCovenantOracle,
   callPaidLiquidityOracle,
@@ -7,6 +10,7 @@ import {
   runScenario
 } from "../src/agent.mjs";
 import { renderBuidlSubmissionMarkdown } from "../src/buidl-submission.mjs";
+import { generateBuidlSubmissionPage } from "../src/buidl-submission.mjs";
 import { csprToMotes, deriveTransferMemo } from "../src/casper-real-adapter.mjs";
 import { getLatestEvidenceBundle, getProviderLedger, getRunLedger } from "../src/ledger.mjs";
 import { verifyLatestEvidenceBundle } from "../src/evidence-verifier.mjs";
@@ -408,6 +412,42 @@ test("BUIDL submission markdown summarizes proof and final gate without secrets"
   assert.match(markdown, /casper-final-submission-seal\.json/);
   assert.match(markdown, /Missing public links: repoUrl, demoUrl, videoUrl/);
   assert.equal(markdown.includes("BEGIN PRIVATE KEY"), false);
+});
+
+test("BUIDL submission generation preserves existing public repo and demo links", async () => {
+  const outputDir = await fs.mkdtemp(path.join(os.tmpdir(), "cspr-buidl-"));
+  await fs.writeFile(
+    path.join(outputDir, "casper-buidl-submission.json"),
+    JSON.stringify({
+      submissionFields: {
+        repoUrl: "https://github.com/example/cspr-guardian",
+        demoUrl: "https://example.github.io/cspr-guardian/",
+        videoUrl: "<paste 90-second demo video URL>"
+      }
+    })
+  );
+
+  const previousRepo = process.env.SUBMISSION_REPO_URL;
+  const previousDemo = process.env.SUBMISSION_DEMO_URL;
+  delete process.env.SUBMISSION_REPO_URL;
+  delete process.env.SUBMISSION_DEMO_URL;
+  try {
+    const page = await generateBuidlSubmissionPage({ outputDir });
+    assert.equal(page.submissionFields.repoUrl, "https://github.com/example/cspr-guardian");
+    assert.equal(page.submissionFields.demoUrl, "https://example.github.io/cspr-guardian/");
+    assert.deepEqual(page.publicSubmissionFields.missing, ["videoUrl"]);
+  } finally {
+    if (previousRepo === undefined) {
+      delete process.env.SUBMISSION_REPO_URL;
+    } else {
+      process.env.SUBMISSION_REPO_URL = previousRepo;
+    }
+    if (previousDemo === undefined) {
+      delete process.env.SUBMISSION_DEMO_URL;
+    } else {
+      process.env.SUBMISSION_DEMO_URL = previousDemo;
+    }
+  }
 });
 
 test("submission profile reads public links from environment and detects placeholders", () => {
