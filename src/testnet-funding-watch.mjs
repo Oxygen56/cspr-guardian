@@ -127,18 +127,20 @@ function positiveInt(value, fallback) {
 
 function nextActionForStatus(status, options) {
   if (status === "seal_completed") {
-    return "Run pnpm audit:submission and submit the final pack.";
+    return "Run npm run audit:submission and submit the final pack.";
   }
   if (status === "funded") {
-    return options.seal ? "Run pnpm seal:submission." : "Funding is ready; run pnpm seal:submission.";
+    return options.seal
+      ? "Run npm run seal:submission."
+      : "Funding is ready; run npm run seal:submission.";
   }
   if (status === "seal_failed") {
-    return "Review the seal output, then rerun pnpm seal:submission.";
+    return "Review the seal output, then rerun npm run seal:submission.";
   }
   if (status === "timed_out") {
-    return "Keep the faucet request open or rerun pnpm wait:testnet after requesting funds.";
+    return "Keep the faucet request open or rerun npm run wait:testnet after requesting funds.";
   }
-  return "Open the faucet with pnpm fund:testnet, then keep this watcher running.";
+  return "Open the faucet with npm run fund:testnet, then keep this watcher running.";
 }
 
 function assertNoPrivateKeyLeak(value) {

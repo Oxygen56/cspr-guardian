@@ -20,24 +20,24 @@ Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 
 | Prize Signal | What To Show | Artifact |
 | --- | --- | --- |
-| Casper-native trust layer | Real receipt deploy hash and CSPR.live explorer URL | `pnpm seal:submission`, Casper Receipt panel |
+| Casper-native trust layer | Real receipt deploy hash and CSPR.live explorer URL | `npm run seal:submission`, Casper Receipt panel |
 | Agent-to-agent commerce | Four paid tools earning CSPR per run | Provider Ledger panel |
 | x402-style payment flow | HTTP 402 challenge, signed payment proof, nonce replay rejection | `/api/oracle/*`, tests, Evidence Bundle |
 | MCP-style tool discovery | Agent discovers paid RWA tools before calling them | Agent Trace, `/mcp/tools` |
 | Autonomous workflow | Agent evaluates risk, KYB, liquidity, and covenants before deciding | Decision panel and trace |
 | RWA relevance | Invoice financing pool gets risk, compliance, liquidity, and covenant checks | RWA signal reports |
 | Auditability | Evidence bundle hashes every payment proof, report, decision, and receipt | Evidence Bundle panel and JSON |
-| Independent verification | Signatures, tx hashes, report hashes, receipt hash, evidence hash, and revenue totals recompute | Evidence Verification panel, `pnpm verify:evidence` |
-| Reviewer proof pack | 402 challenge, signed payment, replay rejection, agent run, verifier, prize gate | `submission/judge-proof-pack.md`, `submission/judge-proof-pack.json`, `pnpm judge:proof` |
-| Real deploy readiness | Signed Casper transfer deploy builds locally without broadcasting | `submission/casper-testnet-preflight.md`, `submission/casper-testnet-preflight.json`, `pnpm preflight:testnet` |
-| x402 real settlement path | Each paid tool payment can build a signed Casper transfer deploy without broadcasting | `submission/casper-x402-settlement-preflight.md`, `pnpm preflight:x402`, `pnpm verify:x402-preflight` |
+| Independent verification | Signatures, tx hashes, report hashes, receipt hash, evidence hash, and revenue totals recompute | Evidence Verification panel, `npm run verify:evidence` |
+| Reviewer proof pack | 402 challenge, signed payment, replay rejection, agent run, verifier, prize gate | `submission/judge-proof-pack.md`, `submission/judge-proof-pack.json`, `npm run judge:proof` |
+| Real deploy readiness | Signed Casper transfer deploy builds locally without broadcasting | `submission/casper-testnet-preflight.md`, `submission/casper-testnet-preflight.json`, `npm run preflight:testnet` |
+| x402 real settlement path | Each paid tool payment can build a signed Casper transfer deploy without broadcasting | `submission/casper-x402-settlement-preflight.md`, `npm run preflight:x402`, `npm run verify:x402-preflight` |
 | Testnet readiness | RPC health, public key, funding status, and readiness gate are visible | Testnet Readiness panel |
 | Business model | Providers earn per tool call and history persists across runs | Provider Ledger and Run History |
-| Submission clarity | Copy-ready BUIDL fields, artifact links, demo flow, and remaining gate are consolidated | `casper-buidl-submission.md`, `pnpm export:buidl` |
-| Submission auditability | Final pack, BUIDL page, seal, leak scan, source zip exclusions, and self-reference checks are verified before upload | Submission Audit panel, `casper-submission-audit.md`, `pnpm audit:submission` |
-| Highest-prize unlock gate | Faucet funding, wallet/reCAPTCHA requirement, public links, and post-funding commands are consolidated | `submission/casper-highest-prize-unlock.md`, `pnpm unlock:highest-prize` |
-| Hosted demo readiness | Docker, Render blueprint, health endpoint, and public-link export path are prepared | `casper-public-demo-handoff.md`, `pnpm check:public-demo`, `/api/health` |
-| Public repo verification | Tests, evidence verifier, preflight verifier, and hosting readiness run in CI | `.github/workflows/submission-readiness.yml`, `casper-ci-readiness.md`, `pnpm check:ci` |
+| Submission clarity | Copy-ready BUIDL fields, artifact links, demo flow, and remaining gate are consolidated | `casper-buidl-submission.md`, `npm run export:buidl` |
+| Submission auditability | Final pack, BUIDL page, seal, leak scan, source zip exclusions, and self-reference checks are verified before upload | Submission Audit panel, `casper-submission-audit.md`, `npm run audit:submission` |
+| Highest-prize unlock gate | Faucet funding, wallet/reCAPTCHA requirement, public links, and post-funding commands are consolidated | `submission/casper-highest-prize-unlock.md`, `npm run unlock:highest-prize` |
+| Hosted demo readiness | Docker, Render blueprint, health endpoint, and public-link export path are prepared | `casper-public-demo-handoff.md`, `npm run check:public-demo`, `/api/health` |
+| Public repo verification | Tests, evidence verifier, preflight verifier, and hosting readiness run in CI | `.github/workflows/submission-readiness.yml`, `casper-ci-readiness.md`, `npm run check:ci` |
 
 ## Ready Screenshot Assets
 
@@ -95,15 +95,15 @@ Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
   working.
 - Current RPC endpoint is verified: `https://node.testnet.casper.network/rpc`.
 - A local testnet key is prepared and waiting for faucet funding.
-- `pnpm seal:submission` is ready to produce final explorer evidence and rebuild
+- `npm run seal:submission` is ready to produce final explorer evidence and rebuild
   the final submission pack after funding.
-- `pnpm audit:submission` is ready to verify the pack and currently should show
+- `npm run audit:submission` is ready to verify the pack and currently should show
   only the remaining real funded testnet deploy gate as blocked after the public
   repo, hosted demo, and walkthrough video URLs are exported.
-- `pnpm preflight:x402` builds signed Casper transfer deploys for each paid
-  x402 tool call without broadcasting; `pnpm verify:x402-preflight` checks the
+- `npm run preflight:x402` builds signed Casper transfer deploys for each paid
+  x402 tool call without broadcasting; `npm run verify:x402-preflight` checks the
   deploy hashes, motes conversion, memo derivation, and recipient shape.
-- `pnpm unlock:highest-prize` records the current CSPR.live faucet/wallet
+- `npm run unlock:highest-prize` records the current CSPR.live faucet/wallet
   funding gate and exact post-funding commands.
 - The remaining hard evidence is a funded testnet account plus one real
   explorer URL.

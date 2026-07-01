@@ -60,7 +60,7 @@ try {
 }
 
 function runSeal() {
-  const result = spawnSync("pnpm", ["seal:submission"], {
+  const result = spawnSync(process.execPath, ["scripts/seal-final-submission.mjs"], {
     cwd: process.cwd(),
     env: process.env,
     stdio: "inherit"

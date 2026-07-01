@@ -69,7 +69,7 @@ export async function generateBuidlSubmissionPage({ outputDir } = {}) {
         prizeReadiness?.testnet?.readyForAnchor ??
         preflight?.readiness?.readyForAnchor ??
         false,
-      nextCommand: finalSeal?.finalGate?.nextCommand || "pnpm seal:submission"
+      nextCommand: finalSeal?.finalGate?.nextCommand || "npm run seal:submission"
     },
     artifacts: {
       submissionPack: finalSeal?.submissionPack?.zipPath || "cspr-guardian-final-submission.zip",
@@ -184,7 +184,7 @@ decision, records provider revenue, and exports tamper-evident evidence.
 The key Casper angle is provenance: each run produces payment hashes, report
 hashes, a decision hash, a receipt hash, and a Casper receipt anchor path. Before
 funding, the project proves that the real Casper deploy builds and signs without
-broadcasting. After funding, \`pnpm seal:submission\` publishes the final
+broadcasting. After funding, \`npm run seal:submission\` publishes the final
 CSPR.live deploy evidence and regenerates this pack.
 
 ## Readiness

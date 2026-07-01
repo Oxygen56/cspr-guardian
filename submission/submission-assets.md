@@ -18,14 +18,14 @@ Public links already prepared:
 | `submission/prize-readiness-snapshot.json` | Machine-readable `/api/prize-readiness` snapshot |
 | `submission/judge-proof-pack.json` | Machine-readable proof of MCP discovery, x402 payment flow, replay rejection, verifier status, and prize-readiness gate |
 | `submission/judge-proof-pack.md` | Human-readable version of the judge proof pack |
-| `submission/casper-testnet-preflight.json` | Machine-readable signed-deploy preflight after running `pnpm preflight:testnet` |
+| `submission/casper-testnet-preflight.json` | Machine-readable signed-deploy preflight after running `npm run preflight:testnet` |
 | `submission/casper-testnet-preflight.md` | Human-readable signed-deploy preflight |
 | `submission/casper-x402-settlement-preflight.json` | Machine-readable signed-but-not-broadcast Casper transfer preflight for four x402 tool payments |
 | `submission/casper-x402-settlement-preflight.md` | Human-readable x402 settlement preflight |
 | `submission/casper-highest-prize-unlock.json` | Machine-readable highest-prize unlock gate report for faucet funding, public links, and final seal commands |
 | `submission/casper-highest-prize-unlock.md` | Human-readable highest-prize unlock checklist |
 | `casper-testnet-funding-watch.json` | Machine-readable faucet funding watcher status; optional until the account is funded |
-| `casper-testnet-funding-watch.md` | Human-readable watcher status for `pnpm wait:testnet` |
+| `casper-testnet-funding-watch.md` | Human-readable watcher status for `npm run wait:testnet` |
 | `casper-buidl-submission.md` | Copy-ready BUIDL page fields, proof summary, and demo flow |
 | `casper-buidl-submission.json` | Machine-readable BUIDL page source data |
 | `casper-submission-audit.md` | External pre-submit audit proving evidence, preflight, pack, BUIDL, seal, leak-scan, and zip checks |
@@ -66,6 +66,6 @@ Final prize-readiness caveat:
   be exported into the BUIDL page with `SUBMISSION_REPO_URL`,
   `SUBMISSION_DEMO_URL`, and `SUBMISSION_VIDEO_URL`.
 - The public demo can be hosted from the included `Dockerfile` and
-  `render.yaml`; `pnpm check:public-demo` writes the handoff.
+  `render.yaml`; `npm run check:public-demo` writes the handoff.
 - The public repository can run `.github/workflows/submission-readiness.yml`;
-  `pnpm check:ci` mirrors that workflow locally.
+  `npm run check:ci` mirrors that workflow locally.

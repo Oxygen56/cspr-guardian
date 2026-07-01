@@ -54,87 +54,89 @@ Or in this workspace:
 
 ## Casper Testnet Commands
 
+All local commands below use `npm`; no global `pnpm` install is required.
+
 Generate a testnet key:
 
 ```bash
-pnpm keygen:casper
+npm run keygen:casper
 ```
 
 Safer local workflow that stores the private key under `.local/` and prints
 only the public key:
 
 ```bash
-pnpm prepare:testnet
+npm run prepare:testnet
 ```
 
 Check whether the generated account is funded and ready:
 
 ```bash
-pnpm check:testnet
+npm run check:testnet
 ```
 
 Write the highest-prize unlock report with the faucet/public-link gates and
 next commands:
 
 ```bash
-pnpm unlock:highest-prize
+npm run unlock:highest-prize
 ```
 
 Open the CSPR.live faucet and copy the prepared public key to the clipboard:
 
 ```bash
-pnpm fund:testnet
+npm run fund:testnet
 ```
 
 Wait for the faucet transfer, then automatically run the final seal once the
 account is funded:
 
 ```bash
-pnpm wait:testnet
+npm run wait:testnet
 ```
 
 Build and sign the real Casper transfer deploy without broadcasting it:
 
 ```bash
-pnpm preflight:testnet
+npm run preflight:testnet
 ```
 
 Build and sign real Casper transfer deploys for the four x402 tool payments
 without broadcasting them:
 
 ```bash
-pnpm preflight:x402
+npm run preflight:x402
 ```
 
 Verify the signed preflight evidence:
 
 ```bash
-pnpm verify:preflight
+npm run verify:preflight
 ```
 
 Verify the signed x402 settlement preflight evidence:
 
 ```bash
-pnpm verify:x402-preflight
+npm run verify:x402-preflight
 ```
 
 Verify the latest local evidence bundle:
 
 ```bash
-pnpm verify:evidence
+npm run verify:evidence
 ```
 
 Generate a judge proof pack with MCP, x402, replay-protection, verifier, and
 prize-readiness evidence:
 
 ```bash
-pnpm judge:proof
+npm run judge:proof
 ```
 
 Export copy-ready BUIDL page fields and judge narrative:
 
 ```bash
-pnpm export:buidl
+npm run export:buidl
 ```
 
 Optional public submission links can be injected before export:
@@ -143,33 +145,33 @@ Optional public submission links can be injected before export:
 SUBMISSION_REPO_URL=https://github.com/you/cspr-guardian \
 SUBMISSION_DEMO_URL=https://your-demo.example \
 SUBMISSION_VIDEO_URL=https://youtu.be/your-demo \
-pnpm export:buidl
+npm run export:buidl
 ```
 
 Export the source archive, screenshots, proof files, and SHA-256 manifest into
 a final submission pack:
 
 ```bash
-pnpm export:submission
+npm run export:submission
 ```
 
 Audit the final pack, BUIDL fields, evidence verification, preflight proof,
 seal state, zip exclusions, and private-key leak safety:
 
 ```bash
-pnpm audit:submission
+npm run audit:submission
 ```
 
 Check public-demo hosting readiness and generate a handoff for Render/Docker:
 
 ```bash
-pnpm check:public-demo
+npm run check:public-demo
 ```
 
 Run the checks that also execute in GitHub Actions:
 
 ```bash
-pnpm check:ci
+npm run check:ci
 ```
 
 One-command final gate after funding: if the account is still unfunded it
@@ -178,28 +180,28 @@ evidence, regenerates judge proof, rebuilds the source archive, and exports the
 final submission pack:
 
 ```bash
-pnpm seal:submission
+npm run seal:submission
 ```
 
-After funding the printed public key on Casper testnet, `pnpm seal:submission`
+After funding the printed public key on Casper testnet, `npm run seal:submission`
 is the one-command final gate. The lower-level real receipt anchor remains
 available for debugging:
 
 ```bash
-CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json pnpm anchor:testnet
+CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json npm run anchor:testnet
 ```
 
 Generate only the final post-funding evidence file without rebuilding the whole
 submission pack:
 
 ```bash
-CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json pnpm finalize:testnet
+CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json npm run finalize:testnet
 ```
 
 Check a deploy hash:
 
 ```bash
-pnpm check:deploy <deploy-hash>
+npm run check:deploy -- <deploy-hash>
 ```
 
 ## Demo Flow
@@ -237,47 +239,47 @@ pnpm check:deploy <deploy-hash>
   402 challenge, signed authorization, replay rejection, and verifier evidence.
 - Testnet preflight endpoint at `/api/testnet/preflight` and dashboard action
   that builds and signs the real deploy without broadcasting.
-- Testnet preflight verifier at `pnpm verify:preflight` that checks the real
+- Testnet preflight verifier at `npm run verify:preflight` that checks the real
   deploy adapter, signed-but-not-broadcast state, deploy hash, signer, memo
   derivation, and private-key leak safety.
-- x402 settlement preflight at `pnpm preflight:x402` and
-  `pnpm verify:x402-preflight` that builds signed-but-not-broadcast Casper
+- x402 settlement preflight at `npm run preflight:x402` and
+  `npm run verify:x402-preflight` that builds signed-but-not-broadcast Casper
   transfer deploys for every paid tool payment, converts CSPR to motes, derives
   transfer memos from x402 authorization hashes, and proves no private key
   material is exposed.
 - Downloadable evidence bundle at `/api/evidence/latest` with signed x402
   proofs, report hashes, decision hash, receipt hash, and an evidence hash.
-- Evidence verifier at `/api/evidence/verify` and `pnpm verify:evidence` that
+- Evidence verifier at `/api/evidence/verify` and `npm run verify:evidence` that
   checks x402 authorization signatures, authorization hashes, payment hashes,
   report hashes, decision hash, receipt hash, evidence hash, and revenue totals.
-- Judge proof pack script at `pnpm judge:proof` that generates a machine-readable
+- Judge proof pack script at `npm run judge:proof` that generates a machine-readable
   and Markdown proof bundle for reviewers.
-- Submission pack exporter at `pnpm export:submission` that gathers the source
+- Submission pack exporter at `npm run export:submission` that gathers the source
   archive, screenshots, judge proof, preflight proof, writeups, and SHA-256
   manifest under the workspace outputs directory.
-- BUIDL submission exporter at `pnpm export:buidl` that creates copy-ready
+- BUIDL submission exporter at `npm run export:buidl` that creates copy-ready
   DoraHacks/ETHGlobal fields, proof summary, artifact list, demo flow, and
   optional public repo/demo/video URLs from environment variables.
-- Final submission sealer at `pnpm seal:submission` that turns a funded
+- Final submission sealer at `npm run seal:submission` that turns a funded
   testnet account into final Casper evidence and a refreshed submission pack in
   one command, or writes a funding handoff if the account is still unfunded.
-- Highest-prize unlock report at `pnpm unlock:highest-prize` that records the
+- Highest-prize unlock report at `npm run unlock:highest-prize` that records the
   faucet/wallet/reCAPTCHA funding gate, public repo/demo/video link gate, and
   exact commands to run once the account is funded.
-- Submission audit at `pnpm audit:submission` and `/api/submission/audit` that
+- Submission audit at `npm run audit:submission` and `/api/submission/audit` that
   checks evidence verification, preflight verification, final pack integrity,
   BUIDL fields, public repo/demo/video links, final seal state, source zip
   exclusions, final-pack self-reference safety, and private-key leak safety.
-- Public demo readiness at `pnpm check:public-demo` with Dockerfile,
+- Public demo readiness at `npm run check:public-demo` with Dockerfile,
   `.dockerignore`, Render blueprint, `/api/health`, and a generated hosting
   handoff.
-- CI readiness at `pnpm check:ci` plus `.github/workflows/submission-readiness.yml`
+- CI readiness at `npm run check:ci` plus `.github/workflows/submission-readiness.yml`
   for public repo verification.
 - Dashboard Final Seal panel and `/api/submission/seal` endpoint that expose
   the current submission gate, package hash, funding status, and next command.
 - Dashboard Submission Audit panel that shows pass/blocked/fail status for the
   whole submission package.
-- Real deploy preflight script at `pnpm preflight:testnet` that builds and signs
+- Real deploy preflight script at `npm run preflight:testnet` that builds and signs
   the Casper transfer deploy without broadcasting.
 - Autonomous RWA scoring and allocation policy.
 - Mock Casper payment and receipt deploy hashes.
@@ -289,22 +291,22 @@ pnpm check:deploy <deploy-hash>
 
 - Switch `CASPER_MODE=mock` to `CASPER_MODE=real` for final testnet evidence.
 - Use the included `CASPER_MODE=real` adapter with a funded testnet key.
-- Run `pnpm preflight:testnet` and confirm deploy build is `ok`.
-- Run `pnpm verify:preflight` and confirm every preflight check passes.
-- Run `pnpm preflight:x402` and `pnpm verify:x402-preflight` to prove each
+- Run `npm run preflight:testnet` and confirm deploy build is `ok`.
+- Run `npm run verify:preflight` and confirm every preflight check passes.
+- Run `npm run preflight:x402` and `npm run verify:x402-preflight` to prove each
   x402 paid tool has a signed Casper settlement transfer path.
-- Run `pnpm check:public-demo`; before publishing links, the only failed item
+- Run `npm run check:public-demo`; before publishing links, the only failed item
   should be `public_links_configured`.
-- Run `pnpm check:ci` and confirm local CI readiness passes.
+- Run `npm run check:ci` and confirm local CI readiness passes.
 - Set `SUBMISSION_REPO_URL`, `SUBMISSION_DEMO_URL`, and
-  `SUBMISSION_VIDEO_URL`, then run `pnpm export:buidl`.
-- Run `pnpm export:submission` and upload the generated submission pack.
-- Run `pnpm audit:submission` and confirm the only blocked items, before
+  `SUBMISSION_VIDEO_URL`, then run `npm run export:buidl`.
+- Run `npm run export:submission` and upload the generated submission pack.
+- Run `npm run audit:submission` and confirm the only blocked items, before
   funding and public-link upload, are `highest_prize_gate` and
   `public_submission_fields`.
-- After funding, run `pnpm seal:submission` to regenerate final evidence, judge
+- After funding, run `npm run seal:submission` to regenerate final evidence, judge
   proof, source zip, submission pack, and final seal in one pass.
-- Run `pnpm audit:submission` again and confirm it says
+- Run `npm run audit:submission` again and confirm it says
   `ready_for_highest_prize_submission`.
 - Record a 90-second video showing the full paid-agent flow.
 - Submit the repo, live demo, and DoraHacks writeup.

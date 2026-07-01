@@ -5,8 +5,8 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=4173
 
-COPY package.json pnpm-lock.yaml ./
-RUN corepack enable && pnpm install --prod --frozen-lockfile
+COPY package.json ./
+RUN npm install --omit=dev
 
 COPY data ./data
 COPY public ./public
@@ -18,4 +18,4 @@ COPY README.md .env.example ./
 
 EXPOSE 4173
 
-CMD ["pnpm", "start"]
+CMD ["npm", "start"]

@@ -104,7 +104,7 @@ export async function getPrizeReadiness() {
           : "needs funding",
       evidence: realCasperDeploy
         ? evidence.anchor.explorerUrl
-        : "Fund testnet key and run pnpm seal:submission"
+        : "Fund testnet key and run npm run seal:submission"
     }),
     criterion({
       id: "submission-assets",
@@ -123,7 +123,7 @@ export async function getPrizeReadiness() {
       ? []
       : [
           `Fund public key ${readiness.publicKeyHex || "(missing key)"} on Casper testnet`,
-          "After funding, run pnpm seal:submission to replace mock deploy evidence"
+          "After funding, run npm run seal:submission to replace mock deploy evidence"
         ])
   ];
 

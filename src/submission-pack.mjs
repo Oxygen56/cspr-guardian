@@ -187,7 +187,7 @@ async function readFinalGate(outputDir) {
     explorerUrl: realExplorerUrl,
     nextStep: prizeReadiness?.highestPrizeGate
       ? "Submit the pack with the real Casper explorer link."
-      : "Fund the prepared Casper testnet key, then run pnpm seal:submission."
+      : "Fund the prepared Casper testnet key, then run npm run seal:submission."
   };
 }
 

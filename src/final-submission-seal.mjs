@@ -18,15 +18,15 @@ export function buildFundingSeal({ readiness, packManifest = null, generatedAt =
       publicKeyHex: readiness?.publicKeyHex || packSummary?.finalGate?.publicKeyHex || null,
       faucetUrl: readiness?.faucetUrl || "https://testnet.cspr.live/tools/faucet",
       requiredMotes: readiness?.requiredMotes || null,
-      nextCommand: "pnpm seal:submission"
+      nextCommand: "npm run seal:submission"
     },
     submissionPack: packSummary,
     commandsAfterFunding: [
-      "pnpm check:testnet",
-      "pnpm verify:preflight",
-      "pnpm seal:submission"
+      "npm run check:testnet",
+      "npm run verify:preflight",
+      "npm run seal:submission"
     ],
-    message: "Fund the prepared Casper testnet key, then rerun pnpm seal:submission."
+    message: "Fund the prepared Casper testnet key, then rerun npm run seal:submission."
   };
 
   assertNoPrivateKeyLeak(seal);
@@ -122,7 +122,7 @@ ${seal.finalGate.requiredMotes || "unknown"}
 After funding:
 
 \`\`\`bash
-pnpm seal:submission
+npm run seal:submission
 \`\`\`
 
 Current pack:

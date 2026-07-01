@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-01T15:03:05.573Z",
+  "generatedAt": "2026-07-01T16:21:31.624Z",
   "project": "CSPR Guardian",
   "status": "needs_funding",
   "testnet": {
@@ -115,27 +115,27 @@
     }
   ],
   "commands": {
-    "faucetHelper": "pnpm fund:testnet",
-    "waitForFunding": "pnpm wait:testnet",
+    "faucetHelper": "npm run fund:testnet",
+    "waitForFunding": "npm run wait:testnet",
     "afterFunding": [
-      "pnpm check:testnet",
-      "pnpm preflight:testnet",
-      "pnpm verify:preflight",
-      "pnpm seal:submission",
-      "pnpm audit:submission"
+      "npm run check:testnet",
+      "npm run preflight:testnet",
+      "npm run verify:preflight",
+      "npm run seal:submission",
+      "npm run audit:submission"
     ],
     "afterPublicLinks": [
-      "SUBMISSION_REPO_URL=<public repo> SUBMISSION_DEMO_URL=<hosted demo> SUBMISSION_VIDEO_URL=<demo video> pnpm export:buidl",
-      "pnpm export:submission",
-      "pnpm audit:submission"
+      "SUBMISSION_REPO_URL=<public repo> SUBMISSION_DEMO_URL=<hosted demo> SUBMISSION_VIDEO_URL=<demo video> npm run export:buidl",
+      "npm run export:submission",
+      "npm run audit:submission"
     ],
     "finalVerification": [
-      "pnpm test",
-      "pnpm check:ci",
-      "pnpm verify:evidence",
-      "pnpm verify:preflight",
-      "pnpm verify:x402-preflight"
+      "npm run test",
+      "npm run check:ci",
+      "npm run verify:evidence",
+      "npm run verify:preflight",
+      "npm run verify:x402-preflight"
     ]
   },
-  "nextAction": "Run pnpm fund:testnet, complete the faucet request at https://testnet.cspr.live/tools/faucet, then run pnpm wait:testnet."
+  "nextAction": "Run npm run fund:testnet, complete the faucet request at https://testnet.cspr.live/tools/faucet, then run npm run wait:testnet."
 }

@@ -1,6 +1,6 @@
 # Casper Highest Prize Unlock
 
-Generated: 2026-07-01T15:03:05.573Z
+Generated: 2026-07-01T16:21:31.624Z
 
 Status: needs_funding
 
@@ -24,10 +24,10 @@ Required motes: 100000001
 
 ## Manual Faucet Steps
 
-1. Run `pnpm fund:testnet` to copy the prepared public key and open the funding guide plus faucet page.
+1. Run `npm run fund:testnet` to copy the prepared public key and open the funding guide plus faucet page.
 2. In CSPR.live, connect Casper Wallet on Casper testnet.
 3. Request faucet funds for the copied public key.
-4. Run `pnpm wait:testnet`; it waits for the balance and then runs the final seal.
+4. Run `npm run wait:testnet`; it waits for the balance and then runs the final seal.
 
 ## Public Links
 
@@ -45,22 +45,22 @@ Missing: none
 
 ## Next Action
 
-Run pnpm fund:testnet, complete the faucet request at https://testnet.cspr.live/tools/faucet, then run pnpm wait:testnet.
+Run npm run fund:testnet, complete the faucet request at https://testnet.cspr.live/tools/faucet, then run npm run wait:testnet.
 
 ## Commands After Funding
 
 ```bash
-pnpm check:testnet
-pnpm preflight:testnet
-pnpm verify:preflight
-pnpm seal:submission
-pnpm audit:submission
+npm run check:testnet
+npm run preflight:testnet
+npm run verify:preflight
+npm run seal:submission
+npm run audit:submission
 ```
 
 ## Commands After Public Links
 
 ```bash
-SUBMISSION_REPO_URL=<public repo> SUBMISSION_DEMO_URL=<hosted demo> SUBMISSION_VIDEO_URL=<demo video> pnpm export:buidl
-pnpm export:submission
-pnpm audit:submission
+SUBMISSION_REPO_URL=<public repo> SUBMISSION_DEMO_URL=<hosted demo> SUBMISSION_VIDEO_URL=<demo video> npm run export:buidl
+npm run export:submission
+npm run audit:submission
 ```

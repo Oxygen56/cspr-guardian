@@ -19,13 +19,10 @@ jobs:
         with:
           node-version: 22
 
-      - name: Enable pnpm
-        run: corepack enable
-
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm install
 
       - name: Run submission readiness checks
         env:
           CASPER_PREFLIGHT_FILE: submission/casper-testnet-preflight.json
-        run: pnpm check:ci
+        run: npm run check:ci

@@ -293,7 +293,7 @@ test("final submission seal keeps unfunded state explicit", () => {
 
   assert.equal(seal.status, "needs_funding");
   assert.equal(seal.finalGate.highestPrizeGate, false);
-  assert.match(markdown, /pnpm seal:submission/);
+  assert.match(markdown, /npm run seal:submission/);
   assert.equal(JSON.stringify(seal).includes("privateKeyHex"), false);
 });
 
@@ -398,7 +398,7 @@ test("BUIDL submission markdown summarizes proof and final gate without secrets"
       accountStatus: "unfunded_or_unavailable",
       preflightStatus: "ok",
       readyForAnchor: false,
-      nextCommand: "pnpm seal:submission"
+      nextCommand: "npm run seal:submission"
     },
     artifacts: {
       submissionPack: "cspr-guardian-final-submission.zip",
@@ -512,10 +512,10 @@ test("highest prize unlock report separates faucet funding and public links", as
     gates,
     nextAction: "Open faucet",
     commands: {
-      faucetHelper: "pnpm fund:testnet",
-      waitForFunding: "pnpm wait:testnet",
-      afterFunding: ["pnpm seal:submission"],
-      afterPublicLinks: ["pnpm export:buidl"]
+      faucetHelper: "npm run fund:testnet",
+      waitForFunding: "npm run wait:testnet",
+      afterFunding: ["npm run seal:submission"],
+      afterPublicLinks: ["npm run export:buidl"]
     }
   };
   const markdown = renderHighestPrizeUnlockMarkdown(unlock);
@@ -525,8 +525,8 @@ test("highest prize unlock report separates faucet funding and public links", as
   assert.equal(deriveHighestPrizeUnlockStatus(gates), "needs_funding_and_public_links");
   assert.match(markdown, /wallet required = true/);
   assert.match(markdown, /Manual Faucet Steps/);
-  assert.match(markdown, /pnpm fund:testnet/);
-  assert.match(markdown, /pnpm wait:testnet/);
+  assert.match(markdown, /npm run fund:testnet/);
+  assert.match(markdown, /npm run wait:testnet/);
   assert.match(markdown, /repoUrl, demoUrl, videoUrl/);
   assert.equal(JSON.stringify(unlock).includes("privateKeyHex"), false);
 });
@@ -563,7 +563,7 @@ test("testnet funding watcher reports pending faucet state without secrets", () 
   assert.equal(options.seal, false);
   assert.equal(report.status, "needs_funding");
   assert.match(markdown, /Casper Testnet Funding Watch/);
-  assert.match(markdown, /pnpm fund:testnet/);
+  assert.match(markdown, /npm run fund:testnet/);
   assert.equal(JSON.stringify(report).includes("PRIVATE KEY"), false);
 });
 
@@ -572,7 +572,7 @@ test("public funding handoff page includes the prepared key and watcher command"
 
   assert.match(html, /011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2/);
   assert.match(html, /https:\/\/testnet\.cspr\.live\/tools\/faucet/);
-  assert.match(html, /pnpm wait:testnet/);
+  assert.match(html, /npm run wait:testnet/);
   assert.equal(html.includes("PRIVATE KEY"), false);
 });
 
@@ -667,7 +667,7 @@ test("submission audit markdown makes external seal and audit boundaries explici
       accountStatus: "unfunded_or_unavailable",
       publicKeyHex: "01abc",
       explorerUrl: null,
-      nextCommand: "pnpm seal:submission"
+      nextCommand: "npm run seal:submission"
     },
     artifacts: {
       submissionPackZip: {
@@ -698,7 +698,7 @@ test("submission audit markdown makes external seal and audit boundaries explici
 
   assert.match(markdown, /ready_except_external_submission_gates/);
   assert.match(markdown, /repoUrl: missing/);
-  assert.match(markdown, /pnpm seal:submission/);
+  assert.match(markdown, /npm run seal:submission/);
   assert.match(markdown, /casper-final-submission-seal/);
   assert.match(markdown, /casper-submission-audit/);
   assert.equal(markdown.includes("BEGIN PRIVATE KEY"), false);
@@ -711,7 +711,7 @@ test("public demo handoff verifies hosting config and calls out missing public l
   };
   const checks = buildPublicDemoReadinessChecks({
     files: {
-      dockerfile: 'RUN corepack enable && pnpm install --prod --frozen-lockfile\nCMD ["pnpm", "start"]',
+      dockerfile: 'RUN npm install --omit=dev\nCMD ["npm", "start"]',
       dockerignore: ".git\n.local\n.env\nnode_modules\noutputs\n",
       renderYaml: "runtime: docker\nhealthCheckPath: /api/health\n",
       server: 'if (req.method === "GET" && url.pathname === "/api/health") {}',

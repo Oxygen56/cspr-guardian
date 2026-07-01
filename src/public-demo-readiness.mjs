@@ -38,7 +38,7 @@ export async function getPublicDemoReadiness({
       healthPath: "/api/health",
       dockerfile: "Dockerfile",
       renderBlueprint: "render.yaml",
-      demoCommand: "pnpm start",
+      demoCommand: "npm start",
       localUrl: "http://localhost:4173",
       envForBuidlExport: [
         "SUBMISSION_REPO_URL",
@@ -68,9 +68,9 @@ export function buildPublicDemoReadinessChecks({ files, publicSubmission }) {
 
   add(
     "dockerfile_present",
-    files.dockerfile.includes("pnpm install --prod") &&
-      files.dockerfile.includes('CMD ["pnpm", "start"]'),
-    "Dockerfile builds a production Node image and starts the demo with pnpm start."
+    files.dockerfile.includes("npm install --omit=dev") &&
+      files.dockerfile.includes('CMD ["npm", "start"]'),
+    "Dockerfile builds a production Node image and starts the demo with npm start."
   );
   add(
     "dockerignore_protects_secrets",
@@ -162,13 +162,13 @@ ${missingLinks}
 SUBMISSION_REPO_URL=https://github.com/you/cspr-guardian \\
 SUBMISSION_DEMO_URL=https://your-demo.example \\
 SUBMISSION_VIDEO_URL=https://youtu.be/your-demo \\
-pnpm export:buidl
-pnpm export:submission
-pnpm seal:submission
-pnpm audit:submission
+npm run export:buidl
+npm run export:submission
+npm run seal:submission
+npm run audit:submission
 \`\`\`
 
-After Casper funding, rerun \`pnpm seal:submission\`, then add
+After Casper funding, rerun \`npm run seal:submission\`, then add
 \`SUBMISSION_CASPER_EXPLORER_URL\` if the explorer URL is not already picked up
 from final evidence.
 

@@ -96,9 +96,9 @@ ${preflight.readiness.accountStatus}
 Next step:
 
 \`\`\`bash
-pnpm check:testnet
-pnpm preflight:testnet
-pnpm seal:submission
+npm run check:testnet
+npm run preflight:testnet
+npm run seal:submission
 \`\`\`
 `;
 }

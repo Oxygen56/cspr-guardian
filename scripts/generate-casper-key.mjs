@@ -14,7 +14,7 @@ console.log(
       nextSteps: [
         "Fund publicKeyHex from the Casper testnet faucet.",
         "Set CASPER_PRIVATE_KEY_ALGORITHM and CASPER_PRIVATE_KEY_PEM.",
-        "Run pnpm anchor:testnet."
+        "Run npm run anchor:testnet."
       ]
     },
     null,

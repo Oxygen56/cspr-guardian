@@ -20,7 +20,7 @@ try {
   if (!readiness.readyForAnchor) {
     const pending = {
       status: "needs_funding",
-      message: "Fund the prepared Casper testnet key, then rerun pnpm finalize:testnet.",
+      message: "Fund the prepared Casper testnet key, then rerun npm run finalize:testnet.",
       readiness
     };
     await writeFinalEvidence(pending);
@@ -117,9 +117,9 @@ ${evidence.readiness.faucetUrl}
 After funding:
 
 \`\`\`bash
-pnpm check:testnet
-pnpm preflight:testnet
-pnpm finalize:testnet
+npm run check:testnet
+npm run preflight:testnet
+npm run finalize:testnet
 \`\`\`
 `;
   }

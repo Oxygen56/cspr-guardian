@@ -2,7 +2,7 @@ const PLACEHOLDERS = {
   repoUrl: "<paste repository URL>",
   demoUrl: "<paste hosted demo URL>",
   videoUrl: "<paste 90-second demo video URL>",
-  casperExplorerUrl: "<fund testnet key, run pnpm seal:submission, paste CSPR.live deploy URL>"
+  casperExplorerUrl: "<fund testnet key, run npm run seal:submission, paste CSPR.live deploy URL>"
 };
 
 export function buildSubmissionFields({

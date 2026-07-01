@@ -82,26 +82,26 @@ export async function generateHighestPrizeUnlock({
     remainingGates: gates.filter((gate) => !gate.complete),
     gates,
     commands: {
-      faucetHelper: "pnpm fund:testnet",
-      waitForFunding: "pnpm wait:testnet",
+      faucetHelper: "npm run fund:testnet",
+      waitForFunding: "npm run wait:testnet",
       afterFunding: [
-        "pnpm check:testnet",
-        "pnpm preflight:testnet",
-        "pnpm verify:preflight",
-        "pnpm seal:submission",
-        "pnpm audit:submission"
+        "npm run check:testnet",
+        "npm run preflight:testnet",
+        "npm run verify:preflight",
+        "npm run seal:submission",
+        "npm run audit:submission"
       ],
       afterPublicLinks: [
-        "SUBMISSION_REPO_URL=<public repo> SUBMISSION_DEMO_URL=<hosted demo> SUBMISSION_VIDEO_URL=<demo video> pnpm export:buidl",
-        "pnpm export:submission",
-        "pnpm audit:submission"
+        "SUBMISSION_REPO_URL=<public repo> SUBMISSION_DEMO_URL=<hosted demo> SUBMISSION_VIDEO_URL=<demo video> npm run export:buidl",
+        "npm run export:submission",
+        "npm run audit:submission"
       ],
       finalVerification: [
-        "pnpm test",
-        "pnpm check:ci",
-        "pnpm verify:evidence",
-        "pnpm verify:preflight",
-        "pnpm verify:x402-preflight"
+        "npm run test",
+        "npm run check:ci",
+        "npm run verify:evidence",
+        "npm run verify:preflight",
+        "npm run verify:x402-preflight"
       ]
     },
     nextAction: deriveNextAction({ status, readiness, publicSubmission, finalSeal })
@@ -159,7 +159,7 @@ export function buildHighestPrizeGates({ readiness, publicSubmission, finalSeal 
       detail: realReceiptComplete
         ? "Final seal contains a public CSPR.live deploy URL."
         : readiness.readyForAnchor
-          ? "Funding is ready; run pnpm seal:submission to broadcast and seal the real receipt."
+          ? "Funding is ready; run npm run seal:submission to broadcast and seal the real receipt."
           : "Waiting for a funded testnet key before broadcasting the real receipt deploy.",
       evidence: {
         sealStatus: finalSeal?.status || "missing",
@@ -270,10 +270,10 @@ Required motes: ${unlock.testnet.requiredMotes || "unknown"}
 
 ## Manual Faucet Steps
 
-1. Run \`${unlock.commands.faucetHelper || "pnpm fund:testnet"}\` to copy the prepared public key and open the funding guide plus faucet page.
+1. Run \`${unlock.commands.faucetHelper || "npm run fund:testnet"}\` to copy the prepared public key and open the funding guide plus faucet page.
 2. In CSPR.live, connect Casper Wallet on Casper testnet.
 3. Request faucet funds for the copied public key.
-4. Run \`${unlock.commands.waitForFunding || "pnpm wait:testnet"}\`; it waits for the balance and then runs the final seal.
+4. Run \`${unlock.commands.waitForFunding || "npm run wait:testnet"}\`; it waits for the balance and then runs the final seal.
 
 ## Public Links
 
@@ -309,15 +309,15 @@ function deriveNextAction({ status, readiness, publicSubmission, finalSeal }) {
   }
 
   if (!readiness.readyForAnchor) {
-    return `Run pnpm fund:testnet, complete the faucet request at ${readiness.faucetUrl || DEFAULT_FAUCET_URL}, then run pnpm wait:testnet.`;
+    return `Run npm run fund:testnet, complete the faucet request at ${readiness.faucetUrl || DEFAULT_FAUCET_URL}, then run npm run wait:testnet.`;
   }
 
   if (!publicSubmission.complete) {
-    return `Publish public links for ${publicSubmission.missing.join(", ")}, then rerun pnpm export:buidl and pnpm audit:submission.`;
+    return `Publish public links for ${publicSubmission.missing.join(", ")}, then rerun npm run export:buidl and npm run audit:submission.`;
   }
 
   if (finalSeal?.status !== "ready_for_highest_prize_submission") {
-    return "Funding and links are ready; run pnpm seal:submission to broadcast the real Casper receipt and rebuild the pack.";
+    return "Funding and links are ready; run npm run seal:submission to broadcast the real Casper receipt and rebuild the pack.";
   }
 
   return "Review the audit report before submission.";

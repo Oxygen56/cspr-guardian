@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T15:03:09.290Z",
+  "generatedAt": "2026-07-01T16:15:24.860Z",
   "status": "final-gate",
   "score": 80,
   "maxScore": 100,
@@ -43,7 +43,7 @@
       "weight": 20,
       "status": "blocked",
       "value": "needs funding",
-      "evidence": "Fund testnet key and run pnpm seal:submission"
+      "evidence": "Fund testnet key and run npm run seal:submission"
     },
     {
       "id": "submission-assets",
@@ -55,9 +55,9 @@
     }
   ],
   "blockers": [
-    "Fund testnet key and run pnpm seal:submission",
+    "Fund testnet key and run npm run seal:submission",
     "Fund public key 011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2 on Casper testnet",
-    "After funding, run pnpm seal:submission to replace mock deploy evidence"
+    "After funding, run npm run seal:submission to replace mock deploy evidence"
   ],
   "testnet": {
     "rpcStatus": "ok",
@@ -68,13 +68,13 @@
     "faucetUrl": "https://testnet.cspr.live/tools/faucet"
   },
   "currentEvidence": {
-    "runId": "run-8491e9f8-43ca-4178-a9f8-ba9830f28f39",
-    "receiptHash": "a922c53c00945c46a6b71d2cb3fa457d6128e1df8de3fb24dc330329262ddf64",
-    "explorerUrl": "https://testnet.cspr.live/deploy/mock-casper-receipt-a922c53c00945c46a6b71d2cb3fa457d6128e1df8de3fb24",
+    "runId": "run-8849e64f-ec9e-4f46-817b-9b1899e76107",
+    "receiptHash": "49de3781bf0ddd390adc2740dc0ac4c70e4cb25b790c3ad2d251b85c63fd6e82",
+    "explorerUrl": "https://testnet.cspr.live/deploy/mock-casper-receipt-49de3781bf0ddd390adc2740dc0ac4c70e4cb25b790c3ad2",
     "anchorMode": "mock",
     "reportHashes": {
       "risk": "81d06f2499c1f01b1fba7f6aac0ab04fe5148aedf206d96ea7e1ce6cb8cc2880",
-      "kyb": "f19c1bd4088d02a3672c50195ce68e4a03e8b6bb8fd05758601d8b46c5fbfb27",
+      "kyb": "7a3664880ab24cd22c2d3ee634dcf38b796972cba8f6ba69989fda071d422121",
       "liquidity": "6d25b444e94b8c58497524c0f642433bdb7ebf923257496d05adedd869538fe3",
       "covenant": "8267de9604c0ee1dc20389da7a2503c8a7c3358072738d77ccaf66e11f6380a1"
     }

@@ -39,7 +39,7 @@ unfunded_or_unavailable
 Next step:
 
 ```bash
-pnpm check:testnet
-pnpm preflight:testnet
-pnpm finalize:testnet
+npm run check:testnet
+npm run preflight:testnet
+npm run finalize:testnet
 ```

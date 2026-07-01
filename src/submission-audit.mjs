@@ -121,7 +121,7 @@ export async function generateSubmissionAudit({
         finalEvidence?.anchor?.explorerUrl ||
         finalEvidence?.explorerUrl ||
         null,
-      nextCommand: finalSeal?.finalGate?.nextCommand || "pnpm seal:submission"
+      nextCommand: finalSeal?.finalGate?.nextCommand || "npm run seal:submission"
     },
     artifacts: {
       submissionPackZip: packZip,
@@ -234,7 +234,7 @@ export function buildSubmissionAuditChecks({
     Boolean(buidlJson) &&
     typeof buidlMarkdown === "string" &&
     buidlMarkdown.includes("CSPR Guardian") &&
-    buidlMarkdown.includes("pnpm seal:submission") &&
+    buidlMarkdown.includes("npm run seal:submission") &&
     buidlMarkdown.includes("casper-final-submission-seal.json");
   add(
     "buidl_page_present",

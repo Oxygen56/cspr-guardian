@@ -16,7 +16,7 @@ Prize readiness: 80/100 (final-gate)
 | nonce-replay-protection | pass | Reusing the same signed payment proof is rejected |
 | agentic-rwa-run | pass | Agent buys four signals, decides under policy, and records provider revenue |
 | independent-verifier | pass | 34/34 checks passed |
-| casper-final-gate | blocked | Fund testnet key and rerun pnpm finalize:testnet |
+| casper-final-gate | blocked | Fund testnet key and rerun npm run finalize:testnet |
 
 ## x402 Payment Flow
 
@@ -75,5 +75,5 @@ The remaining highest-prize gate is a real Casper testnet deploy.
 After funding, run:
 
 ```bash
-pnpm finalize:testnet
+npm run finalize:testnet
 ```

@@ -48,15 +48,15 @@ ${faucetUrl}
 One-command helper:
 
 \`\`\`bash
-pnpm fund:testnet
-pnpm wait:testnet
+npm run fund:testnet
+npm run wait:testnet
 \`\`\`
 
 After funding, run:
 
 \`\`\`bash
-CASPER_PRIVATE_KEY_FILE=${keyFile} pnpm check:testnet
-CASPER_PRIVATE_KEY_FILE=${keyFile} pnpm seal:submission
+CASPER_PRIVATE_KEY_FILE=${keyFile} npm run check:testnet
+CASPER_PRIVATE_KEY_FILE=${keyFile} npm run seal:submission
 \`\`\`
 
 Do not commit or upload \`${keyFile}\`.
@@ -73,10 +73,10 @@ console.log(
       fundingInstructions: instructionsFile,
       faucetUrl,
       nextSteps: [
-        "Run pnpm fund:testnet to copy publicKeyHex and open the faucet.",
-        "Run pnpm wait:testnet to poll until funds arrive and then seal the submission.",
-        `Run CASPER_PRIVATE_KEY_FILE=${keyFile} pnpm check:testnet.`,
-        `Run CASPER_PRIVATE_KEY_FILE=${keyFile} pnpm seal:submission after the balance appears.`
+        "Run npm run fund:testnet to copy publicKeyHex and open the faucet.",
+        "Run npm run wait:testnet to poll until funds arrive and then seal the submission.",
+        `Run CASPER_PRIVATE_KEY_FILE=${keyFile} npm run check:testnet.`,
+        `Run CASPER_PRIVATE_KEY_FILE=${keyFile} npm run seal:submission after the balance appears.`
       ]
     },
     null,

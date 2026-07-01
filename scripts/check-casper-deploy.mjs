@@ -3,7 +3,7 @@ import { checkCasperDeploy } from "../src/casper-deploy-check.mjs";
 const deployHash = process.argv[2] || process.env.CASPER_DEPLOY_HASH;
 
 if (!deployHash) {
-  console.error("Usage: pnpm check:deploy <deploy-hash>");
+  console.error("Usage: npm run check:deploy -- <deploy-hash>");
   process.exit(1);
 }
 

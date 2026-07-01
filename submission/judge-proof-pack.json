@@ -38,7 +38,7 @@
     {
       "id": "casper-final-gate",
       "status": "blocked",
-      "evidence": "Fund testnet key and rerun pnpm finalize:testnet"
+      "evidence": "Fund testnet key and rerun npm run finalize:testnet"
     }
   ],
   "mcp": {
@@ -186,7 +186,7 @@
         "weight": 20,
         "status": "blocked",
         "value": "needs funding",
-        "evidence": "Fund testnet key and run pnpm finalize:testnet"
+        "evidence": "Fund testnet key and run npm run finalize:testnet"
       },
       {
         "id": "submission-assets",
@@ -198,9 +198,9 @@
       }
     ],
     "blockers": [
-      "Fund testnet key and run pnpm finalize:testnet",
+      "Fund testnet key and run npm run finalize:testnet",
       "Fund public key 011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2 on Casper testnet",
-      "Rerun pnpm finalize:testnet to replace mock deploy evidence"
+      "Rerun npm run finalize:testnet to replace mock deploy evidence"
     ]
   },
   "testnet": {

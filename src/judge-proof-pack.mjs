@@ -83,7 +83,7 @@ export async function generateJudgeProofPack({
       evidence:
         preflightVerification.status === "verified"
           ? `${preflightVerification.summary.passed}/${preflightVerification.summary.total} real deploy preflight checks passed`
-          : "Run pnpm preflight:testnet and pnpm verify:preflight before final submission"
+          : "Run npm run preflight:testnet and npm run verify:preflight before final submission"
     },
     {
       id: "x402-settlement-preflight",
@@ -91,14 +91,14 @@ export async function generateJudgeProofPack({
       evidence:
         x402PreflightVerification.status === "verified"
           ? `${x402PreflightVerification.summary.passed}/${x402PreflightVerification.summary.total} signed x402 settlement transfer checks passed`
-          : "Run pnpm preflight:x402 and pnpm verify:x402-preflight before final submission"
+          : "Run npm run preflight:x402 and npm run verify:x402-preflight before final submission"
     },
     {
       id: "casper-final-gate",
       status: prizeReadiness.highestPrizeGate ? "pass" : "blocked",
       evidence: prizeReadiness.highestPrizeGate
         ? "Real CSPR.live deploy evidence is present"
-        : "Fund testnet key and rerun pnpm seal:submission"
+        : "Fund testnet key and rerun npm run seal:submission"
     }
   ];
 
@@ -306,7 +306,7 @@ The remaining highest-prize gate is a real Casper testnet deploy.
 After funding, run:
 
 \`\`\`bash
-pnpm seal:submission
+npm run seal:submission
 \`\`\`
 `;
 }
