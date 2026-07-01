@@ -1,0 +1,54 @@
+{
+  "dataset": "sample-rwa-risk-signals",
+  "generatedAt": "2026-07-01T00:00:00.000Z",
+  "assets": [
+    {
+      "id": "invoice-usdc-7d",
+      "name": "USDC invoice financing pool",
+      "category": "invoice-finance",
+      "jurisdiction": "US",
+      "requestedAmountUsd": 250000,
+      "durationDays": 7,
+      "apr": 11.8,
+      "counterpartyHealth": 83,
+      "liquidityDepthUsd": 1850000,
+      "oracleConfidence": 0.91,
+      "kybStatus": "verified",
+      "sanctionsScreen": "clear",
+      "latePaymentRate90d": 0.018,
+      "volatility30d": 0.021
+    },
+    {
+      "id": "t-bill-token-30d",
+      "name": "Tokenized T-bill rollover vault",
+      "category": "treasury",
+      "jurisdiction": "US",
+      "requestedAmountUsd": 500000,
+      "durationDays": 30,
+      "apr": 5.2,
+      "counterpartyHealth": 96,
+      "liquidityDepthUsd": 12200000,
+      "oracleConfidence": 0.97,
+      "kybStatus": "verified",
+      "sanctionsScreen": "clear",
+      "latePaymentRate90d": 0.002,
+      "volatility30d": 0.006
+    },
+    {
+      "id": "em-credit-note-45d",
+      "name": "Emerging market trade credit note",
+      "category": "trade-credit",
+      "jurisdiction": "BR",
+      "requestedAmountUsd": 175000,
+      "durationDays": 45,
+      "apr": 17.4,
+      "counterpartyHealth": 61,
+      "liquidityDepthUsd": 420000,
+      "oracleConfidence": 0.73,
+      "kybStatus": "manual-review",
+      "sanctionsScreen": "clear",
+      "latePaymentRate90d": 0.074,
+      "volatility30d": 0.066
+    }
+  ]
+}

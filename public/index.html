@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSPR Guardian</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">Casper Agentic Buildathon</p>
+          <h1>CSPR Guardian</h1>
+        </div>
+        <button id="runButton" class="primary-button" type="button">Run Agent</button>
+      </section>
+
+      <section class="status-grid">
+        <article class="metric">
+          <span>Protocol</span>
+          <strong>x402 + MCP</strong>
+        </article>
+        <article class="metric">
+          <span>Chain</span>
+          <strong>Casper Testnet</strong>
+        </article>
+        <article class="metric">
+          <span>Use Case</span>
+          <strong>RWA Risk</strong>
+        </article>
+        <article class="metric">
+          <span>Mode</span>
+          <strong id="modeLabel">Demo</strong>
+        </article>
+        <article class="metric">
+          <span>Provider revenue</span>
+          <strong id="revenueLabel">0.00 CSPR</strong>
+        </article>
+        <article class="metric">
+          <span>Historical runs</span>
+          <strong id="runCountLabel">0</strong>
+        </article>
+      </section>
+
+      <section class="panel prize-panel">
+        <div class="section-heading">
+          <h2>Prize Readiness</h2>
+          <span id="prizeBadge" class="badge muted">Checking</span>
+        </div>
+        <div id="prizeSummary" class="prize-summary"></div>
+        <div id="prizeCriteria" class="prize-criteria"></div>
+        <div id="prizeBlockers" class="prize-blockers"></div>
+        <pre id="prizeBlock">{}</pre>
+      </section>
+
+      <section class="panel seal-panel">
+        <div class="section-heading">
+          <h2>Final Seal</h2>
+          <div class="heading-actions">
+            <button id="refreshSealButton" class="secondary-button" type="button">Refresh</button>
+            <button id="downloadSealButton" class="secondary-button" type="button" disabled>Download JSON</button>
+            <span id="sealBadge" class="badge muted">Checking</span>
+          </div>
+        </div>
+        <div id="sealSummary" class="seal-summary"></div>
+        <div id="sealCommands" class="seal-commands"></div>
+        <pre id="sealBlock">{}</pre>
+      </section>
+
+      <section class="panel audit-panel">
+        <div class="section-heading">
+          <h2>Submission Audit</h2>
+          <div class="heading-actions">
+            <button id="refreshAuditButton" class="secondary-button" type="button">Refresh</button>
+            <button id="downloadAuditButton" class="secondary-button" type="button" disabled>Download JSON</button>
+            <span id="auditBadge" class="badge muted">Checking</span>
+          </div>
+        </div>
+        <div id="auditSummary" class="audit-summary"></div>
+        <div id="auditChecks" class="audit-checks"></div>
+        <pre id="auditBlock">{}</pre>
+      </section>
+
+      <section class="panel proof-panel">
+        <div class="section-heading">
+          <h2>Judge Proof Pack</h2>
+          <div class="heading-actions">
+            <button id="generateProofButton" class="secondary-button" type="button">Generate Proof</button>
+            <button id="downloadProofButton" class="secondary-button" type="button" disabled>Download JSON</button>
+            <span id="proofBadge" class="badge muted">Waiting</span>
+          </div>
+        </div>
+        <div id="proofSummary" class="proof-summary"></div>
+        <div id="proofAssertions" class="proof-assertions"></div>
+        <pre id="proofBlock">{}</pre>
+      </section>
+
+      <section class="panel readiness-panel">
+        <div class="section-heading">
+          <h2>Testnet Readiness</h2>
+          <span id="testnetBadge" class="badge muted">Checking</span>
+        </div>
+        <div id="testnetSummary" class="readiness-summary"></div>
+        <div class="readiness-actions">
+          <button id="copyPublicKeyButton" class="secondary-button" type="button" disabled>Copy Public Key</button>
+          <button id="runPreflightButton" class="secondary-button" type="button">Run Preflight</button>
+          <a id="faucetLink" class="secondary-link" href="https://testnet.cspr.live/tools/faucet" target="_blank" rel="noreferrer">Open Faucet</a>
+        </div>
+        <div class="section-heading compact-heading">
+          <h2>Deploy Preflight</h2>
+          <span id="preflightBadge" class="badge muted">Waiting</span>
+        </div>
+        <div id="preflightSummary" class="preflight-summary"></div>
+        <pre id="preflightBlock">{}</pre>
+        <pre id="testnetBlock">{}</pre>
+      </section>
+
+      <section class="workspace">
+        <aside class="panel controls">
+          <h2>Opportunity</h2>
+          <label for="assetSelect">Asset</label>
+          <select id="assetSelect"></select>
+          <label for="amountInput">Requested allocation</label>
+          <input id="amountInput" type="number" min="10000" step="5000" />
+          <div class="note">
+            The agent buys four paid signals, decides under policy, and anchors the audit receipt.
+          </div>
+        </aside>
+
+        <section class="panel decision">
+          <div class="section-heading">
+            <h2>Decision</h2>
+            <span id="decisionBadge" class="badge">Waiting</span>
+          </div>
+          <div id="decisionBody" class="decision-body empty">
+            Run the agent to generate the first Casper audit trail.
+          </div>
+        </section>
+      </section>
+
+      <section class="workspace lower">
+        <section class="panel trace">
+          <div class="section-heading">
+            <h2>Agent Trace</h2>
+            <span class="badge muted">Autonomous flow</span>
+          </div>
+          <ol id="traceList"></ol>
+        </section>
+
+        <section class="panel receipt">
+          <div class="section-heading">
+            <h2>Casper Receipt</h2>
+            <span class="badge muted">Audit proof</span>
+          </div>
+          <pre id="receiptBlock">{}</pre>
+        </section>
+
+        <section class="panel providers">
+          <div class="section-heading">
+            <h2>Provider Ledger</h2>
+            <span class="badge muted">Paid tools</span>
+          </div>
+          <div id="providerSummary" class="provider-summary"></div>
+          <div id="providerList" class="provider-list"></div>
+        </section>
+      </section>
+
+      <section class="panel history-panel">
+        <div class="section-heading">
+          <h2>Run History</h2>
+          <span class="badge muted">Receipts</span>
+        </div>
+        <div id="runHistory" class="run-history"></div>
+      </section>
+
+      <section class="panel evidence-panel">
+        <div class="section-heading">
+          <h2>Evidence Bundle</h2>
+          <button id="downloadEvidenceButton" class="secondary-button" type="button">Download JSON</button>
+        </div>
+        <div id="evidenceSummary" class="evidence-summary"></div>
+        <pre id="evidenceBlock">{}</pre>
+      </section>
+
+      <section class="panel verification-panel">
+        <div class="section-heading">
+          <h2>Evidence Verification</h2>
+          <span id="verificationBadge" class="badge muted">Waiting</span>
+        </div>
+        <div id="verificationSummary" class="verification-summary"></div>
+        <pre id="verificationBlock">{}</pre>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

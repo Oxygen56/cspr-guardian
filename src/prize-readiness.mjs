@@ -1,0 +1,193 @@
+import fs from "node:fs/promises";
+import path from "node:path";
+import { listTools } from "./agent.mjs";
+import { verifyLatestEvidenceBundle } from "./evidence-verifier.mjs";
+import { getLatestEvidenceBundle, getProviderLedger, getRunLedger } from "./ledger.mjs";
+import { getTestnetReadiness } from "./testnet-readiness.mjs";
+
+const REQUIRED_PAID_TOOLS = [
+  "rwa.risk_score",
+  "rwa.kyb_screen",
+  "rwa.liquidity_depth",
+  "rwa.covenant_monitor"
+];
+
+export async function getPrizeReadiness() {
+  const [tools, evidence, verification, providerLedger, runLedger, readiness, assetsReady] =
+    await Promise.all([
+      listTools(),
+      getLatestEvidenceBundle(),
+      verifyLatestEvidenceBundle(),
+      getProviderLedger(),
+      getRunLedger(),
+      getTestnetReadiness(),
+      hasSubmissionAssets()
+    ]);
+
+  const paidTools = tools.filter((tool) => tool.payment === "x402-casper");
+  const paidToolNames = paidTools.map((tool) => tool.name);
+  const hasRequiredPaidTools = REQUIRED_PAID_TOOLS.every((tool) => paidToolNames.includes(tool));
+  const evidenceReady = evidence.status !== "missing";
+  const x402Proofs = evidenceReady ? evidence.verification?.x402Proofs || [] : [];
+  const reportHashes = evidenceReady ? evidence.verification?.reportHashes || {} : {};
+  const latestRunRevenue = evidenceReady
+    ? evidence.ledgerEntry?.providerRevenue?.totalCSPR ||
+      evidence.payments
+        ?.reduce((sum, payment) => sum + Number(payment.amount || 0), 0)
+        .toFixed(2)
+    : providerLedger.totalCSPR;
+  const realCasperDeploy =
+    evidenceReady &&
+    evidence.anchor?.mode === "real" &&
+    evidence.anchor?.deployHash &&
+    !String(evidence.anchor.deployHash).startsWith("mock-") &&
+    evidence.anchor?.explorerUrl?.includes("cspr.live");
+
+  const criteria = [
+    criterion({
+      id: "x402-paid-tools",
+      label: "x402 paid tools",
+      weight: 20,
+      passed:
+        hasRequiredPaidTools &&
+        x402Proofs.length === REQUIRED_PAID_TOOLS.length &&
+        x402Proofs.every((proof) => proof.signature && proof.authorizationHash),
+      value: `${x402Proofs.length}/${REQUIRED_PAID_TOOLS.length} signed proofs`,
+      evidence: "Four paid CSPR tools with signed authorizations"
+    }),
+    criterion({
+      id: "mcp-tool-discovery",
+      label: "MCP tool discovery",
+      weight: 15,
+      passed: hasRequiredPaidTools && tools.some((tool) => tool.name === "casper.audit_receipt"),
+      value: `${tools.length} discoverable tools`,
+      evidence: "/mcp/tools exposes paid intelligence and receipt tools"
+    }),
+    criterion({
+      id: "agentic-rwa-workflow",
+      label: "Agentic RWA workflow",
+      weight: 20,
+      passed:
+        runLedger.runs.length > 0 &&
+        Boolean(evidence.reports?.risk) &&
+        Boolean(evidence.reports?.kyb) &&
+        Boolean(evidence.reports?.liquidity) &&
+        Boolean(evidence.reports?.covenant) &&
+        Boolean(evidence.decision?.action),
+      value: `${latestRunRevenue} CSPR/run`,
+      evidence: "Risk, KYB, liquidity, covenant, policy decision, provider revenue"
+    }),
+    criterion({
+      id: "independent-verifier",
+      label: "Independent verifier",
+      weight: 15,
+      passed:
+        verification.status === "verified" &&
+        verification.summary?.passed === verification.summary?.total &&
+        verification.summary?.total >= 30,
+      value:
+        verification.summary?.total > 0
+          ? `${verification.summary.passed}/${verification.summary.total}`
+          : "missing",
+      evidence: "Signatures, hashes, receipt, and revenue recompute"
+    }),
+    criterion({
+      id: "casper-receipt",
+      label: "Casper receipt",
+      weight: 20,
+      passed: realCasperDeploy,
+      blocked: !readiness.readyForAnchor,
+      value: realCasperDeploy
+        ? "real testnet deploy"
+        : readiness.readyForAnchor
+          ? "ready to anchor"
+          : "needs funding",
+      evidence: realCasperDeploy
+        ? evidence.anchor.explorerUrl
+        : "Fund testnet key and run pnpm finalize:testnet"
+    }),
+    criterion({
+      id: "submission-assets",
+      label: "Submission assets",
+      weight: 10,
+      passed: assetsReady,
+      value: assetsReady ? "screenshots ready" : "missing assets",
+      evidence: "Dashboard screenshot, verifier screenshot, copy-ready submission notes"
+    })
+  ];
+
+  const score = criteria.reduce((sum, item) => sum + (item.status === "pass" ? item.weight : 0), 0);
+  const blockers = [
+    ...criteria.filter((item) => item.status === "blocked").map((item) => item.evidence),
+    ...(readiness.readyForAnchor
+      ? []
+      : [
+          `Fund public key ${readiness.publicKeyHex || "(missing key)"} on Casper testnet`,
+          "Rerun pnpm finalize:testnet to replace mock deploy evidence"
+        ])
+  ];
+
+  return {
+    generatedAt: new Date().toISOString(),
+    status: score === 100 ? "highest-prize-ready" : score >= 80 ? "final-gate" : "needs-work",
+    score,
+    maxScore: 100,
+    highestPrizeGate: realCasperDeploy,
+    criteria,
+    blockers: [...new Set(blockers)],
+    testnet: {
+      rpcStatus: readiness.rpcStatus,
+      chain: readiness.chain,
+      accountStatus: readiness.accountStatus,
+      readyForAnchor: readiness.readyForAnchor,
+      publicKeyHex: readiness.publicKeyHex,
+      faucetUrl: readiness.faucetUrl
+    },
+    currentEvidence: evidenceReady
+      ? {
+          runId: evidence.run.id,
+          receiptHash: evidence.verification.receiptHash,
+          explorerUrl: evidence.anchor?.explorerUrl || evidence.verification.explorerUrl,
+          anchorMode: evidence.anchor?.mode,
+          reportHashes
+        }
+      : null
+  };
+}
+
+function criterion({ id, label, weight, passed, blocked = false, value, evidence }) {
+  return {
+    id,
+    label,
+    weight,
+    status: passed ? "pass" : blocked ? "blocked" : "partial",
+    value,
+    evidence
+  };
+}
+
+async function hasSubmissionAssets() {
+  const files = [
+    "submission/assets/cspr-guardian-dashboard.png",
+    "submission/assets/cspr-guardian-prize-readiness.png",
+    "submission/assets/cspr-guardian-judge-proof.png",
+    "submission/assets/cspr-guardian-testnet-preflight.png",
+    "submission/assets/cspr-guardian-evidence-verification.png",
+    "submission/dorahacks-draft.md",
+    "submission/demo-video-script.md",
+    "submission/judge-evidence-map.md",
+    "submission/judge-proof-pack.json",
+    "submission/judge-proof-pack.md",
+    "submission/casper-testnet-preflight.json",
+    "submission/casper-testnet-preflight.md",
+    "submission/prize-readiness-snapshot.json",
+    "submission/submission-assets.md"
+  ];
+
+  try {
+    await Promise.all(files.map((file) => fs.access(path.join(process.cwd(), file))));
+    return true;
+  } catch {
+    return false;
+  }
+}

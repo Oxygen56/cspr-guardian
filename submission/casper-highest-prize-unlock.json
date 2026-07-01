@@ -1,0 +1,158 @@
+{
+  "version": "0.1",
+  "generatedAt": "2026-07-01T13:04:10.823Z",
+  "project": "CSPR Guardian",
+  "status": "needs_funding_and_public_links",
+  "testnet": {
+    "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+    "accountStatus": "unfunded_or_unavailable",
+    "readyForAnchor": false,
+    "balanceMotes": null,
+    "requiredMotes": "100000001",
+    "chain": "casper-test",
+    "rpcStatus": "ok",
+    "rpcUrl": "https://node.testnet.casper.network/rpc"
+  },
+  "faucet": {
+    "url": "https://testnet.cspr.live/tools/faucet",
+    "configSourceUrl": "https://testnet.cspr.live/config.js",
+    "configStatus": "detected",
+    "networkName": "casper-test",
+    "apiUrl": "https://api.testnet.cspr.live",
+    "faucetEnabled": true,
+    "walletRequired": true,
+    "recaptchaRequired": true,
+    "faucetAccountHash": "b383c7cc23d18bc1b42406a1b2d29fc8dba86425197b6f553d7fd61375b5e446"
+  },
+  "publicSubmission": {
+    "status": "missing_public_links",
+    "complete": false,
+    "missing": [
+      "repoUrl",
+      "demoUrl",
+      "videoUrl"
+    ],
+    "items": [
+      {
+        "name": "repoUrl",
+        "value": "<paste repository URL>",
+        "complete": false
+      },
+      {
+        "name": "demoUrl",
+        "value": "<paste hosted demo URL>",
+        "complete": false
+      },
+      {
+        "name": "videoUrl",
+        "value": "<paste 90-second demo video URL>",
+        "complete": false
+      }
+    ]
+  },
+  "finalSeal": {
+    "status": "needs_funding",
+    "explorerUrl": null,
+    "deployHash": null
+  },
+  "remainingGates": [
+    {
+      "name": "fund_testnet_key",
+      "complete": false,
+      "detail": "Fund the prepared Casper testnet public key through the CSPR.live faucet.",
+      "evidence": {
+        "accountStatus": "unfunded_or_unavailable",
+        "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+        "requiredMotes": "100000001",
+        "balanceMotes": null
+      }
+    },
+    {
+      "name": "publish_public_repo",
+      "complete": false,
+      "detail": "Publish the source repository and export SUBMISSION_REPO_URL."
+    },
+    {
+      "name": "publish_hosted_demo",
+      "complete": false,
+      "detail": "Deploy the demo and export SUBMISSION_DEMO_URL."
+    },
+    {
+      "name": "publish_demo_video",
+      "complete": false,
+      "detail": "Record the walkthrough and export SUBMISSION_VIDEO_URL."
+    },
+    {
+      "name": "real_casper_receipt_deploy",
+      "complete": false,
+      "readyToComplete": false,
+      "detail": "Waiting for a funded testnet key before broadcasting the real receipt deploy.",
+      "evidence": {
+        "sealStatus": "needs_funding",
+        "explorerUrl": null,
+        "deployHash": null
+      }
+    }
+  ],
+  "gates": [
+    {
+      "name": "fund_testnet_key",
+      "complete": false,
+      "detail": "Fund the prepared Casper testnet public key through the CSPR.live faucet.",
+      "evidence": {
+        "accountStatus": "unfunded_or_unavailable",
+        "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+        "requiredMotes": "100000001",
+        "balanceMotes": null
+      }
+    },
+    {
+      "name": "publish_public_repo",
+      "complete": false,
+      "detail": "Publish the source repository and export SUBMISSION_REPO_URL."
+    },
+    {
+      "name": "publish_hosted_demo",
+      "complete": false,
+      "detail": "Deploy the demo and export SUBMISSION_DEMO_URL."
+    },
+    {
+      "name": "publish_demo_video",
+      "complete": false,
+      "detail": "Record the walkthrough and export SUBMISSION_VIDEO_URL."
+    },
+    {
+      "name": "real_casper_receipt_deploy",
+      "complete": false,
+      "readyToComplete": false,
+      "detail": "Waiting for a funded testnet key before broadcasting the real receipt deploy.",
+      "evidence": {
+        "sealStatus": "needs_funding",
+        "explorerUrl": null,
+        "deployHash": null
+      }
+    }
+  ],
+  "commands": {
+    "afterFunding": [
+      "pnpm check:testnet",
+      "pnpm preflight:testnet",
+      "pnpm verify:preflight",
+      "pnpm seal:submission",
+      "pnpm audit:submission"
+    ],
+    "afterPublicLinks": [
+      "SUBMISSION_REPO_URL=<public repo> SUBMISSION_DEMO_URL=<hosted demo> SUBMISSION_VIDEO_URL=<demo video> pnpm export:buidl",
+      "pnpm export:submission",
+      "pnpm audit:submission"
+    ],
+    "finalVerification": [
+      "pnpm test",
+      "pnpm check:ci",
+      "pnpm verify:evidence",
+      "pnpm verify:preflight",
+      "pnpm verify:x402-preflight"
+    ]
+  },
+  "nextAction": "Open https://testnet.cspr.live/tools/faucet, fund the public key, then run pnpm seal:submission."
+}

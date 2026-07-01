@@ -1,0 +1,36 @@
+{
+  "name": "casper-agentic-rwa",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Agentic RWA risk intelligence marketplace with x402-style payments, MCP tool discovery, and Casper audit receipts.",
+  "scripts": {
+    "start": "sh -c 'if command -v node >/dev/null 2>&1; then node src/server.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node src/server.mjs; fi'",
+    "test": "sh -c 'if command -v node >/dev/null 2>&1; then node --test; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node --test; fi'",
+    "keygen:casper": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/generate-casper-key.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/generate-casper-key.mjs; fi'",
+    "prepare:testnet": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/prepare-testnet-key.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/prepare-testnet-key.mjs; fi'",
+    "check:testnet": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/check-testnet-readiness.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/check-testnet-readiness.mjs; fi'",
+    "preflight:testnet": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/preflight-testnet-anchor.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/preflight-testnet-anchor.mjs; fi'",
+    "preflight:x402": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/preflight-x402-settlement.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/preflight-x402-settlement.mjs; fi'",
+    "verify:preflight": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/verify-testnet-preflight.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/verify-testnet-preflight.mjs; fi'",
+    "verify:x402-preflight": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/verify-x402-settlement-preflight.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/verify-x402-settlement-preflight.mjs; fi'",
+    "verify:evidence": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/verify-evidence.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/verify-evidence.mjs; fi'",
+    "judge:proof": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/generate-judge-proof-pack.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/generate-judge-proof-pack.mjs; fi'",
+    "export:buidl": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/export-buidl-submission.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/export-buidl-submission.mjs; fi'",
+    "export:submission": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/export-submission-pack.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/export-submission-pack.mjs; fi'",
+    "seal:submission": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/seal-final-submission.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/seal-final-submission.mjs; fi'",
+    "audit:submission": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/audit-submission.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/audit-submission.mjs; fi'",
+    "check:public-demo": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/check-public-demo-readiness.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/check-public-demo-readiness.mjs; fi'",
+    "check:ci": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/check-ci-readiness.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/check-ci-readiness.mjs; fi'",
+    "unlock:highest-prize": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/prepare-highest-prize-unlock.mjs \"$@\"; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/prepare-highest-prize-unlock.mjs \"$@\"; fi' --",
+    "anchor:testnet": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/run-real-anchor.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/run-real-anchor.mjs; fi'",
+    "finalize:testnet": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/finalize-testnet-evidence.mjs; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/finalize-testnet-evidence.mjs; fi'",
+    "check:deploy": "sh -c 'if command -v node >/dev/null 2>&1; then node scripts/check-casper-deploy.mjs \"$@\"; else /Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/check-casper-deploy.mjs \"$@\"; fi' --"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "casper-js-sdk": "5.0.12"
+  }
+}

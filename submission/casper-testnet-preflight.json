@@ -1,0 +1,39 @@
+{
+  "status": "needs_funding",
+  "generatedAt": "2026-07-01T10:29:53.707Z",
+  "readiness": {
+    "rpcUrl": "https://node.testnet.casper.network/rpc",
+    "faucetUrl": "https://testnet.cspr.live/tools/faucet",
+    "keyFile": ".local/casper-testnet-key.json",
+    "requiredMotes": "100000001",
+    "rpcStatus": "ok",
+    "accountStatus": "unfunded_or_unavailable",
+    "readyForAnchor": false,
+    "apiVersion": "2.0.0",
+    "chain": "casper-test",
+    "latestBlock": 8360258,
+    "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+    "balanceError": "Code: -32026, err: Purse not found"
+  },
+  "preflight": {
+    "mode": "real",
+    "status": "prepared",
+    "deployHash": "88baa2326ad7f124eab1335a08a44bc765214ff6b65d3d0a4316904000e8de5b",
+    "network": "casper-test",
+    "rpcUrl": "https://node.testnet.casper.network/rpc",
+    "signerPublicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+    "recipientPublicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+    "transferAmount": "1",
+    "paymentAmount": "100000000",
+    "memo": "17374232459717265509",
+    "memoSource": "f11dac5e96824865",
+    "memoBits": 64,
+    "memoDerivation": "uint64(first_16_hex_chars(receiptHash))",
+    "receiptHash": "f11dac5e96824865297a9f32a1cf53e615a5bcb6fcf59a426241c98521d8704b",
+    "deployBuild": {
+      "status": "ok",
+      "signed": true,
+      "broadcast": false
+    }
+  }
+}

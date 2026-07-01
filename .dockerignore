@@ -1,0 +1,9 @@
+.git
+.local
+.env
+node_modules
+outputs
+*.log
+*.zip
+casper-final-submission-seal.*
+casper-submission-audit.*

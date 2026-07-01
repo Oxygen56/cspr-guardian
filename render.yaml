@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: cspr-guardian
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: 4173
+      - key: CASPER_MODE
+        value: mock
+      - key: CASPER_NETWORK
+        value: casper-test
+      - key: CASPER_CHAIN_NAME
+        value: casper-test
+      - key: CASPER_NODE_RPC
+        value: https://node.testnet.casper.network/rpc
+      - key: CASPER_PRIVATE_KEY_FILE
+        value: .local/casper-testnet-key.json
+      - key: CASPER_RECEIPT_TRANSFER_MOTES
+        value: "1"
+      - key: CASPER_RECEIPT_PAYMENT_MOTES
+        value: "100000000"

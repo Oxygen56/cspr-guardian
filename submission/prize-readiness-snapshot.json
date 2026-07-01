@@ -1,0 +1,82 @@
+{
+  "generatedAt": "2026-07-01T13:04:55.622Z",
+  "status": "final-gate",
+  "score": 80,
+  "maxScore": 100,
+  "highestPrizeGate": false,
+  "criteria": [
+    {
+      "id": "x402-paid-tools",
+      "label": "x402 paid tools",
+      "weight": 20,
+      "status": "pass",
+      "value": "4/4 signed proofs",
+      "evidence": "Four paid CSPR tools with signed authorizations"
+    },
+    {
+      "id": "mcp-tool-discovery",
+      "label": "MCP tool discovery",
+      "weight": 15,
+      "status": "pass",
+      "value": "7 discoverable tools",
+      "evidence": "/mcp/tools exposes paid intelligence and receipt tools"
+    },
+    {
+      "id": "agentic-rwa-workflow",
+      "label": "Agentic RWA workflow",
+      "weight": 20,
+      "status": "pass",
+      "value": "0.62 CSPR/run",
+      "evidence": "Risk, KYB, liquidity, covenant, policy decision, provider revenue"
+    },
+    {
+      "id": "independent-verifier",
+      "label": "Independent verifier",
+      "weight": 15,
+      "status": "pass",
+      "value": "34/34",
+      "evidence": "Signatures, hashes, receipt, and revenue recompute"
+    },
+    {
+      "id": "casper-receipt",
+      "label": "Casper receipt",
+      "weight": 20,
+      "status": "blocked",
+      "value": "needs funding",
+      "evidence": "Fund testnet key and run pnpm finalize:testnet"
+    },
+    {
+      "id": "submission-assets",
+      "label": "Submission assets",
+      "weight": 10,
+      "status": "pass",
+      "value": "screenshots ready",
+      "evidence": "Dashboard screenshot, verifier screenshot, copy-ready submission notes"
+    }
+  ],
+  "blockers": [
+    "Fund testnet key and run pnpm finalize:testnet",
+    "Fund public key 011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2 on Casper testnet",
+    "Rerun pnpm finalize:testnet to replace mock deploy evidence"
+  ],
+  "testnet": {
+    "rpcStatus": "ok",
+    "chain": "casper-test",
+    "accountStatus": "unfunded_or_unavailable",
+    "readyForAnchor": false,
+    "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+    "faucetUrl": "https://testnet.cspr.live/tools/faucet"
+  },
+  "currentEvidence": {
+    "runId": "run-5f729979-c9d0-4994-b010-33cf81c5b65d",
+    "receiptHash": "8ba22593096fa22d58671eb8b1e2b7029840eb58c6b325e4089db00a460f72b4",
+    "explorerUrl": "https://testnet.cspr.live/deploy/mock-casper-receipt-8ba22593096fa22d58671eb8b1e2b7029840eb58c6b325e4",
+    "anchorMode": "mock",
+    "reportHashes": {
+      "risk": "81d06f2499c1f01b1fba7f6aac0ab04fe5148aedf206d96ea7e1ce6cb8cc2880",
+      "kyb": "54f0a25dc046d2cecc0a804f74085f09a9ab1e6306f8f32b23236ea613b7fc22",
+      "liquidity": "6d25b444e94b8c58497524c0f642433bdb7ebf923257496d05adedd869538fe3",
+      "covenant": "8267de9604c0ee1dc20389da7a2503c8a7c3358072738d77ccaf66e11f6380a1"
+    }
+  }
+}
