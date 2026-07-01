@@ -42,7 +42,7 @@ transfer to the signer account itself.
 Safer local workflow:
 
 ```bash
-pnpm prepare:testnet
+npm run prepare:testnet
 ```
 
 This writes `.local/casper-testnet-key.json` with file mode `600`, writes
@@ -52,7 +52,7 @@ commit or upload `.local/`.
 Raw keygen workflow:
 
 ```bash
-pnpm keygen:casper
+npm run keygen:casper
 ```
 
 Fund the printed `publicKeyHex` with Casper testnet CSPR. The current official
@@ -61,7 +61,7 @@ faucet path is through CSPR.live testnet with Casper Wallet connected.
 ## Check Funding And RPC Health
 
 ```bash
-CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json pnpm check:testnet
+CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json npm run check:testnet
 ```
 
 The readiness script and the dashboard Testnet Readiness panel confirm:
@@ -94,7 +94,7 @@ Before broadcasting, build and sign a real transfer deploy locally without
 submitting it:
 
 ```bash
-CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json pnpm preflight:testnet
+CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json npm run preflight:testnet
 ```
 
 This catches key, SDK, chain, payment, transfer, deploy-hash, and memo-format
@@ -109,7 +109,7 @@ equal to `ok`.
 Verify the generated preflight evidence:
 
 ```bash
-pnpm verify:preflight
+npm run verify:preflight
 ```
 
 The verifier checks that the preflight came from the real Casper adapter, the
@@ -129,7 +129,7 @@ button and only returns public deploy-build metadata.
 ## Run A Real Anchor
 
 ```bash
-CASPER_MODE=real pnpm start
+CASPER_MODE=real npm start
 ```
 
 Then run the dashboard scenario. The `Casper Receipt` panel should show:
@@ -143,13 +143,13 @@ Then run the dashboard scenario. The `Casper Receipt` panel should show:
 You can also run the flow without the browser:
 
 ```bash
-CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json pnpm anchor:testnet
+CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json npm run anchor:testnet
 ```
 
 For final submission, run the post-funding evidence pipeline:
 
 ```bash
-CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json pnpm finalize:testnet
+CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json npm run finalize:testnet
 ```
 
 It checks funding, runs the real anchor, waits for the deploy to become
@@ -158,7 +158,7 @@ queryable, verifies the evidence bundle, and writes final evidence files.
 Verify the returned deploy hash:
 
 ```bash
-pnpm check:deploy <deploy-hash>
+npm run check:deploy -- <deploy-hash>
 ```
 
 ## One-Command Final Seal
@@ -166,7 +166,7 @@ pnpm check:deploy <deploy-hash>
 After the prepared public key is funded, run:
 
 ```bash
-pnpm seal:submission
+npm run seal:submission
 ```
 
 If the account is still unfunded, this writes
@@ -181,7 +181,7 @@ After the proof files and screenshots are current, gather the source archive,
 writeup, screenshots, preflight proof, judge proof, and SHA-256 manifest:
 
 ```bash
-pnpm export:submission
+npm run export:submission
 ```
 
 This writes `cspr-guardian-final-submission/` and

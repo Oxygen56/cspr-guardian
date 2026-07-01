@@ -7,39 +7,39 @@ true and visible to judges.
 
 - Real Casper testnet transaction or deploy hash for one decision receipt.
 - Explorer link that opens the receipt transaction.
-- `pnpm check:testnet` output showing RPC health, funded account status, and
+- `npm run check:testnet` output showing RPC health, funded account status, and
   enough balance for the receipt anchor.
-- `pnpm preflight:testnet` output showing a signed deploy build with
+- `npm run preflight:testnet` output showing a signed deploy build with
   `deployBuild.status: "ok"` and a numeric memo derived from the receipt hash.
-- `pnpm verify:preflight` output showing the real deploy preflight checks
+- `npm run verify:preflight` output showing the real deploy preflight checks
   passing without exposing private key material.
-- `pnpm preflight:x402` and `pnpm verify:x402-preflight` output showing all
+- `npm run preflight:x402` and `npm run verify:x402-preflight` output showing all
   four x402 paid tool payments can build signed Casper transfer deploys without
   broadcasting or exposing private key material.
-- `pnpm unlock:highest-prize` output producing
+- `npm run unlock:highest-prize` output producing
   `casper-highest-prize-unlock.json` and `.md`, with faucet/wallet funding
   state, public-link state, and the exact post-funding commands.
 - `PAYMENT-REQUIRED` response visible for at least one paid oracle.
 - Signed x402-Casper payment proof visible in the receipt JSON or logs.
 - Downloadable Evidence Bundle JSON with x402 proofs, report hashes, decision
   hash, receipt hash, and evidence hash.
-- Evidence Verification panel or `pnpm verify:evidence` output showing all
+- Evidence Verification panel or `npm run verify:evidence` output showing all
   signature, hash, receipt, and revenue checks passing.
-- `pnpm judge:proof` output showing the 402 challenge, signed authorization,
+- `npm run judge:proof` output showing the 402 challenge, signed authorization,
   replay rejection, agent run, verifier, and final Casper gate.
-- `pnpm export:submission` output producing a final submission directory and
+- `npm run export:submission` output producing a final submission directory and
   zip with `manifest.json` SHA-256 hashes.
-- `pnpm seal:submission` output producing `casper-final-submission-seal.json`
+- `npm run seal:submission` output producing `casper-final-submission-seal.json`
   and `.md`; before funding it must say `needs_funding`, after funding it must
   say `ready_for_highest_prize_submission`.
-- `pnpm audit:submission` output producing `casper-submission-audit.json` and
+- `npm run audit:submission` output producing `casper-submission-audit.json` and
   `.md`; before funding and public-link upload it should say
   `ready_except_external_submission_gates`, after funding and link export it
   should say `ready_for_highest_prize_submission`.
-- `pnpm check:public-demo` output producing `casper-public-demo-readiness.json`
+- `npm run check:public-demo` output producing `casper-public-demo-readiness.json`
   and `casper-public-demo-handoff.md`; before public-link upload only
   `public_links_configured` should be missing.
-- `pnpm check:ci` output producing `casper-ci-readiness.json` and `.md`, plus
+- `npm run check:ci` output producing `casper-ci-readiness.json` and `.md`, plus
   a green GitHub Actions run from `.github/workflows/submission-readiness.yml`.
 - Repository URL with source code, README, and local run instructions.
 - Hosted demo URL or a screen recording that proves the flow.
@@ -72,21 +72,21 @@ true and visible to judges.
 
 ## Next Implementation Tasks
 
-1. Run `pnpm check:public-demo` and use `casper-public-demo-handoff.md` to
+1. Run `npm run check:public-demo` and use `casper-public-demo-handoff.md` to
    publish the repository, host the demo, and record/upload the walkthrough.
-2. Run `pnpm check:ci` and confirm local readiness passes.
+2. Run `npm run check:ci` and confirm local readiness passes.
 3. Export BUIDL fields with `SUBMISSION_REPO_URL`, `SUBMISSION_DEMO_URL`, and
    `SUBMISSION_VIDEO_URL`.
 4. Fund the generated testnet public key.
-5. Run `pnpm check:testnet` until `readyForAnchor` is `true`.
-6. Run `pnpm unlock:highest-prize` and confirm funding/public-link gates are
+5. Run `npm run check:testnet` until `readyForAnchor` is `true`.
+6. Run `npm run unlock:highest-prize` and confirm funding/public-link gates are
    accurately reported.
-7. Run `pnpm preflight:testnet` and confirm the signed deploy build is `ok`.
-8. Run `pnpm verify:preflight` and confirm every preflight check passes.
-9. Run `pnpm preflight:x402` and `pnpm verify:x402-preflight`.
-10. Run `pnpm seal:submission` to finalize the real deploy, rebuild proof files,
+7. Run `npm run preflight:testnet` and confirm the signed deploy build is `ok`.
+8. Run `npm run verify:preflight` and confirm every preflight check passes.
+9. Run `npm run preflight:x402` and `npm run verify:x402-preflight`.
+10. Run `npm run seal:submission` to finalize the real deploy, rebuild proof files,
    rebuild the source zip, and export the final pack.
-11. Run `pnpm audit:submission` and confirm all checks pass.
+11. Run `npm run audit:submission` and confirm all checks pass.
 12. Confirm `casper-final-submission-seal.json` says
    `ready_for_highest_prize_submission`.
 13. Confirm `casper-submission-audit.json` says
