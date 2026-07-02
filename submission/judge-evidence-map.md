@@ -49,8 +49,8 @@ an audit trail that can be inspected after the demo.
 | Innovation and originality | End-to-end paid RWA intelligence market, not a simple API wrapper or chatbot |
 | AI agent use | The agent discovers tools, pays, consumes paid data, decides under policy, and exports proof |
 | Casper integration | x402-style Casper payments, Casper testnet public key, deploy preflight, real transaction, receipt hash, and CSPR.live explorer URL |
-| User and judge experience | Hosted demo, 64-second walkthrough, proof screenshots, copy-ready BUIDL fields, downloadable JSON artifacts |
-| Fast rubric review | One-page scorecard maps proof to technical execution, Casper integration, agent workflow, innovation, and judge UX |
+| User and judge experience | Hosted demo, 64-second walkthrough, architecture map, proof screenshots, copy-ready BUIDL fields, downloadable JSON artifacts |
+| Fast rubric review | One-page scorecard and trust-boundary map show technical execution, Casper integration, agent workflow, innovation, and judge UX |
 
 ## Evidence Table
 
@@ -76,6 +76,7 @@ an audit trail that can be inspected after the demo.
 | Browser-accessible proof | Final audit, proof pack, seal, preflight, BUIDL, CI, and public demo artifacts are linked from one page | `docs/proof-room.html`, `docs/proof/*` |
 | Artifact integrity | Every public proof-room Markdown/JSON artifact has a published SHA-256 hash | `docs/proof/proof-manifest.md`, `npm run proof:manifest` |
 | Competitive differentiation | Visible buildathon categories are addressed without unsupported claims about other teams | `docs/proof/competitive-positioning.md` |
+| Architecture clarity | Payment, replay, settlement, policy, verifier, Casper anchor, and secret-handling boundaries are mapped to proof artifacts | `docs/architecture.html`, `docs/proof/architecture.md` |
 | Submission auditability | Final pack, BUIDL page, seal, leak scan, source zip exclusions, and self-reference checks are verified before upload | Submission Audit panel, `casper-submission-audit.md`, `npm run audit:submission` |
 | Highest-prize unlock gate | Faucet funding, wallet/reCAPTCHA requirement, public links, and post-funding commands are consolidated | `submission/casper-highest-prize-unlock.md`, `npm run unlock:highest-prize` |
 | Hosted demo readiness | Docker, Render blueprint, health endpoint, and public-link export path are prepared | `casper-public-demo-handoff.md`, `npm run check:public-demo`, `/api/health` |
@@ -117,6 +118,8 @@ an audit trail that can be inspected after the demo.
 - `docs/proof-room.html`: public proof room with browser-accessible audit,
   proof pack, seal, preflight, BUIDL, CI, and public demo artifacts.
 - `docs/judge-scorecard.html`: one-page rubric scorecard for judges.
+- `docs/architecture.html`: one-screen architecture and trust-boundary map.
+- `docs/proof/architecture.md`: hashed Markdown architecture proof.
 - `docs/proof/judge-scorecard.md`: Markdown scorecard included in the proof manifest.
 - `docs/proof/casper-scenario-matrix.md`: repeatable RWA scenario matrix.
 - `docs/proof/casper-scenario-matrix.json`: machine-readable scenario matrix.

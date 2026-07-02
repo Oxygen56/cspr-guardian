@@ -79,6 +79,7 @@ export async function generateBuidlSubmissionPage({ outputDir } = {}) {
       finalSeal: "casper-final-submission-seal.md",
       preflight: "casper-testnet-preflight.md",
       x402SettlementBatch: "casper-x402-settlement-batch.md",
+      architecture: "architecture.md",
       screenshots: [
         "cspr-guardian-dashboard.png",
         "cspr-guardian-prize-readiness.png",
@@ -195,8 +196,8 @@ independent verification, a public demo, and a real Casper testnet receipt.
 
 The hosted proof room gives judges browser-accessible Markdown and JSON
 artifacts for the final audit, proof pack, submission seal, testnet evidence,
-preflight files, x402 settlement batch, BUIDL fields, CI readiness, and public
-demo readiness:
+preflight files, x402 settlement batch, architecture and threat model, BUIDL
+fields, CI readiness, and public demo readiness:
 https://oxygen56.github.io/cspr-guardian/proof-room.html
 
 ## Rubric Alignment
@@ -207,7 +208,7 @@ https://oxygen56.github.io/cspr-guardian/proof-room.html
 | Innovation and originality | Paid RWA intelligence market with autonomous buyers, paid providers, replay-safe payment proofs, and verifiable allocation evidence |
 | AI agent use | Agent discovers tools, pays, consumes risk/KYB/liquidity/covenant data, decides under policy, and exports proof |
 | Casper integration | x402-style Casper payments, testnet account, settlement anchors, receipt hash, deploy evidence, and explorer URLs |
-| Judge experience | Hosted demo, 64-second walkthrough, screenshots, proof pack, audit output, and copy-ready links |
+| Judge experience | Hosted demo, 64-second walkthrough, one-screen architecture map, screenshots, proof pack, audit output, and copy-ready links |
 
 ## Readiness
 
@@ -257,9 +258,10 @@ ${paidTools}
 4. Show paid RWA risk, KYB, liquidity, and covenant reports.
 5. Show the decision, provider revenue, run history, and receipt hash.
 6. Open the x402 settlement batch with four Casper testnet transaction links.
-7. Show Evidence Verification with all checks passing.
-8. Show Final Seal and the submission pack hash.
-9. Open the real CSPR.live explorer URL for the final receipt.
+7. Open the architecture map and show trust boundaries.
+8. Show Evidence Verification with all checks passing.
+9. Show Final Seal and the submission pack hash.
+10. Open the real CSPR.live explorer URL for the final receipt.
 
 ## Artifacts
 
@@ -270,6 +272,7 @@ ${paidTools}
 - Final seal: \`${page.artifacts.finalSeal}\`
 - Preflight proof: \`${page.artifacts.preflight}\`
 - x402 settlement batch: \`${page.artifacts.x402SettlementBatch}\`
+- Architecture and threat model: \`${page.artifacts.architecture}\`
 
 Screenshots:
 

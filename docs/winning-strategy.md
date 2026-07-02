@@ -42,6 +42,9 @@ The highest-prize version demonstrates these things in one tight flow:
   Guardian's complete Casper-native evidence loop.
 - Judge scorecard gives reviewers a one-page route through the rubric,
   final receipt, proof room, manifest, and competitive brief.
+- Architecture and threat model gives reviewers a one-screen map from payment,
+  replay safety, settlement anchors, policy decision, verifier, and Casper
+  receipt to public proof artifacts.
 - Scenario matrix proves the policy is repeatable across treasury,
   invoice-finance, and trade-credit assets.
 - x402 settlement batch publishes four Casper testnet settlement-anchor
@@ -61,8 +64,6 @@ allocation, independent verification, and a real Casper receipt.
 These are optional next improvements. They are not remaining submission gates:
 
 1. Add a hosted provider dashboard with paid tool revenue across users.
-2. Add a short architecture diagram showing agent, paid tools, verifier, and
-  Casper receipt in one screen.
 
 ## Judging Hooks
 

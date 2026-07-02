@@ -36,7 +36,8 @@ It combines the buildathon primitives into a single complete loop:
 7. Policy-bounded autonomous allocation.
 8. Independent evidence verification.
 9. Real Casper testnet receipt.
-10. Public proof room with SHA-256 hashes for every proof artifact.
+10. One-screen architecture and threat model mapping trust boundaries to proof.
+11. Public proof room with SHA-256 hashes for every proof artifact.
 
 ## Why This Should Stand Out
 
@@ -49,6 +50,9 @@ It combines the buildathon primitives into a single complete loop:
   checks are all required before the allocation decision.
 - The evidence is reviewer-friendly. Judges can inspect screenshots, Markdown,
   JSON, a proof room, a proof manifest, and a final submission audit.
+- The architecture is explicit. Payment challenge, replay protection,
+  settlement anchoring, policy decision, verification, Casper receipt, and
+  secret handling are mapped to public artifacts.
 - The proof is machine-checkable. The verifier recomputes signatures, payment
   hashes, report hashes, decision hash, receipt hash, evidence hash, and revenue
   totals.

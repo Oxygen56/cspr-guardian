@@ -110,6 +110,7 @@ function roleFor(fileName) {
   if (fileName.includes("x402-settlement-preflight")) return "signed x402 settlement preflight";
   if (fileName.includes("ci-readiness")) return "CI readiness";
   if (fileName.includes("public-demo")) return "public demo readiness";
+  if (fileName.includes("architecture")) return "architecture and threat model";
   if (fileName.includes("judge-scorecard")) return "judge scorecard";
   if (fileName.includes("competitive-positioning")) return "competitive positioning brief";
   if (fileName.includes("highest-prize-unlock")) return "highest-prize unlock report";

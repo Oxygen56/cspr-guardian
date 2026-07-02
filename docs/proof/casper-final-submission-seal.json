@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T15:34:09.518Z",
+  "generatedAt": "2026-07-02T16:30:34.236Z",
   "project": "CSPR Guardian",
   "status": "ready_for_highest_prize_submission",
   "finalGate": {
@@ -26,9 +26,9 @@
   "submissionPack": {
     "status": "ready",
     "missingRequired": 0,
-    "files": 40,
+    "files": 42,
     "zipPath": "cspr-guardian-final-submission.zip",
-    "zipSha256": "1d4cb90786ee453bfb503b6c199866bc19f11826f26294e536270fe17fe33e89",
+    "zipSha256": "fed1ce2ee93c72a82967de8860c56d505a56428d789b32fe8a1996dba5508ef4",
     "finalGate": {
       "highestPrizeGate": true,
       "prizeStatus": "highest-prize-ready",

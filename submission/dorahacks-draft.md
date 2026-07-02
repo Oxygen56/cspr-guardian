@@ -22,10 +22,15 @@ Final proof:
 - Submission audit: `15/15` checks passing, `0` blocked, `0` failed.
 - x402 settlement anchors: four Casper testnet transactions tied to signed
   x402 authorizations.
+- Architecture map: one-screen trust-boundary view for discovery, HTTP 402,
+  replay-safe payment, settlement anchors, policy decision, verifier, and
+  secret handling.
 - Judge proof room:
   `https://oxygen56.github.io/cspr-guardian/proof-room.html`.
 - Judge scorecard:
   `https://oxygen56.github.io/cspr-guardian/judge-scorecard.html`.
+- Architecture and threat model:
+  `https://oxygen56.github.io/cspr-guardian/architecture.html`.
 - Competitive positioning:
   `https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md`.
 - Repeatable scenario matrix:

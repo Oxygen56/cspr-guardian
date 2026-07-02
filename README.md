@@ -13,6 +13,8 @@ Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 
 Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
 
+Architecture map: https://oxygen56.github.io/cspr-guardian/architecture.html
+
 Public proof manifest: https://oxygen56.github.io/cspr-guardian/proof/proof-manifest.md
 
 Scenario matrix: https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md
@@ -46,6 +48,8 @@ and `ready_for_highest_prize_submission` audit status.
   buildathon categories without relying on unsupported claims about other teams.
 - It gives judges a one-page scorecard that maps the project to technical
   execution, Casper integration, agent workflow, innovation, and judge UX.
+- It gives judges a one-screen architecture and threat model showing every
+  trust boundary and the artifact that verifies it.
 - It proves repeatability across three RWA asset types with distinct policy
   outcomes, not only one invoice-finance happy path.
 
