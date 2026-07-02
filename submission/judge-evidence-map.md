@@ -22,6 +22,8 @@ Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
 
 Reality boundary and judge FAQ: https://oxygen56.github.io/cspr-guardian/judge-faq.html
 
+Browser proof verifier: https://oxygen56.github.io/cspr-guardian/verifier.html
+
 Casper receipt:
 https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
 
@@ -51,7 +53,7 @@ an audit trail that can be inspected after the demo.
 | Innovation and originality | End-to-end paid RWA intelligence market, not a simple API wrapper or chatbot |
 | AI agent use | The agent discovers tools, pays, consumes paid data, decides under policy, and exports proof |
 | Casper integration | x402-style Casper payments, Casper testnet public key, deploy preflight, real transaction, receipt hash, and CSPR.live explorer URL |
-| User and judge experience | Hosted demo, 64-second walkthrough, architecture map, reality boundary FAQ, proof screenshots, copy-ready BUIDL fields, downloadable JSON artifacts |
+| User and judge experience | Hosted demo, 64-second walkthrough, architecture map, browser verifier, reality boundary FAQ, proof screenshots, copy-ready BUIDL fields, downloadable JSON artifacts |
 | Fast rubric review | One-page scorecard and trust-boundary map show technical execution, Casper integration, agent workflow, innovation, and judge UX |
 
 ## Evidence Table
@@ -77,6 +79,7 @@ an audit trail that can be inspected after the demo.
 | One-minute judge path | Scorecard gives judges a direct route through readiness, receipt, audit, manifest, and competitive proof | `docs/judge-scorecard.html`, `docs/proof/judge-scorecard.md` |
 | Browser-accessible proof | Final audit, proof pack, seal, preflight, BUIDL, CI, and public demo artifacts are linked from one page | `docs/proof-room.html`, `docs/proof/*` |
 | Artifact integrity | Every public proof-room Markdown/JSON artifact has a published SHA-256 hash | `docs/proof/proof-manifest.md`, `npm run proof:manifest` |
+| Browser verification | Judges can recompute public proof artifact SHA-256 hashes without cloning or running local commands | `docs/verifier.html`, `docs/proof/browser-verifier.md` |
 | Competitive differentiation | Visible buildathon categories are addressed without unsupported claims about other teams | `docs/proof/competitive-positioning.md` |
 | Architecture clarity | Payment, replay, settlement, policy, verifier, Casper anchor, and secret-handling boundaries are mapped to proof artifacts | `docs/architecture.html`, `docs/proof/architecture.md` |
 | Reality boundary | Testnet prototype scope, reproducible provider data, public evidence, and production requirements are explicit | `docs/judge-faq.html`, `docs/proof/judge-faq.md` |
@@ -122,6 +125,8 @@ an audit trail that can be inspected after the demo.
   proof pack, seal, preflight, BUIDL, CI, and public demo artifacts.
 - `docs/judge-scorecard.html`: one-page rubric scorecard for judges.
 - `docs/architecture.html`: one-screen architecture and trust-boundary map.
+- `docs/verifier.html`: browser proof verifier for public artifact hashes.
+- `docs/proof/browser-verifier.md`: hashed Markdown verifier proof.
 - `docs/proof/architecture.md`: hashed Markdown architecture proof.
 - `docs/judge-faq.html`: reality boundary and judge FAQ.
 - `docs/proof/judge-faq.md`: hashed Markdown reality boundary proof.
@@ -148,10 +153,11 @@ an audit trail that can be inspected after the demo.
 5. Show Scenario Matrix: three RWA assets, distinct policy outcomes, same paid tools.
 6. Show Judge Proof Pack: 402 challenge, signed payment, replay rejected, final gate.
 7. Show Provider Ledger: `0.62 CSPR` revenue across four paid tools.
-8. Show Reality Boundary: testnet scope, reproducible sample data, and production requirements.
-9. Show Evidence Verification: `34/34` recomputed checks.
-10. Show Submission Audit: final submission checks passing.
-11. Close with the repeatable model: any RWA intelligence provider can expose a
+8. Run Browser Verifier: every public proof artifact hash recomputes in browser.
+9. Show Reality Boundary: testnet scope, reproducible sample data, and production requirements.
+10. Show Evidence Verification: `34/34` recomputed checks.
+11. Show Submission Audit: final submission checks passing.
+12. Close with the repeatable model: any RWA intelligence provider can expose a
    paid MCP tool, and any autonomous treasury can buy intelligence with an
    auditable Casper receipt.
 

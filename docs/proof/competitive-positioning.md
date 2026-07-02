@@ -37,8 +37,9 @@ It combines the buildathon primitives into a single complete loop:
 8. Independent evidence verification.
 9. Real Casper testnet receipt.
 10. One-screen architecture and threat model mapping trust boundaries to proof.
-11. Reality boundary FAQ that separates real testnet evidence from prototype scope.
-12. Public proof room with SHA-256 hashes for every proof artifact.
+11. Browser proof verifier that recomputes public artifact SHA-256 hashes.
+12. Reality boundary FAQ that separates real testnet evidence from prototype scope.
+13. Public proof room with SHA-256 hashes for every proof artifact.
 
 ## Why This Should Stand Out
 
@@ -51,6 +52,8 @@ It combines the buildathon primitives into a single complete loop:
   checks are all required before the allocation decision.
 - The evidence is reviewer-friendly. Judges can inspect screenshots, Markdown,
   JSON, a proof room, a proof manifest, and a final submission audit.
+- The integrity check is browser-native. Judges can run the verifier page and
+  recompute the proof-room hashes without cloning the repo.
 - The architecture is explicit. Payment challenge, replay protection,
   settlement anchoring, policy decision, verification, Casper receipt, and
   secret handling are mapped to public artifacts.

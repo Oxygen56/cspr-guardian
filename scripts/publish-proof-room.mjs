@@ -57,11 +57,14 @@ await fs.writeFile(path.join(PROOF_DIR, "architecture.md"), architecture);
 const judgeFaq = await fs.readFile(path.join(PROJECT_DIR, "submission/judge-faq.md"), "utf8");
 await fs.writeFile(path.join(PROOF_DIR, "judge-faq.md"), judgeFaq);
 
+const browserVerifier = await fs.readFile(path.join(PROJECT_DIR, "submission/browser-verifier.md"), "utf8");
+await fs.writeFile(path.join(PROOF_DIR, "browser-verifier.md"), browserVerifier);
+
 console.log(
   JSON.stringify(
     {
       status: "proof-room-published",
-      files: PROOF_FILES.length + 4,
+      files: PROOF_FILES.length + 5,
       proofDir: "docs/proof"
     },
     null,

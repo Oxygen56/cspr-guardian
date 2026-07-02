@@ -17,6 +17,8 @@ Architecture map: https://oxygen56.github.io/cspr-guardian/architecture.html
 
 Reality boundary and judge FAQ: https://oxygen56.github.io/cspr-guardian/judge-faq.html
 
+Browser proof verifier: https://oxygen56.github.io/cspr-guardian/verifier.html
+
 Public proof manifest: https://oxygen56.github.io/cspr-guardian/proof/proof-manifest.md
 
 Scenario matrix: https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md
@@ -54,6 +56,8 @@ and `ready_for_highest_prize_submission` audit status.
   trust boundary and the artifact that verifies it.
 - It gives judges a reality boundary and FAQ that separates real testnet
   evidence, reproducible sample provider data, and production requirements.
+- It gives judges a browser proof verifier that fetches every public proof
+  artifact and recomputes SHA-256 hashes against the published manifest.
 - It proves repeatability across three RWA asset types with distinct policy
   outcomes, not only one invoice-finance happy path.
 
@@ -71,6 +75,8 @@ require licensed data providers, custody controls, compliance review, provider
 settlement policy, monitoring, and incident response.
 
 Judge FAQ: https://oxygen56.github.io/cspr-guardian/judge-faq.html
+
+Browser verifier: https://oxygen56.github.io/cspr-guardian/verifier.html
 
 ## Run
 

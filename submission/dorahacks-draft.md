@@ -27,6 +27,8 @@ Final proof:
   secret handling.
 - Reality boundary and judge FAQ: clear separation between real testnet
   evidence, reproducible sample provider data, and production requirements.
+- Browser proof verifier: judges can recompute every public proof artifact
+  SHA-256 directly in the browser.
 - Judge proof room:
   `https://oxygen56.github.io/cspr-guardian/proof-room.html`.
 - Judge scorecard:
@@ -35,6 +37,8 @@ Final proof:
   `https://oxygen56.github.io/cspr-guardian/architecture.html`.
 - Reality boundary and judge FAQ:
   `https://oxygen56.github.io/cspr-guardian/judge-faq.html`.
+- Browser proof verifier:
+  `https://oxygen56.github.io/cspr-guardian/verifier.html`.
 - Competitive positioning:
   `https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md`.
 - Repeatable scenario matrix:
@@ -124,7 +128,8 @@ signals into a single verifiable workflow:
    replay rejection, agentic RWA run, independent verification, and final gate.
 6. Open the x402 Settlement Batch to show four public Casper testnet anchors.
 7. Open the Scenario Matrix to show repeatable outcomes across three RWA assets.
-8. Open the Reality Boundary FAQ to show what is real, what is testnet
+8. Run the Browser Proof Verifier to recompute the public proof manifest hashes.
+9. Open the Reality Boundary FAQ to show what is real, what is testnet
    prototype scope, and what production work remains.
-9. Inspect Evidence Verification for `34/34` recomputed checks.
-10. Inspect Submission Audit for final submission checks.
+10. Inspect Evidence Verification for `34/34` recomputed checks.
+11. Inspect Submission Audit for final submission checks.
