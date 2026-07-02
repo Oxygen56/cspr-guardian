@@ -16,7 +16,7 @@ testnet account.
 5. Submit it with `RpcClient.putDeploy`.
 6. Return a CSPR.live testnet explorer link.
 
-This is the fastest path to public receipt evidence. A later prize-hardening
+This is the fastest path to public receipt evidence. A later review-hardening
 step can replace the transfer memo with a dedicated receipt registry contract.
 
 ## Required Environment

@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSPR Guardian Judge Decision</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17202a;
+        --muted: #5c6b7a;
+        --line: #d7dee7;
+        --panel: #ffffff;
+        --bg: #f3f6f8;
+        --dark: #111827;
+        --accent: #cc1f2f;
+        --accent-soft: #ffe8ea;
+        --ok: #157f54;
+        --gold: #8c6500;
+        --gold-soft: #fff6d6;
+        --gold-line: #e7c65c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.5;
+      }
+
+      header {
+        background: var(--dark);
+        color: white;
+        padding: 44px 24px 32px;
+      }
+
+      header div,
+      main {
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2.1rem, 4vw, 4.2rem);
+        line-height: 1.03;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+        font-size: 1.45rem;
+      }
+
+      h3 {
+        margin: 0 0 8px;
+        font-size: 1.05rem;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      a {
+        color: var(--accent);
+        font-weight: 750;
+      }
+
+      main {
+        padding: 24px;
+      }
+
+      section {
+        margin-top: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 20px;
+        background: var(--panel);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .button-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 8px;
+        padding: 0 14px;
+        color: white;
+        background: rgba(255, 255, 255, 0.08);
+        text-decoration: none;
+      }
+
+      .button-link.primary {
+        border-color: white;
+        background: white;
+        color: var(--dark);
+      }
+
+      .metrics,
+      .decision-grid,
+      .proof-grid,
+      .edge-grid,
+      .path {
+        display: grid;
+        gap: 12px;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        margin-top: 24px;
+      }
+
+      .metric,
+      .decision-card,
+      .proof-item,
+      .edge-item,
+      .path li {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        background: #fbfcfd;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.45rem;
+      }
+
+      .metric span,
+      .muted {
+        color: var(--muted);
+      }
+
+      .verdict {
+        border-color: var(--gold-line);
+        background: var(--gold-soft);
+      }
+
+      .verdict h2 {
+        color: var(--gold);
+      }
+
+      .decision-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .proof-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .edge-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .decision-card strong,
+      .proof-item strong,
+      .edge-item strong,
+      .path strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--accent);
+      }
+
+      .path {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        padding: 0;
+        list-style: none;
+      }
+
+      .pill {
+        display: inline-block;
+        margin: 0 8px 8px 0;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: #941421;
+        font-weight: 750;
+        font-size: 0.88rem;
+      }
+
+      .pill.ok {
+        background: #e6f5ee;
+        color: var(--ok);
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: white;
+      }
+
+      code {
+        display: block;
+        margin-top: 10px;
+        padding: 12px;
+        overflow-wrap: anywhere;
+        border-radius: 8px;
+        background: #101827;
+        color: #e6edf5;
+      }
+
+      @media (max-width: 940px) {
+        .metrics,
+        .decision-grid,
+        .proof-grid,
+        .edge-grid,
+        .path {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <p><a href="./">Back to judge demo</a></p>
+        <h1>Judge Decision</h1>
+        <p>
+          The final review path for CSPR Guardian: verdict,
+          proof chain, Casper fit, competitive edge, and scope boundary in one
+          page.
+        </p>
+        <div class="actions">
+          <a class="button-link primary" href="verifier.html">Run browser verifier</a>
+          <a class="button-link" href="proof-room.html">Open proof room</a>
+          <a class="button-link" href="judge-scorecard.html">Open scorecard</a>
+          <a class="button-link" href="architecture.html">Open architecture</a>
+          <a class="button-link" href="judge-faq.html">Open FAQ</a>
+          <a class="button-link" href="proof/judge-decision.md">Read decision proof</a>
+          <a class="button-link" href="https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a">Open CSPR.live receipt</a>
+        </div>
+        <div class="metrics">
+          <div class="metric"><strong>100/100</strong><span>review readiness</span></div>
+          <div class="metric"><strong>15/15</strong><span>submission audit</span></div>
+          <div class="metric"><strong>34/34</strong><span>evidence verifier</span></div>
+          <div class="metric"><strong>25/25</strong><span>tests passing</span></div>
+          <div class="metric"><strong>4</strong><span>x402 tx anchors</span></div>
+          <div class="metric"><strong>31</strong><span>proof artifacts</span></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="verdict">
+        <h2>Recommended Judging Decision</h2>
+        <p>
+          Review CSPR Guardian as a strong final-review candidate. It demonstrates a
+          complete Casper-native agent economy: paid tool discovery, x402-style
+          payment requirements, replay-safe payment proofs, paid RWA
+          intelligence, policy-bounded allocation, provider revenue, settlement
+          anchors, final receipt anchoring, and independent verification.
+        </p>
+      </section>
+
+      <section>
+        <h2>Why It Clears The Review Bar</h2>
+        <div class="decision-grid">
+          <div class="decision-card">
+            <strong>Complete loop</strong>
+            The agent discovers tools, pays, consumes four intelligence
+            products, decides under policy, records revenue, and exports proof.
+          </div>
+          <div class="decision-card">
+            <strong>Casper is central</strong>
+            Casper appears in payment proofs, settlement anchors, final receipt,
+            memo derivation, testnet preflight, and public explorer evidence.
+          </div>
+          <div class="decision-card">
+            <strong>Judges can recompute</strong>
+            Local verifiers check signatures, hashes, receipts, and revenue;
+            browser verifier checks the public proof manifest without cloning.
+          </div>
+          <div class="decision-card">
+            <strong>Scope is honest</strong>
+            The FAQ separates real testnet evidence from deterministic sample
+            provider data and production requirements.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Ninety-Second Review Path</h2>
+        <ol class="path">
+          <li><strong>1</strong>Confirm this decision page and 100/100 status.</li>
+          <li><strong>2</strong>Open the final CSPR.live receipt.</li>
+          <li><strong>3</strong>Run the browser verifier for all proof hashes.</li>
+          <li><strong>4</strong>Open the x402 settlement batch.</li>
+          <li><strong>5</strong>Open the scorecard and proof room.</li>
+          <li><strong>6</strong>Open the FAQ for the production boundary.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Proof Chain</h2>
+        <div class="proof-grid">
+          <div class="proof-item">
+            <strong>Tool discovery</strong>
+            MCP-style tool metadata exposes paid RWA intelligence before use.
+            <a href="proof/casper-judge-proof-pack.md">Judge proof</a>
+          </div>
+          <div class="proof-item">
+            <strong>Payment requirement</strong>
+            Paid tools return HTTP 402 with x402-Casper payment details.
+            <a href="proof/casper-judge-proof-pack.md">Payment proof</a>
+          </div>
+          <div class="proof-item">
+            <strong>Replay safety</strong>
+            Ed25519 proofs include nonce and expiry; replay returns 402.
+            <a href="proof/casper-judge-proof-pack.json">JSON proof</a>
+          </div>
+          <div class="proof-item">
+            <strong>Settlement anchors</strong>
+            Four paid tool authorizations are tied to Casper testnet transactions.
+            <a href="proof/casper-x402-settlement-batch.md">Settlement batch</a>
+          </div>
+          <div class="proof-item">
+            <strong>RWA decision</strong>
+            Risk, KYB, liquidity, and covenant intelligence gate allocation.
+            <a href="proof/casper-scenario-matrix.md">Scenario matrix</a>
+          </div>
+          <div class="proof-item">
+            <strong>Final receipt</strong>
+            The final decision evidence is anchored with a public CSPR.live link.
+            <a href="proof/casper-final-testnet-evidence.md">Receipt evidence</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Competitive Edge</h2>
+        <div class="edge-grid">
+          <div class="edge-item">
+            <strong>Against single-feature x402 demos</strong>
+            CSPR Guardian makes payment part of an autonomous RWA business
+            workflow, not only an endpoint-level payment example.
+          </div>
+          <div class="edge-item">
+            <strong>Against generic agent crews</strong>
+            The scope is narrower and easier to judge: paid RWA intelligence,
+            policy decision, provider revenue, and public evidence.
+          </div>
+          <div class="edge-item">
+            <strong>Against governance dashboards</strong>
+            It proves what data was bought, what policy ran, what decision was
+            made, and what receipt anchors that decision.
+          </div>
+          <div class="edge-item">
+            <strong>Against screenshot-heavy submissions</strong>
+            Public proof artifacts have SHA-256 hashes and a browser-native
+            verifier that recomputes them on the live site.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Visual Proof</h2>
+        <div class="decision-grid">
+          <div>
+            <img src="assets/cspr-guardian-review-readiness.png" alt="CSPR Guardian review readiness score" />
+          </div>
+          <div>
+            <h3>What this screenshot proves</h3>
+            <p>
+              The project exposes a judge-visible readiness state, not only a
+              narrative. The public pages then link that state to tests, audit,
+              proof pack, proof manifest, browser verifier, and CSPR.live.
+            </p>
+            <div style="margin-top: 14px;">
+              <span class="pill ok">ready_for_final_review</span>
+              <span class="pill ok">real receipt</span>
+              <span class="pill ok">browser-verifiable</span>
+              <span class="pill ok">scope boundary explicit</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Boundary</h2>
+        <p>
+          This is a Casper testnet buildathon prototype. The real claims are the
+          public receipt, settlement-anchor transactions, signed payment proofs,
+          replay rejection, evidence verification, source code, CI, and proof
+          hashes. Production deployment would still need licensed data
+          providers, custody controls, compliance review, monitoring, incident
+          response, and mainnet settlement policy.
+        </p>
+        <code>https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a</code>
+      </section>
+    </main>
+  </body>
+</html>

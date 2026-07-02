@@ -1,8 +1,8 @@
-# Casper Highest Prize Unlock
+# Casper Final Review Unlock
 
-Generated: 2026-07-02T17:59:58.069Z
+Generated: 2026-07-02T20:26:19.668Z
 
-Status: ready_for_highest_prize_submission
+Status: ready_for_final_review
 
 ## Testnet Funding
 

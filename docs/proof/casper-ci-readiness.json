@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T17:59:59.523Z",
+  "generatedAt": "2026-07-02T20:26:21.101Z",
   "project": "CSPR Guardian",
   "status": "ci_ready",
   "summary": {
@@ -40,9 +40,9 @@
       "detail": "Committed real x402 settlement-anchor transactions verify without private key material."
     },
     {
-      "name": "highest_prize_unlock_report",
+      "name": "final_review_unlock_report",
       "status": "pass",
-      "detail": "Highest-prize unlock report captures funding, public-link, and final-seal gates."
+      "detail": "Final review unlock report captures funding, public-link, and final-seal gates."
     },
     {
       "name": "public_demo_readiness",

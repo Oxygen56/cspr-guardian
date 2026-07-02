@@ -59,7 +59,7 @@ Yes. The proof room publishes Markdown and JSON artifacts plus a SHA-256
 manifest. The verifier recomputes signatures, payment hashes, report hashes,
 decision hash, receipt hash, evidence hash, and provider revenue totals.
 
-### Why should this rank above simpler x402 or agent demos?
+### Why should this stand out against simpler x402 or agent demos?
 
 CSPR Guardian combines the full loop in one review path: paid discovery,
 payment requirement, signed authorization, replay protection, paid RWA

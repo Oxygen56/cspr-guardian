@@ -312,14 +312,14 @@ export function buildSubmissionAuditChecks({
       "evidence_verifier",
       "preflight_verifier",
       "x402_settlement_preflight_verifier",
-      "highest_prize_unlock_report",
+      "final_review_unlock_report",
       "public_demo_readiness"
     ].every((name) => ciChecks.includes(name));
   add(
     "ci_readiness_present",
     ciReady ? "pass" : "fail",
     ciReady
-      ? "CI readiness report covers tests, evidence, preflight, highest-prize unlock, and public demo readiness."
+      ? "CI readiness report covers tests, evidence, preflight, final review unlock, and public demo readiness."
       : "CI readiness report is missing or incomplete.",
     {
       ciStatus: ciReadiness?.status || "missing",
@@ -516,8 +516,8 @@ Checks: ${audit.summary.passed}/${audit.summary.total} passed, ${audit.summary.b
 ## Final Gate
 
 - Seal status: ${audit.finalGate.sealStatus}
-- Prize score: ${audit.finalGate.prizeScore ?? "unknown"}/100
-- Highest-prize gate: ${audit.finalGate.highestPrizeGate ? "cleared" : "needs real Casper testnet deploy"}
+- Review score: ${audit.finalGate.prizeScore ?? "unknown"}/100
+- Final review gate: ${audit.finalGate.highestPrizeGate ? "cleared" : "needs real Casper testnet deploy"}
 - Account status: ${audit.finalGate.accountStatus}
 - Public key: ${audit.finalGate.publicKeyHex || "missing"}
 - Explorer URL: ${audit.finalGate.explorerUrl || "missing"}
@@ -545,7 +545,7 @@ ${blocked ? `\n${blocked}` : ""}
 - Source archive: \`${audit.artifacts.sourceZip.path}\`
 - Final seal: \`casper-final-submission-seal.json\`
 - Seal markdown: \`casper-final-submission-seal.md\`
-- Highest-prize unlock: \`casper-highest-prize-unlock.json\`
+- Final review unlock: \`casper-final-review-unlock.json\`
 
 The submission zip intentionally does not include \`casper-final-submission-seal.*\` or \`casper-submission-audit.*\`; those files sit beside it as external integrity proofs.
 `;

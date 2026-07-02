@@ -194,7 +194,7 @@ test("testnet readiness reports RPC and funding state without exposing private k
   assert.equal(JSON.stringify(readiness).includes("BEGIN PRIVATE KEY"), false);
 });
 
-test("prize readiness maps evidence to the remaining highest-prize gate", async () => {
+test("review readiness maps evidence to the remaining final review gate", async () => {
   await runScenario({ assetId: "invoice-usdc-7d", requestedAmountUsd: 250000 });
   const readiness = await getPrizeReadiness();
   const byId = Object.fromEntries(readiness.criteria.map((item) => [item.id, item]));
@@ -208,7 +208,7 @@ test("prize readiness maps evidence to the remaining highest-prize gate", async 
   assert.equal(JSON.stringify(readiness).includes("BEGIN PRIVATE KEY"), false);
 });
 
-test("judge proof pack captures x402, replay, verifier, and prize gate", async () => {
+test("judge proof pack captures x402, replay, verifier, and review gate", async () => {
   const proof = await generateJudgeProofPack({
     assetId: "invoice-usdc-7d",
     requestedAmountUsd: 250000
@@ -354,7 +354,7 @@ test("final submission seal keeps unfunded state explicit", () => {
   assert.equal(JSON.stringify(seal).includes("privateKeyHex"), false);
 });
 
-test("final submission seal only marks highest-prize ready with real final evidence", () => {
+test("final submission seal only marks final-review ready with real final evidence", () => {
   const seal = buildReadySeal({
     readiness: {
       accountStatus: "funded",
@@ -530,7 +530,7 @@ test("submission profile reads public links from environment and detects placeho
   assert.equal(summarizePublicSubmissionFields(completeFields).complete, true);
 });
 
-test("highest prize unlock report separates faucet funding and public links", async () => {
+test("final review unlock report separates faucet funding and public links", async () => {
   const faucetConfig = await fetchCsprLiveFaucetConfig({
     fetchImpl: async () => ({
       ok: true,
@@ -633,7 +633,7 @@ test("public final receipt page includes the prepared key and CSPR.live transact
   assert.equal(html.includes("PRIVATE KEY"), false);
 });
 
-test("highest prize unlock recognizes funded state ready for final seal", () => {
+test("final review unlock recognizes funded state ready for final seal", () => {
   const fields = buildSubmissionFields({
     env: {
       SUBMISSION_REPO_URL: "https://github.com/example/cspr-guardian",

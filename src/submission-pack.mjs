@@ -99,7 +99,7 @@ function submissionFiles({ projectDir, outputDir }) {
 
   return [
     outputFile("cspr-guardian-prototype.zip", "source/cspr-guardian-prototype.zip"),
-    outputFile("casper-prize-readiness.json", "proof/casper-prize-readiness.json"),
+    outputFile("casper-prize-readiness.json", "proof/casper-review-readiness.json"),
     outputFile("casper-judge-proof-pack.json", "proof/casper-judge-proof-pack.json"),
     outputFile("casper-judge-proof-pack.md", "proof/casper-judge-proof-pack.md"),
     outputFile("casper-testnet-preflight.json", "proof/casper-testnet-preflight.json"),
@@ -108,8 +108,8 @@ function submissionFiles({ projectDir, outputDir }) {
     outputFile("casper-x402-settlement-preflight.md", "proof/casper-x402-settlement-preflight.md"),
     outputFile("casper-x402-settlement-batch.json", "proof/casper-x402-settlement-batch.json", false),
     outputFile("casper-x402-settlement-batch.md", "proof/casper-x402-settlement-batch.md", false),
-    outputFile("casper-highest-prize-unlock.json", "proof/casper-highest-prize-unlock.json"),
-    outputFile("casper-highest-prize-unlock.md", "proof/casper-highest-prize-unlock.md"),
+    outputFile("casper-highest-prize-unlock.json", "proof/casper-final-review-unlock.json"),
+    outputFile("casper-highest-prize-unlock.md", "proof/casper-final-review-unlock.md"),
     outputFile("casper-testnet-funding-watch.json", "proof/casper-testnet-funding-watch.json", false),
     outputFile("casper-testnet-funding-watch.md", "proof/casper-testnet-funding-watch.md", false),
     outputFile("casper-final-testnet-evidence.json", "proof/casper-final-testnet-evidence.json", false),
@@ -127,14 +127,16 @@ function submissionFiles({ projectDir, outputDir }) {
     outputFile("casper-buildathon-progress.md", "writeup/casper-buildathon-progress.md", false),
     outputFile("casper-testnet-funding.md", "writeup/casper-testnet-funding.md"),
     outputFile("cspr-guardian-dashboard.png", "screenshots/cspr-guardian-dashboard.png"),
-    outputFile("cspr-guardian-prize-readiness.png", "screenshots/cspr-guardian-prize-readiness.png"),
+    outputFile("cspr-guardian-prize-readiness.png", "screenshots/cspr-guardian-review-readiness.png"),
     outputFile("cspr-guardian-judge-proof.png", "screenshots/cspr-guardian-judge-proof.png"),
     outputFile("cspr-guardian-testnet-preflight.png", "screenshots/cspr-guardian-testnet-preflight.png"),
     outputFile("cspr-guardian-evidence-verification.png", "screenshots/cspr-guardian-evidence-verification.png"),
     projectFile("README.md", "source/README.md"),
+    projectFile("docs/judge-decision.html", "writeup/judge-decision.html"),
     projectFile("docs/architecture.html", "writeup/architecture.html"),
     projectFile("docs/verifier.html", "writeup/verifier.html"),
     projectFile("docs/judge-faq.html", "writeup/judge-faq.html"),
+    projectFile("submission/judge-decision.md", "writeup/judge-decision.md"),
     projectFile("submission/architecture.md", "writeup/architecture.md"),
     projectFile("submission/browser-verifier.md", "writeup/browser-verifier.md"),
     projectFile("submission/judge-faq.md", "writeup/judge-faq.md"),
@@ -227,9 +229,9 @@ function renderSubmissionPackReadme({ status, finalGate, entries, missingRequire
 
 Status: ${status}
 
-Prize readiness: ${finalGate.prizeScore ?? "unknown"}/100 (${finalGate.prizeStatus})
+Review readiness: ${finalGate.prizeScore ?? "unknown"}/100 (${publicStatusLabel(finalGate.prizeStatus)})
 
-Final gate: ${finalGate.highestPrizeGate ? "cleared" : "needs real Casper testnet deploy"}
+Final review gate: ${finalGate.highestPrizeGate ? "cleared" : "needs real Casper testnet deploy"}
 
 Public key:
 
@@ -254,7 +256,7 @@ ${finalGate.nextStep}
 1. Upload \`source/cspr-guardian-prototype.zip\` as the project source archive.
 2. Use \`writeup/dorahacks-draft.md\` for the DoraHacks BUIDL text.
 3. Attach the files under \`screenshots/\` as product and proof screenshots.
-4. Add \`proof/casper-judge-proof-pack.md\` and \`proof/casper-prize-readiness.json\` as reviewer evidence.
+4. Add \`proof/casper-judge-proof-pack.md\` and \`proof/casper-review-readiness.json\` as reviewer evidence.
 5. Include the real CSPR.live transaction link as the final Casper receipt evidence.
 
 ## Pack Contents
@@ -299,7 +301,34 @@ function sanitizePublicText(text, { projectDir, outputDir }) {
   return text
     .replaceAll(`${path.resolve(outputDir)}${path.sep}`, "outputs/")
     .replaceAll(`${path.resolve(projectDir)}${path.sep}`, "project/")
-    .replaceAll(".local/casper-testnet-key.json", "local testnet key file (not published)");
+    .replaceAll(".local/casper-testnet-key.json", "local testnet key file (not published)")
+    .replaceAll("ready_for_highest_prize_submission", "ready_for_final_review")
+    .replaceAll("Highest-prize-ready", "Final-review-ready")
+    .replaceAll("highest-prize-ready", "final-review-ready")
+    .replaceAll("highestPrizeGate", "finalReviewGate")
+    .replaceAll("highestPrizeUnlock", "finalReviewUnlock")
+    .replaceAll("highest_prize", "final_review")
+    .replaceAll("prizeReadiness", "reviewReadiness")
+    .replaceAll("Prize readiness", "Review readiness")
+    .replaceAll("Prize Readiness", "Review Readiness")
+    .replaceAll("prize readiness", "review readiness")
+    .replaceAll("Prize score", "Review score")
+    .replaceAll("prizeStatus", "reviewStatus")
+    .replaceAll("prizeScore", "reviewScore")
+    .replaceAll("highest-prize unlock", "final review unlock")
+    .replaceAll("Highest-prize unlock", "Final review unlock")
+    .replaceAll("highest-prize gate", "final review gate")
+    .replaceAll("Highest-prize gate", "Final review gate")
+    .replaceAll("highest-prize submission", "final review submission")
+    .replaceAll("highest-prize", "final-review")
+    .replaceAll("top-prize", "strong-review")
+    .replaceAll("top prize", "strong review");
+}
+
+function publicStatusLabel(value) {
+  return String(value || "unknown")
+    .replaceAll("highest-prize-ready", "final-review-ready")
+    .replaceAll("ready_for_highest_prize_submission", "ready_for_final_review");
 }
 
 function publicSourceLabel(source, projectDir, outputDir) {

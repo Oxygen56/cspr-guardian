@@ -79,12 +79,13 @@ export async function generateBuidlSubmissionPage({ outputDir } = {}) {
       finalSeal: "casper-final-submission-seal.md",
       preflight: "casper-testnet-preflight.md",
       x402SettlementBatch: "casper-x402-settlement-batch.md",
+      judgeDecision: "judge-decision.md",
       architecture: "architecture.md",
       browserVerifier: "browser-verifier.md",
       judgeFaq: "judge-faq.md",
       screenshots: [
         "cspr-guardian-dashboard.png",
-        "cspr-guardian-prize-readiness.png",
+        "cspr-guardian-review-readiness.png",
         "cspr-guardian-judge-proof.png",
         "cspr-guardian-testnet-preflight.png",
         "cspr-guardian-evidence-verification.png"
@@ -188,9 +189,9 @@ decision, records provider revenue, and exports tamper-evident evidence.
 The key Casper angle is provenance: each run produces payment hashes, report
 hashes, a decision hash, a receipt hash, and a Casper receipt anchor path. The
 final seal publishes real CSPR.live deploy evidence and regenerates this pack
-with the highest-prize gate cleared.
+with the final review gate cleared.
 
-This is designed to stand above single-feature entries. It is not only an
+This is designed to be easier to evaluate than single-feature entries. It is not only an
 x402 endpoint, not only an MCP catalog, and not only a DeFi assistant. It is a
 complete paid-agent workflow with replay-safe payments, four paid RWA
 intelligence tools, provider revenue, four x402 settlement-anchor transactions,
@@ -203,21 +204,24 @@ proof verifier, reality boundary FAQ, BUIDL fields, CI readiness, and public
 demo readiness:
 https://oxygen56.github.io/cspr-guardian/proof-room.html
 
+The judge decision brief is the fastest final-review entry point:
+https://oxygen56.github.io/cspr-guardian/judge-decision.html
+
 ## Rubric Alignment
 
 | Area | Evidence |
 | --- | --- |
-| Technical execution | ${page.readiness.score ?? "unknown"}/${page.readiness.maxScore} prize readiness, ${page.proof.evidenceChecks ? `${page.proof.evidenceChecks.passed}/${page.proof.evidenceChecks.total}` : "missing"} evidence checks, signed deploy preflight, real x402 settlement anchors, public CSPR.live receipt |
+| Technical execution | ${page.readiness.score ?? "unknown"}/${page.readiness.maxScore} review readiness, ${page.proof.evidenceChecks ? `${page.proof.evidenceChecks.passed}/${page.proof.evidenceChecks.total}` : "missing"} evidence checks, signed deploy preflight, real x402 settlement anchors, public CSPR.live receipt |
 | Innovation and originality | Paid RWA intelligence market with autonomous buyers, paid providers, replay-safe payment proofs, and verifiable allocation evidence |
 | AI agent use | Agent discovers tools, pays, consumes risk/KYB/liquidity/covenant data, decides under policy, and exports proof |
 | Casper integration | x402-style Casper payments, testnet account, settlement anchors, receipt hash, deploy evidence, and explorer URLs |
-| Judge experience | Hosted demo, 64-second walkthrough, one-screen architecture map, browser proof verifier, reality boundary FAQ, screenshots, proof pack, audit output, and copy-ready links |
+| Judge experience | Hosted demo, 64-second walkthrough, judge decision brief, one-screen architecture map, browser proof verifier, reality boundary FAQ, screenshots, proof pack, audit output, and copy-ready links |
 
 ## Readiness
 
 - Score: ${page.readiness.score ?? "unknown"}/${page.readiness.maxScore}
 - Status: ${page.readiness.status}
-- Highest-prize gate cleared: ${page.readiness.highestPrizeGate}
+- Final review gate cleared: ${page.readiness.highestPrizeGate}
 - Public links ready: ${page.publicSubmissionFields?.complete ?? false}
 - Missing public links: ${page.publicSubmissionFields?.missing?.join(", ") || "none"}
 - Testnet account: ${page.testnet.accountStatus}
@@ -255,7 +259,7 @@ ${paidTools}
 
 ## Demo Flow
 
-1. Open the dashboard and show Prize Readiness at ${page.readiness.score ?? "unknown"}/${page.readiness.maxScore}.
+1. Open the dashboard and show Review Readiness at ${page.readiness.score ?? "unknown"}/${page.readiness.maxScore}.
 2. Run the agent on the RWA opportunity.
 3. Show MCP discovery, x402 payment requirements, signed payment proofs, and replay rejection.
 4. Show paid RWA risk, KYB, liquidity, and covenant reports.
@@ -277,6 +281,7 @@ ${paidTools}
 - Final seal: \`${page.artifacts.finalSeal}\`
 - Preflight proof: \`${page.artifacts.preflight}\`
 - x402 settlement batch: \`${page.artifacts.x402SettlementBatch}\`
+- Judge decision brief: \`${page.artifacts.judgeDecision}\`
 - Architecture and threat model: \`${page.artifacts.architecture}\`
 - Browser proof verifier: \`${page.artifacts.browserVerifier}\`
 - Reality boundary and judge FAQ: \`${page.artifacts.judgeFaq}\`

@@ -101,10 +101,10 @@ function roleFor(fileName) {
   if (fileName.includes("submission-audit")) return "final submission audit";
   if (fileName.includes("scenario-matrix")) return "repeatable RWA scenario matrix";
   if (fileName.includes("judge-proof-pack")) return "judge proof pack";
-  if (fileName.includes("final-submission-seal")) return "final highest-prize seal";
+  if (fileName.includes("final-submission-seal")) return "final submission seal";
   if (fileName.includes("final-testnet-evidence")) return "real Casper testnet receipt evidence";
   if (fileName.includes("buidl-submission")) return "copy-ready BUIDL fields";
-  if (fileName.includes("prize-readiness")) return "100/100 prize readiness scorecard";
+  if (fileName.includes("review-readiness")) return "100/100 review readiness scorecard";
   if (fileName.includes("testnet-preflight")) return "signed Casper deploy preflight";
   if (fileName.includes("x402-settlement-batch")) return "real x402 settlement transactions";
   if (fileName.includes("x402-settlement-preflight")) return "signed x402 settlement preflight";
@@ -113,9 +113,10 @@ function roleFor(fileName) {
   if (fileName.includes("architecture")) return "architecture and threat model";
   if (fileName.includes("browser-verifier")) return "browser proof verifier";
   if (fileName.includes("judge-faq")) return "reality boundary and judge FAQ";
+  if (fileName.includes("judge-decision")) return "judge decision brief";
   if (fileName.includes("judge-scorecard")) return "judge scorecard";
   if (fileName.includes("competitive-positioning")) return "competitive positioning brief";
-  if (fileName.includes("highest-prize-unlock")) return "highest-prize unlock report";
+  if (fileName.includes("final-review-unlock")) return "final review unlock report";
   return "public proof artifact";
 }
 

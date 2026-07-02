@@ -3,11 +3,11 @@
 ## 0-8s
 
 Open with the final review state: CSPR Guardian is `100/100`,
-highest-prize-ready, and has zero blockers.
+final-review-ready, and has zero blockers.
 
 ## 8-18s
 
-Show the Prize Readiness evidence and the published CSPR.live testnet
+Show the Review Readiness evidence and the published CSPR.live testnet
 transaction. The Casper receipt gate is cleared with a real deploy URL.
 
 ## 18-28s
@@ -28,7 +28,7 @@ covenant intelligence before making the allocation decision.
 ## 38-49s
 
 Show Casper testnet readiness and preflight evidence: funded account, deploy
-build OK, broadcast false, and final seal ready for highest-prize submission.
+build OK, broadcast false, and final seal ready for final review.
 
 ## 49-64s
 

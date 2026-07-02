@@ -11,7 +11,7 @@ try {
   console.log(
     JSON.stringify(
       {
-        status: page.readiness.status,
+        status: publicStatus(page.readiness.status),
         score: `${page.readiness.score}/${page.readiness.maxScore}`,
         finalGate: page.readiness.highestPrizeGate ? "cleared" : "needs_real_testnet_deploy",
         publicLinks: page.publicSubmissionFields.complete ? "ready" : "needs_repo_demo_video_urls",
@@ -26,4 +26,10 @@ try {
 } catch (error) {
   console.error(error.message);
   process.exitCode = 1;
+}
+
+function publicStatus(value) {
+  return String(value)
+    .replaceAll("ready_for_highest_prize_submission", "ready_for_final_review")
+    .replaceAll("highest-prize-ready", "final-review-ready");
 }

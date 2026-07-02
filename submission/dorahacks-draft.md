@@ -16,7 +16,7 @@ the final evidence trail to a real Casper testnet transaction.
 
 Final proof:
 
-- Prize readiness: `100/100`, highest-prize gate cleared.
+- Review readiness: `100/100`, final review gate cleared.
 - Judge proof pack: `10/10` core assertions passing.
 - Evidence verifier: `34/34` checks passing.
 - Submission audit: `15/15` checks passing, `0` blocked, `0` failed.
@@ -113,14 +113,14 @@ signals into a single verifiable workflow:
   and revenue totals.
 - Testnet readiness scripts for key generation, RPC health, balance checking,
   deploy preflight, x402 settlement preflight, and real receipt anchoring.
-- Judge evidence map that ties every prize signal to a visible artifact.
+- Judge evidence map that ties every review signal to a visible artifact.
 - Real Casper testnet transaction published on CSPR.live.
 - Dashboard showing the full trace.
 - Final submission pack with SHA-256 manifest and private-key leak checks.
 
 ## Judge Path
 
-1. Open the hosted judge demo and show `100/100` prize readiness.
+1. Open the hosted judge demo and show `100/100` review readiness.
 2. Open the Judge Scorecard for the one-minute rubric path.
 3. Watch the 64-second walkthrough for the full proof path.
 4. Open the real CSPR.live transaction.

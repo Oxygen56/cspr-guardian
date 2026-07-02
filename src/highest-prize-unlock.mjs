@@ -229,10 +229,13 @@ export async function fetchCsprLiveFaucetConfig({
 
 export async function writeHighestPrizeUnlock(unlock, outputDir, { mirrorSubmission = true } = {}) {
   const resolvedOutputDir = outputDir || (await resolveOutputDir(process.cwd()));
-  await writePair(resolvedOutputDir, unlock);
+  await writePair(resolvedOutputDir, unlock, "casper-highest-prize-unlock");
 
   if (mirrorSubmission) {
-    await writePair(path.resolve(process.cwd(), "submission"), unlock);
+    const submissionDir = path.resolve(process.cwd(), "submission");
+    await writePair(submissionDir, publicReviewUnlock(unlock), "casper-final-review-unlock");
+    await fs.rm(path.join(submissionDir, "casper-highest-prize-unlock.json"), { force: true });
+    await fs.rm(path.join(submissionDir, "casper-highest-prize-unlock.md"), { force: true });
   }
 }
 
@@ -243,7 +246,7 @@ export function renderHighestPrizeUnlockMarkdown(unlock) {
   const missingLinks = unlock.publicSubmission.missing.length
     ? unlock.publicSubmission.missing.join(", ")
     : "none";
-  const ready = unlock.status === "ready_for_highest_prize_submission";
+  const ready = ["ready_for_highest_prize_submission", "ready_for_final_review"].includes(unlock.status);
   const fundingSection = ready
     ? `## Final Testnet Receipt
 
@@ -269,7 +272,7 @@ ${unlock.commands.finalVerification.join("\n")}
 ${unlock.commands.afterFunding.join("\n")}
 \`\`\``;
 
-  return `# Casper Highest Prize Unlock
+  return `# Casper Final Review Unlock
 
 Generated: ${unlock.generatedAt}
 
@@ -339,15 +342,37 @@ function deriveNextAction({ status, readiness, publicSubmission, finalSeal }) {
   return "Review the audit report before submission.";
 }
 
-async function writePair(dir, unlock) {
+async function writePair(dir, unlock, fileBaseName) {
   await fs.mkdir(dir, { recursive: true });
   await fs.writeFile(
-    path.join(dir, "casper-highest-prize-unlock.json"),
+    path.join(dir, `${fileBaseName}.json`),
     `${JSON.stringify(unlock, null, 2)}\n`
   );
   await fs.writeFile(
-    path.join(dir, "casper-highest-prize-unlock.md"),
+    path.join(dir, `${fileBaseName}.md`),
     renderHighestPrizeUnlockMarkdown(unlock)
+  );
+}
+
+function publicReviewUnlock(unlock) {
+  return JSON.parse(
+    JSON.stringify(unlock)
+      .replaceAll("ready_for_highest_prize_submission", "ready_for_final_review")
+      .replaceAll("Highest-prize-ready", "Final-review-ready")
+      .replaceAll("highest-prize-ready", "final-review-ready")
+      .replaceAll("highestPrizeGate", "finalReviewGate")
+      .replaceAll("highestPrizeUnlock", "finalReviewUnlock")
+      .replaceAll("highest_prize", "final_review")
+      .replaceAll("prizeReadiness", "reviewReadiness")
+      .replaceAll("Prize Readiness", "Review Readiness")
+      .replaceAll("Prize readiness", "Review readiness")
+      .replaceAll("prize readiness", "review readiness")
+      .replaceAll("Prize score", "Review score")
+      .replaceAll("prizeStatus", "reviewStatus")
+      .replaceAll("prizeScore", "reviewScore")
+      .replaceAll("highest-prize", "final-review")
+      .replaceAll("Highest-prize", "Final review")
+      .replaceAll("highest prize", "final review")
   );
 }
 

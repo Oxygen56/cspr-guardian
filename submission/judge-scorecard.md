@@ -9,7 +9,7 @@ signals a Casper Agentic Buildathon judge can verify in minutes.
 
 | Signal | Current proof |
 | --- | --- |
-| Prize readiness | `100/100`, highest-prize gate cleared |
+| Review readiness | `100/100`, final review gate cleared |
 | Submission audit | `15/15` checks passed, `0` blocked, `0` failed |
 | Evidence verifier | `34/34` recomputed checks passed |
 | x402 settlement preflight | `28/28` signed transfer checks passed |
@@ -46,12 +46,12 @@ signals a Casper Agentic Buildathon judge can verify in minutes.
 
 ## One-Minute Judge Path
 
-1. Open the hosted demo and confirm `100/100`.
-2. Watch the 64-second walkthrough.
-3. Open the real CSPR.live receipt.
-4. Open the proof room and read the submission audit.
-5. Check the SHA-256 proof manifest.
-6. Open the architecture and threat model.
+1. Open the judge decision brief.
+2. Open the hosted demo and confirm `100/100`.
+3. Watch the 64-second walkthrough.
+4. Open the real CSPR.live receipt.
+5. Open the proof room and read the submission audit.
+6. Check the SHA-256 proof manifest.
 7. Open the x402 settlement batch.
 8. Run the browser proof verifier.
 9. Open the reality boundary FAQ.
@@ -60,6 +60,7 @@ signals a Casper Agentic Buildathon judge can verify in minutes.
 ## Public Links
 
 - Judge demo: https://oxygen56.github.io/cspr-guardian/
+- Judge decision brief: https://oxygen56.github.io/cspr-guardian/judge-decision.html
 - Judge scorecard: https://oxygen56.github.io/cspr-guardian/judge-scorecard.html
 - Architecture map: https://oxygen56.github.io/cspr-guardian/architecture.html
 - Browser proof verifier: https://oxygen56.github.io/cspr-guardian/verifier.html

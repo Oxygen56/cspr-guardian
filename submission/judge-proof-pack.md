@@ -1,10 +1,10 @@
 # Judge Proof Pack
 
-Generated: 2026-07-02T15:32:14.511Z
+Generated: 2026-07-02T19:49:32.222Z
 
 Project: CSPR Guardian
 
-Prize readiness: 100/100 (highest-prize-ready)
+Review readiness: 100/100 (final-review-ready)
 
 ## Assertions
 
@@ -24,8 +24,8 @@ Prize readiness: 100/100 (highest-prize-ready)
 ## x402 Payment Flow
 
 - Before payment: oracle returned 402 with PAYMENT-REQUIRED header.
-- Signed authorization hash: 4f638be8dcc0e361da1b6530080a5fc7f026368530e76355040810e173b9e53d
-- Demo settlement hash: mock-casper-pay-ab2f96b746ed8721bb3112de8d925af80b236ed0d993a744
+- Signed authorization hash: a2d9a2082560c75edd7e8e756e93fc7efb34a347f350998482fbe2cad99b472e
+- Demo settlement hash: mock-casper-pay-b069c10ac6c9a20a2808b2ae30b701805a1be84aadb9b253
 - Replay attempt: 402, Payment nonce already used
 - Real x402 settlement anchors: verified (34/34)
 
@@ -40,11 +40,11 @@ Prize readiness: 100/100 (highest-prize-ready)
 
 ## Agent Run
 
-- Run id: run-33905433-bf82-420b-833d-b281a9890be5
+- Run id: run-0ab7604a-5f88-4bcb-b1fb-5a21a4193e41
 - Decision: approve
 - Approved amount: $207,452
 - Provider revenue: 0.62 CSPR
-- Receipt hash: 27183a60b7ad3571a8ea5138bcd9b70cc24d3732656f41f7295391d94f45af2e
+- Receipt hash: d34905d7f761df0abd7d5a56c4bfea2bd0ed8e255cbcbaa4fd8e1398989d3156
 - Demo anchor mode: mock
 - Demo explorer URL: not used for final judging
 - Final Casper receipt: https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
@@ -55,9 +55,9 @@ Prize readiness: 100/100 (highest-prize-ready)
 - Checks: 34/34
 - Signature checks: 4
 - Hash checks: 17
-- Evidence hash: a0342ab2f2d1ee5e81eaf44a1270e58e1e9981386e4c969e4885e204f29e8be0
+- Evidence hash: 1f654d61a08e72b6259d3da987c6b72021c492349d282c18579581f42faa34da
 
-## Prize Readiness Criteria
+## Review Readiness Criteria
 
 | Criterion | Status | Value | Weight |
 | --- | --- | --- | --- |
@@ -70,7 +70,7 @@ Prize readiness: 100/100 (highest-prize-ready)
 
 ## Current Final Gate
 
-The highest-prize gate is cleared by a real Casper testnet receipt.
+The final review gate is cleared by a real Casper testnet receipt.
 
 - Explorer URL: https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
 - Final receipt hash: 23fd7a0e66756456960cc2522f2a5dbc0a3ae09b6d1b0ba4e285550e50d4fe16

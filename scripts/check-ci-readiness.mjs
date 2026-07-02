@@ -49,10 +49,10 @@ try {
     detail: "Committed real x402 settlement-anchor transactions verify without private key material."
   });
   await runCheck({
-    name: "highest_prize_unlock_report",
+    name: "final_review_unlock_report",
     command: process.execPath,
     args: ["scripts/prepare-highest-prize-unlock.mjs"],
-    detail: "Highest-prize unlock report captures funding, public-link, and final-seal gates."
+    detail: "Final review unlock report captures funding, public-link, and final-seal gates."
   });
   await runCheck({
     name: "public_demo_readiness",

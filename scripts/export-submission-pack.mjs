@@ -49,8 +49,31 @@ async function refreshPrizeReadiness(outputDir) {
     `${JSON.stringify(readiness, null, 2)}\n`
   );
   await fs.writeFile(
-    path.resolve(process.cwd(), "submission/prize-readiness-snapshot.json"),
-    `${JSON.stringify(readiness, null, 2)}\n`
+    path.resolve(process.cwd(), "submission/review-readiness-snapshot.json"),
+    `${JSON.stringify(publicReviewValue(readiness), null, 2)}\n`
+  );
+  await fs.rm(path.resolve(process.cwd(), "submission/prize-readiness-snapshot.json"), { force: true });
+}
+
+function publicReviewValue(value) {
+  return JSON.parse(
+    JSON.stringify(value)
+      .replaceAll("ready_for_highest_prize_submission", "ready_for_final_review")
+      .replaceAll("Highest-prize-ready", "Final-review-ready")
+      .replaceAll("highest-prize-ready", "final-review-ready")
+      .replaceAll("highestPrizeGate", "finalReviewGate")
+      .replaceAll("highestPrizeUnlock", "finalReviewUnlock")
+      .replaceAll("highest_prize", "final_review")
+      .replaceAll("prizeReadiness", "reviewReadiness")
+      .replaceAll("Prize Readiness", "Review Readiness")
+      .replaceAll("Prize readiness", "Review readiness")
+      .replaceAll("prize readiness", "review readiness")
+      .replaceAll("Prize score", "Review score")
+      .replaceAll("prizeStatus", "reviewStatus")
+      .replaceAll("prizeScore", "reviewScore")
+      .replaceAll("highest-prize", "final-review")
+      .replaceAll("Highest-prize", "Final review")
+      .replaceAll("highest prize", "final review")
   );
 }
 

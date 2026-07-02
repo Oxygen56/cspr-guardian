@@ -58,7 +58,7 @@ an audit trail that can be inspected after the demo.
 
 ## Evidence Table
 
-| Prize Signal | What To Show | Artifact |
+| Review Signal | What To Show | Artifact |
 | --- | --- | --- |
 | Casper-native trust layer | Real receipt deploy hash and CSPR.live explorer URL | `npm run seal:submission`, Casper Receipt panel |
 | Agent-to-agent commerce | Four paid tools earning CSPR per run | Provider Ledger panel |
@@ -70,13 +70,14 @@ an audit trail that can be inspected after the demo.
 | Repeatability | Treasury, invoice-finance, and trade-credit assets produce distinct policy outcomes through the same paid tool stack | `casper-scenario-matrix.md`, `npm run scenario:matrix` |
 | Auditability | Evidence bundle hashes every payment proof, report, decision, and receipt | Evidence Bundle panel and JSON |
 | Independent verification | Signatures, tx hashes, report hashes, receipt hash, evidence hash, and revenue totals recompute | Evidence Verification panel, `npm run verify:evidence` |
-| Reviewer proof pack | 402 challenge, signed payment, replay rejection, agent run, verifier, prize gate | `submission/judge-proof-pack.md`, `submission/judge-proof-pack.json`, `npm run judge:proof` |
+| Reviewer proof pack | 402 challenge, signed payment, replay rejection, agent run, verifier, review gate | `submission/judge-proof-pack.md`, `submission/judge-proof-pack.json`, `npm run judge:proof` |
 | Real deploy readiness | Signed Casper transfer deploy builds locally without broadcasting | `submission/casper-testnet-preflight.md`, `submission/casper-testnet-preflight.json`, `npm run preflight:testnet` |
 | x402 preflight path | Each paid tool payment can build a signed Casper transfer deploy without broadcasting | `submission/casper-x402-settlement-preflight.md`, `npm run preflight:x402`, `npm run verify:x402-preflight` |
 | Testnet readiness | RPC health, public key, funding status, and readiness gate are visible | Testnet Readiness panel |
 | Business model | Providers earn per tool call and history persists across runs | Provider Ledger and Run History |
 | Submission clarity | Copy-ready BUIDL fields, artifact links, demo flow, and remaining gate are consolidated | `casper-buidl-submission.md`, `npm run export:buidl` |
 | One-minute judge path | Scorecard gives judges a direct route through readiness, receipt, audit, manifest, and competitive proof | `docs/judge-scorecard.html`, `docs/proof/judge-scorecard.md` |
+| Final decision path | One page gives judges the verdict, proof chain, Casper fit, competitive edge, verifier path, and scope boundary | `docs/judge-decision.html`, `docs/proof/judge-decision.md` |
 | Browser-accessible proof | Final audit, proof pack, seal, preflight, BUIDL, CI, and public demo artifacts are linked from one page | `docs/proof-room.html`, `docs/proof/*` |
 | Artifact integrity | Every public proof-room Markdown/JSON artifact has a published SHA-256 hash | `docs/proof/proof-manifest.md`, `npm run proof:manifest` |
 | Browser verification | Judges can recompute public proof artifact SHA-256 hashes without cloning or running local commands | `docs/verifier.html`, `docs/proof/browser-verifier.md` |
@@ -84,7 +85,7 @@ an audit trail that can be inspected after the demo.
 | Architecture clarity | Payment, replay, settlement, policy, verifier, Casper anchor, and secret-handling boundaries are mapped to proof artifacts | `docs/architecture.html`, `docs/proof/architecture.md` |
 | Reality boundary | Testnet prototype scope, reproducible provider data, public evidence, and production requirements are explicit | `docs/judge-faq.html`, `docs/proof/judge-faq.md` |
 | Submission auditability | Final pack, BUIDL page, seal, leak scan, source zip exclusions, and self-reference checks are verified before upload | Submission Audit panel, `casper-submission-audit.md`, `npm run audit:submission` |
-| Highest-prize unlock gate | Faucet funding, wallet/reCAPTCHA requirement, public links, and post-funding commands are consolidated | `submission/casper-highest-prize-unlock.md`, `npm run unlock:highest-prize` |
+| Final review unlock gate | Faucet funding, wallet/reCAPTCHA requirement, public links, and post-funding commands are consolidated | `submission/casper-final-review-unlock.md`, `npm run unlock:review` |
 | Hosted demo readiness | Docker, Render blueprint, health endpoint, and public-link export path are prepared | `casper-public-demo-handoff.md`, `npm run check:public-demo`, `/api/health` |
 | Public repo verification | Tests, evidence verifier, preflight verifier, and hosting readiness run in CI | `.github/workflows/submission-readiness.yml`, `casper-ci-readiness.md`, `npm run check:ci` |
 
@@ -92,7 +93,7 @@ an audit trail that can be inspected after the demo.
 
 - `submission/assets/cspr-guardian-dashboard.png`: full dashboard screenshot
   after a successful agent run.
-- `submission/assets/cspr-guardian-prize-readiness.png`: focused buildathon
+- `submission/assets/cspr-guardian-review-readiness.png`: focused buildathon
   scorecard showing passed x402/MCP/RWA/verifier criteria and the real testnet
   deploy gate.
 - `submission/assets/cspr-guardian-judge-proof.png`: focused dashboard proof
@@ -114,15 +115,17 @@ an audit trail that can be inspected after the demo.
   settlement-anchor batch with four Casper testnet transaction links.
 - `submission/casper-x402-settlement-batch.json`: machine-readable x402
   settlement-anchor batch.
-- `submission/casper-highest-prize-unlock.md`: human-readable highest-prize
+- `submission/casper-final-review-unlock.md`: human-readable final review
   report with the funded testnet account, public links, and final CSPR.live receipt.
-- `submission/casper-highest-prize-unlock.json`: machine-readable
-  highest-prize unlock report.
+- `submission/casper-final-review-unlock.json`: machine-readable
+  final review unlock report.
 - `submission/submission-assets.md`: screenshot and upload checklist.
 - `casper-buidl-submission.md`: copy-ready BUIDL submission page fields and
   final judge narrative.
 - `docs/proof-room.html`: public proof room with browser-accessible audit,
   proof pack, seal, preflight, BUIDL, CI, and public demo artifacts.
+- `docs/judge-decision.html`: public final review decision brief.
+- `docs/proof/judge-decision.md`: hashed Markdown decision brief.
 - `docs/judge-scorecard.html`: one-page rubric scorecard for judges.
 - `docs/architecture.html`: one-screen architecture and trust-boundary map.
 - `docs/verifier.html`: browser proof verifier for public artifact hashes.
@@ -146,7 +149,7 @@ an audit trail that can be inspected after the demo.
 
 ## 64-Second Judge Path
 
-1. Start with Prize Readiness: `100/100`, highest-prize gate cleared, blockers `0`.
+1. Start with Review Readiness: `100/100`, final review gate cleared, blockers `0`.
 2. Open the Judge Scorecard.
 3. Open the real CSPR.live transaction.
 4. Show x402 Settlement Batch: four Casper testnet settlement-anchor transactions.
@@ -170,14 +173,14 @@ an audit trail that can be inspected after the demo.
 - `npm run seal:submission` is now idempotent: it reuses the existing final
   evidence and refreshes the final submission pack without rebroadcasting.
 - `npm run audit:submission` verifies the pack as
-  `ready_for_highest_prize_submission` with `15/15` checks passed.
+  `ready_for_final_review` with `15/15` checks passed.
 - `npm run preflight:x402` builds signed Casper transfer deploys for each paid
   x402 tool call without broadcasting; `npm run verify:x402-preflight` checks the
   deploy hashes, motes conversion, memo derivation, and recipient shape.
 - `npm run settle:x402:testnet` has published four Casper testnet
   settlement-anchor transactions for the signed x402 tool payments;
   `npm run verify:x402-settlement` verifies `34/34` settlement-anchor checks.
-- `npm run unlock:highest-prize` records zero remaining gates and the final
+- `npm run unlock:review` records zero remaining gates and the final
   Casper explorer URL.
 - Public repo, hosted judge demo, walkthrough video, and the real Casper
   explorer URL are now available

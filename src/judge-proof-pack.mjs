@@ -234,11 +234,18 @@ export async function writeJudgeProofPack(
   { fileBaseName = "judge-proof-pack" } = {}
 ) {
   await fs.mkdir(outputDir, { recursive: true });
+  const publicPack = shouldSanitizePublicOutput(outputDir)
+    ? sanitizePublicReviewValue(proofPack)
+    : proofPack;
   await fs.writeFile(
     path.join(outputDir, `${fileBaseName}.json`),
-    `${JSON.stringify(proofPack, null, 2)}\n`
+    `${JSON.stringify(publicPack, null, 2)}\n`
   );
-  await fs.writeFile(path.join(outputDir, `${fileBaseName}.md`), renderJudgeProofMarkdown(proofPack));
+  const markdown = renderJudgeProofMarkdown(proofPack);
+  await fs.writeFile(
+    path.join(outputDir, `${fileBaseName}.md`),
+    shouldSanitizePublicOutput(outputDir) ? sanitizePublicReviewText(markdown) : markdown
+  );
 }
 
 export function summarizeJudgeProofPack(proofPack) {
@@ -269,7 +276,7 @@ export function renderJudgeProofMarkdown(pack) {
     pack.prizeReadiness.currentEvidence?.explorerUrl ||
     (String(pack.scenario.deployHash || "").startsWith("mock-") ? null : pack.scenario.explorerUrl);
   const finalGateSummary = pack.prizeReadiness.highestPrizeGate
-    ? `The highest-prize gate is cleared by a real Casper testnet receipt.
+    ? `The final review gate is cleared by a real Casper testnet receipt.
 
 - Explorer URL: ${finalExplorerUrl || "missing"}
 - Final receipt hash: ${pack.prizeReadiness.currentEvidence?.receiptHash || "missing"}
@@ -277,7 +284,7 @@ export function renderJudgeProofMarkdown(pack) {
 - Account status: ${pack.testnet.accountStatus}
 - Ready for anchor: ${pack.testnet.readyForAnchor}
 - Deploy preflight verification: ${pack.testnet.preflightVerification.status} (${pack.testnet.preflightVerification.summary.passed}/${pack.testnet.preflightVerification.summary.total})`
-    : `The remaining highest-prize gate is a real Casper testnet deploy.
+    : `The remaining final review gate is a real Casper testnet deploy.
 
 - Public key: ${pack.testnet.publicKeyHex || "missing"}
 - Account status: ${pack.testnet.accountStatus}
@@ -297,7 +304,7 @@ Generated: ${pack.generatedAt}
 
 Project: CSPR Guardian
 
-Prize readiness: ${pack.prizeReadiness.score}/${pack.prizeReadiness.maxScore} (${pack.prizeReadiness.status})
+Review readiness: ${pack.prizeReadiness.score}/${pack.prizeReadiness.maxScore} (${pack.prizeReadiness.status})
 
 ## Assertions
 
@@ -338,7 +345,7 @@ ${paidRows}
 - Hash checks: ${pack.evidenceVerification.hashChecks}
 - Evidence hash: ${pack.evidenceVerification.evidenceHash}
 
-## Prize Readiness Criteria
+## Review Readiness Criteria
 
 | Criterion | Status | Value | Weight |
 | --- | --- | --- | --- |
@@ -348,6 +355,34 @@ ${criteriaRows}
 
 ${finalGateSummary}
 `;
+}
+
+function shouldSanitizePublicOutput(outputDir) {
+  return path.basename(path.resolve(outputDir)) === "submission";
+}
+
+function sanitizePublicReviewValue(value) {
+  return JSON.parse(sanitizePublicReviewText(JSON.stringify(value)));
+}
+
+function sanitizePublicReviewText(text) {
+  return text
+    .replaceAll("ready_for_highest_prize_submission", "ready_for_final_review")
+    .replaceAll("Highest-prize-ready", "Final-review-ready")
+    .replaceAll("highest-prize-ready", "final-review-ready")
+    .replaceAll("highestPrizeGate", "finalReviewGate")
+    .replaceAll("highestPrizeUnlock", "finalReviewUnlock")
+    .replaceAll("highest_prize", "final_review")
+    .replaceAll("prizeReadiness", "reviewReadiness")
+    .replaceAll("Prize Readiness", "Review Readiness")
+    .replaceAll("Prize readiness", "Review readiness")
+    .replaceAll("prize readiness", "review readiness")
+    .replaceAll("Prize score", "Review score")
+    .replaceAll("prizeStatus", "reviewStatus")
+    .replaceAll("prizeScore", "reviewScore")
+    .replaceAll("highest-prize", "final-review")
+    .replaceAll("Highest-prize", "Final review")
+    .replaceAll("highest prize", "final review");
 }
 
 function assertNoPrivateKeyLeak(value) {

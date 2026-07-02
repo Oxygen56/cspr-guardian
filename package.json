@@ -28,9 +28,9 @@
     "scenario:matrix": "node scripts/generate-scenario-matrix.mjs",
     "proof:publish": "node scripts/publish-proof-room.mjs && node scripts/generate-proof-manifest.mjs",
     "proof:manifest": "node scripts/generate-proof-manifest.mjs",
-    "fund:testnet": "node scripts/prepare-highest-prize-unlock.mjs --open-guide --open-faucet --copy-public-key",
+    "fund:testnet": "node scripts/prepare-final-review-unlock.mjs --open-guide --open-faucet --copy-public-key",
     "wait:testnet": "node scripts/wait-testnet-funding.mjs",
-    "unlock:highest-prize": "node scripts/prepare-highest-prize-unlock.mjs",
+    "unlock:review": "node scripts/prepare-final-review-unlock.mjs",
     "anchor:testnet": "node scripts/run-real-anchor.mjs",
     "finalize:testnet": "node scripts/finalize-testnet-evidence.mjs",
     "check:deploy": "node scripts/check-casper-deploy.mjs"

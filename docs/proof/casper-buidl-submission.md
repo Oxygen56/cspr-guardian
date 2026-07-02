@@ -1,6 +1,6 @@
 # CSPR Guardian BUIDL Submission
 
-Generated: 2026-07-02T17:59:18.722Z
+Generated: 2026-07-02T20:25:51.423Z
 
 ## Copy-Paste Fields
 
@@ -19,7 +19,7 @@ Casper payment and audit receipts for autonomous RWA treasury agents.
 Short description:
 
 ```text
-Highest-prize-ready RWA agent where autonomous treasuries buy paid x402/MCP risk tools and anchor verifiable decision evidence to Casper.
+Review-ready RWA agent where autonomous treasuries buy paid x402/MCP risk tools and anchor verifiable decision evidence to Casper.
 ```
 
 Categories:
@@ -65,9 +65,9 @@ decision, records provider revenue, and exports tamper-evident evidence.
 The key Casper angle is provenance: each run produces payment hashes, report
 hashes, a decision hash, a receipt hash, and a Casper receipt anchor path. The
 final seal publishes real CSPR.live deploy evidence and regenerates this pack
-with the highest-prize gate cleared.
+with the final review gate cleared.
 
-This is designed to stand above single-feature entries. It is not only an
+This is designed to be easier to evaluate than single-feature entries. It is not only an
 x402 endpoint, not only an MCP catalog, and not only a DeFi assistant. It is a
 complete paid-agent workflow with replay-safe payments, four paid RWA
 intelligence tools, provider revenue, four x402 settlement-anchor transactions,
@@ -75,25 +75,29 @@ independent verification, a public demo, and a real Casper testnet receipt.
 
 The hosted proof room gives judges browser-accessible Markdown and JSON
 artifacts for the final audit, proof pack, submission seal, testnet evidence,
-preflight files, x402 settlement batch, architecture and threat model, reality
-boundary FAQ, BUIDL fields, CI readiness, and public demo readiness:
+preflight files, x402 settlement batch, architecture and threat model, browser
+proof verifier, reality boundary FAQ, BUIDL fields, CI readiness, and public
+demo readiness:
 https://oxygen56.github.io/cspr-guardian/proof-room.html
+
+The judge decision brief is the fastest final-review entry point:
+https://oxygen56.github.io/cspr-guardian/judge-decision.html
 
 ## Rubric Alignment
 
 | Area | Evidence |
 | --- | --- |
-| Technical execution | 100/100 prize readiness, 34/34 evidence checks, signed deploy preflight, real x402 settlement anchors, public CSPR.live receipt |
+| Technical execution | 100/100 review readiness, 34/34 evidence checks, signed deploy preflight, real x402 settlement anchors, public CSPR.live receipt |
 | Innovation and originality | Paid RWA intelligence market with autonomous buyers, paid providers, replay-safe payment proofs, and verifiable allocation evidence |
 | AI agent use | Agent discovers tools, pays, consumes risk/KYB/liquidity/covenant data, decides under policy, and exports proof |
 | Casper integration | x402-style Casper payments, testnet account, settlement anchors, receipt hash, deploy evidence, and explorer URLs |
-| Judge experience | Hosted demo, 64-second walkthrough, one-screen architecture map, reality boundary FAQ, screenshots, proof pack, audit output, and copy-ready links |
+| Judge experience | Hosted demo, 64-second walkthrough, judge decision brief, one-screen architecture map, browser proof verifier, reality boundary FAQ, screenshots, proof pack, audit output, and copy-ready links |
 
 ## Readiness
 
 - Score: 100/100
-- Status: highest-prize-ready
-- Highest-prize gate cleared: true
+- Status: final-review-ready
+- Final review gate cleared: true
 - Public links ready: true
 - Missing public links: none
 - Testnet account: funded
@@ -135,17 +139,18 @@ Preflight checks: 11/11
 
 ## Demo Flow
 
-1. Open the dashboard and show Prize Readiness at 100/100.
+1. Open the dashboard and show Review Readiness at 100/100.
 2. Run the agent on the RWA opportunity.
 3. Show MCP discovery, x402 payment requirements, signed payment proofs, and replay rejection.
 4. Show paid RWA risk, KYB, liquidity, and covenant reports.
 5. Show the decision, provider revenue, run history, and receipt hash.
 6. Open the x402 settlement batch with four Casper testnet transaction links.
 7. Open the architecture map and show trust boundaries.
-8. Open the reality boundary FAQ and show what is testnet prototype scope.
-9. Show Evidence Verification with all checks passing.
-10. Show Final Seal and the submission pack hash.
-11. Open the real CSPR.live explorer URL for the final receipt.
+8. Open the browser verifier and recompute all public proof artifact hashes.
+9. Open the reality boundary FAQ and show what is testnet prototype scope.
+10. Show Evidence Verification with all checks passing.
+11. Show Final Seal and the submission pack hash.
+12. Open the real CSPR.live explorer URL for the final receipt.
 
 ## Artifacts
 
@@ -156,13 +161,15 @@ Preflight checks: 11/11
 - Final seal: `casper-final-submission-seal.md`
 - Preflight proof: `casper-testnet-preflight.md`
 - x402 settlement batch: `casper-x402-settlement-batch.md`
+- Judge decision brief: `judge-decision.md`
 - Architecture and threat model: `architecture.md`
+- Browser proof verifier: `browser-verifier.md`
 - Reality boundary and judge FAQ: `judge-faq.md`
 
 Screenshots:
 
 - `cspr-guardian-dashboard.png`
-- `cspr-guardian-prize-readiness.png`
+- `cspr-guardian-review-readiness.png`
 - `cspr-guardian-judge-proof.png`
 - `cspr-guardian-testnet-preflight.png`
 - `cspr-guardian-evidence-verification.png`

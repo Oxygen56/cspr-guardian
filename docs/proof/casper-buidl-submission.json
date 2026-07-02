@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T17:59:18.722Z",
+  "generatedAt": "2026-07-02T20:25:51.423Z",
   "project": {
     "name": "CSPR Guardian",
     "tagline": "Casper payment and audit receipts for autonomous RWA treasury agents.",
@@ -16,7 +16,7 @@
     ]
   },
   "submissionFields": {
-    "shortDescription": "Highest-prize-ready RWA agent where autonomous treasuries buy paid x402/MCP risk tools and anchor verifiable decision evidence to Casper.",
+    "shortDescription": "Review-ready RWA agent where autonomous treasuries buy paid x402/MCP risk tools and anchor verifiable decision evidence to Casper.",
     "repoUrl": "https://github.com/Oxygen56/cspr-guardian",
     "demoUrl": "https://oxygen56.github.io/cspr-guardian/",
     "videoUrl": "https://oxygen56.github.io/cspr-guardian/walkthrough.html",
@@ -45,10 +45,10 @@
     ]
   },
   "readiness": {
-    "status": "highest-prize-ready",
+    "status": "final-review-ready",
     "score": 100,
     "maxScore": 100,
-    "highestPrizeGate": true,
+    "finalReviewGate": true,
     "blockers": []
   },
   "proof": {
@@ -155,11 +155,13 @@
     "finalSeal": "casper-final-submission-seal.md",
     "preflight": "casper-testnet-preflight.md",
     "x402SettlementBatch": "casper-x402-settlement-batch.md",
+    "judgeDecision": "judge-decision.md",
     "architecture": "architecture.md",
+    "browserVerifier": "browser-verifier.md",
     "judgeFaq": "judge-faq.md",
     "screenshots": [
       "cspr-guardian-dashboard.png",
-      "cspr-guardian-prize-readiness.png",
+      "cspr-guardian-review-readiness.png",
       "cspr-guardian-judge-proof.png",
       "cspr-guardian-testnet-preflight.png",
       "cspr-guardian-evidence-verification.png"

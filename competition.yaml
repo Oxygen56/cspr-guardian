@@ -1,0 +1,27 @@
+# Casper Agentic Buildathon delivery brief for contestctl-compatible audits.
+project:
+  slug: "cspr-guardian"
+  platform: "dorahacks"
+  url: "https://dorahacks.io/hackathon/casper-agentic-buildathon/buidl"
+  task_type: "Web3 BUIDL"
+  owner: "Oxygen56"
+metric:
+  name: "judge-readiness"
+  direction: "maximize"
+submission:
+  format: "DoraHacks BUIDL page, public demo, repository, proof room, and CSPR.live receipt"
+  package: "../../outputs/cspr-guardian-final-submission.zip"
+constraints:
+  external_data: "public DoraHacks pages and deterministic sample provider data"
+  internet: "used for public links and live receipt/proof verification"
+  compute: "local Node.js scripts plus GitHub Pages"
+  environment: "macOS local workspace"
+judging:
+  rubric:
+    technical_execution: "tests, audit, proof pack, signed preflight, verifier, leak scan"
+    casper_integration: "x402-style Casper payments, settlement anchors, real testnet receipt"
+    agentic_workflow: "discover, pay, consume intelligence, decide, export evidence"
+    innovation: "paid RWA intelligence market for autonomous treasury agents"
+    judge_experience: "one-page decision, scorecard, proof room, verifier, walkthrough"
+notes:
+  current_strategy: "Reduce judge trust cost with public, browser-verifiable proof and a concise final-review decision path."

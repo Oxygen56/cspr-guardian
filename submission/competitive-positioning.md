@@ -4,7 +4,7 @@ Snapshot date: 2026-07-02.
 
 This is a judge-facing positioning brief for CSPR Guardian. It should be used
 as a comparison frame, not as a claim that other submissions are weak or
-incomplete. The safest top-prize argument is that CSPR Guardian demonstrates a
+incomplete. The safest review argument is that CSPR Guardian demonstrates a
 complete, verifiable Casper-native agent economy in one review path.
 
 ## Public Benchmark
@@ -22,7 +22,7 @@ broad field of agent projects, including:
 Official buildathon BUIDL list:
 https://dorahacks.io/hackathon/casper-agentic-buildathon/buidl
 
-## Highest-Prize Claim
+## Strong Review Claim
 
 CSPR Guardian should be judged as more than an interface or isolated endpoint.
 It combines the buildathon primitives into a single complete loop:

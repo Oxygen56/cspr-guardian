@@ -182,7 +182,7 @@ function criterion({ id, label, weight, passed, blocked = false, value, evidence
 async function hasSubmissionAssets() {
   const files = [
     "submission/assets/cspr-guardian-dashboard.png",
-    "submission/assets/cspr-guardian-prize-readiness.png",
+    "submission/assets/cspr-guardian-review-readiness.png",
     "submission/assets/cspr-guardian-judge-proof.png",
     "submission/assets/cspr-guardian-testnet-preflight.png",
     "submission/assets/cspr-guardian-evidence-verification.png",
@@ -195,7 +195,7 @@ async function hasSubmissionAssets() {
     "submission/casper-testnet-preflight.md",
     "submission/casper-x402-settlement-batch.json",
     "submission/casper-x402-settlement-batch.md",
-    "submission/prize-readiness-snapshot.json",
+    "submission/review-readiness-snapshot.json",
     "submission/submission-assets.md"
   ];
 

@@ -1,8 +1,8 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T17:59:53.566Z",
+  "generatedAt": "2026-07-02T20:26:52.380Z",
   "project": "CSPR Guardian",
-  "status": "ready_for_highest_prize_submission",
+  "status": "ready_for_final_review",
   "summary": {
     "passed": 15,
     "blocked": 0,
@@ -10,10 +10,10 @@
     "total": 15
   },
   "finalGate": {
-    "highestPrizeGate": true,
-    "sealStatus": "ready_for_highest_prize_submission",
-    "prizeStatus": "highest-prize-ready",
-    "prizeScore": 100,
+    "finalReviewGate": true,
+    "sealStatus": "ready_for_final_review",
+    "reviewStatus": "final-review-ready",
+    "reviewScore": 100,
     "accountStatus": "funded",
     "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
     "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
@@ -23,17 +23,17 @@
     "submissionPackZip": {
       "exists": true,
       "path": "outputs/cspr-guardian-final-submission.zip",
-      "bytes": 2574959,
-      "sha256": "beaa1f4f6496dc452520f141122845ce01c1a4a92f85798cec9ab0e186167e1f"
+      "bytes": 2879858,
+      "sha256": "0c3383524a73d186b8fd820d63521181d98f94ae058982db6a3e3bf7da8023e8"
     },
     "sourceZip": {
       "exists": true,
       "path": "outputs/cspr-guardian-prototype.zip",
-      "bytes": 2021644,
-      "sha256": "bb79a60181afab7c7c9af1ac082d7f5889d46835b9cbb14b2caf1416d291c7c2"
+      "bytes": 2315349,
+      "sha256": "56f96c8337b47e29ee7dbb774e6027e8e06178228303569b3581cfbbc8c6aeff"
     },
     "finalSeal": "outputs/casper-final-submission-seal.json",
-    "highestPrizeUnlock": "outputs/casper-highest-prize-unlock.json",
+    "finalReviewUnlock": "outputs/casper-final-review-unlock.json",
     "buidlSubmission": "outputs/casper-buidl-submission.md",
     "preflight": "outputs/casper-testnet-preflight.json",
     "auditJson": "outputs/casper-submission-audit.json",
@@ -83,10 +83,10 @@
       "name": "submission_pack_present",
       "detail": "Final pack status is ready; missing required files: 0.",
       "packStatus": "ready",
-      "files": 44,
+      "files": 48,
       "missingRequired": 0,
       "zipPath": "outputs/cspr-guardian-final-submission.zip",
-      "zipSha256": "beaa1f4f6496dc452520f141122845ce01c1a4a92f85798cec9ab0e186167e1f",
+      "zipSha256": "0c3383524a73d186b8fd820d63521181d98f94ae058982db6a3e3bf7da8023e8",
       "status": "pass",
       "ok": true
     },
@@ -138,7 +138,7 @@
     },
     {
       "name": "ci_readiness_present",
-      "detail": "CI readiness report covers tests, evidence, preflight, highest-prize unlock, and public demo readiness.",
+      "detail": "CI readiness report covers tests, evidence, preflight, final review unlock, and public demo readiness.",
       "ciStatus": "ci_ready",
       "ciSummary": {
         "passed": 7,
@@ -151,7 +151,7 @@
         "preflight_verifier",
         "x402_settlement_preflight_verifier",
         "x402_settlement_batch_verifier",
-        "highest_prize_unlock_report",
+        "final_review_unlock_report",
         "public_demo_readiness"
       ],
       "status": "pass",
@@ -159,33 +159,33 @@
     },
     {
       "name": "final_seal_present",
-      "detail": "Final seal is ready_for_highest_prize_submission; package hash source is seal.",
-      "sealStatus": "ready_for_highest_prize_submission",
-      "zipSha256": "beaa1f4f6496dc452520f141122845ce01c1a4a92f85798cec9ab0e186167e1f",
+      "detail": "Final seal is ready_for_final_review; package hash source is seal.",
+      "sealStatus": "ready_for_final_review",
+      "zipSha256": "7eb1a94428a11f0faedfeb117ef6652326da43a5446269208d56df165f8d88e2",
       "status": "pass",
       "ok": true
     },
     {
-      "name": "highest_prize_unlock_present",
-      "detail": "Highest-prize unlock report is ready_for_highest_prize_submission with 0 remaining gate(s).",
-      "unlockStatus": "ready_for_highest_prize_submission",
+      "name": "final_review_unlock_present",
+      "detail": "Final review unlock report is ready_for_final_review with 0 remaining gate(s).",
+      "unlockStatus": "ready_for_final_review",
       "remainingGates": [],
       "status": "pass",
       "ok": true
     },
     {
-      "name": "highest_prize_gate",
-      "detail": "Real Casper testnet receipt evidence is ready for highest-prize submission.",
-      "sealStatus": "ready_for_highest_prize_submission",
-      "highestPrizeGate": true,
+      "name": "final_review_gate",
+      "detail": "Real Casper testnet receipt evidence is ready for final review submission.",
+      "sealStatus": "ready_for_final_review",
+      "finalReviewGate": true,
       "finalEvidenceStatus": "ready_for_submission",
       "status": "pass",
       "ok": true
     },
     {
       "name": "private_key_leak_scan",
-      "detail": "72 text artifacts scanned with no private key material.",
-      "filesScanned": 72,
+      "detail": "76 text artifacts scanned with no private key material.",
+      "filesScanned": 76,
       "matches": [],
       "status": "pass",
       "ok": true
@@ -194,7 +194,7 @@
       "name": "source_zip_exclusions",
       "detail": "Source archive excludes node_modules, .local, and .env.",
       "sourceZipPath": "outputs/cspr-guardian-prototype.zip",
-      "entries": 153,
+      "entries": 164,
       "forbiddenEntries": [],
       "status": "pass",
       "ok": true
@@ -203,7 +203,7 @@
       "name": "final_pack_no_self_reference",
       "detail": "Final pack does not include external seal or audit files that would self-reference the zip.",
       "finalPackPath": "outputs/cspr-guardian-final-submission.zip",
-      "entries": 50,
+      "entries": 54,
       "selfReferences": [],
       "status": "pass",
       "ok": true

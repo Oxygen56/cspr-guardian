@@ -1,11 +1,13 @@
 # CSPR Guardian
 
-CSPR Guardian is a Casper Agentic Buildathon project aimed at the top prize:
+CSPR Guardian is a Casper Agentic Buildathon project built for final review:
 an autonomous RWA allocation agent that discovers paid MCP tools, signs and
 settles x402-style Casper payment proofs, calls risk and KYB oracles, makes a
 policy decision, and anchors an audit receipt to Casper.
 
 Public judge demo: https://oxygen56.github.io/cspr-guardian/
+
+Judge decision brief: https://oxygen56.github.io/cspr-guardian/judge-decision.html
 
 Judge scorecard: https://oxygen56.github.io/cspr-guardian/judge-scorecard.html
 
@@ -31,11 +33,11 @@ Funding handoff: https://oxygen56.github.io/cspr-guardian/funding.html
 
 Final Casper receipt: https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
 
-Current status: `100/100` prize readiness, real Casper testnet receipt
+Current status: `100/100` review readiness, real Casper testnet receipt
 published, public demo live, source repo public, 64-second walkthrough live,
-and `ready_for_highest_prize_submission` audit status.
+and `ready_for_final_review` public audit status.
 
-## Why This Can Win
+## Why This Is Judge-Ready
 
 - It is agentic beyond a chat UI: the agent discovers tools, handles payment,
   calls paid services, decides, and writes audit proof.
@@ -115,11 +117,11 @@ Check whether the generated account is funded and ready:
 npm run check:testnet
 ```
 
-Write the highest-prize unlock report with the faucet/public-link gates and
+Write the final review unlock report with the faucet/public-link gates and
 next commands:
 
 ```bash
-npm run unlock:highest-prize
+npm run unlock:review
 ```
 
 Open the CSPR.live faucet and copy the prepared public key to the clipboard:
@@ -175,7 +177,7 @@ npm run verify:evidence
 ```
 
 Generate a judge proof pack with MCP, x402, replay-protection, verifier, and
-prize-readiness evidence:
+review-readiness evidence:
 
 ```bash
 npm run judge:proof
@@ -282,8 +284,8 @@ npm run check:deploy -- <deploy-hash>
 - Four paid tools: RWA risk scoring, KYB/sanctions policy screening,
   liquidity-depth analysis, and covenant monitoring.
 - Provider revenue accounting and persisted run history.
-- Prize Readiness endpoint at `/api/prize-readiness` that maps evidence to
-  buildathon-winning signals and keeps the real Casper deploy as the final gate.
+- Review readiness endpoint that maps evidence to
+  buildathon review signals and keeps the real Casper deploy as the final gate.
 - Judge Proof Pack endpoint at `/api/judge-proof` and dashboard panel for live
   402 challenge, signed authorization, replay rejection, and verifier evidence.
 - Testnet preflight endpoint at `/api/testnet/preflight` and dashboard action
@@ -315,7 +317,7 @@ npm run check:deploy -- <deploy-hash>
 - Final submission sealer at `npm run seal:submission` that turns a funded
   testnet account into final Casper evidence and a refreshed submission pack in
   one command, or writes a funding handoff if the account is still unfunded.
-- Highest-prize unlock report at `npm run unlock:highest-prize` that records the
+- Final review unlock report at `npm run unlock:review` that records the
   faucet/wallet/reCAPTCHA funding gate, public repo/demo/video link gate, and
   exact commands to run once the account is funded.
 - Submission audit at `npm run audit:submission` and `/api/submission/audit` that
@@ -337,7 +339,7 @@ npm run check:deploy -- <deploy-hash>
 - Demo-mode Casper payment hashes for repeatable local runs, plus final real
   Casper testnet receipt evidence for the submitted build.
 - Dashboard showing trace, decision, revenue, KYB result, receipt JSON,
-  provider ledger, run history, Prize Readiness, Final Seal, Testnet Readiness,
+  provider ledger, run history, Review Readiness, Final Seal, Testnet Readiness,
   Evidence Bundle JSON, and Evidence Verification.
 
 ## Final Submission Verification
@@ -347,7 +349,7 @@ These commands refresh or verify the submitted state:
 - `npm run seal:submission` refreshes final evidence, judge proof, source zip,
   submission pack, and final seal in one pass.
 - `npm run audit:submission` confirms
-  `ready_for_highest_prize_submission`.
+  `ready_for_final_review`.
 - `npm run check:public-demo` confirms public demo links and hosting readiness.
 - `npm run check:ci` mirrors the public GitHub Actions readiness workflow.
 - `npm test` confirms the local test suite.

@@ -18,7 +18,7 @@ const html = renderHtml({
   durationSeconds,
   assets: {
     dashboard: assetUrl("docs/assets/cspr-guardian-dashboard.png"),
-    prize: assetUrl("docs/assets/cspr-guardian-prize-readiness.png"),
+    review: assetUrl("docs/assets/cspr-guardian-review-readiness.png"),
     proof: assetUrl("docs/assets/cspr-guardian-judge-proof.png"),
     preflight: assetUrl("docs/assets/cspr-guardian-testnet-preflight.png")
   }
@@ -157,16 +157,16 @@ function renderHtml({ fps, durationSeconds, assets }) {
         kicker: "FINAL REVIEW STATUS",
         title: "CSPR Guardian",
         subtitle: "Autonomous RWA treasury agents with paid risk intelligence and Casper receipts.",
-        metrics: [["Prize readiness", "100/100"], ["Highest-prize gate", "cleared"], ["Blockers", "0"]],
+        metrics: [["Review readiness", "100/100"], ["Final review gate", "cleared"], ["Blockers", "0"]],
         bullets: ["Real Casper testnet receipt is published", "Independent verifier passes 34/34 checks", "Judge proof pack passes 10/10 assertions"]
       },
       {
         start: 8,
         end: 18,
-        kicker: "HIGHEST-PRIZE EVIDENCE",
+        kicker: "FINAL REVIEW EVIDENCE",
         title: "Start with the proof",
         subtitle: "The scorecard is already final: 100/100 with a real CSPR.live transaction.",
-        image: "prize",
+        image: "review",
         bullets: ["Casper receipt: real testnet deploy", "Final gate: cleared", "Submission assets: ready"]
       },
       {
@@ -194,7 +194,7 @@ function renderHtml({ fps, durationSeconds, assets }) {
         title: "Final receipt is public",
         subtitle: txUrl,
         image: "preflight",
-        bullets: ["Account funded on casper-test", "Deploy build OK, broadcast false in preflight", "Final seal ready_for_highest_prize_submission"]
+        bullets: ["Account funded on casper-test", "Deploy build OK, broadcast false in preflight", "Final seal ready_for_final_review"]
       },
       {
         start: 49,
@@ -209,7 +209,7 @@ function renderHtml({ fps, durationSeconds, assets }) {
         start: 58,
         end: 64,
         kicker: "CASPER AGENTIC BUILDATHON",
-        title: "CSPR Guardian is highest-prize ready",
+        title: "CSPR Guardian is final-review ready",
         subtitle: "A verifiable agent economy workflow: discover paid tools, pay with signed proofs, make an RWA decision, anchor evidence on Casper.",
         metrics: [["Status", "ready"], ["Gate", "cleared"], ["Score", "100/100"]],
         bullets: ["x402-style payments", "MCP-style discovery", "Real Casper testnet receipt"]

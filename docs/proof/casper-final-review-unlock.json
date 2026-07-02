@@ -1,8 +1,8 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T18:50:00.707Z",
+  "generatedAt": "2026-07-02T20:26:19.668Z",
   "project": "CSPR Guardian",
-  "status": "ready_for_highest_prize_submission",
+  "status": "ready_for_final_review",
   "testnet": {
     "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
     "accountStatus": "funded",
@@ -47,7 +47,7 @@
     ]
   },
   "finalSeal": {
-    "status": "ready_for_highest_prize_submission",
+    "status": "ready_for_final_review",
     "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
     "deployHash": "7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a"
   },
@@ -85,7 +85,7 @@
       "readyToComplete": false,
       "detail": "Final seal contains a public CSPR.live deploy URL.",
       "evidence": {
-        "sealStatus": "ready_for_highest_prize_submission",
+        "sealStatus": "ready_for_final_review",
         "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
         "deployHash": "7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a"
       }

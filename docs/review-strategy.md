@@ -1,8 +1,8 @@
-# Winning Strategy
+# Review Strategy
 
 ## Project Positioning
 
-Buildathon judges are likely to reward projects that make the Casper-specific
+Buildathon judges are likely to prioritize projects that make the Casper-specific
 agent economy tangible. CSPR Guardian should be pitched as infrastructure for
 autonomous treasuries:
 
@@ -12,9 +12,9 @@ autonomous treasuries:
 This avoids the crowded "portfolio chatbot" category and shows a repeatable
 business model for agent-to-agent payments.
 
-## Prize Narrative
+## Review Narrative
 
-The highest-prize version demonstrates these things in one tight flow:
+The strongest review version demonstrates these things in one tight flow:
 
 1. A paid MCP tool exists.
 2. The agent receives 402 payment requirements and signs payment proofs.
@@ -28,14 +28,14 @@ The highest-prize version demonstrates these things in one tight flow:
 7. The reality boundary is explicit: testnet prototype scope, reproducible
    sample provider data, and production requirements are separated.
 
-## Current Winning Edge
+## Current Review Edge
 
 - Public judge demo is live.
 - Public repo is live.
 - 64-second walkthrough is live.
 - Real Casper testnet receipt is live on CSPR.live.
-- Prize readiness is `100/100`.
-- Submission audit is `ready_for_highest_prize_submission` with `15/15` checks.
+- Review readiness is `100/100`.
+- Submission audit is `ready_for_final_review` with `15/15` checks.
 - Evidence verification is `34/34`.
 - Judge proof pack covers MCP discovery, HTTP 402, signed payment,
   replay rejection, agentic RWA run, independent verification, and final gate.

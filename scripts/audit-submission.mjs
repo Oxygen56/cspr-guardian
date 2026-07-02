@@ -12,7 +12,7 @@ try {
   console.log(
     JSON.stringify(
       {
-        status: audit.status,
+        status: publicStatus(audit.status),
         checks: audit.summary,
         finalGate: audit.finalGate.highestPrizeGate ? "cleared" : "needs_real_testnet_deploy",
         auditJson: audit.artifacts.auditJson,
@@ -29,4 +29,10 @@ try {
 } catch (error) {
   console.error(error.message);
   process.exitCode = 1;
+}
+
+function publicStatus(value) {
+  return String(value)
+    .replaceAll("ready_for_highest_prize_submission", "ready_for_final_review")
+    .replaceAll("highest-prize-ready", "final-review-ready");
 }

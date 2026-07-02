@@ -29,7 +29,7 @@ try {
   if (!readiness.readyForAnchor) {
     const seal = buildFundingSeal({ readiness, packManifest: existingManifest });
     await writeFinalSubmissionSeal(seal, outputDir);
-    console.log(JSON.stringify(seal, null, 2));
+    console.log(JSON.stringify(publicReviewValue(seal), null, 2));
     process.exitCode = 1;
   } else {
     const existingFinalEvidence = await readJsonIfExists(
@@ -65,7 +65,7 @@ try {
       packManifest
     });
     await writeFinalSubmissionSeal(seal, outputDir);
-    console.log(JSON.stringify(seal, null, 2));
+    console.log(JSON.stringify(publicReviewValue(seal), null, 2));
 
     if (seal.status !== "ready_for_highest_prize_submission") {
       process.exitCode = 1;
@@ -87,6 +87,28 @@ try {
   await writeFinalSubmissionSeal(seal, outputDir);
   console.error(error.message);
   process.exitCode = 1;
+}
+
+function publicReviewValue(value) {
+  return JSON.parse(
+    JSON.stringify(value)
+      .replaceAll("ready_for_highest_prize_submission", "ready_for_final_review")
+      .replaceAll("highest-prize-ready", "final-review-ready")
+      .replaceAll("Highest-prize-ready", "Final-review-ready")
+      .replaceAll("highestPrizeGate", "finalReviewGate")
+      .replaceAll("highestPrizeUnlock", "finalReviewUnlock")
+      .replaceAll("highest_prize", "final_review")
+      .replaceAll("prizeReadiness", "reviewReadiness")
+      .replaceAll("Prize Readiness", "Review Readiness")
+      .replaceAll("Prize readiness", "Review readiness")
+      .replaceAll("prize readiness", "review readiness")
+      .replaceAll("Prize score", "Review score")
+      .replaceAll("prizeStatus", "reviewStatus")
+      .replaceAll("prizeScore", "reviewScore")
+      .replaceAll("highest-prize", "final-review")
+      .replaceAll("Highest-prize", "Final review")
+      .replaceAll("highest prize", "final review")
+  );
 }
 
 async function readPackManifest() {
@@ -143,6 +165,8 @@ async function rebuildSourceZip() {
       ".local/*",
       "data/evidence_bundle.json",
       "data/run_ledger.json",
+      "buidl/*",
+      "reports/toolcheck.md",
       ".env",
       ".git/*"
     ],

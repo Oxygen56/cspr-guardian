@@ -25,7 +25,7 @@ if (process.argv.includes("--open-faucet") || process.env.OPEN_FAUCET === "true"
 console.log(
   JSON.stringify(
     {
-      status: unlock.status,
+      status: publicStatus(unlock.status),
       publicKeyHex: unlock.testnet.publicKeyHex,
       accountStatus: unlock.testnet.accountStatus,
       readyForAnchor: unlock.testnet.readyForAnchor,
@@ -53,6 +53,12 @@ function openUrl(url) {
     stdio: "ignore"
   });
   child.unref();
+}
+
+function publicStatus(value) {
+  return String(value)
+    .replaceAll("ready_for_highest_prize_submission", "ready_for_final_review")
+    .replaceAll("highest-prize-ready", "final-review-ready");
 }
 
 function copyPublicKey(publicKeyHex) {
