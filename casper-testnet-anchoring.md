@@ -103,8 +103,9 @@ issues before the account is funded. It writes:
 - `casper-testnet-preflight.json`
 - `casper-testnet-preflight.md`
 
-The expected pre-funding status is `needs_funding`, with `deployBuild.status`
-equal to `ok`.
+During the earlier pre-funding rehearsal this reported the funding gate as
+pending while still proving `deployBuild.status` equals `ok`. The final
+submission now uses the funded account and published CSPR.live receipt.
 
 Verify the generated preflight evidence:
 

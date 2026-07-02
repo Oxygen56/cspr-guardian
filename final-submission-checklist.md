@@ -30,12 +30,11 @@ true and visible to judges.
 - `npm run export:submission` output producing a final submission directory and
   zip with `manifest.json` SHA-256 hashes.
 - `npm run seal:submission` output producing `casper-final-submission-seal.json`
-  and `.md`; before funding it must say `needs_funding`, after funding it must
-  say `ready_for_highest_prize_submission`.
+  and `.md`; the final submitted state must say
+  `ready_for_highest_prize_submission`.
 - `npm run audit:submission` output producing `casper-submission-audit.json` and
-  `.md`; before funding and public-link upload it should say
-  `ready_except_external_submission_gates`, after funding and link export it
-  should say `ready_for_highest_prize_submission`.
+  `.md`; the final submitted state should say
+  `ready_for_highest_prize_submission`.
 - `npm run check:public-demo` output producing `casper-public-demo-readiness.json`
   and `casper-public-demo-handoff.md`; before public-link upload only
   `public_links_configured` should be missing.
