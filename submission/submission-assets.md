@@ -61,6 +61,7 @@ Public links already prepared:
 | `casper-ci-readiness.md` | Public repository CI/readiness summary |
 | `casper-ci-readiness.json` | Machine-readable CI/readiness result |
 | `submission/dorahacks-draft.md` | Copy-ready project narrative |
+| `submission/dorahacks-page-update.md` | Current compact DoraHacks page update with latest reviewer links and verification metrics |
 | `submission/judge-decision.md` | Judge decision brief source for the public proof artifact |
 | `submission/judge-scorecard.md` | Scorecard source for the public proof artifact |
 | `submission/architecture.md` | Architecture and threat-model source for the public proof artifact |

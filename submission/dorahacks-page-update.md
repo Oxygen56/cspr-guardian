@@ -1,0 +1,62 @@
+# DoraHacks Page Update
+
+Use this as the current DoraHacks project description if the page can still be
+edited.
+
+## Short Description
+
+Autonomous RWA treasury agents need auditable paid risk intelligence,
+replay-safe payments, and Casper-anchored evidence before they can safely
+allocate capital.
+
+## Details
+
+CSPR Guardian is a Casper-native agentic RWA treasury workflow. It shows how an
+autonomous treasury agent discovers paid MCP-style tools, receives x402-style
+payment requirements, signs replay-safe Casper payment authorizations, buys
+risk, KYB, liquidity, and covenant intelligence, makes a constrained allocation
+decision, records provider revenue, and anchors the final decision evidence on
+Casper testnet.
+
+Reviewer start point:
+https://oxygen56.github.io/cspr-guardian/judge-decision.html
+
+Final proof:
+
+- Review readiness: 100/100, final review gate cleared.
+- Browser proof verifier: 31/31 public artifacts verified, 0 failed.
+- Evidence verifier: 34/34 checks passing.
+- Submission audit: 15/15 checks passing, 0 blocked, 0 failed.
+- Unit tests: 25/25 passing.
+- x402 settlement anchors: four Casper testnet transactions tied to signed
+  x402 authorizations.
+- Final Casper receipt:
+  https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
+
+What it demonstrates:
+
+- Paid MCP-style tool discovery and x402-style settlement semantics.
+- Ed25519 signed payment authorizations with nonce replay protection.
+- Four paid RWA intelligence products: risk, KYB/sanctions, liquidity depth,
+  and covenant monitoring.
+- Provider revenue accounting and verifier-ready receipts.
+- A deterministic RWA allocation decision with report hashes, payment hashes,
+  a decision hash, and a receipt hash.
+- A browser-native proof verifier that recomputes SHA-256 hashes for the public
+  proof manifest without requiring a repo clone.
+- A reality boundary that separates real Casper testnet evidence, reproducible
+  sample provider data, and production requirements.
+
+Links:
+
+- Judge decision brief: https://oxygen56.github.io/cspr-guardian/judge-decision.html
+- Demo app: https://oxygen56.github.io/cspr-guardian/
+- Walkthrough: https://oxygen56.github.io/cspr-guardian/walkthrough.html
+- Proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
+- Browser proof verifier: https://oxygen56.github.io/cspr-guardian/verifier.html
+- Judge scorecard: https://oxygen56.github.io/cspr-guardian/judge-scorecard.html
+- Architecture map: https://oxygen56.github.io/cspr-guardian/architecture.html
+- Reality boundary and FAQ: https://oxygen56.github.io/cspr-guardian/judge-faq.html
+- x402 settlement batch: https://oxygen56.github.io/cspr-guardian/proof/casper-x402-settlement-batch.md
+- Scenario matrix: https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md
+- Repository: https://github.com/Oxygen56/cspr-guardian

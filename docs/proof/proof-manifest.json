@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T20:55:19.664Z",
+  "generatedAt": "2026-07-02T21:27:43.324Z",
   "project": "CSPR Guardian",
   "status": "public-proof-room-ready",
   "summary": {
@@ -35,7 +35,7 @@
       "file": "proof/casper-buidl-submission.json",
       "type": "json",
       "bytes": 5130,
-      "sha256": "bc36d2d4618029d83abb5b05caeff608d5f81444c2bee842a05cac5324260f21",
+      "sha256": "6c3aaaf21690dc35c21039ce2b00981585bbc6afd6f77c54714a79d5baf8682f",
       "role": "copy-ready BUIDL fields",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-buidl-submission.json"
     },
@@ -43,7 +43,7 @@
       "file": "proof/casper-buidl-submission.md",
       "type": "markdown",
       "bytes": 6580,
-      "sha256": "48e806a732df468ac8f7b6719d96be269d63eb3f0fcf6fa3c6cfbe73b23bf74b",
+      "sha256": "43431667e3f1611e82df882ab12f110b037e5330b527c895930bc9dc5b647a8f",
       "role": "copy-ready BUIDL fields",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-buidl-submission.md"
     },
@@ -51,7 +51,7 @@
       "file": "proof/casper-ci-readiness.json",
       "type": "json",
       "bytes": 1514,
-      "sha256": "e27efe0d24e3e16bca6661b770a124308c0e73dfa2f7051ed63f637c720478b8",
+      "sha256": "fc48c22988cebc4077f27d5cf15cdca7dcec0219ff8a0a6d58430ee932f62a58",
       "role": "CI readiness",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-ci-readiness.json"
     },
@@ -59,7 +59,7 @@
       "file": "proof/casper-ci-readiness.md",
       "type": "markdown",
       "bytes": 1021,
-      "sha256": "63d0692315a057fc13cdddd4885770cf6d3c58b16ba78470781ca570c557e137",
+      "sha256": "c216f348436d970976c2da1607a85c7f6715f5bbcd4d74d686d663c941c28362",
       "role": "CI readiness",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-ci-readiness.md"
     },
@@ -67,7 +67,7 @@
       "file": "proof/casper-final-review-unlock.json",
       "type": "json",
       "bytes": 3810,
-      "sha256": "6fa58ca686f158506e515507b76f30a7983e2857eca3ab5ac1b29a814a3237f4",
+      "sha256": "7e48a9255e2c8e3ad9eab4b7b2893f31a37dfd3f03f23eb0cd21370fd37ee942",
       "role": "final review unlock report",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-final-review-unlock.json"
     },
@@ -75,7 +75,7 @@
       "file": "proof/casper-final-review-unlock.md",
       "type": "markdown",
       "bytes": 1610,
-      "sha256": "c99a1f3231301446ecb6c3da7b46810d27c8d195d5dd489cf9c5f2e88551a1e3",
+      "sha256": "2e2464d9bb802e23040dfbdf74782aea70d794d0e4385378e339bf352779ca6c",
       "role": "final review unlock report",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-final-review-unlock.md"
     },
@@ -131,7 +131,7 @@
       "file": "proof/casper-public-demo-handoff.md",
       "type": "markdown",
       "bytes": 2040,
-      "sha256": "714301615a49c6eda9f3685086ea7d748b8ade64b95f48a4c60bd2851e1584e3",
+      "sha256": "53cb36a4da198c9186a0e318d9fed779834d9a66bae3f95f4d7526a9860dec5b",
       "role": "public demo readiness",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-public-demo-handoff.md"
     },
@@ -139,7 +139,7 @@
       "file": "proof/casper-public-demo-readiness.json",
       "type": "json",
       "bytes": 2857,
-      "sha256": "ae6a57d8143ea9413df6d1cae62eacd6c0b3acfe559361dc5b38b7cac0d5d026",
+      "sha256": "9680903292885dc090d329ec0d5807cd51afd3b2b2e538952bd7efbb84ccb7de",
       "role": "public demo readiness",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-public-demo-readiness.json"
     },
@@ -147,7 +147,7 @@
       "file": "proof/casper-review-readiness.json",
       "type": "json",
       "bytes": 2625,
-      "sha256": "3e43ee582e22f53caa0c0bcdb56383a672dc8f72c2b35642d9b615a5de706c12",
+      "sha256": "6df76aa82de3c741473803f15f5cd48fd326f15260ceb2124c6a354be0949297",
       "role": "100/100 review readiness scorecard",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-review-readiness.json"
     },
@@ -171,7 +171,7 @@
       "file": "proof/casper-submission-audit.json",
       "type": "json",
       "bytes": 6644,
-      "sha256": "9d32e1625c8ab12a1ac41db845d54a059809bfa450add1e455270db776d056fa",
+      "sha256": "52118f579d9ce090f7c09f6d196a2881cf4ac52b3ffbc6dc0350f8de5a264855",
       "role": "final submission audit",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-submission-audit.json"
     },
@@ -179,7 +179,7 @@
       "file": "proof/casper-submission-audit.md",
       "type": "markdown",
       "bytes": 2892,
-      "sha256": "29ca4428fd53dcd552110679407743fb8e987e8baee565060edba2e3ab8c54aa",
+      "sha256": "19dfef36b2de660d657525ce5a1b10dec0e797a2489f4505761377a3fbbda460",
       "role": "final submission audit",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-submission-audit.md"
     },
