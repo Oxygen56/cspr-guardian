@@ -32,6 +32,7 @@ Public links already prepared:
 | `casper-submission-audit.md` | External pre-submit audit proving evidence, preflight, pack, BUIDL, seal, leak-scan, and zip checks |
 | `casper-submission-audit.json` | Machine-readable external submission audit |
 | `docs/proof-room.html` | Public proof room linking final audit, proof pack, seal, preflight, BUIDL, and CI artifacts |
+| `docs/proof/proof-manifest.md` | SHA-256 manifest for all public proof-room artifacts |
 | `docs/proof/*` | Public Markdown and JSON proof artifacts for browser-based judge review |
 | `casper-public-demo-handoff.md` | Public hosting handoff for Render/Docker, health check, and final BUIDL link export |
 | `casper-public-demo-readiness.json` | Machine-readable public demo hosting readiness |

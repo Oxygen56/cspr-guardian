@@ -211,7 +211,7 @@ function summarizePackManifest(manifest) {
     status: manifest.status,
     missingRequired: manifest.missingRequired?.length ?? null,
     files: manifest.files?.length ?? null,
-    zipPath: manifest.zip?.path || null,
+    zipPath: manifest.zip?.path ? path.basename(manifest.zip.path) : null,
     zipSha256: manifest.zip?.sha256 || null,
     finalGate: manifest.finalGate || null
   };

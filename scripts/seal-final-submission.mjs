@@ -139,6 +139,8 @@ async function rebuildSourceZip() {
       "-x",
       "node_modules/*",
       ".local/*",
+      "data/evidence_bundle.json",
+      "data/run_ledger.json",
       ".env",
       ".git/*"
     ],

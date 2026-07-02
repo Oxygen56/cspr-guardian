@@ -208,6 +208,7 @@
         <div class="actions">
           <a class="button-link primary" href="proof/casper-submission-audit.md">Read audit</a>
           <a class="button-link" href="proof/casper-judge-proof-pack.md">Read judge proof</a>
+          <a class="button-link" href="proof/proof-manifest.md">Check SHA-256 manifest</a>
           <a class="button-link" href="https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a">Open CSPR.live receipt</a>
         </div>
         <div class="metrics">
@@ -215,7 +216,7 @@
           <div class="metric"><strong>14/14</strong><span>Submission audit</span></div>
           <div class="metric"><strong>34/34</strong><span>Evidence verifier</span></div>
           <div class="metric"><strong>28/28</strong><span>x402 preflight</span></div>
-          <div class="metric"><strong>0</strong><span>Blocked gates</span></div>
+          <div class="metric"><strong>21</strong><span>Hashed artifacts</span></div>
         </div>
       </div>
     </header>
@@ -236,6 +237,12 @@
       <section>
         <h2>Artifacts</h2>
         <div class="artifact-grid">
+          <div class="artifact">
+            <strong>Proof Manifest</strong>
+            <p>SHA-256 integrity manifest for every public Markdown and JSON proof artifact in this room.</p>
+            <a href="proof/proof-manifest.md">Markdown</a>
+            <a href="proof/proof-manifest.json">JSON</a>
+          </div>
           <div class="artifact">
             <strong>Submission Audit</strong>
             <p>Final external audit: pack, BUIDL fields, public links, leak scan, final gate, and source zip checks.</p>
@@ -305,6 +312,7 @@
           <li><span class="ok">Pass:</span> final submission pack has no required-file gaps.</li>
           <li><span class="ok">Pass:</span> public repo, demo, video, and explorer links are present.</li>
           <li><span class="ok">Pass:</span> private-key leak scan is clear.</li>
+          <li><span class="ok">Pass:</span> public proof artifacts have SHA-256 hashes.</li>
         </ul>
       </section>
 

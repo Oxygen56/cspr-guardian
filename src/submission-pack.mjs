@@ -6,6 +6,7 @@ import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
 const PRIVATE_KEY_PATTERN = /BEGIN [A-Z ]*PRIVATE KEY|"privateKey(?:Hex|Pem)?"\s*:/i;
+const TEXT_EXTENSIONS = new Set([".css", ".html", ".js", ".json", ".md", ".mjs", ".txt"]);
 
 export async function createSubmissionPack({
   projectDir = process.cwd(),
@@ -32,13 +33,18 @@ export async function createSubmissionPack({
   const missingRequired = [];
 
   for (const file of files) {
-    const copied = await copySubmissionFile({ file, packDir });
+    const copied = await copySubmissionFile({
+      file,
+      packDir,
+      projectDir: resolvedProjectDir,
+      outputDir: resolvedOutputDir
+    });
     if (copied) {
       entries.push(copied);
     } else if (file.required) {
       missingRequired.push({
         path: file.destination,
-        source: file.source
+        source: publicSourceLabel(file.source, resolvedProjectDir, resolvedOutputDir)
       });
     }
   }
@@ -128,9 +134,14 @@ function submissionFiles({ projectDir, outputDir }) {
   ];
 }
 
-async function copySubmissionFile({ file, packDir }) {
+async function copySubmissionFile({ file, packDir, projectDir, outputDir }) {
   try {
-    const bytes = await fs.readFile(file.source);
+    const originalBytes = await fs.readFile(file.source);
+    const bytes = sanitizePublicArtifactBytes(originalBytes, {
+      filePath: file.source,
+      projectDir,
+      outputDir
+    });
     assertNoPrivateKeyLeak(bytes, file.source);
     const destination = path.join(packDir, file.destination);
     await fs.mkdir(path.dirname(destination), { recursive: true });
@@ -138,7 +149,7 @@ async function copySubmissionFile({ file, packDir }) {
 
     return {
       path: file.destination,
-      source: file.source,
+      source: publicSourceLabel(file.source, projectDir, outputDir),
       required: file.required,
       bytes: bytes.length,
       sha256: sha256(bytes)
@@ -254,7 +265,7 @@ async function zipPack({ packDir, zipPath, outputDir }) {
     const stat = await fs.stat(zipPath);
     return {
       ok: true,
-      path: zipPath,
+      path: path.basename(zipPath),
       bytes: stat.size,
       sha256: sha256(await fs.readFile(zipPath))
     };
@@ -264,6 +275,32 @@ async function zipPack({ packDir, zipPath, outputDir }) {
       error: error.message
     };
   }
+}
+
+function sanitizePublicArtifactBytes(bytes, { filePath, projectDir, outputDir }) {
+  if (!TEXT_EXTENSIONS.has(path.extname(filePath))) return bytes;
+  const text = bytes.toString("utf8");
+  return Buffer.from(sanitizePublicText(text, { projectDir, outputDir }));
+}
+
+function sanitizePublicText(text, { projectDir, outputDir }) {
+  return text
+    .replaceAll(`${path.resolve(outputDir)}${path.sep}`, "outputs/")
+    .replaceAll(`${path.resolve(projectDir)}${path.sep}`, "project/")
+    .replaceAll(".local/casper-testnet-key.json", "local testnet key file (not published)");
+}
+
+function publicSourceLabel(source, projectDir, outputDir) {
+  const resolved = path.resolve(source);
+  const resolvedOutputDir = path.resolve(outputDir);
+  const resolvedProjectDir = path.resolve(projectDir);
+  if (resolved.startsWith(`${resolvedOutputDir}${path.sep}`)) {
+    return `outputs/${path.relative(resolvedOutputDir, resolved)}`;
+  }
+  if (resolved.startsWith(`${resolvedProjectDir}${path.sep}`)) {
+    return `project/${path.relative(resolvedProjectDir, resolved)}`;
+  }
+  return path.basename(source);
 }
 
 async function resolveOutputDir(projectDir) {

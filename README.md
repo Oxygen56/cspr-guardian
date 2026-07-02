@@ -11,6 +11,8 @@ Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 
 Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
 
+Public proof manifest: https://oxygen56.github.io/cspr-guardian/proof/proof-manifest.md
+
 Funding handoff: https://oxygen56.github.io/cspr-guardian/funding.html
 
 Final Casper receipt: https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
