@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T12:49:49.696Z",
+  "generatedAt": "2026-07-02T13:05:24.865Z",
   "project": "CSPR Guardian",
   "assetId": "invoice-usdc-7d",
   "requestedAmountUsd": 250000,
@@ -96,8 +96,8 @@
             "extra": {
               "tool": "rwa.risk_score",
               "assetId": "invoice-usdc-7d",
-              "nonce": "2eb66e9e-fe77-4276-a638-d3f802e0fd80",
-              "expiresAt": "2026-07-02T12:54:46.105Z"
+              "nonce": "b542f44f-3268-491e-a640-bb966abdce81",
+              "expiresAt": "2026-07-02T13:10:22.733Z"
             }
           }
         ]
@@ -109,14 +109,14 @@
       "agentId": "judge-proof-agent",
       "amount": "0.25",
       "network": "casper-test",
-      "nonce": "2eb66e9e-fe77-4276-a638-d3f802e0fd80",
-      "authorizationHash": "32324f77aedd88b7c0626745dad9bfa516a3698f01ca0e95bb3c3436afed3e08",
-      "publicKeyFingerprint": "9a350ec65f6f9844b234dbe4",
-      "signature": "cr4RYTIdsjmwxIg8GqilYsljhq1IUnAmdZaQ6Nq3qMov3GLZu5DRuHkV5VVgXFPZUwzaCD_Mg655EZ2O5sKYCg"
+      "nonce": "b542f44f-3268-491e-a640-bb966abdce81",
+      "authorizationHash": "083602ca5893a980a995512678b50492f95e2ca726ac503d43484430691b13be",
+      "publicKeyFingerprint": "bb90730badc55c416a5e5321",
+      "signature": "lX47yPrPDmzFGm292R9gRE94GNud35e4Mw-ZZJC7dqvjBynMukzAuC8lHzbYgOgmNV8artbHohTJ6BUNHDP0BA"
     },
     "settlement": {
       "status": "settled",
-      "txHash": "mock-casper-pay-b1752e7be7a99e2b92fce0fa37498b2bd3f853a0fe1ce802",
+      "txHash": "mock-casper-pay-12ca6af47e4c0a75959618e0d7f88baace2386ec96195810",
       "amount": "0.25",
       "currency": "CSPR"
     },
@@ -126,7 +126,7 @@
     }
   },
   "scenario": {
-    "runId": "run-5c701d5a-11fb-4579-8043-40502bd6a8d5",
+    "runId": "run-0f88a9c9-52e9-4e16-b2b3-4cacbcbf50ac",
     "decision": "approve",
     "approvedAmountUsd": 207452,
     "providerRevenue": "0.62",
@@ -136,9 +136,9 @@
       "rwa.liquidity_depth",
       "rwa.covenant_monitor"
     ],
-    "receiptHash": "0dc0c5dea408520a459473b2ccd7effc1ebba9231665eabfe2dc586dee3fa2b9",
+    "receiptHash": "3553e7d2914568ed0d05705a88799fb720004f4bbe27c69cffb20dd320719fd4",
     "anchorMode": "mock",
-    "deployHash": "mock-casper-receipt-0dc0c5dea408520a459473b2ccd7effc1ebba9231665eabf",
+    "deployHash": "mock-casper-receipt-3553e7d2914568ed0d05705a88799fb720004f4bbe27c69c",
     "explorerUrl": null
   },
   "evidenceVerification": {
@@ -150,7 +150,7 @@
     "failedChecks": [],
     "signatureChecks": 4,
     "hashChecks": 17,
-    "evidenceHash": "c3b84944b9b6ce67e18f637c456508d23856fb05bef5440fde0a6707e184c59a"
+    "evidenceHash": "86e87b74f9fb8b0f46896b71783f05939fa721c3b0f2b2510f7c1290401bd1bc"
   },
   "prizeReadiness": {
     "status": "highest-prize-ready",
@@ -209,13 +209,13 @@
     ],
     "blockers": [],
     "currentEvidence": {
-      "runId": "run-5c701d5a-11fb-4579-8043-40502bd6a8d5",
+      "runId": "run-0f88a9c9-52e9-4e16-b2b3-4cacbcbf50ac",
       "receiptHash": "23fd7a0e66756456960cc2522f2a5dbc0a3ae09b6d1b0ba4e285550e50d4fe16",
       "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
       "anchorMode": "real",
       "reportHashes": {
         "risk": "81d06f2499c1f01b1fba7f6aac0ab04fe5148aedf206d96ea7e1ce6cb8cc2880",
-        "kyb": "6ddacd9b73ec425d186d5dbb11a3ae66c0ba2a4d815607da9c50cb3745befbc6",
+        "kyb": "7b459473322afbd09ff624cbb028f7831c04f534851d580288476819d5cae3a9",
         "liquidity": "6d25b444e94b8c58497524c0f642433bdb7ebf923257496d05adedd869538fe3",
         "covenant": "8267de9604c0ee1dc20389da7a2503c8a7c3358072738d77ccaf66e11f6380a1"
       }

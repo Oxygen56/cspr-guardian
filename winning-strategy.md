@@ -37,6 +37,18 @@ The highest-prize version demonstrates these things in one tight flow:
 - Evidence verification is `34/34`.
 - Judge proof pack covers MCP discovery, HTTP 402, signed payment,
   replay rejection, agentic RWA run, independent verification, and final gate.
+- Public proof room includes SHA-256 hashes for every proof artifact.
+- Competitive positioning brief maps visible buildathon categories to CSPR
+  Guardian's complete Casper-native evidence loop.
+
+## Competitive Benchmark
+
+Publicly visible Casper Agentic Buildathon signals include spend guard,
+multi-agent economy, governance sentinel, and RWA escrow cockpit projects. CSPR
+Guardian should be positioned above generic agent demos by emphasizing one
+reviewable loop: paid MCP discovery, x402-style Casper authorization, four RWA
+intelligence purchases, replay protection, provider revenue, policy-bounded
+allocation, independent verification, and a real Casper receipt.
 
 ## What Still Raises The Ceiling
 

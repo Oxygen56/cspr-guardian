@@ -1,6 +1,6 @@
 # CSPR Guardian BUIDL Submission
 
-Generated: 2026-07-02T12:47:26.811Z
+Generated: 2026-07-02T13:05:27.935Z
 
 ## Copy-Paste Fields
 
@@ -144,7 +144,7 @@ Preflight checks: 11/11
 
 ## Artifacts
 
-- Submission pack: `outputs/cspr-guardian-final-submission.zip`
+- Submission pack: `cspr-guardian-final-submission.zip`
 - Submission pack SHA-256: see `casper-final-submission-seal.json`
 - Source zip: `cspr-guardian-prototype.zip`
 - Judge proof: `casper-judge-proof-pack.md`
