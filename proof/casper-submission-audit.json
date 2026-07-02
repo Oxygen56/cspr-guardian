@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T13:05:28.152Z",
+  "generatedAt": "2026-07-02T13:15:36.112Z",
   "project": "CSPR Guardian",
   "status": "ready_for_highest_prize_submission",
   "summary": {
@@ -23,14 +23,14 @@
     "submissionPackZip": {
       "exists": true,
       "path": "outputs/cspr-guardian-final-submission.zip",
-      "bytes": 2500100,
-      "sha256": "95e769c8fb4f0b3edbf232a678ac458828b34f222f3b56aac7e4faf9cf1d749c"
+      "bytes": 2509237,
+      "sha256": "1ad1f0d4c870fa24170125e0ac794a6daad96844ba34b12d9d7b284534355d2c"
     },
     "sourceZip": {
       "exists": true,
       "path": "outputs/cspr-guardian-prototype.zip",
-      "bytes": 1968424,
-      "sha256": "a08d6e75c257de8d67945185ea83772d323e01c3e33a4d581c62707b5fc6f662"
+      "bytes": 1975539,
+      "sha256": "b4da2b766cd276d16118d8b31a0b18f01d61f88283d8e2add806c67d0019f548"
     },
     "finalSeal": "outputs/casper-final-submission-seal.json",
     "highestPrizeUnlock": "outputs/casper-highest-prize-unlock.json",
@@ -73,10 +73,10 @@
       "name": "submission_pack_present",
       "detail": "Final pack status is ready; missing required files: 0.",
       "packStatus": "ready",
-      "files": 35,
+      "files": 36,
       "missingRequired": 0,
       "zipPath": "outputs/cspr-guardian-final-submission.zip",
-      "zipSha256": "95e769c8fb4f0b3edbf232a678ac458828b34f222f3b56aac7e4faf9cf1d749c",
+      "zipSha256": "1ad1f0d4c870fa24170125e0ac794a6daad96844ba34b12d9d7b284534355d2c",
       "status": "pass",
       "ok": true
     },
@@ -150,7 +150,7 @@
       "name": "final_seal_present",
       "detail": "Final seal is ready_for_highest_prize_submission; package hash source is seal.",
       "sealStatus": "ready_for_highest_prize_submission",
-      "zipSha256": "95e769c8fb4f0b3edbf232a678ac458828b34f222f3b56aac7e4faf9cf1d749c",
+      "zipSha256": "1ad1f0d4c870fa24170125e0ac794a6daad96844ba34b12d9d7b284534355d2c",
       "status": "pass",
       "ok": true
     },
@@ -173,8 +173,8 @@
     },
     {
       "name": "private_key_leak_scan",
-      "detail": "59 text artifacts scanned with no private key material.",
-      "filesScanned": 59,
+      "detail": "60 text artifacts scanned with no private key material.",
+      "filesScanned": 60,
       "matches": [],
       "status": "pass",
       "ok": true
@@ -183,7 +183,7 @@
       "name": "source_zip_exclusions",
       "detail": "Source archive excludes node_modules, .local, and .env.",
       "sourceZipPath": "outputs/cspr-guardian-prototype.zip",
-      "entries": 128,
+      "entries": 131,
       "forbiddenEntries": [],
       "status": "pass",
       "ok": true
@@ -192,7 +192,7 @@
       "name": "final_pack_no_self_reference",
       "detail": "Final pack does not include external seal or audit files that would self-reference the zip.",
       "finalPackPath": "outputs/cspr-guardian-final-submission.zip",
-      "entries": 41,
+      "entries": 42,
       "selfReferences": [],
       "status": "pass",
       "ok": true

@@ -40,6 +40,8 @@ The highest-prize version demonstrates these things in one tight flow:
 - Public proof room includes SHA-256 hashes for every proof artifact.
 - Competitive positioning brief maps visible buildathon categories to CSPR
   Guardian's complete Casper-native evidence loop.
+- Judge scorecard gives reviewers a one-page route through the rubric,
+  final receipt, proof room, manifest, and competitive brief.
 
 ## Competitive Benchmark
 

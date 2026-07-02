@@ -28,7 +28,7 @@ CASPER_CHAIN_NAME=casper-test
 CASPER_NODE_RPC=https://node.testnet.casper.network/rpc
 CASPER_PRIVATE_KEY_ALGORITHM=ED25519
 CASPER_PRIVATE_KEY_HEX=<funded testnet private key>
-CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json
+CASPER_PRIVATE_KEY_FILE=<local-testnet-key-file>
 CASPER_RECEIPT_SINK_PUBLIC_KEY=<recipient public key, optional>
 CASPER_RECEIPT_TRANSFER_MOTES=2500000000
 CASPER_RECEIPT_PAYMENT_MOTES=100000000
@@ -45,9 +45,9 @@ Safer local workflow:
 npm run prepare:testnet
 ```
 
-This writes `.local/casper-testnet-key.json` with file mode `600`, writes
-`.local/casper-testnet-funding.md`, and prints only the public key. Do not
-commit or upload `.local/`.
+This writes a local testnet key file with file mode `600`, writes a local
+funding handoff, and prints only the public key. Do not commit or upload local
+key material.
 
 Raw keygen workflow:
 
@@ -61,7 +61,7 @@ faucet path is through CSPR.live testnet with Casper Wallet connected.
 ## Check Funding And RPC Health
 
 ```bash
-CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json npm run check:testnet
+CASPER_PRIVATE_KEY_FILE=<local-testnet-key-file> npm run check:testnet
 ```
 
 The readiness script and the dashboard Testnet Readiness panel confirm:
@@ -94,7 +94,7 @@ Before broadcasting, build and sign a real transfer deploy locally without
 submitting it:
 
 ```bash
-CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json npm run preflight:testnet
+CASPER_PRIVATE_KEY_FILE=<local-testnet-key-file> npm run preflight:testnet
 ```
 
 This catches key, SDK, chain, payment, transfer, deploy-hash, and memo-format
@@ -144,13 +144,13 @@ Then run the dashboard scenario. The `Casper Receipt` panel should show:
 You can also run the flow without the browser:
 
 ```bash
-CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json npm run anchor:testnet
+CASPER_PRIVATE_KEY_FILE=<local-testnet-key-file> npm run anchor:testnet
 ```
 
 For final submission, run the post-funding evidence pipeline:
 
 ```bash
-CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json npm run finalize:testnet
+CASPER_PRIVATE_KEY_FILE=<local-testnet-key-file> npm run finalize:testnet
 ```
 
 It checks funding, runs the real anchor, waits for the deploy to become
