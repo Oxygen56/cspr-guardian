@@ -1,0 +1,109 @@
+{
+  "version": "0.1",
+  "generatedAt": "2026-07-02T12:38:27.385Z",
+  "project": "CSPR Guardian",
+  "status": "host_ready",
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "total": 7
+  },
+  "publicSubmission": {
+    "status": "complete",
+    "complete": true,
+    "missing": [],
+    "items": [
+      {
+        "name": "repoUrl",
+        "value": "https://github.com/Oxygen56/cspr-guardian",
+        "complete": true
+      },
+      {
+        "name": "demoUrl",
+        "value": "https://oxygen56.github.io/cspr-guardian/",
+        "complete": true
+      },
+      {
+        "name": "videoUrl",
+        "value": "https://oxygen56.github.io/cspr-guardian/walkthrough.html",
+        "complete": true
+      }
+    ]
+  },
+  "deployment": {
+    "healthPath": "/api/health",
+    "dockerfile": "Dockerfile",
+    "renderBlueprint": "render.yaml",
+    "demoCommand": "npm start",
+    "localUrl": "http://localhost:4173",
+    "envForBuidlExport": [
+      "SUBMISSION_REPO_URL",
+      "SUBMISSION_DEMO_URL",
+      "SUBMISSION_VIDEO_URL",
+      "SUBMISSION_CASPER_EXPLORER_URL"
+    ]
+  },
+  "checks": [
+    {
+      "name": "dockerfile_present",
+      "detail": "Dockerfile builds a production Node image and starts the demo with npm start.",
+      "status": "pass",
+      "ok": true
+    },
+    {
+      "name": "dockerignore_protects_secrets",
+      "detail": ".dockerignore excludes local keys, env files, dependencies, and generated outputs.",
+      "status": "pass",
+      "ok": true
+    },
+    {
+      "name": "render_blueprint_present",
+      "detail": "Render blueprint is present with Docker runtime and health check.",
+      "status": "pass",
+      "ok": true
+    },
+    {
+      "name": "health_endpoint_present",
+      "detail": "Server exposes /api/health for hosted-demo checks.",
+      "status": "pass",
+      "ok": true
+    },
+    {
+      "name": "start_script_present",
+      "detail": "package.json has a start script for public hosting.",
+      "status": "pass",
+      "ok": true
+    },
+    {
+      "name": "submission_env_documented",
+      "detail": ".env.example documents public submission URL fields.",
+      "status": "pass",
+      "ok": true
+    },
+    {
+      "name": "public_links_configured",
+      "detail": "BUIDL export has concrete public repo, hosted demo, and video links.",
+      "status": "pass",
+      "complete": true,
+      "missing": [],
+      "items": [
+        {
+          "name": "repoUrl",
+          "value": "https://github.com/Oxygen56/cspr-guardian",
+          "complete": true
+        },
+        {
+          "name": "demoUrl",
+          "value": "https://oxygen56.github.io/cspr-guardian/",
+          "complete": true
+        },
+        {
+          "name": "videoUrl",
+          "value": "https://oxygen56.github.io/cspr-guardian/walkthrough.html",
+          "complete": true
+        }
+      ],
+      "ok": true
+    }
+  ]
+}

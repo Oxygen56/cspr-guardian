@@ -192,6 +192,11 @@ complete paid-agent workflow with replay-safe payments, four paid RWA
 intelligence tools, provider revenue, independent verification, a public demo,
 and a real Casper testnet receipt.
 
+The hosted proof room gives judges browser-accessible Markdown and JSON
+artifacts for the final audit, proof pack, submission seal, testnet evidence,
+preflight files, BUIDL fields, CI readiness, and public demo readiness:
+https://oxygen56.github.io/cspr-guardian/proof-room.html
+
 ## Rubric Alignment
 
 | Area | Evidence |

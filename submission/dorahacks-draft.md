@@ -20,6 +20,8 @@ Final proof:
 - Judge proof pack: `7/7` core assertions passing.
 - Evidence verifier: `34/34` checks passing.
 - Submission audit: `14/14` checks passing, `0` blocked, `0` failed.
+- Judge proof room:
+  `https://oxygen56.github.io/cspr-guardian/proof-room.html`.
 - Casper receipt:
   `https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a`.
 

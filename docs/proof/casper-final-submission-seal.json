@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "generatedAt": "2026-07-02T12:38:44.301Z",
+  "project": "CSPR Guardian",
+  "status": "ready_for_highest_prize_submission",
+  "finalGate": {
+    "highestPrizeGate": true,
+    "prizeStatus": "highest-prize-ready",
+    "prizeScore": 100,
+    "accountStatus": "funded",
+    "readyForAnchor": true,
+    "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+    "deployHash": "7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
+    "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
+    "receiptHash": "23fd7a0e66756456960cc2522f2a5dbc0a3ae09b6d1b0ba4e285550e50d4fe16",
+    "memo": "633145303394134",
+    "memoDerivation": "uint53(first_13_hex_chars(receiptHash))"
+  },
+  "verification": {
+    "evidenceStatus": "verified",
+    "checksPassed": 34,
+    "checksTotal": 34,
+    "evidenceHash": "b4e20e6ed039a626ee81aba9060d6452cd0517aec62e4f83f723013c1ba22179",
+    "judgeProofStatus": null
+  },
+  "submissionPack": {
+    "status": "ready",
+    "missingRequired": 0,
+    "files": 34,
+    "zipPath": "outputs/cspr-guardian-final-submission.zip",
+    "zipSha256": "e18a6ff2101766e70c32ee7ca16aae40bfc8d8ed31c8203021e34e46dbcdcad1",
+    "finalGate": {
+      "highestPrizeGate": true,
+      "prizeStatus": "highest-prize-ready",
+      "prizeScore": 100,
+      "finalEvidenceStatus": "ready_for_submission",
+      "preflightStatus": "ok",
+      "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+      "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
+      "nextStep": "Submit the pack with the real Casper explorer link."
+    }
+  },
+  "message": "Final Casper testnet evidence is present. Submit the pack and paste the CSPR.live explorer link into the BUIDL page."
+}

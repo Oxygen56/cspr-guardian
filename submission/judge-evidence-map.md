@@ -16,6 +16,8 @@ Hosted judge demo: https://oxygen56.github.io/cspr-guardian/
 
 Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 
+Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
+
 Casper receipt:
 https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
 
@@ -65,6 +67,7 @@ an audit trail that can be inspected after the demo.
 | Testnet readiness | RPC health, public key, funding status, and readiness gate are visible | Testnet Readiness panel |
 | Business model | Providers earn per tool call and history persists across runs | Provider Ledger and Run History |
 | Submission clarity | Copy-ready BUIDL fields, artifact links, demo flow, and remaining gate are consolidated | `casper-buidl-submission.md`, `npm run export:buidl` |
+| Browser-accessible proof | Final audit, proof pack, seal, preflight, BUIDL, CI, and public demo artifacts are linked from one page | `docs/proof-room.html`, `docs/proof/*` |
 | Submission auditability | Final pack, BUIDL page, seal, leak scan, source zip exclusions, and self-reference checks are verified before upload | Submission Audit panel, `casper-submission-audit.md`, `npm run audit:submission` |
 | Highest-prize unlock gate | Faucet funding, wallet/reCAPTCHA requirement, public links, and post-funding commands are consolidated | `submission/casper-highest-prize-unlock.md`, `npm run unlock:highest-prize` |
 | Hosted demo readiness | Docker, Render blueprint, health endpoint, and public-link export path are prepared | `casper-public-demo-handoff.md`, `npm run check:public-demo`, `/api/health` |
@@ -99,6 +102,9 @@ an audit trail that can be inspected after the demo.
 - `submission/submission-assets.md`: screenshot and upload checklist.
 - `casper-buidl-submission.md`: copy-ready BUIDL submission page fields and
   final judge narrative.
+- `docs/proof-room.html`: public proof room with browser-accessible audit,
+  proof pack, seal, preflight, BUIDL, CI, and public demo artifacts.
+- `docs/proof/*`: public Markdown and JSON proof artifacts.
 - `casper-submission-audit.md`: external audit showing submission package
   status and any remaining final gate.
 - `casper-public-demo-handoff.md`: public hosting handoff for repo, hosted

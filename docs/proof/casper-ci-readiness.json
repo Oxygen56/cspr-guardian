@@ -1,0 +1,49 @@
+{
+  "version": "0.1",
+  "generatedAt": "2026-07-02T12:38:27.391Z",
+  "project": "CSPR Guardian",
+  "status": "ci_ready",
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6
+  },
+  "publicDemo": {
+    "status": "host_ready",
+    "externalLinkGateOnly": false,
+    "missingPublicLinks": []
+  },
+  "checks": [
+    {
+      "name": "unit_tests",
+      "status": "pass",
+      "detail": "Node test suite passes."
+    },
+    {
+      "name": "evidence_verifier",
+      "status": "pass",
+      "detail": "Evidence bundle verifies signatures, hashes, receipt links, and revenue."
+    },
+    {
+      "name": "preflight_verifier",
+      "status": "pass",
+      "detail": "Committed signed Casper preflight evidence verifies without private key material."
+    },
+    {
+      "name": "x402_settlement_preflight_verifier",
+      "status": "pass",
+      "detail": "Committed signed x402 settlement transfer preflight verifies without private key material."
+    },
+    {
+      "name": "highest_prize_unlock_report",
+      "status": "pass",
+      "detail": "Highest-prize unlock report captures funding, public-link, and final-seal gates."
+    },
+    {
+      "name": "public_demo_readiness",
+      "status": "pass",
+      "detail": "Docker, Render, health endpoint, and public-demo handoff are ready."
+    }
+  ],
+  "error": null
+}

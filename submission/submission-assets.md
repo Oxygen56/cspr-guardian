@@ -7,6 +7,7 @@ Public links already prepared:
 - Repository: https://github.com/Oxygen56/cspr-guardian
 - Hosted judge demo: https://oxygen56.github.io/cspr-guardian/
 - Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
+- Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
 
 | Asset | Purpose |
 | --- | --- |
@@ -30,6 +31,8 @@ Public links already prepared:
 | `casper-buidl-submission.json` | Machine-readable BUIDL page source data |
 | `casper-submission-audit.md` | External pre-submit audit proving evidence, preflight, pack, BUIDL, seal, leak-scan, and zip checks |
 | `casper-submission-audit.json` | Machine-readable external submission audit |
+| `docs/proof-room.html` | Public proof room linking final audit, proof pack, seal, preflight, BUIDL, and CI artifacts |
+| `docs/proof/*` | Public Markdown and JSON proof artifacts for browser-based judge review |
 | `casper-public-demo-handoff.md` | Public hosting handoff for Render/Docker, health check, and final BUIDL link export |
 | `casper-public-demo-readiness.json` | Machine-readable public demo hosting readiness |
 | `casper-ci-readiness.md` | Public repository CI/readiness summary |

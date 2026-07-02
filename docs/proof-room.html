@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSPR Guardian Judge Proof Room</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17202a;
+        --muted: #5c6b7a;
+        --line: #d7dee7;
+        --panel: #ffffff;
+        --bg: #f3f6f8;
+        --accent: #cc1f2f;
+        --ok: #157f54;
+        --warn: #a15c00;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.5;
+      }
+
+      header {
+        background: #111827;
+        color: white;
+        padding: 42px 24px 32px;
+      }
+
+      header div,
+      main {
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: clamp(2.2rem, 4vw, 4.2rem);
+        line-height: 1.03;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+      }
+
+      a {
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      main {
+        padding: 24px;
+      }
+
+      section {
+        margin-top: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 20px;
+        background: var(--panel);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .button-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 8px;
+        padding: 0 14px;
+        color: white;
+        background: rgba(255, 255, 255, 0.08);
+        text-decoration: none;
+      }
+
+      .button-link.primary {
+        border-color: white;
+        background: white;
+        color: #111827;
+      }
+
+      .metrics,
+      .artifact-grid,
+      .flow {
+        display: grid;
+        gap: 12px;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        margin-top: 24px;
+      }
+
+      .metric,
+      .artifact,
+      .flow div {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        background: #fbfcfd;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.45rem;
+      }
+
+      .metric span,
+      .artifact p,
+      .muted {
+        color: var(--muted);
+      }
+
+      .flow {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      .flow strong,
+      .artifact strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--accent);
+      }
+
+      .artifact-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .artifact p {
+        min-height: 70px;
+        margin: 0 0 12px;
+      }
+
+      .artifact a {
+        display: inline-block;
+        margin-right: 12px;
+      }
+
+      .checklist {
+        columns: 2;
+        padding-left: 20px;
+      }
+
+      .checklist li {
+        break-inside: avoid;
+        margin: 0 0 10px;
+      }
+
+      code {
+        display: block;
+        margin-top: 10px;
+        padding: 12px;
+        overflow-wrap: anywhere;
+        border-radius: 8px;
+        background: #101827;
+        color: #e6edf5;
+      }
+
+      .ok {
+        color: var(--ok);
+        font-weight: 800;
+      }
+
+      @media (max-width: 940px) {
+        .metrics,
+        .artifact-grid,
+        .flow {
+          grid-template-columns: 1fr;
+        }
+
+        .checklist {
+          columns: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <p><a href="./">Back to judge demo</a></p>
+        <h1>Judge Proof Room</h1>
+        <p>
+          One-page evidence room for CSPR Guardian: public receipt, proof pack,
+          audit output, CI readiness, BUIDL fields, and signed preflight files.
+        </p>
+        <div class="actions">
+          <a class="button-link primary" href="proof/casper-submission-audit.md">Read audit</a>
+          <a class="button-link" href="proof/casper-judge-proof-pack.md">Read judge proof</a>
+          <a class="button-link" href="https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a">Open CSPR.live receipt</a>
+        </div>
+        <div class="metrics">
+          <div class="metric"><strong>100/100</strong><span>Prize readiness</span></div>
+          <div class="metric"><strong>14/14</strong><span>Submission audit</span></div>
+          <div class="metric"><strong>34/34</strong><span>Evidence verifier</span></div>
+          <div class="metric"><strong>28/28</strong><span>x402 preflight</span></div>
+          <div class="metric"><strong>0</strong><span>Blocked gates</span></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>Verification Path</h2>
+        <div class="flow">
+          <div><strong>Discover</strong>MCP-style paid RWA tools are exposed before the agent calls them.</div>
+          <div><strong>Challenge</strong>Paid tools return HTTP 402 with x402-Casper payment requirements.</div>
+          <div><strong>Authorize</strong>The agent signs replay-safe Ed25519 payment proofs.</div>
+          <div><strong>Decide</strong>Risk, KYB, liquidity, and covenant intelligence gate the allocation.</div>
+          <div><strong>Verify</strong>Signatures, hashes, revenue, and receipt metadata recompute independently.</div>
+          <div><strong>Anchor</strong>The final receipt is public on Casper testnet.</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Artifacts</h2>
+        <div class="artifact-grid">
+          <div class="artifact">
+            <strong>Submission Audit</strong>
+            <p>Final external audit: pack, BUIDL fields, public links, leak scan, final gate, and source zip checks.</p>
+            <a href="proof/casper-submission-audit.md">Markdown</a>
+            <a href="proof/casper-submission-audit.json">JSON</a>
+          </div>
+          <div class="artifact">
+            <strong>Judge Proof Pack</strong>
+            <p>MCP discovery, HTTP 402, signed payment, replay rejection, agent run, verifier, and final gate.</p>
+            <a href="proof/casper-judge-proof-pack.md">Markdown</a>
+            <a href="proof/casper-judge-proof-pack.json">JSON</a>
+          </div>
+          <div class="artifact">
+            <strong>Final Seal</strong>
+            <p>Highest-prize-ready seal with receipt hash, deploy hash, CSPR.live URL, and pack status.</p>
+            <a href="proof/casper-final-submission-seal.md">Markdown</a>
+            <a href="proof/casper-final-submission-seal.json">JSON</a>
+          </div>
+          <div class="artifact">
+            <strong>Final Testnet Evidence</strong>
+            <p>Real Casper transaction, transfer memo, memo derivation, receipt hash, and evidence hash.</p>
+            <a href="proof/casper-final-testnet-evidence.md">Markdown</a>
+            <a href="proof/casper-final-testnet-evidence.json">JSON</a>
+          </div>
+          <div class="artifact">
+            <strong>BUIDL Fields</strong>
+            <p>Copy-ready DoraHacks fields, rubric alignment, demo flow, artifact list, and public links.</p>
+            <a href="proof/casper-buidl-submission.md">Markdown</a>
+            <a href="proof/casper-buidl-submission.json">JSON</a>
+          </div>
+          <div class="artifact">
+            <strong>Prize Readiness</strong>
+            <p>Machine-readable scorecard showing the 100/100 final state and cleared highest-prize gate.</p>
+            <a href="proof/casper-prize-readiness.json">JSON</a>
+          </div>
+          <div class="artifact">
+            <strong>Testnet Preflight</strong>
+            <p>Signed deploy build, memo safety, broadcast false, signer checks, and private-key leak safety.</p>
+            <a href="proof/casper-testnet-preflight.md">Markdown</a>
+            <a href="proof/casper-testnet-preflight.json">JSON</a>
+          </div>
+          <div class="artifact">
+            <strong>x402 Settlement Preflight</strong>
+            <p>Signed Casper transfer preflight for the four paid x402 tool payments without broadcasting.</p>
+            <a href="proof/casper-x402-settlement-preflight.md">Markdown</a>
+            <a href="proof/casper-x402-settlement-preflight.json">JSON</a>
+          </div>
+          <div class="artifact">
+            <strong>CI And Public Demo</strong>
+            <p>CI readiness, Docker/Render handoff, health endpoint, public links, and hosting checks.</p>
+            <a href="proof/casper-ci-readiness.md">CI</a>
+            <a href="proof/casper-public-demo-handoff.md">Hosting</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>What Judges Can Verify</h2>
+        <ul class="checklist">
+          <li><span class="ok">Pass:</span> real Casper testnet receipt is public.</li>
+          <li><span class="ok">Pass:</span> x402 paid tools require payment before access.</li>
+          <li><span class="ok">Pass:</span> signed payment proofs unlock paid intelligence.</li>
+          <li><span class="ok">Pass:</span> nonce replay is rejected.</li>
+          <li><span class="ok">Pass:</span> four paid RWA tools earn provider revenue.</li>
+          <li><span class="ok">Pass:</span> evidence verifier recomputes all checks.</li>
+          <li><span class="ok">Pass:</span> signed Casper deploy preflight does not expose keys.</li>
+          <li><span class="ok">Pass:</span> final submission pack has no required-file gaps.</li>
+          <li><span class="ok">Pass:</span> public repo, demo, video, and explorer links are present.</li>
+          <li><span class="ok">Pass:</span> private-key leak scan is clear.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Public Receipt</h2>
+        <p class="muted">The final receipt is the judge-facing on-chain anchor.</p>
+        <code>https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a</code>
+      </section>
+    </main>
+  </body>
+</html>

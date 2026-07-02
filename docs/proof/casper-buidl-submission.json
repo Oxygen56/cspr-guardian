@@ -1,0 +1,160 @@
+{
+  "version": "0.1",
+  "generatedAt": "2026-07-02T12:38:44.218Z",
+  "project": {
+    "name": "CSPR Guardian",
+    "tagline": "Casper payment and audit receipts for autonomous RWA treasury agents.",
+    "oneLiner": "CSPR Guardian lets an agent discover paid RWA intelligence tools, pay through x402-style Casper proofs, make a constrained allocation decision, and export a verifiable receipt.",
+    "categories": [
+      "Casper",
+      "AI agents",
+      "x402",
+      "MCP",
+      "RWA",
+      "DeFi",
+      "auditability"
+    ]
+  },
+  "submissionFields": {
+    "shortDescription": "Highest-prize-ready RWA agent where autonomous treasuries buy paid x402/MCP risk tools and anchor verifiable decision evidence to Casper.",
+    "repoUrl": "https://github.com/Oxygen56/cspr-guardian",
+    "demoUrl": "https://oxygen56.github.io/cspr-guardian/",
+    "videoUrl": "https://oxygen56.github.io/cspr-guardian/walkthrough.html",
+    "casperExplorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a"
+  },
+  "publicSubmissionFields": {
+    "status": "complete",
+    "complete": true,
+    "missing": [],
+    "items": [
+      {
+        "name": "repoUrl",
+        "value": "https://github.com/Oxygen56/cspr-guardian",
+        "complete": true
+      },
+      {
+        "name": "demoUrl",
+        "value": "https://oxygen56.github.io/cspr-guardian/",
+        "complete": true
+      },
+      {
+        "name": "videoUrl",
+        "value": "https://oxygen56.github.io/cspr-guardian/walkthrough.html",
+        "complete": true
+      }
+    ]
+  },
+  "readiness": {
+    "status": "highest-prize-ready",
+    "score": 100,
+    "maxScore": 100,
+    "highestPrizeGate": true,
+    "blockers": []
+  },
+  "proof": {
+    "assertions": [
+      {
+        "id": "mcp-tool-discovery",
+        "status": "pass",
+        "evidence": "7 tools exposed, including four x402-Casper paid tools"
+      },
+      {
+        "id": "payment-required",
+        "status": "pass",
+        "evidence": "Risk oracle returns HTTP 402 plus PAYMENT-REQUIRED before payment"
+      },
+      {
+        "id": "signed-payment",
+        "status": "pass",
+        "evidence": "Ed25519 signed authorization unlocks the paid oracle"
+      },
+      {
+        "id": "nonce-replay-protection",
+        "status": "pass",
+        "evidence": "Reusing the same signed payment proof is rejected"
+      },
+      {
+        "id": "agentic-rwa-run",
+        "status": "pass",
+        "evidence": "Agent buys four signals, decides under policy, and records provider revenue"
+      },
+      {
+        "id": "independent-verifier",
+        "status": "pass",
+        "evidence": "34/34 checks passed"
+      },
+      {
+        "id": "real-deploy-preflight",
+        "status": "pass",
+        "evidence": "11/11 real deploy preflight checks passed"
+      },
+      {
+        "id": "x402-settlement-preflight",
+        "status": "pass",
+        "evidence": "28/28 signed x402 settlement transfer checks passed"
+      },
+      {
+        "id": "casper-final-gate",
+        "status": "pass",
+        "evidence": "Real CSPR.live deploy evidence is present"
+      }
+    ],
+    "evidenceChecks": {
+      "passed": 34,
+      "total": 34
+    },
+    "preflightVerification": {
+      "status": "verified",
+      "sourceFile": "outputs/casper-testnet-preflight.json",
+      "summary": {
+        "passed": 11,
+        "total": 11
+      },
+      "failedChecks": []
+    },
+    "paidTools": [
+      {
+        "name": "rwa.risk_score",
+        "price": "0.25 CSPR",
+        "payment": "x402-casper"
+      },
+      {
+        "name": "rwa.kyb_screen",
+        "price": "0.10 CSPR",
+        "payment": "x402-casper"
+      },
+      {
+        "name": "rwa.liquidity_depth",
+        "price": "0.15 CSPR",
+        "payment": "x402-casper"
+      },
+      {
+        "name": "rwa.covenant_monitor",
+        "price": "0.12 CSPR",
+        "payment": "x402-casper"
+      }
+    ]
+  },
+  "testnet": {
+    "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+    "accountStatus": "funded",
+    "preflightStatus": "ok",
+    "readyForAnchor": true,
+    "nextCommand": "npm run seal:submission"
+  },
+  "artifacts": {
+    "submissionPack": "outputs/cspr-guardian-final-submission.zip",
+    "submissionPackSha256Source": "casper-final-submission-seal.json",
+    "sourceZip": "cspr-guardian-prototype.zip",
+    "judgeProof": "casper-judge-proof-pack.md",
+    "finalSeal": "casper-final-submission-seal.md",
+    "preflight": "casper-testnet-preflight.md",
+    "screenshots": [
+      "cspr-guardian-dashboard.png",
+      "cspr-guardian-prize-readiness.png",
+      "cspr-guardian-judge-proof.png",
+      "cspr-guardian-testnet-preflight.png",
+      "cspr-guardian-evidence-verification.png"
+    ]
+  }
+}

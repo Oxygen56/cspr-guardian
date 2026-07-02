@@ -9,6 +9,8 @@ Public judge demo: https://oxygen56.github.io/cspr-guardian/
 
 Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 
+Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
+
 Funding handoff: https://oxygen56.github.io/cspr-guardian/funding.html
 
 Final Casper receipt: https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
@@ -39,22 +41,10 @@ npm start
 
 Open `http://localhost:4173`.
 
-In this Codex workspace, Node is available at:
-
-```bash
-/Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node src/server.mjs
-```
-
 ## Test
 
 ```bash
 npm test
-```
-
-Or in this workspace:
-
-```bash
-/Users/oxygen/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node --test
 ```
 
 ## Casper Testnet Commands
@@ -189,17 +179,19 @@ npm run seal:submission
 
 The prepared public key is now funded on Casper testnet, so
 `npm run seal:submission` is the one-command final pack refresh. The lower-level
-real receipt anchor remains available for debugging:
+real receipt anchor remains available for debugging and uses the unpublished
+local testnet key file by default:
 
 ```bash
-CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json npm run anchor:testnet
+npm run anchor:testnet
 ```
 
 Generate only the final post-funding evidence file without rebuilding the whole
-submission pack:
+submission pack. This also uses the unpublished local testnet key file by
+default:
 
 ```bash
-CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json npm run finalize:testnet
+npm run finalize:testnet
 ```
 
 Check a deploy hash:
@@ -305,7 +297,7 @@ These commands refresh or verify the submitted state:
 - `npm test` confirms the local test suite.
 
 The final public materials are the repo, hosted judge demo, 64-second
-walkthrough, CSPR.live transaction, proof screenshots, generated BUIDL fields,
-and final submission pack.
+walkthrough, proof room, CSPR.live transaction, proof screenshots, generated
+BUIDL fields, and final submission pack.
 
 See `docs/casper-testnet-anchoring.md` for the exact environment variables.
