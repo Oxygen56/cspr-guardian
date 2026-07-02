@@ -1,41 +1,36 @@
-# 90-Second Demo Script
+# 64-Second Demo Script
 
-## 0-10s
+## 0-8s
 
-CSPR Guardian is a Casper payment and audit layer for autonomous RWA treasury
-agents. It lets agents buy specialized tools, make a constrained allocation
-decision, and leave a verifiable Casper receipt.
+Open with the final review state: CSPR Guardian is `100/100`,
+highest-prize-ready, and has zero blockers.
 
-## 10-25s
+## 8-18s
 
-Open the dashboard and choose the USDC invoice financing pool. The agent will
-not call free mock data: each tool exposes an x402-style payment requirement.
+Show the Prize Readiness evidence and the published CSPR.live testnet
+transaction. The Casper receipt gate is cleared with a real deploy URL.
 
-## 25-45s
+## 18-28s
 
-Run the agent. Show the trace:
+Show Judge Proof Pack at `7/7`:
 
 - MCP tool discovery
-- signed x402-Casper payment authorizations
-- paid RWA risk oracle
-- paid KYB/sanctions oracle
-- paid liquidity-depth oracle
-- paid covenant-monitoring oracle
+- HTTP 402 payment requirements
+- signed x402-Casper authorization
+- nonce replay rejection
+- independent verification
 
-## 45-65s
+## 28-38s
 
-Show the decision panel. The agent combines risk score, KYB policy, liquidity
-coverage, slippage, and executable size. It approves, limits, or rejects under
-a safety policy.
+Show the agentic RWA workflow: the agent buys risk, KYB, liquidity, and
+covenant intelligence before making the allocation decision.
 
-## 65-78s
+## 38-49s
 
-Show Provider Ledger and Run History. Four paid tools earn CSPR and every run
-persists receipt hashes, proving the agent-to-agent marketplace model.
+Show Casper testnet readiness and preflight evidence: funded account, deploy
+build OK, broadcast false, and final seal ready for highest-prize submission.
 
-## 78-90s
+## 49-64s
 
-Show the Evidence Bundle, Evidence Verification, and Casper Receipt panels.
-The verifier recomputes signatures, payment hashes, report hashes, decision
-hash, receipt hash, and evidence hash. Download the JSON evidence bundle, then
-open the published Casper testnet explorer link for the final receipt.
+Close with the submission pack: repo, hosted demo, walkthrough, proof pack,
+audit, `34/34` evidence verification, and the real Casper receipt link.

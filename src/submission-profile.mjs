@@ -1,7 +1,7 @@
 const PLACEHOLDERS = {
   repoUrl: "<paste repository URL>",
   demoUrl: "<paste hosted demo URL>",
-  videoUrl: "<paste 90-second demo video URL>",
+  videoUrl: "<paste 64-second final walkthrough URL>",
   casperExplorerUrl: "<fund testnet key, run npm run seal:submission, paste CSPR.live deploy URL>"
 };
 

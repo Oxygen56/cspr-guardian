@@ -306,7 +306,8 @@ npm run check:deploy -- <deploy-hash>
   zip, submission pack, and final seal in one pass.
 - Run `npm run audit:submission` again and confirm it says
   `ready_for_highest_prize_submission`.
-- Record a 90-second video showing the full paid-agent flow.
+- Publish the 64-second final walkthrough showing 100/100 status, judge proof,
+  paid-agent flow, and the real Casper receipt.
 - Submit the repo, live demo, and DoraHacks writeup.
 
 See `docs/casper-testnet-anchoring.md` for the exact environment variables.

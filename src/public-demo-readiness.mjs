@@ -155,7 +155,7 @@ ${missingLinks}
 2. Create a Render web service from the repo using \`render.yaml\`.
 3. Keep \`CASPER_MODE=mock\` for the public demo until the testnet key is funded.
 4. Open \`/api/health\` on the hosted URL and confirm it returns \`status: ok\`.
-5. Record the 90-second walkthrough from the hosted URL.
+5. Record or publish the 64-second final walkthrough from the hosted URL.
 6. Re-export BUIDL fields:
 
 \`\`\`bash

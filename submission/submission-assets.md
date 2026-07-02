@@ -35,13 +35,13 @@ Public links already prepared:
 | `casper-ci-readiness.md` | Public repository CI/readiness summary |
 | `casper-ci-readiness.json` | Machine-readable CI/readiness result |
 | `submission/dorahacks-draft.md` | Copy-ready project narrative |
-| `submission/demo-video-script.md` | 90-second demo script |
+| `submission/demo-video-script.md` | 64-second final walkthrough script |
 | `submission/judge-evidence-map.md` | Prize-signal-to-artifact walkthrough |
 
 Current screenshot capture state:
 
 - Decision: `approve`.
-- Static screenshots have been refreshed after final testnet funding and receipt
+- Static screenshots have been refreshed after final testnet funding and
   receipt publication.
 - Prize Readiness: `100/100`, `highest-prize-ready`.
 - Judge Proof Pack: final gate `pass`, replay result `402`.
