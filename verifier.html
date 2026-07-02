@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSPR Guardian Browser Verifier</title>
+    <style>
+      :root {
+        --bg: #f5f7fb;
+        --ink: #14202e;
+        --muted: #607086;
+        --line: #d6e0ea;
+        --panel: #ffffff;
+        --accent: #cc1f2f;
+        --ok: #157f54;
+        --bad: #b42318;
+        --wait: #8a5a00;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      header,
+      main {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 32px 24px;
+      }
+
+      a {
+        color: var(--accent);
+        font-weight: 750;
+      }
+
+      h1 {
+        margin: 18px 0 10px;
+        font-size: clamp(2rem, 4vw, 3.6rem);
+        line-height: 1.04;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+        font-size: 1.35rem;
+      }
+
+      p {
+        max-width: 880px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .button-link,
+      button {
+        display: inline-flex;
+        align-items: center;
+        min-height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 0 14px;
+        background: var(--panel);
+        color: var(--ink);
+        font: inherit;
+        font-weight: 750;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .button-link.primary,
+      button.primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #ffffff;
+      }
+
+      .metrics,
+      .results {
+        display: grid;
+        gap: 12px;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        margin-top: 22px;
+      }
+
+      .metric,
+      section,
+      .result {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .metric {
+        min-height: 86px;
+        padding: 14px;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.45rem;
+      }
+
+      .metric span,
+      .muted {
+        color: var(--muted);
+      }
+
+      section {
+        margin-top: 22px;
+        padding: 18px;
+      }
+
+      .status {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 0 10px;
+        background: #eef2f7;
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 850;
+      }
+
+      .badge.ok {
+        background: #e6f5ee;
+        color: var(--ok);
+      }
+
+      .badge.bad {
+        background: #ffebe8;
+        color: var(--bad);
+      }
+
+      .badge.wait {
+        background: #fff6d6;
+        color: var(--wait);
+      }
+
+      .results {
+        grid-template-columns: 1fr;
+      }
+
+      .result {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        align-items: start;
+        padding: 12px;
+      }
+
+      .result strong {
+        display: block;
+        margin-bottom: 4px;
+        overflow-wrap: anywhere;
+      }
+
+      .result code {
+        display: block;
+        color: var(--muted);
+        overflow-wrap: anywhere;
+      }
+
+      .summary-line {
+        margin-top: 12px;
+      }
+
+      @media (max-width: 860px) {
+        .metrics,
+        .result {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p><a href="./">Back to judge demo</a></p>
+      <h1>Browser Proof Verifier</h1>
+      <p>
+        Recompute the public proof-room SHA-256 manifest directly in the
+        browser. No repository clone, terminal, or private context is required.
+      </p>
+      <div class="actions">
+        <button id="verify-button" class="primary" type="button">Run verifier</button>
+        <a class="button-link" href="proof/proof-manifest.md">Open manifest</a>
+        <a class="button-link" href="proof-room.html">Open proof room</a>
+        <a class="button-link" href="proof/browser-verifier.md">Read verifier proof</a>
+        <a class="button-link" href="https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a">Open CSPR.live receipt</a>
+      </div>
+      <div class="metrics">
+        <div class="metric"><strong id="metric-total">0</strong><span>manifest entries</span></div>
+        <div class="metric"><strong id="metric-passed">0</strong><span>verified artifacts</span></div>
+        <div class="metric"><strong id="metric-failed">0</strong><span>failed artifacts</span></div>
+        <div class="metric"><strong id="metric-bytes">0</strong><span>bytes checked</span></div>
+        <div class="metric"><strong id="metric-status">idle</strong><span>verifier status</span></div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>Verification Status</h2>
+        <div class="status">
+          <span id="overall-badge" class="badge wait">Not started</span>
+          <span id="manifest-badge" class="badge wait">Manifest pending</span>
+          <span id="entries-badge" class="badge wait">Entries pending</span>
+        </div>
+        <p id="summary-line" class="summary-line muted">
+          Press Run verifier to fetch the manifest and recompute all public
+          proof artifact hashes.
+        </p>
+      </section>
+
+      <section>
+        <h2>Artifact Results</h2>
+        <div id="results" class="results"></div>
+      </section>
+    </main>
+
+    <script>
+      const manifestPath = "proof/proof-manifest.json";
+      const button = document.querySelector("#verify-button");
+      const results = document.querySelector("#results");
+      const summaryLine = document.querySelector("#summary-line");
+      const overallBadge = document.querySelector("#overall-badge");
+      const manifestBadge = document.querySelector("#manifest-badge");
+      const entriesBadge = document.querySelector("#entries-badge");
+      const metricTotal = document.querySelector("#metric-total");
+      const metricPassed = document.querySelector("#metric-passed");
+      const metricFailed = document.querySelector("#metric-failed");
+      const metricBytes = document.querySelector("#metric-bytes");
+      const metricStatus = document.querySelector("#metric-status");
+
+      button.addEventListener("click", runVerifier);
+      runVerifier();
+
+      async function runVerifier() {
+        button.disabled = true;
+        results.replaceChildren();
+        updateBadge(overallBadge, "Running", "wait");
+        updateBadge(manifestBadge, "Manifest loading", "wait");
+        updateBadge(entriesBadge, "Entries pending", "wait");
+        setMetrics({ total: 0, passed: 0, failed: 0, bytes: 0, status: "running" });
+        summaryLine.textContent = "Fetching proof manifest and artifacts.";
+
+        try {
+          const manifest = await fetchJson(withCacheBust(manifestPath));
+          const entries = Array.isArray(manifest.entries) ? manifest.entries : [];
+          const expectedCount = Number(manifest.summary?.files || 0);
+          const countMatches = expectedCount === entries.length;
+          updateBadge(
+            manifestBadge,
+            countMatches ? `Manifest loaded: ${entries.length}` : `Manifest count mismatch: ${entries.length}/${expectedCount}`,
+            countMatches ? "ok" : "bad"
+          );
+
+          let passed = 0;
+          let failed = countMatches ? 0 : 1;
+          let bytesChecked = 0;
+          setMetrics({ total: entries.length, passed, failed, bytes: bytesChecked, status: "running" });
+
+          for (const entry of entries) {
+            const result = await verifyEntry(entry);
+            bytesChecked += result.bytes || 0;
+            if (result.ok) {
+              passed += 1;
+            } else {
+              failed += 1;
+            }
+            renderResult(entry, result);
+            setMetrics({ total: entries.length, passed, failed, bytes: bytesChecked, status: "running" });
+          }
+
+          const ok = failed === 0 && passed === entries.length;
+          updateBadge(overallBadge, ok ? "All artifacts verified" : "Verification failed", ok ? "ok" : "bad");
+          updateBadge(entriesBadge, `${passed}/${entries.length} artifacts verified`, ok ? "ok" : "bad");
+          setMetrics({ total: entries.length, passed, failed, bytes: bytesChecked, status: ok ? "verified" : "failed" });
+          summaryLine.textContent = ok
+            ? `Verified ${passed}/${entries.length} public proof artifacts against the SHA-256 manifest.`
+            : `Verified ${passed}/${entries.length}; ${failed} check(s) need review.`;
+        } catch (error) {
+          updateBadge(overallBadge, "Verifier error", "bad");
+          updateBadge(manifestBadge, "Manifest failed", "bad");
+          metricStatus.textContent = "error";
+          summaryLine.textContent = error.message;
+        } finally {
+          button.disabled = false;
+        }
+      }
+
+      async function fetchJson(url) {
+        const response = await fetch(url, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Could not fetch ${url}: HTTP ${response.status}`);
+        }
+        return response.json();
+      }
+
+      async function verifyEntry(entry) {
+        try {
+          const response = await fetch(withCacheBust(entry.file), { cache: "no-store" });
+          if (!response.ok) {
+            return { ok: false, bytes: 0, reason: `HTTP ${response.status}` };
+          }
+          const buffer = await response.arrayBuffer();
+          const hash = await sha256(buffer);
+          const bytes = buffer.byteLength;
+          const hashOk = hash === entry.sha256;
+          const bytesOk = bytes === entry.bytes;
+          return {
+            ok: hashOk && bytesOk,
+            bytes,
+            hash,
+            hashOk,
+            bytesOk,
+            reason: hashOk && bytesOk ? "ok" : "hash_or_byte_mismatch"
+          };
+        } catch (error) {
+          return { ok: false, bytes: 0, reason: error.message };
+        }
+      }
+
+      async function sha256(buffer) {
+        const digest = await crypto.subtle.digest("SHA-256", buffer);
+        return [...new Uint8Array(digest)]
+          .map((byte) => byte.toString(16).padStart(2, "0"))
+          .join("");
+      }
+
+      function renderResult(entry, result) {
+        const item = document.createElement("article");
+        item.className = "result";
+
+        const details = document.createElement("div");
+        const title = document.createElement("strong");
+        title.textContent = entry.file;
+        const role = document.createElement("code");
+        role.textContent = `${entry.role} | expected ${entry.bytes} bytes | ${entry.sha256}`;
+        const actual = document.createElement("code");
+        actual.textContent = result.hash
+          ? `actual ${result.bytes} bytes | ${result.hash}`
+          : `actual unavailable | ${result.reason}`;
+        details.append(title, role, actual);
+
+        const badge = document.createElement("span");
+        badge.className = `badge ${result.ok ? "ok" : "bad"}`;
+        badge.textContent = result.ok ? "verified" : result.reason;
+
+        item.append(details, badge);
+        results.append(item);
+      }
+
+      function setMetrics({ total, passed, failed, bytes, status }) {
+        metricTotal.textContent = String(total);
+        metricPassed.textContent = String(passed);
+        metricFailed.textContent = String(failed);
+        metricBytes.textContent = bytes.toLocaleString("en-US");
+        metricStatus.textContent = status;
+      }
+
+      function updateBadge(element, text, state) {
+        element.textContent = text;
+        element.className = `badge ${state}`;
+      }
+
+      function withCacheBust(path) {
+        const separator = path.includes("?") ? "&" : "?";
+        return `${path}${separator}v=${Date.now()}`;
+      }
+    </script>
+  </body>
+</html>

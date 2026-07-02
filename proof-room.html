@@ -210,6 +210,7 @@
           <a class="button-link" href="judge-scorecard.html">Open judge scorecard</a>
           <a class="button-link" href="architecture.html">Open architecture map</a>
           <a class="button-link" href="judge-faq.html">Open judge FAQ</a>
+          <a class="button-link" href="verifier.html">Run browser verifier</a>
           <a class="button-link" href="proof/casper-judge-proof-pack.md">Read judge proof</a>
           <a class="button-link" href="proof/proof-manifest.md">Check SHA-256 manifest</a>
           <a class="button-link" href="proof/competitive-positioning.md">Read competitive brief</a>
@@ -221,7 +222,7 @@
           <div class="metric"><strong>34/34</strong><span>Evidence verifier</span></div>
           <div class="metric"><strong>4</strong><span>x402 tx anchors</span></div>
           <div class="metric"><strong>28/28</strong><span>x402 preflight</span></div>
-          <div class="metric"><strong>29</strong><span>Hashed artifacts</span></div>
+          <div class="metric"><strong>30</strong><span>Hashed artifacts</span></div>
         </div>
       </div>
     </header>
@@ -248,6 +249,13 @@
             <p>SHA-256 integrity manifest for every public Markdown and JSON proof artifact in this room.</p>
             <a href="proof/proof-manifest.md">Markdown</a>
             <a href="proof/proof-manifest.json">JSON</a>
+            <a href="verifier.html">Browser verifier</a>
+          </div>
+          <div class="artifact">
+            <strong>Browser Proof Verifier</strong>
+            <p>Client-side verifier that fetches every proof artifact, recomputes SHA-256, and compares against the manifest.</p>
+            <a href="verifier.html">Page</a>
+            <a href="proof/browser-verifier.md">Markdown</a>
           </div>
           <div class="artifact">
             <strong>Competitive Positioning</strong>
@@ -355,6 +363,7 @@
           <li><span class="ok">Pass:</span> public repo, demo, video, and explorer links are present.</li>
           <li><span class="ok">Pass:</span> private-key leak scan is clear.</li>
           <li><span class="ok">Pass:</span> public proof artifacts have SHA-256 hashes.</li>
+          <li><span class="ok">Pass:</span> browser verifier recomputes public proof artifact hashes from the manifest.</li>
           <li><span class="ok">Pass:</span> architecture and threat model maps every trust boundary to a proof artifact.</li>
           <li><span class="ok">Pass:</span> reality boundary and judge FAQ separates testnet prototype scope from production requirements.</li>
           <li><span class="ok">Pass:</span> scenario matrix proves repeatable policy outcomes across multiple RWA assets.</li>
