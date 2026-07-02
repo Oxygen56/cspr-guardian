@@ -33,7 +33,7 @@ The highest-prize version demonstrates these things in one tight flow:
 - 64-second walkthrough is live.
 - Real Casper testnet receipt is live on CSPR.live.
 - Prize readiness is `100/100`.
-- Submission audit is `ready_for_highest_prize_submission` with `14/14` checks.
+- Submission audit is `ready_for_highest_prize_submission` with `15/15` checks.
 - Evidence verification is `34/34`.
 - Judge proof pack covers MCP discovery, HTTP 402, signed payment,
   replay rejection, agentic RWA run, independent verification, and final gate.
@@ -44,6 +44,8 @@ The highest-prize version demonstrates these things in one tight flow:
   final receipt, proof room, manifest, and competitive brief.
 - Scenario matrix proves the policy is repeatable across treasury,
   invoice-finance, and trade-credit assets.
+- x402 settlement batch publishes four Casper testnet settlement-anchor
+  transactions tied to the signed x402 tool authorizations.
 
 ## Competitive Benchmark
 
@@ -58,11 +60,9 @@ allocation, independent verification, and a real Casper receipt.
 
 These are optional next improvements. They are not remaining submission gates:
 
-1. Broadcast a real Casper settlement transaction for at least one x402 tool
-   payment, not only the final receipt.
-2. Add a hosted provider dashboard with paid tool revenue across users.
-3. Add a short architecture diagram showing agent, paid tools, verifier, and
-   Casper receipt in one screen.
+1. Add a hosted provider dashboard with paid tool revenue across users.
+2. Add a short architecture diagram showing agent, paid tools, verifier, and
+  Casper receipt in one screen.
 
 ## Judging Hooks
 

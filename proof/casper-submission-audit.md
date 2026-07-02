@@ -1,10 +1,10 @@
 # Casper Submission Audit
 
-Generated: 2026-07-02T13:37:54.005Z
+Generated: 2026-07-02T15:35:03.813Z
 
 Status: ready_for_highest_prize_submission
 
-Checks: 14/14 passed, 0 blocked, 0 failed.
+Checks: 15/15 passed, 0 blocked, 0 failed.
 
 ## Final Gate
 
@@ -29,6 +29,7 @@ Checks: 14/14 passed, 0 blocked, 0 failed.
 | evidence_verified | pass | 34/34 evidence checks passed. |
 | preflight_verified | pass | 11/11 preflight checks passed. |
 | x402_settlement_preflight_verified | pass | 28/28 x402 settlement preflight checks passed. |
+| x402_settlement_batch_verified | pass | 34/34 real x402 settlement-anchor checks passed. |
 | submission_pack_present | pass | Final pack status is ready; missing required files: 0. |
 | buidl_page_present | pass | BUIDL page fields, final seal reference, and funding command are present. |
 | public_submission_fields | pass | Repository, hosted demo, and video URLs are concrete public links. |
@@ -37,7 +38,7 @@ Checks: 14/14 passed, 0 blocked, 0 failed.
 | final_seal_present | pass | Final seal is ready_for_highest_prize_submission; package hash source is seal. |
 | highest_prize_unlock_present | pass | Highest-prize unlock report is ready_for_highest_prize_submission with 0 remaining gate(s). |
 | highest_prize_gate | pass | Real Casper testnet receipt evidence is ready for highest-prize submission. |
-| private_key_leak_scan | pass | 64 text artifacts scanned with no private key material. |
+| private_key_leak_scan | pass | 68 text artifacts scanned with no private key material. |
 | source_zip_exclusions | pass | Source archive excludes node_modules, .local, and .env. |
 | final_pack_no_self_reference | pass | Final pack does not include external seal or audit files that would self-reference the zip. |
 
@@ -49,7 +50,7 @@ Checks: 14/14 passed, 0 blocked, 0 failed.
 ## Integrity Files
 
 - Submission pack: `outputs/cspr-guardian-final-submission.zip`
-- Submission pack SHA-256: `64288eaaac3c14f2e118a9fb4b51a3096862c28722e0447bb6d5245e66a1b64a`
+- Submission pack SHA-256: `1d4cb90786ee453bfb503b6c199866bc19f11826f26294e536270fe17fe33e89`
 - Source archive: `outputs/cspr-guardian-prototype.zip`
 - Final seal: `casper-final-submission-seal.json`
 - Seal markdown: `casper-final-submission-seal.md`

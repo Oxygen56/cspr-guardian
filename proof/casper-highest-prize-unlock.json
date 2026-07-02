@@ -1,13 +1,13 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T12:38:25.043Z",
+  "generatedAt": "2026-07-02T15:32:24.796Z",
   "project": "CSPR Guardian",
   "status": "ready_for_highest_prize_submission",
   "testnet": {
     "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
     "accountStatus": "funded",
     "readyForAnchor": true,
-    "balanceMotes": "4900000000",
+    "balanceMotes": "4500000000",
     "requiredMotes": "2600000000",
     "chain": "casper-test",
     "rpcStatus": "ok",
@@ -61,7 +61,7 @@
         "accountStatus": "funded",
         "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
         "requiredMotes": "2600000000",
-        "balanceMotes": "4900000000"
+        "balanceMotes": "4500000000"
       }
     },
     {

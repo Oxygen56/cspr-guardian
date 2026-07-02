@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T13:37:47.841Z",
+  "generatedAt": "2026-07-02T15:34:09.426Z",
   "project": {
     "name": "CSPR Guardian",
     "tagline": "Casper payment and audit receipts for autonomous RWA treasury agents.",
@@ -94,6 +94,11 @@
         "evidence": "28/28 signed x402 settlement transfer checks passed"
       },
       {
+        "id": "x402-real-settlement",
+        "status": "pass",
+        "evidence": "34/34 real x402 settlement-anchor checks passed"
+      },
+      {
         "id": "casper-final-gate",
         "status": "pass",
         "evidence": "Real CSPR.live deploy evidence is present"
@@ -149,6 +154,7 @@
     "judgeProof": "casper-judge-proof-pack.md",
     "finalSeal": "casper-final-submission-seal.md",
     "preflight": "casper-testnet-preflight.md",
+    "x402SettlementBatch": "casper-x402-settlement-batch.md",
     "screenshots": [
       "cspr-guardian-dashboard.png",
       "cspr-guardian-prize-readiness.png",

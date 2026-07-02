@@ -109,7 +109,7 @@
       }
 
       .metrics {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-columns: repeat(6, minmax(0, 1fr));
         margin-top: 24px;
       }
 
@@ -215,10 +215,11 @@
         </div>
         <div class="metrics">
           <div class="metric"><strong>100/100</strong><span>Prize readiness</span></div>
-          <div class="metric"><strong>14/14</strong><span>Submission audit</span></div>
+          <div class="metric"><strong>15/15</strong><span>Submission audit</span></div>
           <div class="metric"><strong>34/34</strong><span>Evidence verifier</span></div>
+          <div class="metric"><strong>4</strong><span>x402 tx anchors</span></div>
           <div class="metric"><strong>28/28</strong><span>x402 preflight</span></div>
-          <div class="metric"><strong>25</strong><span>Hashed artifacts</span></div>
+          <div class="metric"><strong>27</strong><span>Hashed artifacts</span></div>
         </div>
       </div>
     </header>
@@ -230,6 +231,7 @@
           <div><strong>Discover</strong>MCP-style paid RWA tools are exposed before the agent calls them.</div>
           <div><strong>Challenge</strong>Paid tools return HTTP 402 with x402-Casper payment requirements.</div>
           <div><strong>Authorize</strong>The agent signs replay-safe Ed25519 payment proofs.</div>
+          <div><strong>Settle</strong>Four x402 settlement-anchor transactions are public on Casper testnet.</div>
           <div><strong>Decide</strong>Risk, KYB, liquidity, and covenant intelligence gate the allocation.</div>
           <div><strong>Verify</strong>Signatures, hashes, revenue, and receipt metadata recompute independently.</div>
           <div><strong>Anchor</strong>The final receipt is public on Casper testnet.</div>
@@ -310,6 +312,12 @@
             <a href="proof/casper-x402-settlement-preflight.json">JSON</a>
           </div>
           <div class="artifact">
+            <strong>x402 Settlement Batch</strong>
+            <p>Four real Casper testnet settlement-anchor transactions tied to the signed x402 tool authorizations.</p>
+            <a href="proof/casper-x402-settlement-batch.md">Markdown</a>
+            <a href="proof/casper-x402-settlement-batch.json">JSON</a>
+          </div>
+          <div class="artifact">
             <strong>CI And Public Demo</strong>
             <p>CI readiness, Docker/Render handoff, health endpoint, public links, and hosting checks.</p>
             <a href="proof/casper-ci-readiness.md">CI</a>
@@ -324,6 +332,7 @@
           <li><span class="ok">Pass:</span> real Casper testnet receipt is public.</li>
           <li><span class="ok">Pass:</span> x402 paid tools require payment before access.</li>
           <li><span class="ok">Pass:</span> signed payment proofs unlock paid intelligence.</li>
+          <li><span class="ok">Pass:</span> four x402 settlement anchors are public on Casper testnet.</li>
           <li><span class="ok">Pass:</span> nonce replay is rejected.</li>
           <li><span class="ok">Pass:</span> four paid RWA tools earn provider revenue.</li>
           <li><span class="ok">Pass:</span> evidence verifier recomputes all checks.</li>
