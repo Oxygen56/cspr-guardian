@@ -1,6 +1,6 @@
 # Judge Proof Pack
 
-Generated: 2026-07-02T15:34:06.410Z
+Generated: 2026-07-02T16:30:31.583Z
 
 Project: CSPR Guardian
 
@@ -24,8 +24,8 @@ Prize readiness: 100/100 (highest-prize-ready)
 ## x402 Payment Flow
 
 - Before payment: oracle returned 402 with PAYMENT-REQUIRED header.
-- Signed authorization hash: 3b2eb7fa9e5bfd5da26d53bd0d47b42446346d2a3c6e755ccf85c5e7fa3866ba
-- Demo settlement hash: mock-casper-pay-9bb40940086940dcb79d775e7ae7a72888b423ce6e692c29
+- Signed authorization hash: 2d857df0bd15af2e7c699e47afc4dd5660f33124fdb8b5c5dd4ebc78296f131f
+- Demo settlement hash: mock-casper-pay-10763e09a953a58878837cec5e80c14952a7a762230a81af
 - Replay attempt: 402, Payment nonce already used
 - Real x402 settlement anchors: verified (34/34)
 
@@ -40,11 +40,11 @@ Prize readiness: 100/100 (highest-prize-ready)
 
 ## Agent Run
 
-- Run id: run-37a41748-ffe1-4e98-9ac1-3ce38321c53a
+- Run id: run-1beb2ab9-c045-48c2-88dc-ff4cd67e133b
 - Decision: approve
 - Approved amount: $207,452
 - Provider revenue: 0.62 CSPR
-- Receipt hash: d178a082a9520d20a63e2a906e589cb5c10ff03ddc58697a6e8fcf7339eddad6
+- Receipt hash: 7f223b5d35a2bc6323804d7dce64b1b3b21f9b78c0981c25e69613b936da63c0
 - Demo anchor mode: mock
 - Demo explorer URL: not used for final judging
 - Final Casper receipt: https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
@@ -55,7 +55,7 @@ Prize readiness: 100/100 (highest-prize-ready)
 - Checks: 34/34
 - Signature checks: 4
 - Hash checks: 17
-- Evidence hash: 7ed9d6feae17129d96f25f9fdc4d466c4448e7ab73554c9066593cfa34cc383d
+- Evidence hash: d082970edb21ba6871dfff0257a1a74c9b1221ac4cc696ee7022ebfd091c9dc9
 
 ## Prize Readiness Criteria
 

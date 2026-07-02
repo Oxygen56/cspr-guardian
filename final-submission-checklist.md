@@ -25,6 +25,7 @@ already true for the submitted CSPR Guardian build.
 - Walkthrough video: `https://oxygen56.github.io/cspr-guardian/walkthrough.html`.
 - Judge proof room: `https://oxygen56.github.io/cspr-guardian/proof-room.html`.
 - Judge scorecard: `https://oxygen56.github.io/cspr-guardian/judge-scorecard.html`.
+- Architecture map: `https://oxygen56.github.io/cspr-guardian/architecture.html`.
 - Scenario matrix:
   `https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md`.
 - x402 settlement batch:
@@ -66,6 +67,9 @@ already true for the submitted CSPR Guardian build.
 - `npm run check:ci` output producing CI readiness artifacts.
 - `npm run scenario:matrix` output proving repeatable policy outcomes across
   treasury, invoice-finance, and trade-credit assets.
+- `docs/architecture.html` and `docs/proof/architecture.md` showing the full
+  trust-boundary map for payment, replay safety, settlement, policy,
+  verification, Casper anchoring, and secret handling.
 - Product, preflight, judge proof, prize readiness, and verifier screenshots
   from `submission/assets/`.
 - Browser-accessible proof artifacts under `docs/proof/`, linked from
@@ -76,16 +80,17 @@ already true for the submitted CSPR Guardian build.
 1. Start with Prize Readiness: `100/100`, final gate cleared, blockers `0`.
 2. Open the Judge Scorecard.
 3. Open the real CSPR.live transaction.
-4. Show the x402 Settlement Batch: four Casper testnet settlement anchors tied
+4. Show the Architecture Map: trust boundaries and matching proof artifacts.
+5. Show the x402 Settlement Batch: four Casper testnet settlement anchors tied
    to signed x402 authorizations.
-5. Show the Scenario Matrix: three RWA assets, distinct policy outcomes, same
+6. Show the Scenario Matrix: three RWA assets, distinct policy outcomes, same
    paid tool stack.
-6. Show the Judge Proof Pack: MCP discovery, HTTP 402, signed payment, replay
+7. Show the Judge Proof Pack: MCP discovery, HTTP 402, signed payment, replay
    rejected, and final gate.
-7. Show the Provider Ledger: `0.62 CSPR` revenue across four paid tools.
-8. Show Evidence Verification: `34/34` recomputed checks.
-9. Show Submission Audit: final submission checks.
-10. Close with the repeatable model: any RWA intelligence provider can expose a
+8. Show the Provider Ledger: `0.62 CSPR` revenue across four paid tools.
+9. Show Evidence Verification: `34/34` recomputed checks.
+10. Show Submission Audit: final submission checks.
+11. Close with the repeatable model: any RWA intelligence provider can expose a
    paid MCP tool, and any autonomous treasury can buy intelligence with an
    auditable Casper receipt.
 
@@ -94,4 +99,3 @@ already true for the submitted CSPR Guardian build.
 No remaining submission gate is known. Optional next improvements are:
 
 1. Add a hosted provider analytics dashboard across multiple users.
-2. Add a one-screen architecture diagram for the judge flow.
