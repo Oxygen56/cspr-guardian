@@ -541,6 +541,10 @@ ol li p {
   background: #fbfcfd;
 }
 
+.prize-row > div {
+  min-width: 0;
+}
+
 .prize-row.pass {
   border-color: #b7dfd8;
   background: #f1fbf8;
@@ -565,6 +569,12 @@ ol li p {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.prize-row a {
+  color: var(--blue);
+  font-weight: 700;
 }
 
 .prize-row em {

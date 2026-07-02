@@ -38,4 +38,4 @@ persists receipt hashes, proving the agent-to-agent marketplace model.
 Show the Evidence Bundle, Evidence Verification, and Casper Receipt panels.
 The verifier recomputes signatures, payment hashes, report hashes, decision
 hash, receipt hash, and evidence hash. Download the JSON evidence bundle, then
-open the testnet explorer link after `CASPER_MODE=real` is funded.
+open the published Casper testnet explorer link for the final receipt.

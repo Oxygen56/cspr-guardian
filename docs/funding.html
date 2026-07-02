@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CSPR Guardian Funding Handoff</title>
+    <title>CSPR Guardian Final Testnet Receipt</title>
     <style>
       :root {
         color-scheme: light;
@@ -162,17 +162,18 @@
   <body>
     <header>
       <p><a href="./">Back to judge demo</a></p>
-      <h1>Funding Handoff</h1>
+      <h1>Final Testnet Receipt</h1>
       <p class="status">
-        Fund the prepared Casper testnet key, then let the watcher finish the
-        highest-prize seal.
+        The prepared Casper testnet key is funded and the final highest-prize
+        receipt has been published on CSPR.live.
       </p>
     </header>
     <main>
       <section>
         <h2>Prepared Testnet Key</h2>
         <span class="pill ok">RPC verified</span>
-        <span class="pill">Needs faucet funding</span>
+        <span class="pill ok">Account funded</span>
+        <span class="pill ok">Final receipt published</span>
         <code class="key" id="public-key">011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2</code>
         <button type="button" id="copy-key">Copy public key</button>
         <span class="status" id="copy-status" aria-live="polite"></span>
@@ -180,18 +181,18 @@
 
       <div class="grid">
         <section>
-          <h2>Faucet Flow</h2>
+          <h2>Final Evidence</h2>
           <ol>
-            <li>Copy the public key above.</li>
-            <li>Open the Casper testnet faucet.</li>
-            <li>Connect Casper Wallet on Casper testnet.</li>
-            <li>Request funds for the copied public key.</li>
-            <li>Return to the terminal and run <code>npm run wait:testnet</code>.</li>
+            <li>Prize readiness is <code>100/100</code>.</li>
+            <li>Highest-prize gate is cleared.</li>
+            <li>Evidence verification passes <code>34/34</code> checks.</li>
+            <li>Final seal status is <code>ready_for_highest_prize_submission</code>.</li>
+            <li>Casper testnet transaction is public and queryable.</li>
           </ol>
         </section>
         <section>
           <h2>Links</h2>
-          <p><a class="button" href="https://testnet.cspr.live/tools/faucet">Open faucet</a></p>
+          <p><a class="button" href="https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a">Open CSPR.live transaction</a></p>
           <p style="margin-top: 12px;"><a class="button secondary" href="https://github.com/Oxygen56/cspr-guardian">Open repo</a></p>
         </section>
       </div>

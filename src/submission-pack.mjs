@@ -232,7 +232,7 @@ ${finalGate.nextStep}
 2. Use \`writeup/dorahacks-draft.md\` for the DoraHacks BUIDL text.
 3. Attach the files under \`screenshots/\` as product and proof screenshots.
 4. Add \`proof/casper-judge-proof-pack.md\` and \`proof/casper-prize-readiness.json\` as reviewer evidence.
-5. After funding, replace the final gate note with the real CSPR.live deploy link.
+5. Include the real CSPR.live transaction link as the final Casper receipt evidence.
 
 ## Pack Contents
 

@@ -182,10 +182,9 @@ buys risk/KYB/liquidity/covenant intelligence, makes a constrained allocation
 decision, records provider revenue, and exports tamper-evident evidence.
 
 The key Casper angle is provenance: each run produces payment hashes, report
-hashes, a decision hash, a receipt hash, and a Casper receipt anchor path. Before
-funding, the project proves that the real Casper deploy builds and signs without
-broadcasting. After funding, \`npm run seal:submission\` publishes the final
-CSPR.live deploy evidence and regenerates this pack.
+hashes, a decision hash, a receipt hash, and a Casper receipt anchor path. The
+final seal publishes real CSPR.live deploy evidence and regenerates this pack
+with the highest-prize gate cleared.
 
 ## Readiness
 
@@ -236,7 +235,7 @@ ${paidTools}
 5. Show the decision, provider revenue, run history, and receipt hash.
 6. Show Evidence Verification with all checks passing.
 7. Show Final Seal and the submission pack hash.
-8. After funding, open the real CSPR.live explorer URL.
+8. Open the real CSPR.live explorer URL for the final receipt.
 
 ## Artifacts
 

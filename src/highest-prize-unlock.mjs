@@ -243,6 +243,31 @@ export function renderHighestPrizeUnlockMarkdown(unlock) {
   const missingLinks = unlock.publicSubmission.missing.length
     ? unlock.publicSubmission.missing.join(", ")
     : "none";
+  const ready = unlock.status === "ready_for_highest_prize_submission";
+  const fundingSection = ready
+    ? `## Final Testnet Receipt
+
+- Account status: ${unlock.testnet.accountStatus}
+- Ready for anchor: ${unlock.testnet.readyForAnchor}
+- Explorer URL: ${unlock.finalSeal?.explorerUrl || "missing"}
+- Deploy hash: ${unlock.finalSeal?.deployHash || "missing"}`
+    : `## Manual Faucet Steps
+
+1. Run \`${unlock.commands.faucetHelper || "npm run fund:testnet"}\` to copy the prepared public key and open the funding guide plus faucet page.
+2. In CSPR.live, connect Casper Wallet on Casper testnet.
+3. Request faucet funds for the copied public key.
+4. Run \`${unlock.commands.waitForFunding || "npm run wait:testnet"}\`; it waits for the balance and then runs the final seal.`;
+  const commandSection = ready
+    ? `## Final Verification Commands
+
+\`\`\`bash
+${unlock.commands.finalVerification.join("\n")}
+\`\`\``
+    : `## Commands After Funding
+
+\`\`\`bash
+${unlock.commands.afterFunding.join("\n")}
+\`\`\``;
 
   return `# Casper Highest Prize Unlock
 
@@ -268,12 +293,7 @@ Faucet checks: wallet required = ${unlock.faucet.walletRequired}, reCAPTCHA requ
 
 Required motes: ${unlock.testnet.requiredMotes || "unknown"}
 
-## Manual Faucet Steps
-
-1. Run \`${unlock.commands.faucetHelper || "npm run fund:testnet"}\` to copy the prepared public key and open the funding guide plus faucet page.
-2. In CSPR.live, connect Casper Wallet on Casper testnet.
-3. Request faucet funds for the copied public key.
-4. Run \`${unlock.commands.waitForFunding || "npm run wait:testnet"}\`; it waits for the balance and then runs the final seal.
+${fundingSection}
 
 ## Public Links
 
@@ -289,11 +309,7 @@ ${gates}
 
 ${unlock.nextAction}
 
-## Commands After Funding
-
-\`\`\`bash
-${unlock.commands.afterFunding.join("\n")}
-\`\`\`
+${commandSection}
 
 ## Commands After Public Links
 

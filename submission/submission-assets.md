@@ -11,9 +11,9 @@ Public links already prepared:
 | Asset | Purpose |
 | --- | --- |
 | `submission/assets/cspr-guardian-dashboard.png` | Main product screenshot showing the end-to-end CSPR Guardian dashboard |
-| `submission/assets/cspr-guardian-prize-readiness.png` | Prize-readiness screenshot captured before final funding; machine-readable proof now shows `100/100` |
-| `submission/assets/cspr-guardian-judge-proof.png` | Judge proof screenshot captured before final funding; regenerated judge proof now shows final gate `pass` |
-| `submission/assets/cspr-guardian-testnet-preflight.png` | Testnet preflight screenshot; regenerated preflight shows deploy build `ok`, broadcast `false`, and safe memo bits `52` |
+| `submission/assets/cspr-guardian-prize-readiness.png` | Current prize-readiness screenshot showing `100/100`, cleared final gate, and zero blockers |
+| `submission/assets/cspr-guardian-judge-proof.png` | Judge proof screenshot; regenerated judge proof shows final gate `pass` |
+| `submission/assets/cspr-guardian-testnet-preflight.png` | Testnet preflight screenshot; deploy build `ok`, broadcast `false`, and safe memo bits `52` |
 | `submission/assets/cspr-guardian-evidence-verification.png` | Technical proof screenshot showing `Verified` and `34/34` checks |
 | `submission/prize-readiness-snapshot.json` | Machine-readable `/api/prize-readiness` snapshot |
 | `submission/judge-proof-pack.json` | Machine-readable proof of MCP discovery, x402 payment flow, replay rejection, verifier status, and prize-readiness gate |
@@ -22,9 +22,9 @@ Public links already prepared:
 | `submission/casper-testnet-preflight.md` | Human-readable signed-deploy preflight |
 | `submission/casper-x402-settlement-preflight.json` | Machine-readable signed-but-not-broadcast Casper transfer preflight for four x402 tool payments |
 | `submission/casper-x402-settlement-preflight.md` | Human-readable x402 settlement preflight |
-| `submission/casper-highest-prize-unlock.json` | Machine-readable highest-prize unlock gate report for faucet funding, public links, and final seal commands |
+| `submission/casper-highest-prize-unlock.json` | Machine-readable highest-prize unlock report with funded testnet account, public links, and final receipt |
 | `submission/casper-highest-prize-unlock.md` | Human-readable highest-prize unlock checklist |
-| `casper-testnet-funding-watch.json` | Machine-readable faucet funding watcher status; optional until the account is funded |
+| `casper-testnet-funding-watch.json` | Machine-readable testnet funding watcher status from the final funding flow |
 | `casper-testnet-funding-watch.md` | Human-readable watcher status for `npm run wait:testnet` |
 | `casper-buidl-submission.md` | Copy-ready BUIDL page fields, proof summary, and demo flow |
 | `casper-buidl-submission.json` | Machine-readable BUIDL page source data |
@@ -41,10 +41,11 @@ Public links already prepared:
 Current screenshot capture state:
 
 - Decision: `approve`.
-- Static screenshots were captured before final faucet funding.
-- Regenerated Prize Readiness: `100/100`, `highest-prize-ready`.
-- Regenerated Judge Proof Pack: final gate `pass`, replay result `402`.
-- Regenerated Testnet Preflight: deploy build `ok`, broadcast `false`, memo bits `52`.
+- Static screenshots have been refreshed after final testnet funding and receipt
+  receipt publication.
+- Prize Readiness: `100/100`, `highest-prize-ready`.
+- Judge Proof Pack: final gate `pass`, replay result `402`.
+- Testnet Preflight: deploy build `ok`, broadcast `false`, memo bits `52`.
 - Final Seal external output: `ready_for_highest_prize_submission`.
 - Highest Prize Unlock external output: `ready_for_highest_prize_submission`
   with zero remaining gates.

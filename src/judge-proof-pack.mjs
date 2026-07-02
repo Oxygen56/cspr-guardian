@@ -241,6 +241,27 @@ export function renderJudgeProofMarkdown(pack) {
   const criteriaRows = pack.prizeReadiness.criteria
     .map((item) => `| ${item.label} | ${item.status} | ${item.value} | ${item.weight} |`)
     .join("\n");
+  const finalGateSummary = pack.prizeReadiness.highestPrizeGate
+    ? `The highest-prize gate is cleared by a real Casper testnet receipt.
+
+- Explorer URL: ${pack.prizeReadiness.currentEvidence?.explorerUrl || pack.scenario.explorerUrl || "missing"}
+- Public key: ${pack.testnet.publicKeyHex || "missing"}
+- Account status: ${pack.testnet.accountStatus}
+- Ready for anchor: ${pack.testnet.readyForAnchor}
+- Deploy preflight verification: ${pack.testnet.preflightVerification.status} (${pack.testnet.preflightVerification.summary.passed}/${pack.testnet.preflightVerification.summary.total})`
+    : `The remaining highest-prize gate is a real Casper testnet deploy.
+
+- Public key: ${pack.testnet.publicKeyHex || "missing"}
+- Account status: ${pack.testnet.accountStatus}
+- Ready for anchor: ${pack.testnet.readyForAnchor}
+- Deploy preflight verification: ${pack.testnet.preflightVerification.status} (${pack.testnet.preflightVerification.summary.passed}/${pack.testnet.preflightVerification.summary.total})
+- Faucet: ${pack.testnet.faucetUrl}
+
+After funding, run:
+
+\`\`\`bash
+npm run seal:submission
+\`\`\``;
 
   return `# Judge Proof Pack
 
@@ -295,19 +316,7 @@ ${criteriaRows}
 
 ## Current Final Gate
 
-The remaining highest-prize gate is a real Casper testnet deploy.
-
-- Public key: ${pack.testnet.publicKeyHex || "missing"}
-- Account status: ${pack.testnet.accountStatus}
-- Ready for anchor: ${pack.testnet.readyForAnchor}
-- Deploy preflight verification: ${pack.testnet.preflightVerification.status} (${pack.testnet.preflightVerification.summary.passed}/${pack.testnet.preflightVerification.summary.total})
-- Faucet: ${pack.testnet.faucetUrl}
-
-After funding, run:
-
-\`\`\`bash
-npm run seal:submission
-\`\`\`
+${finalGateSummary}
 `;
 }
 

@@ -464,7 +464,7 @@ async function refreshTestnetReadiness() {
   testnetBadge.textContent = statusLabel;
   testnetBadge.className = `badge ${ready ? "approve" : missingKey ? "reject" : "limit"}`;
   copyPublicKeyButton.disabled = !latestReadiness.publicKeyHex;
-  faucetLink.href = latestReadiness.faucetUrl || "https://testnet.cspr.live/tools/faucet";
+  updateTestnetActionLink();
 
   testnetSummary.innerHTML = `
     <div class="summary-tile">
@@ -713,7 +713,7 @@ async function refreshPrizeReadiness() {
       <article class="prize-row ${item.status}">
         <div>
           <strong>${item.label}</strong>
-          <span>${item.evidence}</span>
+          <span>${formatPrizeEvidence(item.evidence)}</span>
         </div>
         <em>${item.value}</em>
         <b>${item.status === "pass" ? item.weight : 0}/${item.weight}</b>
@@ -737,6 +737,26 @@ async function refreshPrizeReadiness() {
     null,
     2
   );
+
+  updateTestnetActionLink();
+}
+
+function formatPrizeEvidence(evidence) {
+  if (typeof evidence === "string" && evidence.startsWith("https://testnet.cspr.live/transaction/")) {
+    return `<a href="${evidence}" target="_blank" rel="noreferrer">CSPR.live transaction</a>`;
+  }
+  return evidence;
+}
+
+function updateTestnetActionLink() {
+  if (latestPrizeReadiness?.currentEvidence?.explorerUrl) {
+    faucetLink.href = latestPrizeReadiness.currentEvidence.explorerUrl;
+    faucetLink.textContent = "Open CSPR.live Tx";
+    return;
+  }
+
+  faucetLink.href = latestReadiness?.faucetUrl || "https://testnet.cspr.live/tools/faucet";
+  faucetLink.textContent = "Open Faucet";
 }
 
 async function refreshFinalSeal() {

@@ -1,6 +1,6 @@
 # Judge Proof Pack
 
-Generated: 2026-07-01T17:53:58.543Z
+Generated: 2026-07-02T03:30:03.937Z
 
 Project: CSPR Guardian
 
@@ -23,8 +23,8 @@ Prize readiness: 100/100 (highest-prize-ready)
 ## x402 Payment Flow
 
 - Before payment: oracle returned 402 with PAYMENT-REQUIRED header.
-- Signed authorization hash: 0a54c1827a81529a091b15cd22a8880a3fb616e4a3feded567934151beb48b87
-- Mock Casper settlement hash: mock-casper-pay-769b093d35fcc560d4905d5d34d9113869ea7e30e70ceb13
+- Signed authorization hash: 75d7c63fcbbbd50f5c7a7ee0460fec8b872b077102eac62973aa4948e1cb7b74
+- Mock Casper settlement hash: mock-casper-pay-1024f323d804353953f8cfad9a62bd5cfad6ea8ac6859049
 - Replay attempt: 402, Payment nonce already used
 
 ## MCP Paid Tools
@@ -38,13 +38,13 @@ Prize readiness: 100/100 (highest-prize-ready)
 
 ## Agent Run
 
-- Run id: run-2e2467c9-ca2a-4a45-9636-7b82c3664009
+- Run id: run-d65ab587-b70e-45b3-b0bb-e408731df2a7
 - Decision: approve
 - Approved amount: $207,452
 - Provider revenue: 0.62 CSPR
-- Receipt hash: a021954542101de36c65d2b9e701bff7347b6555839a127150698014ae9881ab
+- Receipt hash: 5fc159ae03e507a0434ba2b7f37df9ccca40c776c8596e0df46e3abf2bd9cd65
 - Anchor mode: mock
-- Explorer URL: https://testnet.cspr.live/deploy/mock-casper-receipt-a021954542101de36c65d2b9e701bff7347b6555839a1271
+- Explorer URL: https://testnet.cspr.live/deploy/mock-casper-receipt-5fc159ae03e507a0434ba2b7f37df9ccca40c776c8596e0d
 
 ## Evidence Verification
 
@@ -52,7 +52,7 @@ Prize readiness: 100/100 (highest-prize-ready)
 - Checks: 34/34
 - Signature checks: 4
 - Hash checks: 17
-- Evidence hash: 5b318790dea084e64ab298bfe1d5641ae7bd5b2ebdabbefec94cf416c8048967
+- Evidence hash: 0f7aae1b49dc53188b1ef2a3340722fa75c45ae0d5e7ac0194f099871abf7066
 
 ## Prize Readiness Criteria
 
@@ -67,16 +67,10 @@ Prize readiness: 100/100 (highest-prize-ready)
 
 ## Current Final Gate
 
-The remaining highest-prize gate is a real Casper testnet deploy.
+The highest-prize gate is cleared by a real Casper testnet receipt.
 
+- Explorer URL: https://testnet.cspr.live/deploy/mock-casper-receipt-5fc159ae03e507a0434ba2b7f37df9ccca40c776c8596e0d
 - Public key: 011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2
 - Account status: funded
 - Ready for anchor: true
 - Deploy preflight verification: verified (11/11)
-- Faucet: https://testnet.cspr.live/tools/faucet
-
-After funding, run:
-
-```bash
-npm run seal:submission
-```

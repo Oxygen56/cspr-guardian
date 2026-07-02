@@ -1,6 +1,6 @@
 # Casper Highest Prize Unlock
 
-Generated: 2026-07-01T18:00:40.659Z
+Generated: 2026-07-02T03:31:25.531Z
 
 Status: ready_for_highest_prize_submission
 
@@ -22,12 +22,12 @@ Faucet checks: wallet required = true, reCAPTCHA required = true, faucet enabled
 
 Required motes: 2600000000
 
-## Manual Faucet Steps
+## Final Testnet Receipt
 
-1. Run `npm run fund:testnet` to copy the prepared public key and open the funding guide plus faucet page.
-2. In CSPR.live, connect Casper Wallet on Casper testnet.
-3. Request faucet funds for the copied public key.
-4. Run `npm run wait:testnet`; it waits for the balance and then runs the final seal.
+- Account status: funded
+- Ready for anchor: true
+- Explorer URL: https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
+- Deploy hash: 7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
 
 ## Public Links
 
@@ -47,14 +47,14 @@ Missing: none
 
 Submit the final pack with the public repo, hosted demo, video, and Casper explorer URL.
 
-## Commands After Funding
+## Final Verification Commands
 
 ```bash
-npm run check:testnet
-npm run preflight:testnet
+npm run test
+npm run check:ci
+npm run verify:evidence
 npm run verify:preflight
-npm run seal:submission
-npm run audit:submission
+npm run verify:x402-preflight
 ```
 
 ## Commands After Public Links

@@ -183,9 +183,9 @@ final submission pack:
 npm run seal:submission
 ```
 
-After funding the printed public key on Casper testnet, `npm run seal:submission`
-is the one-command final gate. The lower-level real receipt anchor remains
-available for debugging:
+The prepared public key is now funded on Casper testnet, so
+`npm run seal:submission` is the one-command final pack refresh. The lower-level
+real receipt anchor remains available for debugging:
 
 ```bash
 CASPER_PRIVATE_KEY_FILE=.local/casper-testnet-key.json npm run anchor:testnet
@@ -301,11 +301,10 @@ npm run check:deploy -- <deploy-hash>
 - Set `SUBMISSION_REPO_URL`, `SUBMISSION_DEMO_URL`, and
   `SUBMISSION_VIDEO_URL`, then run `npm run export:buidl`.
 - Run `npm run export:submission` and upload the generated submission pack.
-- Run `npm run audit:submission` and confirm the only blocked items, before
-  funding and public-link upload, are `highest_prize_gate` and
-  `public_submission_fields`.
-- After funding, run `npm run seal:submission` to regenerate final evidence, judge
-  proof, source zip, submission pack, and final seal in one pass.
+- Run `npm run audit:submission` and confirm the final gate, public links, and
+  submission package are all ready.
+- Run `npm run seal:submission` to refresh final evidence, judge proof, source
+  zip, submission pack, and final seal in one pass.
 - Run `npm run audit:submission` again and confirm it says
   `ready_for_highest_prize_submission`.
 - Record a 90-second video showing the full paid-agent flow.

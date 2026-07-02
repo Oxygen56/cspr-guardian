@@ -567,12 +567,12 @@ test("testnet funding watcher reports pending faucet state without secrets", () 
   assert.equal(JSON.stringify(report).includes("PRIVATE KEY"), false);
 });
 
-test("public funding handoff page includes the prepared key and watcher command", async () => {
+test("public final receipt page includes the prepared key and CSPR.live transaction", async () => {
   const html = await fs.readFile(path.resolve("docs/funding.html"), "utf8");
 
   assert.match(html, /011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2/);
-  assert.match(html, /https:\/\/testnet\.cspr\.live\/tools\/faucet/);
-  assert.match(html, /npm run wait:testnet/);
+  assert.match(html, /https:\/\/testnet\.cspr\.live\/transaction\/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a/);
+  assert.match(html, /100\/100/);
   assert.equal(html.includes("PRIVATE KEY"), false);
 });
 

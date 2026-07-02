@@ -62,7 +62,7 @@ Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 - `submission/casper-x402-settlement-preflight.json`: machine-readable x402
   settlement preflight.
 - `submission/casper-highest-prize-unlock.md`: human-readable highest-prize
-  gate report for faucet funding, public links, and final seal commands.
+  report with the funded testnet account, public links, and final CSPR.live receipt.
 - `submission/casper-highest-prize-unlock.json`: machine-readable
   highest-prize unlock report.
 - `submission/submission-assets.md`: screenshot and upload checklist.
