@@ -450,6 +450,24 @@ export async function loadSignals() {
   return JSON.parse(await fs.readFile(DATA_PATH, "utf8"));
 }
 
+export function evaluatePolicyScenario(asset, requestedAmountUsd = asset.requestedAmountUsd) {
+  const riskReport = scoreAsset(asset, requestedAmountUsd);
+  const kybReport = buildKybReport(asset);
+  const liquidityReport = buildLiquidityReport(asset, requestedAmountUsd);
+  const covenantReport = buildCovenantReport(asset, requestedAmountUsd);
+  const decision = decide(riskReport, kybReport, liquidityReport, covenantReport);
+
+  return {
+    asset,
+    requestedAmountUsd,
+    riskReport,
+    kybReport,
+    liquidityReport,
+    covenantReport,
+    decision
+  };
+}
+
 function buildPaymentRequirement(tool, asset) {
   const resourceByTool = {
     "rwa.risk_score": "rwa-risk",

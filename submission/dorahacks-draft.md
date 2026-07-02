@@ -26,6 +26,8 @@ Final proof:
   `https://oxygen56.github.io/cspr-guardian/judge-scorecard.html`.
 - Competitive positioning:
   `https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md`.
+- Repeatable scenario matrix:
+  `https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md`.
 - Casper receipt:
   `https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a`.
 
@@ -105,5 +107,6 @@ signals into a single verifiable workflow:
 4. Open the real CSPR.live transaction.
 5. Inspect the Judge Proof Pack for MCP discovery, HTTP 402, signed payment,
    replay rejection, agentic RWA run, independent verification, and final gate.
-6. Inspect Evidence Verification for `34/34` recomputed checks.
-7. Inspect Submission Audit for `14/14` final submission checks.
+6. Open the Scenario Matrix to show repeatable outcomes across three RWA assets.
+7. Inspect Evidence Verification for `34/34` recomputed checks.
+8. Inspect Submission Audit for `14/14` final submission checks.

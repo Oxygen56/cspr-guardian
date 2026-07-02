@@ -31,6 +31,7 @@ import {
   buildPublicDemoReadinessChecks,
   renderPublicDemoHandoffMarkdown
 } from "../src/public-demo-readiness.mjs";
+import { generateScenarioMatrix, summarizeScenarioMatrix } from "../src/scenario-matrix.mjs";
 import {
   buildSubmissionFields,
   summarizePublicSubmissionFields
@@ -127,6 +128,20 @@ test("agent scenario completes payment, decision, and Casper receipt", async () 
   assert.equal(verification.status, "verified");
   assert.equal(verification.summary.passed, verification.summary.total);
   assert.ok(verification.checks.find((check) => check.name.endsWith("_signature") && check.ok));
+});
+
+test("scenario matrix proves repeatable RWA policy outcomes", async () => {
+  const matrix = await generateScenarioMatrix();
+  const summary = summarizeScenarioMatrix(matrix);
+  const actions = matrix.scenarios.map((scenario) => scenario.decision.action);
+
+  assert.equal(matrix.status, "repeatable_rwa_policy_matrix_ready");
+  assert.equal(summary.scenarios, 3);
+  assert.equal(summary.paidToolsPerScenario, 4);
+  assert.equal(summary.totalProviderRevenueIfAllRunCSPR, "1.86");
+  assert.ok(actions.includes("approve"));
+  assert.ok(actions.includes("reject"));
+  assert.ok(matrix.scenarios.every((scenario) => scenario.policySignals.length > 0));
 });
 
 test("testnet readiness reports RPC and funding state without exposing private key", async () => {

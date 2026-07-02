@@ -46,6 +46,8 @@ try {
       PROOF_OUTPUT_DIR: "../../outputs",
       PROOF_FILE_BASE: "casper-judge-proof-pack"
     });
+    await runStep("scenario_matrix", ["scripts/generate-scenario-matrix.mjs"]);
+    await syncSubmissionWriteups();
     await rebuildSourceZip();
     await runStep("export_submission", ["scripts/export-submission-pack.mjs"]);
 
@@ -148,5 +150,21 @@ async function rebuildSourceZip() {
       cwd: projectDir,
       maxBuffer: 1024 * 1024 * 8
     }
+  );
+}
+
+async function syncSubmissionWriteups() {
+  const snapshots = [
+    ["submission/judge-evidence-map.md", "judge-evidence-map.md"],
+    ["submission/judge-evidence-map.md", "casper-judge-evidence-map.md"],
+    ["submission/submission-assets.md", "submission-assets.md"],
+    ["submission/submission-assets.md", "casper-submission-assets.md"]
+  ];
+
+  await fs.mkdir(outputDir, { recursive: true });
+  await Promise.all(
+    snapshots.map(([source, destination]) =>
+      fs.copyFile(path.join(projectDir, source), path.join(outputDir, destination))
+    )
   );
 }

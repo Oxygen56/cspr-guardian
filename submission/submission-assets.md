@@ -42,6 +42,8 @@ Public links already prepared:
 | `docs/proof/*` | Public Markdown and JSON proof artifacts for browser-based judge review |
 | `casper-public-demo-handoff.md` | Public hosting handoff for Render/Docker, health check, and final BUIDL link export |
 | `casper-public-demo-readiness.json` | Machine-readable public demo hosting readiness |
+| `casper-scenario-matrix.md` | Human-readable repeatable RWA scenario matrix |
+| `casper-scenario-matrix.json` | Machine-readable repeatable RWA scenario matrix |
 | `casper-ci-readiness.md` | Public repository CI/readiness summary |
 | `casper-ci-readiness.json` | Machine-readable CI/readiness result |
 | `submission/dorahacks-draft.md` | Copy-ready project narrative |

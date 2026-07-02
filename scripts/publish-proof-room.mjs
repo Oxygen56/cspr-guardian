@@ -20,6 +20,8 @@ const PROOF_FILES = [
   "casper-judge-proof-pack.md",
   "casper-prize-readiness.json",
   "casper-public-demo-readiness.json",
+  "casper-scenario-matrix.json",
+  "casper-scenario-matrix.md",
   "casper-submission-audit.json",
   "casper-submission-audit.md",
   "casper-testnet-preflight.json",

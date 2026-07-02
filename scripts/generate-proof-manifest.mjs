@@ -99,6 +99,7 @@ ${rows}
 
 function roleFor(fileName) {
   if (fileName.includes("submission-audit")) return "final submission audit";
+  if (fileName.includes("scenario-matrix")) return "repeatable RWA scenario matrix";
   if (fileName.includes("judge-proof-pack")) return "judge proof pack";
   if (fileName.includes("final-submission-seal")) return "final highest-prize seal";
   if (fileName.includes("final-testnet-evidence")) return "real Casper testnet receipt evidence";

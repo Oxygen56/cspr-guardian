@@ -42,6 +42,8 @@ The highest-prize version demonstrates these things in one tight flow:
   Guardian's complete Casper-native evidence loop.
 - Judge scorecard gives reviewers a one-page route through the rubric,
   final receipt, proof room, manifest, and competitive brief.
+- Scenario matrix proves the policy is repeatable across treasury,
+  invoice-finance, and trade-credit assets.
 
 ## Competitive Benchmark
 
@@ -61,7 +63,6 @@ These are optional next improvements. They are not remaining submission gates:
 2. Add a hosted provider dashboard with paid tool revenue across users.
 3. Add a short architecture diagram showing agent, paid tools, verifier, and
    Casper receipt in one screen.
-4. Add a second RWA scenario to prove repeatability beyond one invoice pool.
 
 ## Judging Hooks
 

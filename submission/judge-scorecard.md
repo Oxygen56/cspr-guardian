@@ -14,6 +14,7 @@ signals a Casper Agentic Buildathon judge can verify in minutes.
 | Evidence verifier | `34/34` recomputed checks passed |
 | x402 settlement preflight | `28/28` signed transfer checks passed |
 | Paid tools | 4 RWA intelligence tools |
+| Repeatable scenarios | 3 RWA assets with different policy outcomes |
 | Provider revenue | `0.62 CSPR` per full run |
 | Public proof artifacts | SHA-256 manifest in the public proof room |
 | Casper receipt | Real CSPR.live testnet transaction |
@@ -25,6 +26,7 @@ signals a Casper Agentic Buildathon judge can verify in minutes.
 | Technical execution | It has tests, audit, evidence verification, signed Casper deploy preflight, x402 settlement preflight, and leak checks. | `npm test`, `casper-submission-audit.md`, `casper-judge-proof-pack.md` |
 | Casper integration | Casper is used for public receipt anchoring, signed preflight, x402-style payment authorization, memo derivation, and explorer-verifiable evidence. | CSPR.live transaction, `casper-final-testnet-evidence.md`, `casper-testnet-preflight.md` |
 | Agentic AI workflow | The agent discovers tools, pays for intelligence, gathers RWA signals, applies policy, decides, records revenue, and exports proof. | Dashboard, walkthrough, evidence bundle, judge proof pack |
+| Repeatability | The same paid RWA intelligence stack handles treasury, invoice-finance, and trade-credit scenarios. | `casper-scenario-matrix.md`, `casper-scenario-matrix.json` |
 | Innovation | The project is not a chatbot or isolated endpoint; it demonstrates a two-sided paid intelligence market for autonomous treasury agents. | Competitive positioning brief and provider ledger |
 | Usability for judges | The public site exposes a 64-second walkthrough, proof room, scorecard, final audit, manifest, and copy-ready BUIDL fields. | `judge-scorecard.html`, `proof-room.html`, `proof-manifest.md` |
 
@@ -45,7 +47,7 @@ signals a Casper Agentic Buildathon judge can verify in minutes.
 3. Open the real CSPR.live receipt.
 4. Open the proof room and read the submission audit.
 5. Check the SHA-256 proof manifest.
-6. Read the competitive positioning brief.
+6. Open the repeatable scenario matrix.
 
 ## Public Links
 
@@ -53,5 +55,6 @@ signals a Casper Agentic Buildathon judge can verify in minutes.
 - Judge scorecard: https://oxygen56.github.io/cspr-guardian/judge-scorecard.html
 - Proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
 - Proof manifest: https://oxygen56.github.io/cspr-guardian/proof/proof-manifest.md
+- Scenario matrix: https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md
 - Competitive positioning: https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md
 - Casper receipt: https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a

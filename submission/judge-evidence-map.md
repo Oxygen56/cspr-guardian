@@ -45,7 +45,7 @@ an audit trail that can be inspected after the demo.
 
 | Rubric Area | CSPR Guardian Evidence |
 | --- | --- |
-| Technical execution | `23/23` tests, `14/14` audit checks, `34/34` evidence checks, signed deploy preflight, and public CSPR.live receipt |
+| Technical execution | `24/24` tests, `14/14` audit checks, `34/34` evidence checks, signed deploy preflight, and public CSPR.live receipt |
 | Innovation and originality | End-to-end paid RWA intelligence market, not a simple API wrapper or chatbot |
 | AI agent use | The agent discovers tools, pays, consumes paid data, decides under policy, and exports proof |
 | Casper integration | x402-style Casper payments, Casper testnet public key, deploy preflight, real transaction, receipt hash, and CSPR.live explorer URL |
@@ -62,6 +62,7 @@ an audit trail that can be inspected after the demo.
 | MCP-style tool discovery | Agent discovers paid RWA tools before calling them | Agent Trace, `/mcp/tools` |
 | Autonomous workflow | Agent evaluates risk, KYB, liquidity, and covenants before deciding | Decision panel and trace |
 | RWA relevance | Invoice financing pool gets risk, compliance, liquidity, and covenant checks | RWA signal reports |
+| Repeatability | Treasury, invoice-finance, and trade-credit assets produce distinct policy outcomes through the same paid tool stack | `casper-scenario-matrix.md`, `npm run scenario:matrix` |
 | Auditability | Evidence bundle hashes every payment proof, report, decision, and receipt | Evidence Bundle panel and JSON |
 | Independent verification | Signatures, tx hashes, report hashes, receipt hash, evidence hash, and revenue totals recompute | Evidence Verification panel, `npm run verify:evidence` |
 | Reviewer proof pack | 402 challenge, signed payment, replay rejection, agent run, verifier, prize gate | `submission/judge-proof-pack.md`, `submission/judge-proof-pack.json`, `npm run judge:proof` |
@@ -112,6 +113,8 @@ an audit trail that can be inspected after the demo.
   proof pack, seal, preflight, BUIDL, CI, and public demo artifacts.
 - `docs/judge-scorecard.html`: one-page rubric scorecard for judges.
 - `docs/proof/judge-scorecard.md`: Markdown scorecard included in the proof manifest.
+- `docs/proof/casper-scenario-matrix.md`: repeatable RWA scenario matrix.
+- `docs/proof/casper-scenario-matrix.json`: machine-readable scenario matrix.
 - `docs/proof/proof-manifest.md`: SHA-256 manifest for all public proof-room
   artifacts.
 - `docs/proof/competitive-positioning.md`: public judge-facing benchmark brief.
@@ -128,11 +131,12 @@ an audit trail that can be inspected after the demo.
 1. Start with Prize Readiness: `100/100`, highest-prize gate cleared, blockers `0`.
 2. Open the Judge Scorecard.
 3. Open the real CSPR.live transaction.
-4. Show Judge Proof Pack: 402 challenge, signed payment, replay rejected, final gate.
-5. Show Provider Ledger: `0.62 CSPR` revenue across four paid tools.
-6. Show Evidence Verification: `34/34` recomputed checks.
-7. Show Submission Audit: `ready_for_highest_prize_submission`, `14/14` checks.
-8. Close with the repeatable model: any RWA intelligence provider can expose a
+4. Show Scenario Matrix: three RWA assets, distinct policy outcomes, same paid tools.
+5. Show Judge Proof Pack: 402 challenge, signed payment, replay rejected, final gate.
+6. Show Provider Ledger: `0.62 CSPR` revenue across four paid tools.
+7. Show Evidence Verification: `34/34` recomputed checks.
+8. Show Submission Audit: `ready_for_highest_prize_submission`, `14/14` checks.
+9. Close with the repeatable model: any RWA intelligence provider can expose a
    paid MCP tool, and any autonomous treasury can buy intelligence with an
    auditable Casper receipt.
 

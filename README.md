@@ -15,6 +15,8 @@ Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
 
 Public proof manifest: https://oxygen56.github.io/cspr-guardian/proof/proof-manifest.md
 
+Scenario matrix: https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md
+
 Competitive positioning: https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md
 
 Funding handoff: https://oxygen56.github.io/cspr-guardian/funding.html
@@ -35,13 +37,15 @@ and `ready_for_highest_prize_submission` audit status.
   MCP tools and autonomous treasury agents can pay per decision.
 - It gives judges a clean demo path with visible traces, hashes, ledgers, and a
   downloadable evidence bundle.
-- It has public proof beyond screenshots: `23/23` tests, `34/34` evidence
+- It has public proof beyond screenshots: `24/24` tests, `34/34` evidence
   verification, `14/14` submission audit, signed deploy preflight, and a real
   CSPR.live receipt.
 - It includes a concise competitive positioning brief that frames visible
   buildathon categories without relying on unsupported claims about other teams.
 - It gives judges a one-page scorecard that maps the project to technical
   execution, Casper integration, agent workflow, innovation, and judge UX.
+- It proves repeatability across three RWA asset types with distinct policy
+  outcomes, not only one invoice-finance happy path.
 
 ## Run
 

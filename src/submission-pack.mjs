@@ -119,6 +119,8 @@ function submissionFiles({ projectDir, outputDir }) {
     outputFile("casper-ci-readiness.md", "proof/casper-ci-readiness.md"),
     outputFile("casper-public-demo-handoff.md", "writeup/casper-public-demo-handoff.md"),
     outputFile("casper-public-demo-readiness.json", "proof/casper-public-demo-readiness.json"),
+    outputFile("casper-scenario-matrix.json", "proof/casper-scenario-matrix.json"),
+    outputFile("casper-scenario-matrix.md", "writeup/casper-scenario-matrix.md"),
     outputFile("casper-judge-evidence-map.md", "writeup/casper-judge-evidence-map.md"),
     outputFile("casper-buildathon-progress.md", "writeup/casper-buildathon-progress.md", false),
     outputFile("casper-testnet-funding.md", "writeup/casper-testnet-funding.md"),

@@ -1,0 +1,186 @@
+{
+  "version": "0.1",
+  "generatedAt": "2026-07-02T13:30:16.525Z",
+  "project": "CSPR Guardian",
+  "status": "repeatable_rwa_policy_matrix_ready",
+  "summary": {
+    "scenarios": 3,
+    "paidToolsPerScenario": 4,
+    "fullRunRevenueCSPR": "0.62",
+    "totalProviderRevenueIfAllRunCSPR": "1.86",
+    "actions": {
+      "approve": 2,
+      "limit": 0,
+      "reject": 1
+    },
+    "humanReviewRequired": 1
+  },
+  "paidTools": [
+    {
+      "name": "rwa.risk_score",
+      "price": "0.25 CSPR",
+      "payment": "x402-casper"
+    },
+    {
+      "name": "rwa.kyb_screen",
+      "price": "0.10 CSPR",
+      "payment": "x402-casper"
+    },
+    {
+      "name": "rwa.liquidity_depth",
+      "price": "0.15 CSPR",
+      "payment": "x402-casper"
+    },
+    {
+      "name": "rwa.covenant_monitor",
+      "price": "0.12 CSPR",
+      "payment": "x402-casper"
+    }
+  ],
+  "scenarios": [
+    {
+      "asset": {
+        "id": "invoice-usdc-7d",
+        "name": "USDC invoice financing pool",
+        "category": "invoice-finance",
+        "jurisdiction": "US",
+        "requestedAmountUsd": 250000
+      },
+      "risk": {
+        "score": 91,
+        "tier": "A",
+        "confidence": 0.91,
+        "maxExposureUsd": 207452
+      },
+      "kyb": {
+        "entityStatus": "verified",
+        "sanctionsScreen": "clear",
+        "jurisdictionRisk": "low",
+        "policyResult": "pass"
+      },
+      "liquidity": {
+        "coverageRatio": 7.4,
+        "liquidityGrade": "B",
+        "slippageBps": 39,
+        "maxExecutableUsd": 407000,
+        "policyResult": "pass"
+      },
+      "covenant": {
+        "policyResult": "standard-watch",
+        "reviewCadenceHours": 72,
+        "defaultRisk": 0.221,
+        "volatilityRisk": 0.189
+      },
+      "decision": {
+        "action": "approve",
+        "riskTier": "A",
+        "approvedAmountUsd": 207452,
+        "humanReviewRequired": false,
+        "rationale": "Risk, KYB, liquidity, and covenant policies pass, so the agent can autonomously approve a capped allocation."
+      },
+      "policySignals": [
+        "Enable weekly covenant checks",
+        "Persist monitoring proof with the Casper receipt"
+      ]
+    },
+    {
+      "asset": {
+        "id": "t-bill-token-30d",
+        "name": "Tokenized T-bill rollover vault",
+        "category": "treasury",
+        "jurisdiction": "US",
+        "requestedAmountUsd": 500000
+      },
+      "risk": {
+        "score": 93,
+        "tier": "A",
+        "confidence": 0.97,
+        "maxExposureUsd": 426357
+      },
+      "kyb": {
+        "entityStatus": "verified",
+        "sanctionsScreen": "clear",
+        "jurisdictionRisk": "low",
+        "policyResult": "pass"
+      },
+      "liquidity": {
+        "coverageRatio": 24.4,
+        "liquidityGrade": "A",
+        "slippageBps": 10,
+        "maxExecutableUsd": 2684000,
+        "policyResult": "pass"
+      },
+      "covenant": {
+        "policyResult": "standard-watch",
+        "reviewCadenceHours": 72,
+        "defaultRisk": 0.034,
+        "volatilityRisk": 0.054
+      },
+      "decision": {
+        "action": "approve",
+        "riskTier": "A",
+        "approvedAmountUsd": 426357,
+        "humanReviewRequired": false,
+        "rationale": "Risk, KYB, liquidity, and covenant policies pass, so the agent can autonomously approve a capped allocation."
+      },
+      "policySignals": [
+        "Enable weekly covenant checks",
+        "Persist monitoring proof with the Casper receipt"
+      ]
+    },
+    {
+      "asset": {
+        "id": "em-credit-note-45d",
+        "name": "Emerging market trade credit note",
+        "category": "trade-credit",
+        "jurisdiction": "BR",
+        "requestedAmountUsd": 175000
+      },
+      "risk": {
+        "score": 59,
+        "tier": "C",
+        "confidence": 0.73,
+        "maxExposureUsd": 89996
+      },
+      "kyb": {
+        "entityStatus": "needs-review",
+        "sanctionsScreen": "clear",
+        "jurisdictionRisk": "medium",
+        "policyResult": "manual-review"
+      },
+      "liquidity": {
+        "coverageRatio": 2.4,
+        "liquidityGrade": "C",
+        "slippageBps": 144,
+        "maxExecutableUsd": 92400,
+        "policyResult": "cap-or-review"
+      },
+      "covenant": {
+        "policyResult": "critical-watch",
+        "reviewCadenceHours": 12,
+        "defaultRisk": 0.769,
+        "volatilityRisk": 0.594
+      },
+      "decision": {
+        "action": "reject",
+        "riskTier": "C",
+        "approvedAmountUsd": 0,
+        "humanReviewRequired": true,
+        "rationale": "Risk-adjusted score or oracle confidence is below the autonomous policy threshold."
+      },
+      "policySignals": [
+        "KYB requires manual review",
+        "Elevated 90-day late-payment rate",
+        "Thin exit liquidity",
+        "Policy score below autonomous allocation threshold",
+        "KYB document freshness needs review",
+        "BR jurisdiction risk is medium",
+        "Requested allocation is large relative to exit liquidity",
+        "Estimated slippage exceeds autonomous policy threshold",
+        "Block autonomous execution until reviewer approval",
+        "Enable daily covenant checks",
+        "Persist monitoring proof with the Casper receipt"
+      ]
+    }
+  ]
+}
