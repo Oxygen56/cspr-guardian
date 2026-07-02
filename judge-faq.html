@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSPR Guardian Judge FAQ</title>
+    <style>
+      :root {
+        --bg: #f7f9fc;
+        --ink: #12202f;
+        --muted: #607086;
+        --line: #d7e0ea;
+        --panel: #ffffff;
+        --accent: #cc1f2f;
+        --ok: #167f52;
+        --warn: #9d5a00;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      header,
+      main {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 32px 24px;
+      }
+
+      a {
+        color: var(--accent);
+        font-weight: 750;
+      }
+
+      h1 {
+        margin: 18px 0 10px;
+        font-size: clamp(2rem, 4vw, 3.6rem);
+        line-height: 1.04;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+        font-size: 1.35rem;
+      }
+
+      h3 {
+        margin: 0 0 8px;
+        font-size: 1.05rem;
+      }
+
+      p {
+        max-width: 860px;
+      }
+
+      section {
+        margin-top: 22px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .button-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 0 14px;
+        background: var(--panel);
+        color: var(--ink);
+        text-decoration: none;
+      }
+
+      .button-link.primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #ffffff;
+      }
+
+      .metrics,
+      .grid,
+      .qa-grid,
+      .path {
+        display: grid;
+        gap: 12px;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        margin-top: 22px;
+      }
+
+      .metric,
+      .card,
+      .question,
+      .path li {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 14px;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.45rem;
+      }
+
+      .metric span,
+      .card span,
+      .question p {
+        color: var(--muted);
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .qa-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--accent);
+      }
+
+      .card.ok strong {
+        color: var(--ok);
+      }
+
+      .card.warn strong {
+        color: var(--warn);
+      }
+
+      .path {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        padding: 0;
+        list-style: none;
+      }
+
+      .path strong {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        margin-right: 8px;
+        border-radius: 999px;
+        background: var(--ink);
+        color: #ffffff;
+      }
+
+      code {
+        display: block;
+        border-radius: 8px;
+        padding: 12px;
+        background: #101827;
+        color: #eef6ff;
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 900px) {
+        .metrics,
+        .grid,
+        .qa-grid,
+        .path {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p><a href="./">Back to judge demo</a></p>
+      <h1>Reality Boundary And Judge FAQ</h1>
+      <p>
+        A direct answer to the review questions that matter: what is real,
+        what is testnet prototype scope, what can be recomputed, and what would
+        be required before production treasury use.
+      </p>
+      <div class="actions">
+        <a class="button-link primary" href="proof/judge-faq.md">Read FAQ proof</a>
+        <a class="button-link" href="proof-room.html">Open proof room</a>
+        <a class="button-link" href="architecture.html">Open architecture map</a>
+        <a class="button-link" href="proof/casper-x402-settlement-batch.md">Open x402 settlement batch</a>
+        <a class="button-link" href="https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a">Open CSPR.live receipt</a>
+      </div>
+      <div class="metrics">
+        <div class="metric"><strong>testnet</strong><span>Casper network scope</span></div>
+        <div class="metric"><strong>5</strong><span>public verification links</span></div>
+        <div class="metric"><strong>34/34</strong><span>evidence checks</span></div>
+        <div class="metric"><strong>15/15</strong><span>submission audit</span></div>
+        <div class="metric"><strong>0</strong><span>private keys published</span></div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>What Is Real</h2>
+        <div class="grid">
+          <div class="card ok"><strong>Public demo</strong><span>The hosted demo, walkthrough, proof room, and source repo are public.</span></div>
+          <div class="card ok"><strong>Casper receipt</strong><span>The final receipt is a public CSPR.live transaction on Casper testnet.</span></div>
+          <div class="card ok"><strong>x402 settlement anchors</strong><span>Four paid-tool settlement anchors are linked from the x402 batch artifact.</span></div>
+          <div class="card ok"><strong>Signed proofs</strong><span>Payment proofs, replay rejection, hashes, and provider revenue are in JSON and Markdown artifacts.</span></div>
+          <div class="card ok"><strong>Independent verification</strong><span>The verifier recomputes signatures, hashes, receipt metadata, and revenue totals.</span></div>
+          <div class="card ok"><strong>Leak boundary</strong><span>Published artifacts are scanned so private keys stay out of the public repo and final pack.</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Prototype Boundary</h2>
+        <div class="grid">
+          <div class="card warn"><strong>Network</strong><span>Casper testnet evidence today; mainnet would need custody controls and production monitoring.</span></div>
+          <div class="card warn"><strong>RWA data</strong><span>Deterministic provider data is used for reproducible judging; production needs licensed providers.</span></div>
+          <div class="card warn"><strong>Payments</strong><span>x402-style authorization and testnet settlement anchors are demonstrated; production needs provider settlement policy.</span></div>
+          <div class="card warn"><strong>Treasury action</strong><span>The demo produces a policy-bounded allocation decision; real capital movement needs approvals and compliance review.</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Judge Questions</h2>
+        <div class="qa-grid">
+          <div class="question">
+            <h3>Is this more than a UI?</h3>
+            <p>Yes. The agent discovers paid tools, pays, consumes four signals, rejects replay, records revenue, decides, and exports proof.</p>
+          </div>
+          <div class="question">
+            <h3>Is Casper meaningful?</h3>
+            <p>Yes. Casper is the durable receipt and settlement-anchor layer, with one final receipt and four x402 settlement anchors.</p>
+          </div>
+          <div class="question">
+            <h3>Is this mainnet finance?</h3>
+            <p>No. It is a testnet prototype that demonstrates payment, evidence, and audit mechanics without production custody claims.</p>
+          </div>
+          <div class="question">
+            <h3>Can judges verify without screenshots?</h3>
+            <p>Yes. The proof room publishes JSON, Markdown, hashes, verifier output, audit output, and public CSPR.live links.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Fast Verification Path</h2>
+        <ol class="path">
+          <li><strong>1</strong>Open judge demo.</li>
+          <li><strong>2</strong>Confirm 100/100, 15/15, 34/34 in proof room.</li>
+          <li><strong>3</strong>Open architecture map.</li>
+          <li><strong>4</strong>Open x402 batch and final receipt.</li>
+          <li><strong>5</strong>Confirm this prototype boundary.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Primary Receipt</h2>
+        <code>https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a</code>
+      </section>
+    </main>
+  </body>
+</html>

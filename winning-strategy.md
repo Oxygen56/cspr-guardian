@@ -25,6 +25,8 @@ The highest-prize version demonstrates these things in one tight flow:
    as an audit receipt.
 6. The BUIDL page has concrete public repo, hosted demo, video, and CSPR.live
    explorer links.
+7. The reality boundary is explicit: testnet prototype scope, reproducible
+   sample provider data, and production requirements are separated.
 
 ## Current Winning Edge
 
@@ -45,6 +47,8 @@ The highest-prize version demonstrates these things in one tight flow:
 - Architecture and threat model gives reviewers a one-screen map from payment,
   replay safety, settlement anchors, policy decision, verifier, and Casper
   receipt to public proof artifacts.
+- Reality boundary and judge FAQ makes the testnet prototype scope explicit
+  without weakening the verifiable proof path.
 - Scenario matrix proves the policy is repeatable across treasury,
   invoice-finance, and trade-credit assets.
 - x402 settlement batch publishes four Casper testnet settlement-anchor
@@ -57,7 +61,8 @@ multi-agent economy, governance sentinel, and RWA escrow cockpit projects. CSPR
 Guardian should be positioned above generic agent demos by emphasizing one
 reviewable loop: paid MCP discovery, x402-style Casper authorization, four RWA
 intelligence purchases, replay protection, provider revenue, policy-bounded
-allocation, independent verification, and a real Casper receipt.
+allocation, independent verification, clear prototype boundaries, and a real
+Casper receipt.
 
 ## What Still Raises The Ceiling
 
