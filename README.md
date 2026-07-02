@@ -174,10 +174,9 @@ Run the checks that also execute in GitHub Actions:
 npm run check:ci
 ```
 
-One-command final gate after funding: if the account is still unfunded it
-writes a funding handoff; if funded it preflights, finalizes real Casper
-evidence, regenerates judge proof, rebuilds the source archive, and exports the
-final submission pack:
+One-command final pack refresh: the funded account preflights, finalizes real
+Casper evidence, regenerates judge proof, rebuilds the source archive, and
+exports the final submission pack:
 
 ```bash
 npm run seal:submission
