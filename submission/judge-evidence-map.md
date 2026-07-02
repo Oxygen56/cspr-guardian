@@ -69,6 +69,7 @@ an audit trail that can be inspected after the demo.
 | Submission clarity | Copy-ready BUIDL fields, artifact links, demo flow, and remaining gate are consolidated | `casper-buidl-submission.md`, `npm run export:buidl` |
 | Browser-accessible proof | Final audit, proof pack, seal, preflight, BUIDL, CI, and public demo artifacts are linked from one page | `docs/proof-room.html`, `docs/proof/*` |
 | Artifact integrity | Every public proof-room Markdown/JSON artifact has a published SHA-256 hash | `docs/proof/proof-manifest.md`, `npm run proof:manifest` |
+| Competitive differentiation | Visible buildathon categories are addressed without unsupported claims about other teams | `docs/proof/competitive-positioning.md` |
 | Submission auditability | Final pack, BUIDL page, seal, leak scan, source zip exclusions, and self-reference checks are verified before upload | Submission Audit panel, `casper-submission-audit.md`, `npm run audit:submission` |
 | Highest-prize unlock gate | Faucet funding, wallet/reCAPTCHA requirement, public links, and post-funding commands are consolidated | `submission/casper-highest-prize-unlock.md`, `npm run unlock:highest-prize` |
 | Hosted demo readiness | Docker, Render blueprint, health endpoint, and public-link export path are prepared | `casper-public-demo-handoff.md`, `npm run check:public-demo`, `/api/health` |
@@ -107,6 +108,7 @@ an audit trail that can be inspected after the demo.
   proof pack, seal, preflight, BUIDL, CI, and public demo artifacts.
 - `docs/proof/proof-manifest.md`: SHA-256 manifest for all public proof-room
   artifacts.
+- `docs/proof/competitive-positioning.md`: public judge-facing benchmark brief.
 - `docs/proof/*`: public Markdown and JSON proof artifacts.
 - `casper-submission-audit.md`: external audit showing submission package
   status and any remaining final gate.

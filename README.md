@@ -13,6 +13,8 @@ Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
 
 Public proof manifest: https://oxygen56.github.io/cspr-guardian/proof/proof-manifest.md
 
+Competitive positioning: https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md
+
 Funding handoff: https://oxygen56.github.io/cspr-guardian/funding.html
 
 Final Casper receipt: https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
@@ -34,6 +36,8 @@ and `ready_for_highest_prize_submission` audit status.
 - It has public proof beyond screenshots: `23/23` tests, `34/34` evidence
   verification, `14/14` submission audit, signed deploy preflight, and a real
   CSPR.live receipt.
+- It includes a concise competitive positioning brief that frames visible
+  buildathon categories without relying on unsupported claims about other teams.
 
 ## Run
 

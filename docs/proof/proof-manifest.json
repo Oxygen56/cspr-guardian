@@ -1,12 +1,12 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T12:50:06.743Z",
+  "generatedAt": "2026-07-02T13:05:28.337Z",
   "project": "CSPR Guardian",
   "status": "public-proof-room-ready",
   "summary": {
-    "files": 21,
+    "files": 22,
     "json": 11,
-    "markdown": 10
+    "markdown": 11
   },
   "publicLinks": {
     "proofRoom": "https://oxygen56.github.io/cspr-guardian/proof-room.html",
@@ -18,16 +18,16 @@
     {
       "file": "proof/casper-buidl-submission.json",
       "type": "json",
-      "bytes": 4774,
-      "sha256": "19985924c82a3b2c254f9f95f9b7296816e3686f4ad99002487c45b753edce0e",
+      "bytes": 4766,
+      "sha256": "4eebb17da96c276170ad1a51820ae38f0ca592f9a7060325fb0f25b3adacd1db",
       "role": "copy-ready BUIDL fields",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-buidl-submission.json"
     },
     {
       "file": "proof/casper-buidl-submission.md",
       "type": "markdown",
-      "bytes": 5540,
-      "sha256": "29729e6cdf7bf3d65f39c297daf6fa1c836366fc1e1688c66d9c33eae268f60c",
+      "bytes": 5532,
+      "sha256": "2760d21343febb9368777486189ca0c3de09dcd22c7bcda54266afbcd3c45a74",
       "role": "copy-ready BUIDL fields",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-buidl-submission.md"
     },
@@ -51,7 +51,7 @@
       "file": "proof/casper-final-submission-seal.json",
       "type": "json",
       "bytes": 1895,
-      "sha256": "947a149b543035b25fe93cf68326c60abf3d3b96c98c848decc9fcc38212f80e",
+      "sha256": "ad55ae13efff313bd14cc0831a5b48c3613f9bca228fc8a3c84c1964b052f64b",
       "role": "final highest-prize seal",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-final-submission-seal.json"
     },
@@ -99,7 +99,7 @@
       "file": "proof/casper-judge-proof-pack.json",
       "type": "json",
       "bytes": 7660,
-      "sha256": "5157b45e3750980eefc12de478c296c1881ea40ff8fa7aeeb39cb2e29c986367",
+      "sha256": "eb0f63ab6f2e91762923a8aa558507624f5313170a8f8dadd3d18f5cfd9de0c0",
       "role": "judge proof pack",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-judge-proof-pack.json"
     },
@@ -107,7 +107,7 @@
       "file": "proof/casper-judge-proof-pack.md",
       "type": "markdown",
       "bytes": 3027,
-      "sha256": "c2859f2c185b6f416edb63a1d7da00b325a2910042b8ad3323f7aa99936b9f9c",
+      "sha256": "f1b41d39619a87653d41d5d687343f0b85b035bb6395c1bb0d1406f202a51f5c",
       "role": "judge proof pack",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-judge-proof-pack.md"
     },
@@ -115,7 +115,7 @@
       "file": "proof/casper-prize-readiness.json",
       "type": "json",
       "bytes": 2627,
-      "sha256": "690ee09e6deb58fed3be88532384becbe11c918f87bcbdd0626d253886419c63",
+      "sha256": "61f16b1ccdbe2cdaf55451919f452a8a5ee24cde28cb5658540f477adf4f20a9",
       "role": "100/100 prize readiness scorecard",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-prize-readiness.json"
     },
@@ -139,7 +139,7 @@
       "file": "proof/casper-submission-audit.json",
       "type": "json",
       "bytes": 6379,
-      "sha256": "dff885c530d846dd39e082740448e15da54f9e4c2f962d12b2252217f99d040f",
+      "sha256": "e459948ea471463a454556fc4c434fc77d1166b220b006c0c526307e317acb24",
       "role": "final submission audit",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-submission-audit.json"
     },
@@ -147,7 +147,7 @@
       "file": "proof/casper-submission-audit.md",
       "type": "markdown",
       "bytes": 2854,
-      "sha256": "c7dd611c38c40c0a405cbb817cc675af0098cfc073466a8e613694a4f934440d",
+      "sha256": "086e2f6080a00c74a1488a0759a4b38981a23f1994959301593ed28da3dcc020",
       "role": "final submission audit",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-submission-audit.md"
     },
@@ -182,6 +182,14 @@
       "sha256": "9fbc9e8c543b8e4bd96a90aaaa0ae612f80d54d89a82e05ba4564f550ce0d3ca",
       "role": "signed x402 settlement preflight",
       "url": "https://oxygen56.github.io/cspr-guardian/proof/casper-x402-settlement-preflight.md"
+    },
+    {
+      "file": "proof/competitive-positioning.md",
+      "type": "markdown",
+      "bytes": 3087,
+      "sha256": "4b714b46f8d3d78f82b7f66bb9efa4e6e00604d533299f57aac64f1e25703e14",
+      "role": "competitive positioning brief",
+      "url": "https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md"
     }
   ]
 }

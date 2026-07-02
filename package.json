@@ -23,6 +23,7 @@
     "check:public-demo": "node scripts/check-public-demo-readiness.mjs",
     "check:ci": "node scripts/check-ci-readiness.mjs",
     "video:walkthrough": "node scripts/render-walkthrough-video.mjs",
+    "proof:publish": "node scripts/publish-proof-room.mjs && node scripts/generate-proof-manifest.mjs",
     "proof:manifest": "node scripts/generate-proof-manifest.mjs",
     "fund:testnet": "node scripts/prepare-highest-prize-unlock.mjs --open-guide --open-faucet --copy-public-key",
     "wait:testnet": "node scripts/wait-testnet-funding.mjs",

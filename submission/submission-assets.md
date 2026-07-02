@@ -8,6 +8,8 @@ Public links already prepared:
 - Hosted judge demo: https://oxygen56.github.io/cspr-guardian/
 - Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 - Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
+- Competitive positioning:
+  https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md
 
 | Asset | Purpose |
 | --- | --- |
@@ -33,12 +35,14 @@ Public links already prepared:
 | `casper-submission-audit.json` | Machine-readable external submission audit |
 | `docs/proof-room.html` | Public proof room linking final audit, proof pack, seal, preflight, BUIDL, and CI artifacts |
 | `docs/proof/proof-manifest.md` | SHA-256 manifest for all public proof-room artifacts |
+| `docs/proof/competitive-positioning.md` | Public competitive positioning brief |
 | `docs/proof/*` | Public Markdown and JSON proof artifacts for browser-based judge review |
 | `casper-public-demo-handoff.md` | Public hosting handoff for Render/Docker, health check, and final BUIDL link export |
 | `casper-public-demo-readiness.json` | Machine-readable public demo hosting readiness |
 | `casper-ci-readiness.md` | Public repository CI/readiness summary |
 | `casper-ci-readiness.json` | Machine-readable CI/readiness result |
 | `submission/dorahacks-draft.md` | Copy-ready project narrative |
+| `submission/competitive-positioning.md` | Competitive positioning source for the public proof artifact |
 | `submission/demo-video-script.md` | 64-second final walkthrough script |
 | `submission/judge-evidence-map.md` | Prize-signal-to-artifact walkthrough |
 
