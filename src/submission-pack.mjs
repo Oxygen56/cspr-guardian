@@ -128,6 +128,7 @@ function submissionFiles({ projectDir, outputDir }) {
     outputFile("cspr-guardian-testnet-preflight.png", "screenshots/cspr-guardian-testnet-preflight.png"),
     outputFile("cspr-guardian-evidence-verification.png", "screenshots/cspr-guardian-evidence-verification.png"),
     projectFile("README.md", "source/README.md"),
+    projectFile("submission/judge-scorecard.md", "writeup/judge-scorecard.md"),
     projectFile("submission/competitive-positioning.md", "writeup/competitive-positioning.md"),
     projectFile("submission/dorahacks-draft.md", "writeup/dorahacks-draft.md"),
     projectFile("submission/demo-video-script.md", "writeup/demo-video-script.md"),

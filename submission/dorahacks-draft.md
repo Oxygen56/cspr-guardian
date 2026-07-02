@@ -22,6 +22,8 @@ Final proof:
 - Submission audit: `14/14` checks passing, `0` blocked, `0` failed.
 - Judge proof room:
   `https://oxygen56.github.io/cspr-guardian/proof-room.html`.
+- Judge scorecard:
+  `https://oxygen56.github.io/cspr-guardian/judge-scorecard.html`.
 - Competitive positioning:
   `https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md`.
 - Casper receipt:
@@ -98,9 +100,10 @@ signals into a single verifiable workflow:
 ## Judge Path
 
 1. Open the hosted judge demo and show `100/100` prize readiness.
-2. Watch the 64-second walkthrough for the full proof path.
-3. Open the real CSPR.live transaction.
-4. Inspect the Judge Proof Pack for MCP discovery, HTTP 402, signed payment,
+2. Open the Judge Scorecard for the one-minute rubric path.
+3. Watch the 64-second walkthrough for the full proof path.
+4. Open the real CSPR.live transaction.
+5. Inspect the Judge Proof Pack for MCP discovery, HTTP 402, signed payment,
    replay rejection, agentic RWA run, independent verification, and final gate.
-5. Inspect Evidence Verification for `34/34` recomputed checks.
-6. Inspect Submission Audit for `14/14` final submission checks.
+6. Inspect Evidence Verification for `34/34` recomputed checks.
+7. Inspect Submission Audit for `14/14` final submission checks.

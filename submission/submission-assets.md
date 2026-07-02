@@ -6,6 +6,7 @@ Public links already prepared:
 
 - Repository: https://github.com/Oxygen56/cspr-guardian
 - Hosted judge demo: https://oxygen56.github.io/cspr-guardian/
+- Judge scorecard: https://oxygen56.github.io/cspr-guardian/judge-scorecard.html
 - Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 - Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
 - Competitive positioning:
@@ -33,8 +34,10 @@ Public links already prepared:
 | `casper-buidl-submission.json` | Machine-readable BUIDL page source data |
 | `casper-submission-audit.md` | External pre-submit audit proving evidence, preflight, pack, BUIDL, seal, leak-scan, and zip checks |
 | `casper-submission-audit.json` | Machine-readable external submission audit |
+| `docs/judge-scorecard.html` | One-page judge scoring matrix |
 | `docs/proof-room.html` | Public proof room linking final audit, proof pack, seal, preflight, BUIDL, and CI artifacts |
 | `docs/proof/proof-manifest.md` | SHA-256 manifest for all public proof-room artifacts |
+| `docs/proof/judge-scorecard.md` | Markdown judge scorecard included in the public proof manifest |
 | `docs/proof/competitive-positioning.md` | Public competitive positioning brief |
 | `docs/proof/*` | Public Markdown and JSON proof artifacts for browser-based judge review |
 | `casper-public-demo-handoff.md` | Public hosting handoff for Render/Docker, health check, and final BUIDL link export |
@@ -42,6 +45,7 @@ Public links already prepared:
 | `casper-ci-readiness.md` | Public repository CI/readiness summary |
 | `casper-ci-readiness.json` | Machine-readable CI/readiness result |
 | `submission/dorahacks-draft.md` | Copy-ready project narrative |
+| `submission/judge-scorecard.md` | Scorecard source for the public proof artifact |
 | `submission/competitive-positioning.md` | Competitive positioning source for the public proof artifact |
 | `submission/demo-video-script.md` | 64-second final walkthrough script |
 | `submission/judge-evidence-map.md` | Prize-signal-to-artifact walkthrough |

@@ -14,6 +14,8 @@ Public repo: https://github.com/Oxygen56/cspr-guardian
 
 Hosted judge demo: https://oxygen56.github.io/cspr-guardian/
 
+Judge scorecard: https://oxygen56.github.io/cspr-guardian/judge-scorecard.html
+
 Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 
 Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
@@ -48,6 +50,7 @@ an audit trail that can be inspected after the demo.
 | AI agent use | The agent discovers tools, pays, consumes paid data, decides under policy, and exports proof |
 | Casper integration | x402-style Casper payments, Casper testnet public key, deploy preflight, real transaction, receipt hash, and CSPR.live explorer URL |
 | User and judge experience | Hosted demo, 64-second walkthrough, proof screenshots, copy-ready BUIDL fields, downloadable JSON artifacts |
+| Fast rubric review | One-page scorecard maps proof to technical execution, Casper integration, agent workflow, innovation, and judge UX |
 
 ## Evidence Table
 
@@ -67,6 +70,7 @@ an audit trail that can be inspected after the demo.
 | Testnet readiness | RPC health, public key, funding status, and readiness gate are visible | Testnet Readiness panel |
 | Business model | Providers earn per tool call and history persists across runs | Provider Ledger and Run History |
 | Submission clarity | Copy-ready BUIDL fields, artifact links, demo flow, and remaining gate are consolidated | `casper-buidl-submission.md`, `npm run export:buidl` |
+| One-minute judge path | Scorecard gives judges a direct route through readiness, receipt, audit, manifest, and competitive proof | `docs/judge-scorecard.html`, `docs/proof/judge-scorecard.md` |
 | Browser-accessible proof | Final audit, proof pack, seal, preflight, BUIDL, CI, and public demo artifacts are linked from one page | `docs/proof-room.html`, `docs/proof/*` |
 | Artifact integrity | Every public proof-room Markdown/JSON artifact has a published SHA-256 hash | `docs/proof/proof-manifest.md`, `npm run proof:manifest` |
 | Competitive differentiation | Visible buildathon categories are addressed without unsupported claims about other teams | `docs/proof/competitive-positioning.md` |
@@ -106,6 +110,8 @@ an audit trail that can be inspected after the demo.
   final judge narrative.
 - `docs/proof-room.html`: public proof room with browser-accessible audit,
   proof pack, seal, preflight, BUIDL, CI, and public demo artifacts.
+- `docs/judge-scorecard.html`: one-page rubric scorecard for judges.
+- `docs/proof/judge-scorecard.md`: Markdown scorecard included in the proof manifest.
 - `docs/proof/proof-manifest.md`: SHA-256 manifest for all public proof-room
   artifacts.
 - `docs/proof/competitive-positioning.md`: public judge-facing benchmark brief.
@@ -120,12 +126,13 @@ an audit trail that can be inspected after the demo.
 ## 64-Second Judge Path
 
 1. Start with Prize Readiness: `100/100`, highest-prize gate cleared, blockers `0`.
-2. Open the real CSPR.live transaction.
-3. Show Judge Proof Pack: 402 challenge, signed payment, replay rejected, final gate.
-4. Show Provider Ledger: `0.62 CSPR` revenue across four paid tools.
-5. Show Evidence Verification: `34/34` recomputed checks.
-6. Show Submission Audit: `ready_for_highest_prize_submission`, `14/14` checks.
-7. Close with the repeatable model: any RWA intelligence provider can expose a
+2. Open the Judge Scorecard.
+3. Open the real CSPR.live transaction.
+4. Show Judge Proof Pack: 402 challenge, signed payment, replay rejected, final gate.
+5. Show Provider Ledger: `0.62 CSPR` revenue across four paid tools.
+6. Show Evidence Verification: `34/34` recomputed checks.
+7. Show Submission Audit: `ready_for_highest_prize_submission`, `14/14` checks.
+8. Close with the repeatable model: any RWA intelligence provider can expose a
    paid MCP tool, and any autonomous treasury can buy intelligence with an
    auditable Casper receipt.
 

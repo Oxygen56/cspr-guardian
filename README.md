@@ -7,6 +7,8 @@ policy decision, and anchors an audit receipt to Casper.
 
 Public judge demo: https://oxygen56.github.io/cspr-guardian/
 
+Judge scorecard: https://oxygen56.github.io/cspr-guardian/judge-scorecard.html
+
 Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 
 Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
@@ -38,6 +40,8 @@ and `ready_for_highest_prize_submission` audit status.
   CSPR.live receipt.
 - It includes a concise competitive positioning brief that frames visible
   buildathon categories without relying on unsupported claims about other teams.
+- It gives judges a one-page scorecard that maps the project to technical
+  execution, Casper integration, agent workflow, innovation, and judge UX.
 
 ## Run
 
