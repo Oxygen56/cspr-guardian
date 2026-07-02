@@ -164,10 +164,7 @@ function publicRecipientLabel(settlement) {
   if (settlement.recipientSource === "configured") {
     return "configured provider recipient";
   }
-  if (
-    settlement.recipientSource === "agent_controlled_testnet_recipient" ||
-    String(settlement.recipientSource || "").startsWith("self_fallback")
-  ) {
+  if (settlement.recipientSource === "agent_controlled_testnet_recipient") {
     return "agent-controlled testnet recipient";
   }
   return settlement.recipientSource || "unknown";
@@ -177,10 +174,10 @@ function recipientFallbackReason(settlement) {
   if (settlement.recipientFallbackReason) {
     return settlement.recipientFallbackReason;
   }
-  if (settlement.recipientSource === "self_fallback_invalid_pay_to") {
+  if (settlement.recipientSource === "agent_controlled_testnet_recipient_invalid_pay_to") {
     return "configured_pay_to_was_not_a_casper_public_key";
   }
-  if (settlement.recipientSource === "self_fallback_missing_pay_to") {
+  if (settlement.recipientSource === "agent_controlled_testnet_recipient_missing_pay_to") {
     return "pay_to_missing";
   }
   return null;

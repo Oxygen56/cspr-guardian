@@ -133,7 +133,7 @@ export async function getPrizeReadiness() {
       ? []
       : [
           `Fund public key ${readiness.publicKeyHex || "(missing key)"} on Casper testnet`,
-          "After funding, run npm run seal:submission to replace mock deploy evidence"
+          "After funding, run npm run seal:submission to publish real receipt evidence"
         ])
   ];
 
