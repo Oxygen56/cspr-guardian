@@ -14,7 +14,7 @@ business model for agent-to-agent payments.
 
 ## Prize Narrative
 
-The highest-prize version should demonstrate four things in one tight flow:
+The highest-prize version demonstrates these things in one tight flow:
 
 1. A paid MCP tool exists.
 2. The agent receives 402 payment requirements and signs payment proofs.
@@ -26,17 +26,28 @@ The highest-prize version should demonstrate four things in one tight flow:
 6. The BUIDL page has concrete public repo, hosted demo, video, and CSPR.live
    explorer links.
 
-## What To Build Next
+## Current Winning Edge
 
-Priority order:
+- Public judge demo is live.
+- Public repo is live.
+- 64-second walkthrough is live.
+- Real Casper testnet receipt is live on CSPR.live.
+- Prize readiness is `100/100`.
+- Submission audit is `ready_for_highest_prize_submission` with `14/14` checks.
+- Evidence verification is `34/34`.
+- Judge proof pack covers MCP discovery, HTTP 402, signed payment,
+  replay rejection, agentic RWA run, independent verification, and final gate.
 
-1. Real Casper testnet anchoring for the receipt.
-2. Broadcast a real Casper settlement transaction for at least one x402 proof.
-3. Fund the prepared testnet key and capture a verified CSPR.live explorer link.
-4. Publish the repository, host the demo, record the walkthrough, and re-export
-   BUIDL fields with `SUBMISSION_REPO_URL`, `SUBMISSION_DEMO_URL`, and
-   `SUBMISSION_VIDEO_URL`.
-5. A real hosted provider dashboard with historical paid tool revenue across users.
+## What Still Raises The Ceiling
+
+These are optional next improvements. They are not remaining submission gates:
+
+1. Broadcast a real Casper settlement transaction for at least one x402 tool
+   payment, not only the final receipt.
+2. Add a hosted provider dashboard with paid tool revenue across users.
+3. Add a short architecture diagram showing agent, paid tools, verifier, and
+   Casper receipt in one screen.
+4. Add a second RWA scenario to prove repeatability beyond one invoice pool.
 
 ## Judging Hooks
 
