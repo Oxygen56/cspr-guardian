@@ -8,10 +8,12 @@ already true for the submitted CSPR Guardian build.
 - Prize readiness: `100/100`.
 - Final gate: cleared.
 - Submission audit: `ready_for_highest_prize_submission`.
-- Submission audit checks: `14/14` passed, `0` blocked, `0` failed.
+- Submission audit checks: final checks passed, `0` blocked, `0` failed.
 - Evidence verification: `34/34` checks passed.
 - Testnet preflight: `11/11` checks passed.
 - x402 settlement preflight: `28/28` checks passed.
+- x402 settlement batch: `34/34` checks passed, four Casper testnet
+  settlement-anchor transactions published.
 - Scenario matrix: 3 RWA assets evaluated through the same policy stack.
 - Public repo, hosted demo, walkthrough video, and Casper explorer URL are all
   present in the BUIDL export.
@@ -25,6 +27,8 @@ already true for the submitted CSPR Guardian build.
 - Judge scorecard: `https://oxygen56.github.io/cspr-guardian/judge-scorecard.html`.
 - Scenario matrix:
   `https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md`.
+- x402 settlement batch:
+  `https://oxygen56.github.io/cspr-guardian/proof/casper-x402-settlement-batch.md`.
 - Final receipt page: `https://oxygen56.github.io/cspr-guardian/funding.html`.
 - Casper transaction:
   `https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a`.
@@ -42,6 +46,8 @@ already true for the submitted CSPR Guardian build.
 - `npm run preflight:x402` and `npm run verify:x402-preflight` output showing all
   four x402 paid tool payments can build signed Casper transfer deploys without
   broadcasting or exposing private key material.
+- `npm run settle:x402:testnet` and `npm run verify:x402-settlement` output
+  showing four x402 settlement-anchor transactions are public on Casper testnet.
 - `PAYMENT-REQUIRED` response visible for at least one paid oracle.
 - Signed x402-Casper payment proof visible in the receipt JSON and proof pack.
 - Downloadable Evidence Bundle JSON with x402 proofs, report hashes, decision
@@ -70,14 +76,16 @@ already true for the submitted CSPR Guardian build.
 1. Start with Prize Readiness: `100/100`, final gate cleared, blockers `0`.
 2. Open the Judge Scorecard.
 3. Open the real CSPR.live transaction.
-4. Show the Scenario Matrix: three RWA assets, distinct policy outcomes, same
+4. Show the x402 Settlement Batch: four Casper testnet settlement anchors tied
+   to signed x402 authorizations.
+5. Show the Scenario Matrix: three RWA assets, distinct policy outcomes, same
    paid tool stack.
-5. Show the Judge Proof Pack: MCP discovery, HTTP 402, signed payment, replay
+6. Show the Judge Proof Pack: MCP discovery, HTTP 402, signed payment, replay
    rejected, and final gate.
-6. Show the Provider Ledger: `0.62 CSPR` revenue across four paid tools.
-7. Show Evidence Verification: `34/34` recomputed checks.
-8. Show Submission Audit: `14/14` final submission checks.
-9. Close with the repeatable model: any RWA intelligence provider can expose a
+7. Show the Provider Ledger: `0.62 CSPR` revenue across four paid tools.
+8. Show Evidence Verification: `34/34` recomputed checks.
+9. Show Submission Audit: final submission checks.
+10. Close with the repeatable model: any RWA intelligence provider can expose a
    paid MCP tool, and any autonomous treasury can buy intelligence with an
    auditable Casper receipt.
 
@@ -85,6 +93,5 @@ already true for the submitted CSPR Guardian build.
 
 No remaining submission gate is known. Optional next improvements are:
 
-1. Broadcast real Casper settlement transactions for individual x402 tool
-   payments, not only the final receipt.
-2. Add a hosted provider analytics dashboard across multiple users.
+1. Add a hosted provider analytics dashboard across multiple users.
+2. Add a one-screen architecture diagram for the judge flow.

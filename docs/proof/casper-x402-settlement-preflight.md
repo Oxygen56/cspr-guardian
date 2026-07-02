@@ -2,7 +2,7 @@
 
 Status: ready_to_settle
 
-Run id: run-1c6b7fe1-3c0b-4da3-916d-05e5a667f93c
+Run id: run-c2c70314-ecbf-4aac-af8a-3b6975f52204
 
 Total: 0.62 CSPR (620000000 motes)
 
@@ -18,10 +18,10 @@ Public key:
 
 | Tool | CSPR | Motes | Build | Recipient | Deploy hash |
 | --- | --- | --- | --- | --- | --- |
-| rwa.risk_score | 0.25 | 250000000 | ok | self_fallback_invalid_pay_to | ab7e220ad7c65237635fdad53e62138edce70ebe9a4254d5aa4b0fc64b42a635 |
-| rwa.kyb_screen | 0.10 | 100000000 | ok | self_fallback_invalid_pay_to | 9453c611948e9e72d266cd018839bb0d78a26dffc6c6e6ada9af262f62329d17 |
-| rwa.liquidity_depth | 0.15 | 150000000 | ok | self_fallback_invalid_pay_to | 1b80d489a62bc3114f3d4c20b90a5123a23d8651fb2a41de4f0eb3c89dbf2ccd |
-| rwa.covenant_monitor | 0.12 | 120000000 | ok | self_fallback_invalid_pay_to | b55920bf1f64f3256d614a9da7fec2394214cf3e94603c5961ec1ab1cf4183e5 |
+| rwa.risk_score | 0.25 | 250000000 | ok | agent-controlled testnet recipient | 88d17aa9a49a0723ac8d2cb1ecb4ccad2ecebe2bad0ba8878c90047c02b76e3f |
+| rwa.kyb_screen | 0.10 | 100000000 | ok | agent-controlled testnet recipient | f1226d5900d9eb20ed21e1d714a1c986c4b3456ac638691c736c32f51e9d240b |
+| rwa.liquidity_depth | 0.15 | 150000000 | ok | agent-controlled testnet recipient | a813462474b42cd193d0a0effcf157e29b324169d163e13920a30404e4157e11 |
+| rwa.covenant_monitor | 0.12 | 120000000 | ok | agent-controlled testnet recipient | 258afff1254d965a1d1ed39023479dd303840e554d35cf7e511f3d28cc2e748f |
 
 Recipient note: when `CASPER_TREASURY_PUBLIC_KEY` is not a Casper public key,
 the preflight uses the signer public key as a non-broadcast recipient so the

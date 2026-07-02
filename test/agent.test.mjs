@@ -32,6 +32,7 @@ import {
   renderPublicDemoHandoffMarkdown
 } from "../src/public-demo-readiness.mjs";
 import { generateScenarioMatrix, summarizeScenarioMatrix } from "../src/scenario-matrix.mjs";
+import { verifyX402SettlementBatch } from "../src/x402-settlement-batch-verifier.mjs";
 import {
   buildSubmissionFields,
   summarizePublicSubmissionFields
@@ -144,6 +145,46 @@ test("scenario matrix proves repeatable RWA policy outcomes", async () => {
   assert.ok(matrix.scenarios.every((scenario) => scenario.policySignals.length > 0));
 });
 
+test("x402 settlement batch verifier requires real confirmed Casper transactions", () => {
+  const settlements = ["rwa.risk_score", "rwa.kyb_screen", "rwa.liquidity_depth", "rwa.covenant_monitor"].map(
+    (tool, index) => {
+      const authorizationHash = `${String(index + 1).repeat(64)}`.slice(0, 64);
+      const deployHash = `${String(index + 5).repeat(64)}`.slice(0, 64);
+
+      return {
+        tool,
+        status: "submitted",
+        mode: "real",
+        deployHash,
+        network: "casper-test",
+        recipientSource: "configured",
+        amountCSPR: ["0.25", "0.10", "0.15", "0.12"][index],
+        x402AmountCSPR: ["0.25", "0.10", "0.15", "0.12"][index],
+        x402AmountMotes: ["250000000", "100000000", "150000000", "120000000"][index],
+        transferAmount: "2500000000",
+        nativeTransferFloorApplied: true,
+        authorizationHash,
+        memo: BigInt(`0x${authorizationHash.slice(0, 13)}`).toString(),
+        memoSource: authorizationHash.slice(0, 13),
+        memoBits: 52,
+        explorerUrl: `https://testnet.cspr.live/transaction/${deployHash}`,
+        deployBuild: { signed: true, broadcast: true },
+        confirmation: { status: "found" }
+      };
+    }
+  );
+  const verification = verifyX402SettlementBatch({
+    status: "settled_on_casper_testnet",
+    readiness: { chain: "casper-test" },
+    evidence: { paymentCount: 4, totalMotes: "620000000" },
+    settlements
+  });
+
+  assert.equal(verification.status, "verified");
+  assert.equal(verification.summary.passed, verification.summary.total);
+  assert.ok(verification.summary.total > 20);
+});
+
 test("testnet readiness reports RPC and funding state without exposing private key", async () => {
   const readiness = await getTestnetReadiness();
   assert.equal(readiness.rpcStatus, "ok");
@@ -180,6 +221,7 @@ test("judge proof pack captures x402, replay, verifier, and prize gate", async (
   assert.equal(byId["signed-payment"].status, "pass");
   assert.equal(byId["nonce-replay-protection"].status, "pass");
   assert.ok(["pass", "blocked"].includes(byId["real-deploy-preflight"].status));
+  assert.ok(["pass", "blocked"].includes(byId["x402-real-settlement"].status));
   assert.equal(proof.x402Flow.beforePayment.status, 402);
   assert.equal(proof.x402Flow.replayAttempt.status, 402);
   assert.match(proof.x402Flow.replayAttempt.error, /nonce already used/i);

@@ -1,6 +1,6 @@
 # Judge Proof Pack
 
-Generated: 2026-07-02T12:22:36.921Z
+Generated: 2026-07-02T15:32:14.511Z
 
 Project: CSPR Guardian
 
@@ -18,14 +18,16 @@ Prize readiness: 100/100 (highest-prize-ready)
 | independent-verifier | pass | 34/34 checks passed |
 | real-deploy-preflight | pass | 11/11 real deploy preflight checks passed |
 | x402-settlement-preflight | pass | 28/28 signed x402 settlement transfer checks passed |
+| x402-real-settlement | pass | 34/34 real x402 settlement-anchor checks passed |
 | casper-final-gate | pass | Real CSPR.live deploy evidence is present |
 
 ## x402 Payment Flow
 
 - Before payment: oracle returned 402 with PAYMENT-REQUIRED header.
-- Signed authorization hash: 4a013719d244c4f0b3344db219482a1938e03f0692d1c8a133abf5c027243353
-- Demo settlement hash: mock-casper-pay-46e00bf9d6deae442437e0f9179b904fbc88ae929cb9318f
+- Signed authorization hash: 4f638be8dcc0e361da1b6530080a5fc7f026368530e76355040810e173b9e53d
+- Demo settlement hash: mock-casper-pay-ab2f96b746ed8721bb3112de8d925af80b236ed0d993a744
 - Replay attempt: 402, Payment nonce already used
+- Real x402 settlement anchors: verified (34/34)
 
 ## MCP Paid Tools
 
@@ -38,11 +40,11 @@ Prize readiness: 100/100 (highest-prize-ready)
 
 ## Agent Run
 
-- Run id: run-7f63fcc8-8713-4f78-9586-fa686b5d5bcf
+- Run id: run-33905433-bf82-420b-833d-b281a9890be5
 - Decision: approve
 - Approved amount: $207,452
 - Provider revenue: 0.62 CSPR
-- Receipt hash: 108d84e6ffa37754a3bf180e9f73e8477ca3d66298ed7e970cc4d8edf4279322
+- Receipt hash: 27183a60b7ad3571a8ea5138bcd9b70cc24d3732656f41f7295391d94f45af2e
 - Demo anchor mode: mock
 - Demo explorer URL: not used for final judging
 - Final Casper receipt: https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
@@ -53,7 +55,7 @@ Prize readiness: 100/100 (highest-prize-ready)
 - Checks: 34/34
 - Signature checks: 4
 - Hash checks: 17
-- Evidence hash: b87d0273adfa848952d85b721672d1cf374795728efcd04d2f6246c8b6b7f4d6
+- Evidence hash: a0342ab2f2d1ee5e81eaf44a1270e58e1e9981386e4c969e4885e204f29e8be0
 
 ## Prize Readiness Criteria
 

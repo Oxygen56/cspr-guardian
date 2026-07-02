@@ -45,7 +45,7 @@ an audit trail that can be inspected after the demo.
 
 | Rubric Area | CSPR Guardian Evidence |
 | --- | --- |
-| Technical execution | `24/24` tests, `14/14` audit checks, `34/34` evidence checks, signed deploy preflight, and public CSPR.live receipt |
+| Technical execution | `25/25` tests, final audit checks, `34/34` evidence checks, signed deploy preflight, four x402 settlement anchors, and public CSPR.live receipt |
 | Innovation and originality | End-to-end paid RWA intelligence market, not a simple API wrapper or chatbot |
 | AI agent use | The agent discovers tools, pays, consumes paid data, decides under policy, and exports proof |
 | Casper integration | x402-style Casper payments, Casper testnet public key, deploy preflight, real transaction, receipt hash, and CSPR.live explorer URL |
@@ -59,6 +59,7 @@ an audit trail that can be inspected after the demo.
 | Casper-native trust layer | Real receipt deploy hash and CSPR.live explorer URL | `npm run seal:submission`, Casper Receipt panel |
 | Agent-to-agent commerce | Four paid tools earning CSPR per run | Provider Ledger panel |
 | x402-style payment flow | HTTP 402 challenge, signed payment proof, nonce replay rejection | `/api/oracle/*`, tests, Evidence Bundle |
+| x402 real settlement | Four x402 settlement-anchor transactions are published on Casper testnet and tied to the signed authorizations | `submission/casper-x402-settlement-batch.md`, `npm run settle:x402:testnet`, `npm run verify:x402-settlement` |
 | MCP-style tool discovery | Agent discovers paid RWA tools before calling them | Agent Trace, `/mcp/tools` |
 | Autonomous workflow | Agent evaluates risk, KYB, liquidity, and covenants before deciding | Decision panel and trace |
 | RWA relevance | Invoice financing pool gets risk, compliance, liquidity, and covenant checks | RWA signal reports |
@@ -67,7 +68,7 @@ an audit trail that can be inspected after the demo.
 | Independent verification | Signatures, tx hashes, report hashes, receipt hash, evidence hash, and revenue totals recompute | Evidence Verification panel, `npm run verify:evidence` |
 | Reviewer proof pack | 402 challenge, signed payment, replay rejection, agent run, verifier, prize gate | `submission/judge-proof-pack.md`, `submission/judge-proof-pack.json`, `npm run judge:proof` |
 | Real deploy readiness | Signed Casper transfer deploy builds locally without broadcasting | `submission/casper-testnet-preflight.md`, `submission/casper-testnet-preflight.json`, `npm run preflight:testnet` |
-| x402 real settlement path | Each paid tool payment can build a signed Casper transfer deploy without broadcasting | `submission/casper-x402-settlement-preflight.md`, `npm run preflight:x402`, `npm run verify:x402-preflight` |
+| x402 preflight path | Each paid tool payment can build a signed Casper transfer deploy without broadcasting | `submission/casper-x402-settlement-preflight.md`, `npm run preflight:x402`, `npm run verify:x402-preflight` |
 | Testnet readiness | RPC health, public key, funding status, and readiness gate are visible | Testnet Readiness panel |
 | Business model | Providers earn per tool call and history persists across runs | Provider Ledger and Run History |
 | Submission clarity | Copy-ready BUIDL fields, artifact links, demo flow, and remaining gate are consolidated | `casper-buidl-submission.md`, `npm run export:buidl` |
@@ -102,6 +103,10 @@ an audit trail that can be inspected after the demo.
   x402 settlement transfer preflight.
 - `submission/casper-x402-settlement-preflight.json`: machine-readable x402
   settlement preflight.
+- `submission/casper-x402-settlement-batch.md`: human-readable real x402
+  settlement-anchor batch with four Casper testnet transaction links.
+- `submission/casper-x402-settlement-batch.json`: machine-readable x402
+  settlement-anchor batch.
 - `submission/casper-highest-prize-unlock.md`: human-readable highest-prize
   report with the funded testnet account, public links, and final CSPR.live receipt.
 - `submission/casper-highest-prize-unlock.json`: machine-readable
@@ -131,11 +136,12 @@ an audit trail that can be inspected after the demo.
 1. Start with Prize Readiness: `100/100`, highest-prize gate cleared, blockers `0`.
 2. Open the Judge Scorecard.
 3. Open the real CSPR.live transaction.
-4. Show Scenario Matrix: three RWA assets, distinct policy outcomes, same paid tools.
-5. Show Judge Proof Pack: 402 challenge, signed payment, replay rejected, final gate.
-6. Show Provider Ledger: `0.62 CSPR` revenue across four paid tools.
-7. Show Evidence Verification: `34/34` recomputed checks.
-8. Show Submission Audit: `ready_for_highest_prize_submission`, `14/14` checks.
+4. Show x402 Settlement Batch: four Casper testnet settlement-anchor transactions.
+5. Show Scenario Matrix: three RWA assets, distinct policy outcomes, same paid tools.
+6. Show Judge Proof Pack: 402 challenge, signed payment, replay rejected, final gate.
+7. Show Provider Ledger: `0.62 CSPR` revenue across four paid tools.
+8. Show Evidence Verification: `34/34` recomputed checks.
+9. Show Submission Audit: final submission checks passing.
 9. Close with the repeatable model: any RWA intelligence provider can expose a
    paid MCP tool, and any autonomous treasury can buy intelligence with an
    auditable Casper receipt.
@@ -149,10 +155,13 @@ an audit trail that can be inspected after the demo.
 - `npm run seal:submission` is now idempotent: it reuses the existing final
   evidence and refreshes the final submission pack without rebroadcasting.
 - `npm run audit:submission` verifies the pack as
-  `ready_for_highest_prize_submission` with `14/14` checks passed.
+  `ready_for_highest_prize_submission` with `15/15` checks passed.
 - `npm run preflight:x402` builds signed Casper transfer deploys for each paid
   x402 tool call without broadcasting; `npm run verify:x402-preflight` checks the
   deploy hashes, motes conversion, memo derivation, and recipient shape.
+- `npm run settle:x402:testnet` has published four Casper testnet
+  settlement-anchor transactions for the signed x402 tool payments;
+  `npm run verify:x402-settlement` verifies `34/34` settlement-anchor checks.
 - `npm run unlock:highest-prize` records zero remaining gates and the final
   Casper explorer URL.
 - Public repo, hosted judge demo, walkthrough video, and the real Casper

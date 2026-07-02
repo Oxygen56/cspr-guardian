@@ -45,26 +45,9 @@ export async function preflightReceiptTransfer(receipt) {
 }
 
 export async function preflightPaymentTransfer(payment, { recipientPublicKeyHex } = {}) {
-  const hashSource = payment.authorizationHash || payment.txHash;
-  const { memo, memoSource, memoBits } = deriveTransferMemo(hashSource);
-  const transferAmount = csprToMotes(payment.amount);
-  const { summary } = await prepareTransferDeploy({
+  const { summary } = await preparePaymentTransferDeploy(payment, {
     checkBalance: false,
-    transferAmount,
-    memo,
-    memoSource,
-    memoBits,
-    memoDerivation: "uint53(first_13_hex_chars(authorizationHash))",
-    receiptHash: null,
-    recipientPublicKeyHex,
-    payTo: payment.payTo,
-    metadata: {
-      tool: payment.tool,
-      amountCSPR: payment.amount,
-      authorizationHash: payment.authorizationHash,
-      paymentTxHash: payment.txHash,
-      nonce: payment.nonce
-    }
+    recipientPublicKeyHex
   });
 
   return {
@@ -76,6 +59,72 @@ export async function preflightPaymentTransfer(payment, { recipientPublicKeyHex 
       broadcast: false
     }
   };
+}
+
+export async function settlePaymentTransfer(
+  payment,
+  { recipientPublicKeyHex, transferAmountMotes } = {}
+) {
+  const { deploy, transaction, summary, rpcClient } = await preparePaymentTransferDeploy(payment, {
+    checkBalance: true,
+    recipientPublicKeyHex,
+    transferAmountMotes
+  });
+
+  const result = transaction
+    ? await rpcClient.putTransaction(transaction)
+    : await rpcClient.putDeploy(deploy);
+  const deployHash =
+    formatDeployHash(result.transactionHash) ||
+    formatDeployHash(result.deployHash) ||
+    summary.transactionHash ||
+    formatDeployHash(transaction?.hash) ||
+    formatDeployHash(deploy?.hash);
+
+  return {
+    ...summary,
+    status: "submitted",
+    deployHash,
+    transactionHash: transaction ? deployHash : null,
+    explorerUrl: buildExplorerUrl(deployHash, summary.transactionType),
+    submittedAt: new Date().toISOString(),
+    deployBuild: {
+      status: "ok",
+      signed: true,
+      broadcast: true
+    }
+  };
+}
+
+async function preparePaymentTransferDeploy(
+  payment,
+  { checkBalance, recipientPublicKeyHex, transferAmountMotes } = {}
+) {
+  const hashSource = payment.authorizationHash || payment.txHash;
+  const { memo, memoSource, memoBits } = deriveTransferMemo(hashSource);
+  const x402AmountMotes = csprToMotes(payment.amount);
+  const transferAmount = transferAmountMotes || x402AmountMotes;
+  return prepareTransferDeploy({
+    checkBalance,
+    transferAmount,
+    memo,
+    memoSource,
+    memoBits,
+    memoDerivation: "uint53(first_13_hex_chars(authorizationHash))",
+    receiptHash: null,
+    recipientPublicKeyHex,
+    payTo: payment.payTo,
+    metadata: {
+      tool: payment.tool,
+      amountCSPR: payment.amount,
+      x402AmountCSPR: payment.amount,
+      x402AmountMotes,
+      nativeTransferFloorApplied: transferAmount !== x402AmountMotes,
+      authorizationHash: payment.authorizationHash,
+      paymentTxHash: payment.txHash,
+      nonce: payment.nonce
+    }
+  });
 }
 
 export function deriveTransferMemo(receiptHash) {
@@ -198,6 +247,7 @@ async function prepareTransferDeploy({
       recipientPublicKeyHex: recipient.publicKeyHex,
       requestedRecipient: recipient.requested,
       recipientSource: recipient.source,
+      recipientFallbackReason: recipient.fallbackReason,
       transferAmount,
       paymentAmount,
       memo,
@@ -229,7 +279,10 @@ function resolveRecipientPublicKey({ requested, fallback }) {
   return {
     requested: requested || null,
     publicKeyHex: fallback,
-    source: requested ? "self_fallback_invalid_pay_to" : "self_fallback_missing_pay_to"
+    source: "agent_controlled_testnet_recipient",
+    fallbackReason: requested
+      ? "configured_pay_to_was_not_a_casper_public_key"
+      : "pay_to_missing"
   };
 }
 

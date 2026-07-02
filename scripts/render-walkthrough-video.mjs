@@ -158,7 +158,7 @@ function renderHtml({ fps, durationSeconds, assets }) {
         title: "CSPR Guardian",
         subtitle: "Autonomous RWA treasury agents with paid risk intelligence and Casper receipts.",
         metrics: [["Prize readiness", "100/100"], ["Highest-prize gate", "cleared"], ["Blockers", "0"]],
-        bullets: ["Real Casper testnet receipt is published", "Independent verifier passes 34/34 checks", "Judge proof pack passes 7/7 assertions"]
+        bullets: ["Real Casper testnet receipt is published", "Independent verifier passes 34/34 checks", "Judge proof pack passes 10/10 assertions"]
       },
       {
         start: 8,
@@ -202,7 +202,7 @@ function renderHtml({ fps, durationSeconds, assets }) {
         kicker: "SUBMISSION PACK",
         title: "Ready for judging",
         subtitle: "Repo, hosted demo, walkthrough, proof pack, audit, and CSPR.live transaction are all linked.",
-        metrics: [["Audit", "14/14"], ["Proof", "7/7"], ["Evidence", "34/34"]],
+        metrics: [["Audit", "15/15"], ["Proof", "10/10"], ["Evidence", "34/34"]],
         bullets: ["Public demo: oxygen56.github.io/cspr-guardian", "Repository: github.com/Oxygen56/cspr-guardian", "Final transaction: " + tx.slice(0, 10) + "..." + tx.slice(-8)]
       },
       {

@@ -1,13 +1,13 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T13:37:54.005Z",
+  "generatedAt": "2026-07-02T15:35:03.813Z",
   "project": "CSPR Guardian",
   "status": "ready_for_highest_prize_submission",
   "summary": {
-    "passed": 14,
+    "passed": 15,
     "blocked": 0,
     "failed": 0,
-    "total": 14
+    "total": 15
   },
   "finalGate": {
     "highestPrizeGate": true,
@@ -23,14 +23,14 @@
     "submissionPackZip": {
       "exists": true,
       "path": "outputs/cspr-guardian-final-submission.zip",
-      "bytes": 2522613,
-      "sha256": "64288eaaac3c14f2e118a9fb4b51a3096862c28722e0447bb6d5245e66a1b64a"
+      "bytes": 2546864,
+      "sha256": "1d4cb90786ee453bfb503b6c199866bc19f11826f26294e536270fe17fe33e89"
     },
     "sourceZip": {
       "exists": true,
       "path": "outputs/cspr-guardian-prototype.zip",
-      "bytes": 1985084,
-      "sha256": "85c47f45d92c7b919cbfc8d23eaa9ac3764efcaa25ff90f886c38ca81a88fd97"
+      "bytes": 2005079,
+      "sha256": "bb5c3ec54603150a2638f2a1c15cf9a3703ff5ef9a61b52b235f18de1a95474f"
     },
     "finalSeal": "outputs/casper-final-submission-seal.json",
     "highestPrizeUnlock": "outputs/casper-highest-prize-unlock.json",
@@ -70,13 +70,23 @@
       "ok": true
     },
     {
+      "name": "x402_settlement_batch_verified",
+      "detail": "34/34 real x402 settlement-anchor checks passed.",
+      "x402SettlementStatus": "verified",
+      "passed": 34,
+      "total": 34,
+      "sourceFile": "outputs/casper-x402-settlement-batch.json",
+      "status": "pass",
+      "ok": true
+    },
+    {
       "name": "submission_pack_present",
       "detail": "Final pack status is ready; missing required files: 0.",
       "packStatus": "ready",
-      "files": 38,
+      "files": 40,
       "missingRequired": 0,
       "zipPath": "outputs/cspr-guardian-final-submission.zip",
-      "zipSha256": "64288eaaac3c14f2e118a9fb4b51a3096862c28722e0447bb6d5245e66a1b64a",
+      "zipSha256": "1d4cb90786ee453bfb503b6c199866bc19f11826f26294e536270fe17fe33e89",
       "status": "pass",
       "ok": true
     },
@@ -131,15 +141,16 @@
       "detail": "CI readiness report covers tests, evidence, preflight, highest-prize unlock, and public demo readiness.",
       "ciStatus": "ci_ready",
       "ciSummary": {
-        "passed": 6,
+        "passed": 7,
         "failed": 0,
-        "total": 6
+        "total": 7
       },
       "ciChecks": [
         "unit_tests",
         "evidence_verifier",
         "preflight_verifier",
         "x402_settlement_preflight_verifier",
+        "x402_settlement_batch_verifier",
         "highest_prize_unlock_report",
         "public_demo_readiness"
       ],
@@ -150,7 +161,7 @@
       "name": "final_seal_present",
       "detail": "Final seal is ready_for_highest_prize_submission; package hash source is seal.",
       "sealStatus": "ready_for_highest_prize_submission",
-      "zipSha256": "64288eaaac3c14f2e118a9fb4b51a3096862c28722e0447bb6d5245e66a1b64a",
+      "zipSha256": "1d4cb90786ee453bfb503b6c199866bc19f11826f26294e536270fe17fe33e89",
       "status": "pass",
       "ok": true
     },
@@ -173,8 +184,8 @@
     },
     {
       "name": "private_key_leak_scan",
-      "detail": "64 text artifacts scanned with no private key material.",
-      "filesScanned": 64,
+      "detail": "68 text artifacts scanned with no private key material.",
+      "filesScanned": 68,
       "matches": [],
       "status": "pass",
       "ok": true
@@ -183,7 +194,7 @@
       "name": "source_zip_exclusions",
       "detail": "Source archive excludes node_modules, .local, and .env.",
       "sourceZipPath": "outputs/cspr-guardian-prototype.zip",
-      "entries": 137,
+      "entries": 145,
       "forbiddenEntries": [],
       "status": "pass",
       "ok": true
@@ -192,7 +203,7 @@
       "name": "final_pack_no_self_reference",
       "detail": "Final pack does not include external seal or audit files that would self-reference the zip.",
       "finalPackPath": "outputs/cspr-guardian-final-submission.zip",
-      "entries": 44,
+      "entries": 46,
       "selfReferences": [],
       "status": "pass",
       "ok": true

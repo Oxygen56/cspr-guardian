@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T12:22:36.921Z",
+  "generatedAt": "2026-07-02T15:32:14.511Z",
   "project": "CSPR Guardian",
   "assetId": "invoice-usdc-7d",
   "requestedAmountUsd": 250000,
@@ -44,6 +44,11 @@
       "id": "x402-settlement-preflight",
       "status": "pass",
       "evidence": "28/28 signed x402 settlement transfer checks passed"
+    },
+    {
+      "id": "x402-real-settlement",
+      "status": "pass",
+      "evidence": "34/34 real x402 settlement-anchor checks passed"
     },
     {
       "id": "casper-final-gate",
@@ -96,8 +101,8 @@
             "extra": {
               "tool": "rwa.risk_score",
               "assetId": "invoice-usdc-7d",
-              "nonce": "211c7770-e452-4c0a-95a8-76a14b40db16",
-              "expiresAt": "2026-07-02T12:27:31.486Z"
+              "nonce": "80adbcd0-4032-4559-a813-263bc2499d34",
+              "expiresAt": "2026-07-02T15:37:07.727Z"
             }
           }
         ]
@@ -109,14 +114,14 @@
       "agentId": "judge-proof-agent",
       "amount": "0.25",
       "network": "casper-test",
-      "nonce": "211c7770-e452-4c0a-95a8-76a14b40db16",
-      "authorizationHash": "4a013719d244c4f0b3344db219482a1938e03f0692d1c8a133abf5c027243353",
-      "publicKeyFingerprint": "812ba3a1f3b9408e8a5debf4",
-      "signature": "NfuD0tduxhgSuIS6PpB366vszJ3woW0DPlG1wuF9RqakkDB1SNPilXzxG7jWjY1pgjhz0T8YOEp7JD7U8a2DAA"
+      "nonce": "80adbcd0-4032-4559-a813-263bc2499d34",
+      "authorizationHash": "4f638be8dcc0e361da1b6530080a5fc7f026368530e76355040810e173b9e53d",
+      "publicKeyFingerprint": "924b76959ee3c59c431c6c8d",
+      "signature": "Ql9oeruXNwsGTe0OWq1C7TtPN9fFCbqSGK0JQi3ZoefmmvziWpWldGakLYp9HVyWuKa9X6QBFQ-LybfwpKuMCA"
     },
     "settlement": {
       "status": "settled",
-      "txHash": "mock-casper-pay-46e00bf9d6deae442437e0f9179b904fbc88ae929cb9318f",
+      "txHash": "mock-casper-pay-ab2f96b746ed8721bb3112de8d925af80b236ed0d993a744",
       "amount": "0.25",
       "currency": "CSPR"
     },
@@ -126,7 +131,7 @@
     }
   },
   "scenario": {
-    "runId": "run-7f63fcc8-8713-4f78-9586-fa686b5d5bcf",
+    "runId": "run-33905433-bf82-420b-833d-b281a9890be5",
     "decision": "approve",
     "approvedAmountUsd": 207452,
     "providerRevenue": "0.62",
@@ -136,9 +141,9 @@
       "rwa.liquidity_depth",
       "rwa.covenant_monitor"
     ],
-    "receiptHash": "108d84e6ffa37754a3bf180e9f73e8477ca3d66298ed7e970cc4d8edf4279322",
+    "receiptHash": "27183a60b7ad3571a8ea5138bcd9b70cc24d3732656f41f7295391d94f45af2e",
     "anchorMode": "mock",
-    "deployHash": "mock-casper-receipt-108d84e6ffa37754a3bf180e9f73e8477ca3d66298ed7e97",
+    "deployHash": "mock-casper-receipt-27183a60b7ad3571a8ea5138bcd9b70cc24d3732656f41f7",
     "explorerUrl": null
   },
   "evidenceVerification": {
@@ -150,7 +155,7 @@
     "failedChecks": [],
     "signatureChecks": 4,
     "hashChecks": 17,
-    "evidenceHash": "b87d0273adfa848952d85b721672d1cf374795728efcd04d2f6246c8b6b7f4d6"
+    "evidenceHash": "a0342ab2f2d1ee5e81eaf44a1270e58e1e9981386e4c969e4885e204f29e8be0"
   },
   "prizeReadiness": {
     "status": "highest-prize-ready",
@@ -209,13 +214,13 @@
     ],
     "blockers": [],
     "currentEvidence": {
-      "runId": "run-7f63fcc8-8713-4f78-9586-fa686b5d5bcf",
+      "runId": "run-33905433-bf82-420b-833d-b281a9890be5",
       "receiptHash": "23fd7a0e66756456960cc2522f2a5dbc0a3ae09b6d1b0ba4e285550e50d4fe16",
       "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
       "anchorMode": "real",
       "reportHashes": {
         "risk": "81d06f2499c1f01b1fba7f6aac0ab04fe5148aedf206d96ea7e1ce6cb8cc2880",
-        "kyb": "2189476f46a3edee3fcca1109dc7728c6ceee58846f7985ae596bd46462b3f3f",
+        "kyb": "e57706386cc57df6f506029078a2254cad0def85e8a5914022f47a4c822c5926",
         "liquidity": "6d25b444e94b8c58497524c0f642433bdb7ebf923257496d05adedd869538fe3",
         "covenant": "8267de9604c0ee1dc20389da7a2503c8a7c3358072738d77ccaf66e11f6380a1"
       }
@@ -243,6 +248,15 @@
       "summary": {
         "passed": 28,
         "total": 28
+      },
+      "failedChecks": []
+    },
+    "x402SettlementBatch": {
+      "status": "verified",
+      "sourceFile": "outputs/casper-x402-settlement-batch.json",
+      "summary": {
+        "passed": 34,
+        "total": 34
       },
       "failedChecks": []
     }

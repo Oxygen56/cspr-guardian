@@ -31,16 +31,18 @@ It combines the buildathon primitives into a single complete loop:
 2. HTTP 402-style payment requirements.
 3. Replay-safe Ed25519 payment authorizations.
 4. Four paid RWA intelligence products.
-5. Provider revenue accounting.
-6. Policy-bounded autonomous allocation.
-7. Independent evidence verification.
-8. Real Casper testnet receipt.
-9. Public proof room with SHA-256 hashes for every proof artifact.
+5. Four public Casper testnet settlement-anchor transactions for x402 payments.
+6. Provider revenue accounting.
+7. Policy-bounded autonomous allocation.
+8. Independent evidence verification.
+9. Real Casper testnet receipt.
+10. Public proof room with SHA-256 hashes for every proof artifact.
 
 ## Why This Should Stand Out
 
 - Casper is not decorative. The final submission has a public CSPR.live receipt
-  and Casper-specific signed deploy preflight artifacts.
+  Casper-specific signed deploy preflight artifacts, and four public x402
+  settlement-anchor transactions.
 - The agent workflow is end to end. It discovers tools, pays, consumes data,
   decides, records revenue, and exports proof.
 - The RWA use case is concrete. Risk, KYB/sanctions, liquidity, and covenant

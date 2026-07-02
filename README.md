@@ -17,6 +17,8 @@ Public proof manifest: https://oxygen56.github.io/cspr-guardian/proof/proof-mani
 
 Scenario matrix: https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md
 
+x402 settlement batch: https://oxygen56.github.io/cspr-guardian/proof/casper-x402-settlement-batch.md
+
 Competitive positioning: https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md
 
 Funding handoff: https://oxygen56.github.io/cspr-guardian/funding.html
@@ -37,9 +39,9 @@ and `ready_for_highest_prize_submission` audit status.
   MCP tools and autonomous treasury agents can pay per decision.
 - It gives judges a clean demo path with visible traces, hashes, ledgers, and a
   downloadable evidence bundle.
-- It has public proof beyond screenshots: `24/24` tests, `34/34` evidence
-  verification, `14/14` submission audit, signed deploy preflight, and a real
-  CSPR.live receipt.
+- It has public proof beyond screenshots: `25/25` tests, `34/34` evidence
+  verification, final submission audit, signed deploy preflight, four x402
+  settlement-anchor transactions, and a real CSPR.live receipt.
 - It includes a concise competitive positioning brief that frames visible
   buildathon categories without relying on unsupported claims about other teams.
 - It gives judges a one-page scorecard that maps the project to technical
@@ -115,6 +117,14 @@ without broadcasting them:
 
 ```bash
 npm run preflight:x402
+```
+
+Broadcast and verify the four Casper testnet settlement-anchor transactions
+tied to the signed x402 tool payments:
+
+```bash
+npm run settle:x402:testnet
+npm run verify:x402-settlement
 ```
 
 Verify the signed preflight evidence:
@@ -257,6 +267,9 @@ npm run check:deploy -- <deploy-hash>
   transfer deploys for every paid tool payment, converts CSPR to motes, derives
   transfer memos from x402 authorization hashes, and proves no private key
   material is exposed.
+- x402 settlement batch at `npm run settle:x402:testnet` and
+  `npm run verify:x402-settlement` that publishes four Casper testnet
+  settlement-anchor transactions tied to the signed x402 authorizations.
 - Downloadable evidence bundle at `/api/evidence/latest` with signed x402
   proofs, report hashes, decision hash, receipt hash, and an evidence hash.
 - Evidence verifier at `/api/evidence/verify` and `npm run verify:evidence` that

@@ -106,6 +106,7 @@ function roleFor(fileName) {
   if (fileName.includes("buidl-submission")) return "copy-ready BUIDL fields";
   if (fileName.includes("prize-readiness")) return "100/100 prize readiness scorecard";
   if (fileName.includes("testnet-preflight")) return "signed Casper deploy preflight";
+  if (fileName.includes("x402-settlement-batch")) return "real x402 settlement transactions";
   if (fileName.includes("x402-settlement-preflight")) return "signed x402 settlement preflight";
   if (fileName.includes("ci-readiness")) return "CI readiness";
   if (fileName.includes("public-demo")) return "public demo readiness";

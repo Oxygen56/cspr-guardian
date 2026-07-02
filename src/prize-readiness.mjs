@@ -193,6 +193,8 @@ async function hasSubmissionAssets() {
     "submission/judge-proof-pack.md",
     "submission/casper-testnet-preflight.json",
     "submission/casper-testnet-preflight.md",
+    "submission/casper-x402-settlement-batch.json",
+    "submission/casper-x402-settlement-batch.md",
     "submission/prize-readiness-snapshot.json",
     "submission/submission-assets.md"
   ];

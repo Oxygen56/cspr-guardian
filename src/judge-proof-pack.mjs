@@ -5,6 +5,7 @@ import { verifyLatestEvidenceBundle } from "./evidence-verifier.mjs";
 import { getLatestEvidenceBundle } from "./ledger.mjs";
 import { getPrizeReadiness } from "./prize-readiness.mjs";
 import { verifyTestnetPreflightFile } from "./testnet-preflight-verifier.mjs";
+import { verifyX402SettlementBatchFile } from "./x402-settlement-batch-verifier.mjs";
 import { getTestnetReadiness } from "./testnet-readiness.mjs";
 import { verifyX402SettlementPreflightFile } from "./x402-settlement-preflight-verifier.mjs";
 import { sha256, signDemoPayment } from "./x402-casper.mjs";
@@ -35,6 +36,7 @@ export async function generateJudgeProofPack({
   const testnetReadiness = await getTestnetReadiness();
   const preflightVerification = await verifyTestnetPreflightFile();
   const x402PreflightVerification = await verifyX402SettlementPreflightFile();
+  const x402SettlementVerification = await verifyX402SettlementBatchFile();
   const authorization = paidCall.body.payment.authorization;
 
   const assertions = [
@@ -92,6 +94,14 @@ export async function generateJudgeProofPack({
         x402PreflightVerification.status === "verified"
           ? `${x402PreflightVerification.summary.passed}/${x402PreflightVerification.summary.total} signed x402 settlement transfer checks passed`
           : "Run npm run preflight:x402 and npm run verify:x402-preflight before final submission"
+    },
+    {
+      id: "x402-real-settlement",
+      status: x402SettlementVerification.status === "verified" ? "pass" : "blocked",
+      evidence:
+        x402SettlementVerification.status === "verified"
+          ? `${x402SettlementVerification.summary.passed}/${x402SettlementVerification.summary.total} real x402 settlement-anchor checks passed`
+          : "Run npm run settle:x402:testnet and npm run verify:x402-settlement to publish real settlement anchors"
     },
     {
       id: "casper-final-gate",
@@ -189,7 +199,7 @@ export async function generateJudgeProofPack({
       faucetUrl: testnetReadiness.faucetUrl,
       preflightVerification: {
         status: preflightVerification.status,
-        sourceFile: preflightVerification.sourceFile,
+        sourceFile: publicSourceFile(preflightVerification.sourceFile),
         summary: preflightVerification.summary,
         failedChecks: preflightVerification.checks
           .filter((check) => !check.ok)
@@ -197,9 +207,17 @@ export async function generateJudgeProofPack({
       },
       x402SettlementPreflight: {
         status: x402PreflightVerification.status,
-        sourceFile: x402PreflightVerification.sourceFile,
+        sourceFile: publicSourceFile(x402PreflightVerification.sourceFile),
         summary: x402PreflightVerification.summary,
         failedChecks: x402PreflightVerification.checks
+          .filter((check) => !check.ok)
+          .map((check) => check.name)
+      },
+      x402SettlementBatch: {
+        status: x402SettlementVerification.status,
+        sourceFile: publicSourceFile(x402SettlementVerification.sourceFile),
+        summary: x402SettlementVerification.summary,
+        failedChecks: x402SettlementVerification.checks
           .filter((check) => !check.ok)
           .map((check) => check.name)
       }
@@ -244,6 +262,9 @@ export function renderJudgeProofMarkdown(pack) {
   const criteriaRows = pack.prizeReadiness.criteria
     .map((item) => `| ${item.label} | ${item.status} | ${item.value} | ${item.weight} |`)
     .join("\n");
+  const x402SettlementSummary = pack.testnet.x402SettlementBatch
+    ? `- Real x402 settlement anchors: ${pack.testnet.x402SettlementBatch.status} (${pack.testnet.x402SettlementBatch.summary.passed}/${pack.testnet.x402SettlementBatch.summary.total})`
+    : "- Real x402 settlement anchors: not generated";
   const finalExplorerUrl =
     pack.prizeReadiness.currentEvidence?.explorerUrl ||
     (String(pack.scenario.deployHash || "").startsWith("mock-") ? null : pack.scenario.explorerUrl);
@@ -290,6 +311,7 @@ ${rows}
 - Signed authorization hash: ${pack.x402Flow.signedAuthorization.authorizationHash}
 - Demo settlement hash: ${pack.x402Flow.settlement.txHash}
 - Replay attempt: ${pack.x402Flow.replayAttempt.status}, ${pack.x402Flow.replayAttempt.error}
+${x402SettlementSummary}
 
 ## MCP Paid Tools
 
@@ -333,4 +355,21 @@ function assertNoPrivateKeyLeak(value) {
   if (serialized.includes("BEGIN PRIVATE KEY") || serialized.includes("PRIVATE KEY")) {
     throw new Error("Proof pack would leak a private key.");
   }
+}
+
+function publicSourceFile(filePath) {
+  if (!filePath) {
+    return null;
+  }
+  const absoluteFilePath = path.resolve(filePath);
+  const projectDir = process.cwd();
+  const outputDir = path.resolve(projectDir, "../../outputs");
+
+  if (absoluteFilePath.startsWith(`${outputDir}${path.sep}`)) {
+    return path.join("outputs", path.relative(outputDir, absoluteFilePath));
+  }
+  if (absoluteFilePath.startsWith(`${projectDir}${path.sep}`)) {
+    return path.relative(projectDir, absoluteFilePath);
+  }
+  return path.basename(filePath);
 }

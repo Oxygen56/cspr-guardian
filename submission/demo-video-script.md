@@ -12,7 +12,7 @@ transaction. The Casper receipt gate is cleared with a real deploy URL.
 
 ## 18-28s
 
-Show Judge Proof Pack at `7/7`:
+Show Judge Proof Pack at `10/10`:
 
 - MCP tool discovery
 - HTTP 402 payment requirements

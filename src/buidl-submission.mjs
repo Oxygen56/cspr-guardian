@@ -78,6 +78,7 @@ export async function generateBuidlSubmissionPage({ outputDir } = {}) {
       judgeProof: "casper-judge-proof-pack.md",
       finalSeal: "casper-final-submission-seal.md",
       preflight: "casper-testnet-preflight.md",
+      x402SettlementBatch: "casper-x402-settlement-batch.md",
       screenshots: [
         "cspr-guardian-dashboard.png",
         "cspr-guardian-prize-readiness.png",
@@ -189,22 +190,23 @@ with the highest-prize gate cleared.
 This is designed to stand above single-feature entries. It is not only an
 x402 endpoint, not only an MCP catalog, and not only a DeFi assistant. It is a
 complete paid-agent workflow with replay-safe payments, four paid RWA
-intelligence tools, provider revenue, independent verification, a public demo,
-and a real Casper testnet receipt.
+intelligence tools, provider revenue, four x402 settlement-anchor transactions,
+independent verification, a public demo, and a real Casper testnet receipt.
 
 The hosted proof room gives judges browser-accessible Markdown and JSON
 artifacts for the final audit, proof pack, submission seal, testnet evidence,
-preflight files, BUIDL fields, CI readiness, and public demo readiness:
+preflight files, x402 settlement batch, BUIDL fields, CI readiness, and public
+demo readiness:
 https://oxygen56.github.io/cspr-guardian/proof-room.html
 
 ## Rubric Alignment
 
 | Area | Evidence |
 | --- | --- |
-| Technical execution | ${page.readiness.score ?? "unknown"}/${page.readiness.maxScore} prize readiness, ${page.proof.evidenceChecks ? `${page.proof.evidenceChecks.passed}/${page.proof.evidenceChecks.total}` : "missing"} evidence checks, signed deploy preflight, public CSPR.live receipt |
+| Technical execution | ${page.readiness.score ?? "unknown"}/${page.readiness.maxScore} prize readiness, ${page.proof.evidenceChecks ? `${page.proof.evidenceChecks.passed}/${page.proof.evidenceChecks.total}` : "missing"} evidence checks, signed deploy preflight, real x402 settlement anchors, public CSPR.live receipt |
 | Innovation and originality | Paid RWA intelligence market with autonomous buyers, paid providers, replay-safe payment proofs, and verifiable allocation evidence |
 | AI agent use | Agent discovers tools, pays, consumes risk/KYB/liquidity/covenant data, decides under policy, and exports proof |
-| Casper integration | x402-style Casper payments, testnet account, receipt hash, deploy evidence, and explorer URL |
+| Casper integration | x402-style Casper payments, testnet account, settlement anchors, receipt hash, deploy evidence, and explorer URLs |
 | Judge experience | Hosted demo, 64-second walkthrough, screenshots, proof pack, audit output, and copy-ready links |
 
 ## Readiness
@@ -254,9 +256,10 @@ ${paidTools}
 3. Show MCP discovery, x402 payment requirements, signed payment proofs, and replay rejection.
 4. Show paid RWA risk, KYB, liquidity, and covenant reports.
 5. Show the decision, provider revenue, run history, and receipt hash.
-6. Show Evidence Verification with all checks passing.
-7. Show Final Seal and the submission pack hash.
-8. Open the real CSPR.live explorer URL for the final receipt.
+6. Open the x402 settlement batch with four Casper testnet transaction links.
+7. Show Evidence Verification with all checks passing.
+8. Show Final Seal and the submission pack hash.
+9. Open the real CSPR.live explorer URL for the final receipt.
 
 ## Artifacts
 
@@ -266,6 +269,7 @@ ${paidTools}
 - Judge proof: \`${page.artifacts.judgeProof}\`
 - Final seal: \`${page.artifacts.finalSeal}\`
 - Preflight proof: \`${page.artifacts.preflight}\`
+- x402 settlement batch: \`${page.artifacts.x402SettlementBatch}\`
 
 Screenshots:
 

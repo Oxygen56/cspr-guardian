@@ -1,10 +1,10 @@
 # Casper CI Readiness
 
-Generated: 2026-07-02T12:38:27.391Z
+Generated: 2026-07-02T15:32:27.293Z
 
 Status: ci_ready
 
-Checks: 6/6 passed, 0 failed.
+Checks: 7/7 passed, 0 failed.
 
 ## Public Demo External Gate
 
@@ -22,5 +22,6 @@ Missing public links:
 | evidence_verifier | pass | Evidence bundle verifies signatures, hashes, receipt links, and revenue. |
 | preflight_verifier | pass | Committed signed Casper preflight evidence verifies without private key material. |
 | x402_settlement_preflight_verifier | pass | Committed signed x402 settlement transfer preflight verifies without private key material. |
+| x402_settlement_batch_verifier | pass | Committed real x402 settlement-anchor transactions verify without private key material. |
 | highest_prize_unlock_report | pass | Highest-prize unlock report captures funding, public-link, and final-seal gates. |
 | public_demo_readiness | pass | Docker, Render, health endpoint, and public-demo handoff are ready. |

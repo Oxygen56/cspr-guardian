@@ -17,9 +17,11 @@ the final evidence trail to a real Casper testnet transaction.
 Final proof:
 
 - Prize readiness: `100/100`, highest-prize gate cleared.
-- Judge proof pack: `7/7` core assertions passing.
+- Judge proof pack: `10/10` core assertions passing.
 - Evidence verifier: `34/34` checks passing.
-- Submission audit: `14/14` checks passing, `0` blocked, `0` failed.
+- Submission audit: `15/15` checks passing, `0` blocked, `0` failed.
+- x402 settlement anchors: four Casper testnet transactions tied to signed
+  x402 authorizations.
 - Judge proof room:
   `https://oxygen56.github.io/cspr-guardian/proof-room.html`.
 - Judge scorecard:
@@ -28,6 +30,8 @@ Final proof:
   `https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md`.
 - Repeatable scenario matrix:
   `https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md`.
+- x402 settlement batch:
+  `https://oxygen56.github.io/cspr-guardian/proof/casper-x402-settlement-batch.md`.
 - Casper receipt:
   `https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a`.
 
@@ -65,6 +69,8 @@ signals into a single verifiable workflow:
 
 - It is agentic end to end: discover, pay, analyze, decide, prove.
 - It uses four paid RWA intelligence tools, not one isolated endpoint.
+- It publishes four Casper testnet settlement-anchor transactions for the
+  signed x402 tool payments.
 - It has replay protection and independent recomputation of signatures, hashes,
   receipts, and provider revenue.
 - It links business value to Casper: every RWA allocation can be audited by a
@@ -107,6 +113,7 @@ signals into a single verifiable workflow:
 4. Open the real CSPR.live transaction.
 5. Inspect the Judge Proof Pack for MCP discovery, HTTP 402, signed payment,
    replay rejection, agentic RWA run, independent verification, and final gate.
-6. Open the Scenario Matrix to show repeatable outcomes across three RWA assets.
-7. Inspect Evidence Verification for `34/34` recomputed checks.
-8. Inspect Submission Audit for `14/14` final submission checks.
+6. Open the x402 Settlement Batch to show four public Casper testnet anchors.
+7. Open the Scenario Matrix to show repeatable outcomes across three RWA assets.
+8. Inspect Evidence Verification for `34/34` recomputed checks.
+9. Inspect Submission Audit for final submission checks.

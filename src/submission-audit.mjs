@@ -11,6 +11,7 @@ import {
 import { getPublicDemoReadiness } from "./public-demo-readiness.mjs";
 import { summarizePublicSubmissionFields } from "./submission-profile.mjs";
 import { verifyTestnetPreflightFile } from "./testnet-preflight-verifier.mjs";
+import { verifyX402SettlementBatchFile } from "./x402-settlement-batch-verifier.mjs";
 import { verifyX402SettlementPreflightFile } from "./x402-settlement-preflight-verifier.mjs";
 
 const execFileAsync = promisify(execFile);
@@ -40,6 +41,7 @@ export async function generateSubmissionAudit({
     evidenceVerification,
     preflightVerification,
     x402PreflightVerification,
+    x402SettlementVerification,
     packManifest,
     finalSeal,
     highestPrizeUnlock,
@@ -58,6 +60,9 @@ export async function generateSubmissionAudit({
       failedVerification(error.message)
     ),
     verifyX402SettlementPreflightFile(paths.x402PreflightJson).catch((error) =>
+      failedVerification(error.message)
+    ),
+    verifyX402SettlementBatchFile(paths.x402SettlementBatchJson).catch((error) =>
       failedVerification(error.message)
     ),
     readJsonIfExists(paths.packManifest),
@@ -83,6 +88,7 @@ export async function generateSubmissionAudit({
     evidenceVerification,
     preflightVerification,
     x402PreflightVerification,
+    x402SettlementVerification,
     packManifest,
     finalSeal,
     highestPrizeUnlock,
@@ -144,6 +150,7 @@ export function buildSubmissionAuditChecks({
   evidenceVerification,
   preflightVerification,
   x402PreflightVerification,
+  x402SettlementVerification,
   packManifest,
   finalSeal,
   highestPrizeUnlock,
@@ -208,6 +215,20 @@ export function buildSubmissionAuditChecks({
       passed: x402PreflightVerification?.summary?.passed ?? 0,
       total: x402PreflightVerification?.summary?.total ?? 0,
       sourceFile: x402PreflightVerification?.sourceFile || null
+    }
+  );
+
+  add(
+    "x402_settlement_batch_verified",
+    x402SettlementVerification?.status === "verified" ? "pass" : "fail",
+    x402SettlementVerification?.summary
+      ? `${x402SettlementVerification.summary.passed}/${x402SettlementVerification.summary.total} real x402 settlement-anchor checks passed.`
+      : "x402 settlement batch verification is missing.",
+    {
+      x402SettlementStatus: x402SettlementVerification?.status || "missing",
+      passed: x402SettlementVerification?.summary?.passed ?? 0,
+      total: x402SettlementVerification?.summary?.total ?? 0,
+      sourceFile: x402SettlementVerification?.sourceFile || null
     }
   );
 
@@ -552,6 +573,7 @@ function auditPaths(outputDir) {
     buidlMarkdown: path.join(outputDir, "casper-buidl-submission.md"),
     ciReadinessJson: path.join(outputDir, "casper-ci-readiness.json"),
     x402PreflightJson: path.join(outputDir, "casper-x402-settlement-preflight.json"),
+    x402SettlementBatchJson: path.join(outputDir, "casper-x402-settlement-batch.json"),
     prizeReadinessJson: path.join(outputDir, "casper-prize-readiness.json"),
     finalEvidenceJson: path.join(outputDir, "casper-final-testnet-evidence.json"),
     highestPrizeUnlockJson: path.join(outputDir, "casper-highest-prize-unlock.json"),

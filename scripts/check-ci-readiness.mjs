@@ -40,6 +40,15 @@ try {
     detail: "Committed signed x402 settlement transfer preflight verifies without private key material."
   });
   await runCheck({
+    name: "x402_settlement_batch_verifier",
+    command: process.execPath,
+    args: [
+      "scripts/verify-x402-settlement.mjs",
+      "submission/casper-x402-settlement-batch.json"
+    ],
+    detail: "Committed real x402 settlement-anchor transactions verify without private key material."
+  });
+  await runCheck({
     name: "highest_prize_unlock_report",
     command: process.execPath,
     args: ["scripts/prepare-highest-prize-unlock.mjs"],

@@ -26,6 +26,8 @@ Public links already prepared:
 | `submission/casper-testnet-preflight.md` | Human-readable signed-deploy preflight |
 | `submission/casper-x402-settlement-preflight.json` | Machine-readable signed-but-not-broadcast Casper transfer preflight for four x402 tool payments |
 | `submission/casper-x402-settlement-preflight.md` | Human-readable x402 settlement preflight |
+| `submission/casper-x402-settlement-batch.json` | Machine-readable real x402 settlement-anchor batch with four Casper testnet transactions |
+| `submission/casper-x402-settlement-batch.md` | Human-readable x402 settlement-anchor batch |
 | `submission/casper-highest-prize-unlock.json` | Machine-readable highest-prize unlock report with funded testnet account, public links, and final receipt |
 | `submission/casper-highest-prize-unlock.md` | Human-readable highest-prize unlock checklist |
 | `casper-testnet-funding-watch.json` | Machine-readable testnet funding watcher status from the final funding flow |
@@ -64,7 +66,8 @@ Current screenshot capture state:
 - Highest Prize Unlock external output: `ready_for_highest_prize_submission`
   with zero remaining gates.
 - Submission Audit external output: `ready_for_highest_prize_submission`,
-  `14/14` checks passed, `0` blocked, `0` failed.
+  final checks passed, `0` blocked, `0` failed.
+- x402 Settlement Batch: `settled_on_casper_testnet`, four transaction anchors.
 - Casper explorer URL:
   `https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a`.
 - Evidence verification: `Verified`.
