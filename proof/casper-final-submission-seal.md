@@ -35,5 +35,5 @@ Evidence verification:
 Submission pack:
 
 ```text
-outputs/cspr-guardian-final-submission.zip
+cspr-guardian-final-submission.zip
 ```

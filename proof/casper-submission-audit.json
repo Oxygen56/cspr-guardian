@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T12:27:35.060Z",
+  "generatedAt": "2026-07-02T12:49:52.445Z",
   "project": "CSPR Guardian",
   "status": "ready_for_highest_prize_submission",
   "summary": {
@@ -23,14 +23,14 @@
     "submissionPackZip": {
       "exists": true,
       "path": "outputs/cspr-guardian-final-submission.zip",
-      "bytes": 2466150,
-      "sha256": "74807b79bdf944f1c5677f974498891db9afffce454da29d4d67c951cb9a8dc8"
+      "bytes": 2492946,
+      "sha256": "3e23a59020a8b2217a19f367a5353d811d2f5a7f5694de5abd22e15c36b60496"
     },
     "sourceZip": {
       "exists": true,
       "path": "outputs/cspr-guardian-prototype.zip",
-      "bytes": 1936732,
-      "sha256": "c4535e0902ac6bc74824b9be966d019b97d3f501e5bfa671aca1f860ba0f5e84"
+      "bytes": 1963210,
+      "sha256": "0c9a3e19382814d1bb45e9df4c89b16f38bcc9a20d6e0ca14cf27b5e28c2df04"
     },
     "finalSeal": "outputs/casper-final-submission-seal.json",
     "highestPrizeUnlock": "outputs/casper-highest-prize-unlock.json",
@@ -76,7 +76,7 @@
       "files": 34,
       "missingRequired": 0,
       "zipPath": "outputs/cspr-guardian-final-submission.zip",
-      "zipSha256": "74807b79bdf944f1c5677f974498891db9afffce454da29d4d67c951cb9a8dc8",
+      "zipSha256": "3e23a59020a8b2217a19f367a5353d811d2f5a7f5694de5abd22e15c36b60496",
       "status": "pass",
       "ok": true
     },
@@ -150,7 +150,7 @@
       "name": "final_seal_present",
       "detail": "Final seal is ready_for_highest_prize_submission; package hash source is seal.",
       "sealStatus": "ready_for_highest_prize_submission",
-      "zipSha256": "74807b79bdf944f1c5677f974498891db9afffce454da29d4d67c951cb9a8dc8",
+      "zipSha256": "3e23a59020a8b2217a19f367a5353d811d2f5a7f5694de5abd22e15c36b60496",
       "status": "pass",
       "ok": true
     },
@@ -183,7 +183,7 @@
       "name": "source_zip_exclusions",
       "detail": "Source archive excludes node_modules, .local, and .env.",
       "sourceZipPath": "outputs/cspr-guardian-prototype.zip",
-      "entries": 101,
+      "entries": 125,
       "forbiddenEntries": [],
       "status": "pass",
       "ok": true
