@@ -14,6 +14,8 @@
         --bg: #f3f6f8;
         --accent: #cc1f2f;
         --accent-soft: #ffe8ea;
+        --gold-soft: #fff6d6;
+        --gold-line: #e7c65c;
         --ok: #157f54;
       }
 
@@ -70,6 +72,32 @@
 
       main {
         padding: 28px 24px 56px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .button-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 8px;
+        padding: 0 14px;
+        color: white;
+        background: rgba(255, 255, 255, 0.08);
+        text-decoration: none;
+      }
+
+      .button-link.primary {
+        border-color: white;
+        background: white;
+        color: #111827;
       }
 
       .summary {
@@ -158,6 +186,38 @@
         gap: 16px;
       }
 
+      .rubric {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .rubric article,
+      .edge-item {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        background: #fbfcfd;
+      }
+
+      .rubric strong,
+      .edge-item strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--accent);
+      }
+
+      .winner {
+        border-color: var(--gold-line);
+        background: var(--gold-soft);
+      }
+
+      .edge {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
       .pill {
         display: inline-block;
         margin: 0 8px 8px 0;
@@ -188,7 +248,9 @@
         .summary,
         .flow,
         .shots,
-        .status {
+        .status,
+        .rubric,
+        .edge {
           grid-template-columns: 1fr;
         }
       }
@@ -203,6 +265,11 @@
           This judge demo walks through the agent flow, proof artifacts, and the
           final Casper testnet gate.
         </p>
+        <div class="actions">
+          <a class="button-link primary" href="walkthrough.html">Watch 64-second proof</a>
+          <a class="button-link" href="https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a">Open real Casper receipt</a>
+          <a class="button-link" href="https://github.com/Oxygen56/cspr-guardian">Review source</a>
+        </div>
         <div class="summary">
           <div class="metric"><strong>4</strong><span>paid x402 tools</span></div>
           <div class="metric"><strong>0.62 CSPR</strong><span>provider revenue per run</span></div>
@@ -213,6 +280,59 @@
     </header>
 
     <main>
+      <section class="winner">
+        <h2>Why This Should Score At The Top</h2>
+        <div class="rubric">
+          <article>
+            <strong>Technical Execution</strong>
+            23/23 tests, 14/14 submission audit, 34/34 evidence verification,
+            signed deploy preflight, and a real CSPR.live receipt.
+          </article>
+          <article>
+            <strong>Innovation</strong>
+            Not a chatbot or a simple paid API: it is a repeatable paid-agent
+            market for RWA intelligence with replay-safe settlement proofs.
+          </article>
+          <article>
+            <strong>AI Agent Use</strong>
+            The agent discovers tools, pays for them, consumes four paid
+            signals, makes a constrained treasury decision, and exports proof.
+          </article>
+          <article>
+            <strong>Casper Fit</strong>
+            Casper is the receipt and trust layer for machine-to-machine
+            commerce, auditability, predictable payments, and RWA workflows.
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Competitive Edge</h2>
+        <div class="edge">
+          <div class="edge-item">
+            <strong>Beyond x402 API demos</strong>
+            CSPR Guardian uses x402 as part of an autonomous business workflow:
+            paid discovery, signed payment, replay rejection, provider revenue,
+            allocation decision, and final receipt.
+          </div>
+          <div class="edge-item">
+            <strong>Beyond portfolio agents</strong>
+            The RWA allocation is evidence-gated. Risk, KYB, liquidity, and
+            covenant signals must be paid for and verified before capital moves.
+          </div>
+          <div class="edge-item">
+            <strong>Beyond screenshots</strong>
+            Judges can inspect JSON proof packs, hashes, test output, CI-ready
+            commands, and a public Casper transaction instead of trusting copy.
+          </div>
+          <div class="edge-item">
+            <strong>Beyond mock chain claims</strong>
+            The public submission includes a real Casper testnet receipt and a
+            funded testnet account, while keeping private keys out of artifacts.
+          </div>
+        </div>
+      </section>
+
       <section>
         <h2>End-To-End Flow</h2>
         <ol class="flow">

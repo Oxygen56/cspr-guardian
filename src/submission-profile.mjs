@@ -11,7 +11,7 @@ export function buildSubmissionFields({
 } = {}) {
   return {
     shortDescription:
-      "Agentic RWA workflow where autonomous treasuries buy paid risk tools and anchor decision evidence to Casper.",
+      "Highest-prize-ready RWA agent where autonomous treasuries buy paid x402/MCP risk tools and anchor verifiable decision evidence to Casper.",
     repoUrl: firstValue(env.SUBMISSION_REPO_URL, env.REPO_URL, PLACEHOLDERS.repoUrl),
     demoUrl: firstValue(env.SUBMISSION_DEMO_URL, env.DEMO_URL, PLACEHOLDERS.demoUrl),
     videoUrl: firstValue(env.SUBMISSION_VIDEO_URL, env.VIDEO_URL, PLACEHOLDERS.videoUrl),

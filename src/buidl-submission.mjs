@@ -186,6 +186,22 @@ hashes, a decision hash, a receipt hash, and a Casper receipt anchor path. The
 final seal publishes real CSPR.live deploy evidence and regenerates this pack
 with the highest-prize gate cleared.
 
+This is designed to stand above single-feature entries. It is not only an
+x402 endpoint, not only an MCP catalog, and not only a DeFi assistant. It is a
+complete paid-agent workflow with replay-safe payments, four paid RWA
+intelligence tools, provider revenue, independent verification, a public demo,
+and a real Casper testnet receipt.
+
+## Rubric Alignment
+
+| Area | Evidence |
+| --- | --- |
+| Technical execution | ${page.readiness.score ?? "unknown"}/${page.readiness.maxScore} prize readiness, ${page.proof.evidenceChecks ? `${page.proof.evidenceChecks.passed}/${page.proof.evidenceChecks.total}` : "missing"} evidence checks, signed deploy preflight, public CSPR.live receipt |
+| Innovation and originality | Paid RWA intelligence market with autonomous buyers, paid providers, replay-safe payment proofs, and verifiable allocation evidence |
+| AI agent use | Agent discovers tools, pays, consumes risk/KYB/liquidity/covenant data, decides under policy, and exports proof |
+| Casper integration | x402-style Casper payments, testnet account, receipt hash, deploy evidence, and explorer URL |
+| Judge experience | Hosted demo, 64-second walkthrough, screenshots, proof pack, audit output, and copy-ready links |
+
 ## Readiness
 
 - Score: ${page.readiness.score ?? "unknown"}/${page.readiness.maxScore}

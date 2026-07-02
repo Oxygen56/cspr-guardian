@@ -149,11 +149,18 @@ Missing public links:
 
 ${missingLinks}
 
-## Fast Hosting Path
+## Current Public Path
+
+The public judge demo is already available through GitHub Pages. The final
+walkthrough, public source repository, BUIDL links, and Casper explorer URL are
+configured.
+
+## Optional Server Hosting Path
 
 1. Push this project to a public repository.
 2. Create a Render web service from the repo using \`render.yaml\`.
-3. Keep \`CASPER_MODE=mock\` for the public demo until the testnet key is funded.
+3. Keep \`CASPER_MODE=mock\` for repeatable interactive demo runs, or set
+   \`CASPER_MODE=real\` only when intentionally using a funded local key.
 4. Open \`/api/health\` on the hosted URL and confirm it returns \`status: ok\`.
 5. Record or publish the 64-second final walkthrough from the hosted URL.
 6. Re-export BUIDL fields:
@@ -168,9 +175,9 @@ npm run seal:submission
 npm run audit:submission
 \`\`\`
 
-After Casper funding, rerun \`npm run seal:submission\`, then add
-\`SUBMISSION_CASPER_EXPLORER_URL\` if the explorer URL is not already picked up
-from final evidence.
+The final Casper receipt is already picked up from final evidence. If a new
+receipt is broadcast later, rerun \`npm run seal:submission\` and then
+\`npm run audit:submission\`.
 
 ## Checks
 

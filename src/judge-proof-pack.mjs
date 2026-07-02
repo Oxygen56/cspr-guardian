@@ -157,7 +157,9 @@ export async function generateJudgeProofPack({
       receiptHash: scenario.anchor.receipt.receiptHash,
       anchorMode: scenario.anchor.mode,
       deployHash: scenario.anchor.deployHash,
-      explorerUrl: scenario.anchor.explorerUrl
+      explorerUrl: String(scenario.anchor.deployHash || "").startsWith("mock-")
+        ? null
+        : scenario.anchor.explorerUrl
     },
     evidenceVerification: {
       status: verification.status,
@@ -175,7 +177,8 @@ export async function generateJudgeProofPack({
       maxScore: prizeReadiness.maxScore,
       highestPrizeGate: prizeReadiness.highestPrizeGate,
       criteria: prizeReadiness.criteria,
-      blockers: prizeReadiness.blockers
+      blockers: prizeReadiness.blockers,
+      currentEvidence: prizeReadiness.currentEvidence || null
     },
     testnet: {
       rpcStatus: testnetReadiness.rpcStatus,
@@ -241,10 +244,14 @@ export function renderJudgeProofMarkdown(pack) {
   const criteriaRows = pack.prizeReadiness.criteria
     .map((item) => `| ${item.label} | ${item.status} | ${item.value} | ${item.weight} |`)
     .join("\n");
+  const finalExplorerUrl =
+    pack.prizeReadiness.currentEvidence?.explorerUrl ||
+    (String(pack.scenario.deployHash || "").startsWith("mock-") ? null : pack.scenario.explorerUrl);
   const finalGateSummary = pack.prizeReadiness.highestPrizeGate
     ? `The highest-prize gate is cleared by a real Casper testnet receipt.
 
-- Explorer URL: ${pack.prizeReadiness.currentEvidence?.explorerUrl || pack.scenario.explorerUrl || "missing"}
+- Explorer URL: ${finalExplorerUrl || "missing"}
+- Final receipt hash: ${pack.prizeReadiness.currentEvidence?.receiptHash || "missing"}
 - Public key: ${pack.testnet.publicKeyHex || "missing"}
 - Account status: ${pack.testnet.accountStatus}
 - Ready for anchor: ${pack.testnet.readyForAnchor}
@@ -281,7 +288,7 @@ ${rows}
 
 - Before payment: oracle returned ${pack.x402Flow.beforePayment.status} with PAYMENT-REQUIRED header.
 - Signed authorization hash: ${pack.x402Flow.signedAuthorization.authorizationHash}
-- Mock Casper settlement hash: ${pack.x402Flow.settlement.txHash}
+- Demo settlement hash: ${pack.x402Flow.settlement.txHash}
 - Replay attempt: ${pack.x402Flow.replayAttempt.status}, ${pack.x402Flow.replayAttempt.error}
 
 ## MCP Paid Tools
@@ -297,8 +304,9 @@ ${paidRows}
 - Approved amount: $${pack.scenario.approvedAmountUsd.toLocaleString("en-US")}
 - Provider revenue: ${pack.scenario.providerRevenue} CSPR
 - Receipt hash: ${pack.scenario.receiptHash}
-- Anchor mode: ${pack.scenario.anchorMode}
-- Explorer URL: ${pack.scenario.explorerUrl}
+- Demo anchor mode: ${pack.scenario.anchorMode}
+- Demo explorer URL: ${pack.scenario.explorerUrl || "not used for final judging"}
+- Final Casper receipt: ${finalExplorerUrl || "see Current Final Gate"}
 
 ## Evidence Verification
 

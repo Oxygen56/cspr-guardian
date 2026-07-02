@@ -5,6 +5,24 @@
 CSPR Guardian turns Casper into the payment and audit layer for autonomous RWA
 treasury agents.
 
+## 30-Second Judge Summary
+
+CSPR Guardian is built to be judged as a complete Casper agent economy demo,
+not as a standalone chatbot or a single paid endpoint. An autonomous treasury
+agent discovers paid MCP-style tools, receives x402-style payment requirements,
+signs replay-safe Ed25519 authorizations, buys four RWA intelligence products,
+makes a constrained allocation decision, records provider revenue, and anchors
+the final evidence trail to a real Casper testnet transaction.
+
+Final proof:
+
+- Prize readiness: `100/100`, highest-prize gate cleared.
+- Judge proof pack: `7/7` core assertions passing.
+- Evidence verifier: `34/34` checks passing.
+- Submission audit: `14/14` checks passing, `0` blocked, `0` failed.
+- Casper receipt:
+  `https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a`.
+
 ## Problem
 
 Autonomous agents can source DeFi/RWA opportunities, but they lack a reliable
@@ -31,8 +49,27 @@ and decision provenance can be verified without trusting the app server. This
 is especially important for RWA and treasury workflows where every automated
 decision needs an audit trail.
 
+## Why This Should Rank Above Typical Entries
+
+Many buildathon projects can show one part of the stack: an x402 API, an MCP
+tool list, a DeFi assistant, or a RWA dashboard. CSPR Guardian combines those
+signals into a single verifiable workflow:
+
+- It is agentic end to end: discover, pay, analyze, decide, prove.
+- It uses four paid RWA intelligence tools, not one isolated endpoint.
+- It has replay protection and independent recomputation of signatures, hashes,
+  receipts, and provider revenue.
+- It links business value to Casper: every RWA allocation can be audited by a
+  human, DAO, or compliance reviewer.
+- It includes a public Casper testnet receipt, public demo, public source repo,
+  walkthrough video, proof pack, screenshots, and final audit output.
+
 ## What Is Working
 
+- Hosted judge demo.
+- Public source repository.
+- 64-second final walkthrough video.
+- Real Casper testnet receipt.
 - Local agent orchestration.
 - MCP-like tool discovery endpoint.
 - x402-style payment-required oracle with `PAYMENT-REQUIRED` headers.
@@ -48,15 +85,18 @@ decision needs an audit trail.
   payment hashes, report hashes, decision hash, receipt hash, evidence hash,
   and revenue totals.
 - Testnet readiness scripts for key generation, RPC health, balance checking,
-  and real receipt anchoring.
+  deploy preflight, x402 settlement preflight, and real receipt anchoring.
 - Judge evidence map that ties every prize signal to a visible artifact.
-- Mock Casper payment and receipt deploy hashes.
+- Real Casper testnet transaction published on CSPR.live.
 - Dashboard showing the full trace.
+- Final submission pack with SHA-256 manifest and private-key leak checks.
 
-## What Comes Before Final Submission
+## Judge Path
 
-- Fund generated Casper testnet key.
-- Real Casper testnet receipt deploy.
-- Real explorer link.
-- Hosted demo.
-- Walkthrough video.
+1. Open the hosted judge demo and show `100/100` prize readiness.
+2. Watch the 64-second walkthrough for the full proof path.
+3. Open the real CSPR.live transaction.
+4. Inspect the Judge Proof Pack for MCP discovery, HTTP 402, signed payment,
+   replay rejection, agentic RWA run, independent verification, and final gate.
+5. Inspect Evidence Verification for `34/34` recomputed checks.
+6. Inspect Submission Audit for `14/14` final submission checks.

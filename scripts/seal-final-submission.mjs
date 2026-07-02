@@ -40,13 +40,13 @@ try {
       await runStep("preflight", ["scripts/preflight-testnet-anchor.mjs"]);
       await runStep("verify_preflight", ["scripts/verify-testnet-preflight.mjs"]);
       await runStep("finalize", ["scripts/finalize-testnet-evidence.mjs"]);
-      await runStep("judge_proof", ["scripts/generate-judge-proof-pack.mjs"], {
-        PROOF_OUTPUT_DIR: "../../outputs",
-        PROOF_FILE_BASE: "casper-judge-proof-pack"
-      });
-      await rebuildSourceZip();
     }
 
+    await runStep("judge_proof", ["scripts/generate-judge-proof-pack.mjs"], {
+      PROOF_OUTPUT_DIR: "../../outputs",
+      PROOF_FILE_BASE: "casper-judge-proof-pack"
+    });
+    await rebuildSourceZip();
     await runStep("export_submission", ["scripts/export-submission-pack.mjs"]);
 
     const [finalEvidence, prizeReadiness, judgeProof, packManifest] = await Promise.all([

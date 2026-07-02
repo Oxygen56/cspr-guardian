@@ -11,20 +11,25 @@ Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 
 Funding handoff: https://oxygen56.github.io/cspr-guardian/funding.html
 
-The current version is a local demo with a mock Casper payment/deploy adapter.
-It is deliberately structured so the mock adapter can be replaced with a real
-Casper testnet signer before submission.
+Final Casper receipt: https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
+
+Current status: `100/100` prize readiness, real Casper testnet receipt
+published, public demo live, source repo public, 64-second walkthrough live,
+and `ready_for_highest_prize_submission` audit status.
 
 ## Why This Can Win
 
-- It is agentic beyond a chat UI: the agent discovers a tool, handles payment,
-  calls the paid service, decides, and writes an audit proof.
+- It is agentic beyond a chat UI: the agent discovers tools, handles payment,
+  calls paid services, decides, and writes audit proof.
 - It uses the buildathon primitives together: MCP-style tool discovery, x402
   payment flow, Casper network receipt, AI-agent workflow, DeFi/RWA use case.
 - It creates a two-sided agent economy: paid risk data providers can expose
   MCP tools and autonomous treasury agents can pay per decision.
 - It gives judges a clean demo path with visible traces, hashes, ledgers, and a
   downloadable evidence bundle.
+- It has public proof beyond screenshots: `23/23` tests, `34/34` evidence
+  verification, `14/14` submission audit, signed deploy preflight, and a real
+  CSPR.live receipt.
 
 ## Run
 
@@ -281,33 +286,26 @@ npm run check:deploy -- <deploy-hash>
 - Real deploy preflight script at `npm run preflight:testnet` that builds and signs
   the Casper transfer deploy without broadcasting.
 - Autonomous RWA scoring and allocation policy.
-- Mock Casper payment and receipt deploy hashes.
+- Demo-mode Casper payment hashes for repeatable local runs, plus final real
+  Casper testnet receipt evidence for the submitted build.
 - Dashboard showing trace, decision, revenue, KYB result, receipt JSON,
   provider ledger, run history, Prize Readiness, Final Seal, Testnet Readiness,
   Evidence Bundle JSON, and Evidence Verification.
 
-## Final Submission TODO
+## Final Submission Verification
 
-- Switch `CASPER_MODE=mock` to `CASPER_MODE=real` for final testnet evidence.
-- Use the included `CASPER_MODE=real` adapter with a funded testnet key.
-- Run `npm run preflight:testnet` and confirm deploy build is `ok`.
-- Run `npm run verify:preflight` and confirm every preflight check passes.
-- Run `npm run preflight:x402` and `npm run verify:x402-preflight` to prove each
-  x402 paid tool has a signed Casper settlement transfer path.
-- Run `npm run check:public-demo`; before publishing links, the only failed item
-  should be `public_links_configured`.
-- Run `npm run check:ci` and confirm local CI readiness passes.
-- Set `SUBMISSION_REPO_URL`, `SUBMISSION_DEMO_URL`, and
-  `SUBMISSION_VIDEO_URL`, then run `npm run export:buidl`.
-- Run `npm run export:submission` and upload the generated submission pack.
-- Run `npm run audit:submission` and confirm the final gate, public links, and
-  submission package are all ready.
-- Run `npm run seal:submission` to refresh final evidence, judge proof, source
-  zip, submission pack, and final seal in one pass.
-- Run `npm run audit:submission` again and confirm it says
+These commands refresh or verify the submitted state:
+
+- `npm run seal:submission` refreshes final evidence, judge proof, source zip,
+  submission pack, and final seal in one pass.
+- `npm run audit:submission` confirms
   `ready_for_highest_prize_submission`.
-- Publish the 64-second final walkthrough showing 100/100 status, judge proof,
-  paid-agent flow, and the real Casper receipt.
-- Submit the repo, live demo, and DoraHacks writeup.
+- `npm run check:public-demo` confirms public demo links and hosting readiness.
+- `npm run check:ci` mirrors the public GitHub Actions readiness workflow.
+- `npm test` confirms the local test suite.
+
+The final public materials are the repo, hosted judge demo, 64-second
+walkthrough, CSPR.live transaction, proof screenshots, generated BUIDL fields,
+and final submission pack.
 
 See `docs/casper-testnet-anchoring.md` for the exact environment variables.

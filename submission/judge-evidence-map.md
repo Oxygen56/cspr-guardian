@@ -16,6 +16,37 @@ Hosted judge demo: https://oxygen56.github.io/cspr-guardian/
 
 Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 
+Casper receipt:
+https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
+
+## Top-Score Positioning
+
+The judging hook is the complete loop. CSPR Guardian is not just an x402 API,
+not just an MCP catalog, and not just a DeFi assistant. It combines all of
+those into a verifiable RWA treasury workflow:
+
+1. Discover paid MCP-style tools.
+2. Receive HTTP 402 payment requirements.
+3. Sign replay-safe Casper payment authorizations.
+4. Buy risk, KYB, liquidity, and covenant intelligence.
+5. Make a constrained allocation decision.
+6. Recompute the evidence independently.
+7. Publish a real Casper testnet receipt.
+
+That gives judges a concrete Casper-native agent economy: paid service
+providers, autonomous buyers, policy-bounded decisions, revenue accounting, and
+an audit trail that can be inspected after the demo.
+
+## Rubric Alignment
+
+| Rubric Area | CSPR Guardian Evidence |
+| --- | --- |
+| Technical execution | `23/23` tests, `14/14` audit checks, `34/34` evidence checks, signed deploy preflight, and public CSPR.live receipt |
+| Innovation and originality | End-to-end paid RWA intelligence market, not a simple API wrapper or chatbot |
+| AI agent use | The agent discovers tools, pays, consumes paid data, decides under policy, and exports proof |
+| Casper integration | x402-style Casper payments, Casper testnet public key, deploy preflight, real transaction, receipt hash, and CSPR.live explorer URL |
+| User and judge experience | Hosted demo, 64-second walkthrough, proof screenshots, copy-ready BUIDL fields, downloadable JSON artifacts |
+
 ## Evidence Table
 
 | Prize Signal | What To Show | Artifact |
@@ -75,17 +106,15 @@ Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 - `casper-ci-readiness.md`: summary of the same checks wired into GitHub
   Actions for the public repository.
 
-## 90-Second Judge Path
+## 64-Second Judge Path
 
-1. Run the agent from the dashboard.
-2. Point to the trace: discovery -> payment -> paid tools -> decision -> receipt.
-3. Open Provider Ledger and show `0.62 CSPR` revenue across four tools.
-4. Open Testnet Readiness and show RPC health plus funding status.
-5. Open Evidence Bundle and show signed x402 proofs plus report hashes.
-6. Open Evidence Verification and show all checks passing.
-7. Open the judge proof pack and show 402 -> signed payment -> replay rejected.
-8. Open Casper Receipt and show receipt hash, deploy hash, and explorer URL.
-9. Close with the repeatable model: any RWA intelligence provider can expose a
+1. Start with Prize Readiness: `100/100`, highest-prize gate cleared, blockers `0`.
+2. Open the real CSPR.live transaction.
+3. Show Judge Proof Pack: 402 challenge, signed payment, replay rejected, final gate.
+4. Show Provider Ledger: `0.62 CSPR` revenue across four paid tools.
+5. Show Evidence Verification: `34/34` recomputed checks.
+6. Show Submission Audit: `ready_for_highest_prize_submission`, `14/14` checks.
+7. Close with the repeatable model: any RWA intelligence provider can expose a
    paid MCP tool, and any autonomous treasury can buy intelligence with an
    auditable Casper receipt.
 
