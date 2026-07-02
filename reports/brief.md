@@ -30,8 +30,12 @@ verifiable Casper-native agent economy:
 - Submission audit: `15/15`.
 - Evidence verifier: `34/34`.
 - Unit tests: `25/25`.
+- CI readiness: `7/7`.
 - x402 settlement preflight: `28/28`.
-- Public proof artifacts: `30` before the judge-decision upgrade.
+- Browser proof verifier: `31/31` public artifacts verified, `0` failed.
+- Public proof artifacts: `31`, including the judge-decision brief,
+  final-review unlock report, review-readiness snapshot, proof manifest,
+  x402 settlement artifacts, and final submission audit.
 - Final Casper receipt:
   https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
 
@@ -47,7 +51,21 @@ is that CSPR Guardian minimizes judge trust cost:
 - It separates real testnet proof from prototype scope.
 - It lets judges recompute proof hashes in the browser.
 
-## Next Iteration
+## Latest Iteration Completed
 
-Add a single public judge-decision page that consolidates the final verdict,
-review evidence, competitive edge, verification path, and risk boundary.
+- Added a single public judge-decision page that consolidates the final review
+  path, proof chain, Casper fit, verification path, and scope boundary.
+- Renamed public-facing readiness artifacts from old internal naming to
+  `final-review` and `review-readiness` terminology.
+- Published a browser verifier path that recomputes the 31-artifact public
+  proof manifest from GitHub Pages.
+- Confirmed public materials do not use outcome language; the external
+  claim is evidence strength, not an outcome guarantee.
+
+## Optional Next Iteration
+
+If the DoraHacks page can still be edited, put the judge-decision link first
+in the submission description so reviewers start from the shortest validated
+path:
+
+https://oxygen56.github.io/cspr-guardian/judge-decision.html

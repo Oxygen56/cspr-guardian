@@ -1,6 +1,6 @@
 # Casper Submission Audit
 
-Generated: 2026-07-02T20:26:52.380Z
+Generated: 2026-07-02T20:54:15.502Z
 
 Status: ready_for_final_review
 
@@ -50,7 +50,7 @@ Checks: 15/15 passed, 0 blocked, 0 failed.
 ## Integrity Files
 
 - Submission pack: `outputs/cspr-guardian-final-submission.zip`
-- Submission pack SHA-256: `0c3383524a73d186b8fd820d63521181d98f94ae058982db6a3e3bf7da8023e8`
+- Submission pack SHA-256: `390f463e84d84d31a21b30a2aa8062176754d2091421f295feeea00ce0ae9610`
 - Source archive: `outputs/cspr-guardian-prototype.zip`
 - Final seal: `casper-final-submission-seal.json`
 - Seal markdown: `casper-final-submission-seal.md`

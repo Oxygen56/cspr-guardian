@@ -6,6 +6,7 @@ Public links already prepared:
 
 - Repository: https://github.com/Oxygen56/cspr-guardian
 - Hosted judge demo: https://oxygen56.github.io/cspr-guardian/
+- Judge decision brief: https://oxygen56.github.io/cspr-guardian/judge-decision.html
 - Judge scorecard: https://oxygen56.github.io/cspr-guardian/judge-scorecard.html
 - Architecture map: https://oxygen56.github.io/cspr-guardian/architecture.html
 - Reality boundary and judge FAQ: https://oxygen56.github.io/cspr-guardian/judge-faq.html

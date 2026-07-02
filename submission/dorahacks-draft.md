@@ -29,6 +29,8 @@ Final proof:
   evidence, reproducible sample provider data, and production requirements.
 - Browser proof verifier: judges can recompute every public proof artifact
   SHA-256 directly in the browser.
+- Judge decision brief:
+  `https://oxygen56.github.io/cspr-guardian/judge-decision.html`.
 - Judge proof room:
   `https://oxygen56.github.io/cspr-guardian/proof-room.html`.
 - Judge scorecard:
@@ -74,11 +76,11 @@ and decision provenance can be verified without trusting the app server. This
 is especially important for RWA and treasury workflows where every automated
 decision needs an audit trail.
 
-## Why This Should Rank Above Typical Entries
+## Why Judges Can Evaluate It Quickly
 
-Many buildathon projects can show one part of the stack: an x402 API, an MCP
-tool list, a DeFi assistant, or a RWA dashboard. CSPR Guardian combines those
-signals into a single verifiable workflow:
+Many buildathon projects show one part of the stack: an x402 API, an MCP tool
+list, a DeFi assistant, or a RWA dashboard. CSPR Guardian combines those
+signals into one verifiable workflow that minimizes reviewer trust cost:
 
 - It is agentic end to end: discover, pay, analyze, decide, prove.
 - It uses four paid RWA intelligence tools, not one isolated endpoint.
@@ -120,16 +122,17 @@ signals into a single verifiable workflow:
 
 ## Judge Path
 
-1. Open the hosted judge demo and show `100/100` review readiness.
-2. Open the Judge Scorecard for the one-minute rubric path.
-3. Watch the 64-second walkthrough for the full proof path.
-4. Open the real CSPR.live transaction.
-5. Inspect the Judge Proof Pack for MCP discovery, HTTP 402, signed payment,
+1. Open the Judge Decision brief for the shortest final-review path.
+2. Open the hosted judge demo and show `100/100` review readiness.
+3. Open the Judge Scorecard for the one-minute rubric path.
+4. Watch the 64-second walkthrough for the full proof path.
+5. Open the real CSPR.live transaction.
+6. Inspect the Judge Proof Pack for MCP discovery, HTTP 402, signed payment,
    replay rejection, agentic RWA run, independent verification, and final gate.
-6. Open the x402 Settlement Batch to show four public Casper testnet anchors.
-7. Open the Scenario Matrix to show repeatable outcomes across three RWA assets.
-8. Run the Browser Proof Verifier to recompute the public proof manifest hashes.
-9. Open the Reality Boundary FAQ to show what is real, what is testnet
+7. Open the x402 Settlement Batch to show four public Casper testnet anchors.
+8. Open the Scenario Matrix to show repeatable outcomes across three RWA assets.
+9. Run the Browser Proof Verifier to recompute the public proof manifest hashes.
+10. Open the Reality Boundary FAQ to show what is real, what is testnet
    prototype scope, and what production work remains.
-10. Inspect Evidence Verification for `34/34` recomputed checks.
-11. Inspect Submission Audit for final submission checks.
+11. Inspect Evidence Verification for `34/34` recomputed checks.
+12. Inspect Submission Audit for final submission checks.
