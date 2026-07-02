@@ -20,6 +20,7 @@ already true for the submitted CSPR Guardian build.
 - Public repo: `https://github.com/Oxygen56/cspr-guardian`.
 - Hosted judge demo: `https://oxygen56.github.io/cspr-guardian/`.
 - Walkthrough video: `https://oxygen56.github.io/cspr-guardian/walkthrough.html`.
+- Judge proof room: `https://oxygen56.github.io/cspr-guardian/proof-room.html`.
 - Final receipt page: `https://oxygen56.github.io/cspr-guardian/funding.html`.
 - Casper transaction:
   `https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a`.
@@ -55,6 +56,8 @@ already true for the submitted CSPR Guardian build.
 - `npm run check:ci` output producing CI readiness artifacts.
 - Product, preflight, judge proof, prize readiness, and verifier screenshots
   from `submission/assets/`.
+- Browser-accessible proof artifacts under `docs/proof/`, linked from
+  `docs/proof-room.html`.
 
 ## 64-Second Judge Path
 

@@ -1,0 +1,39 @@
+{
+  "status": "ready_to_anchor",
+  "generatedAt": "2026-07-01T17:34:48.141Z",
+  "readiness": {
+    "rpcUrl": "https://node.testnet.casper.network/rpc",
+    "faucetUrl": "https://testnet.cspr.live/tools/faucet",
+    "keyFile": "local testnet key file (not published)",
+    "requiredMotes": "2600000000",
+    "rpcStatus": "ok",
+    "accountStatus": "funded",
+    "readyForAnchor": true,
+    "apiVersion": "2.0.0",
+    "chain": "casper-test",
+    "latestBlock": 8363444,
+    "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+    "balanceMotes": "5000000000"
+  },
+  "preflight": {
+    "mode": "real",
+    "status": "build_ready",
+    "deployHash": "ab3f2b6ab677bdd9f971b8fbf90133833abf0e9881e3622200c892d00a53633b",
+    "network": "casper-test",
+    "rpcUrl": "https://node.testnet.casper.network/rpc",
+    "signerPublicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+    "recipientPublicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+    "transferAmount": "2500000000",
+    "paymentAmount": "100000000",
+    "memo": "1020996107237816",
+    "memoSource": "3a0972e49f9b8",
+    "memoBits": 52,
+    "memoDerivation": "uint53(first_13_hex_chars(receiptHash))",
+    "receiptHash": "3a0972e49f9b8cb2d4366d8eac5f7e9e37813f7f727301cf53837630916db651",
+    "deployBuild": {
+      "status": "ok",
+      "signed": true,
+      "broadcast": false
+    }
+  }
+}

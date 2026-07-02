@@ -1,0 +1,118 @@
+{
+  "version": "0.1",
+  "generatedAt": "2026-07-02T12:38:25.043Z",
+  "project": "CSPR Guardian",
+  "status": "ready_for_highest_prize_submission",
+  "testnet": {
+    "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+    "accountStatus": "funded",
+    "readyForAnchor": true,
+    "balanceMotes": "4900000000",
+    "requiredMotes": "2600000000",
+    "chain": "casper-test",
+    "rpcStatus": "ok",
+    "rpcUrl": "https://node.testnet.casper.network/rpc"
+  },
+  "faucet": {
+    "url": "https://testnet.cspr.live/tools/faucet",
+    "configSourceUrl": "https://testnet.cspr.live/config.js",
+    "configStatus": "detected",
+    "networkName": "casper-test",
+    "apiUrl": "https://api.testnet.cspr.live",
+    "faucetEnabled": true,
+    "walletRequired": true,
+    "recaptchaRequired": true,
+    "faucetAccountHash": "b383c7cc23d18bc1b42406a1b2d29fc8dba86425197b6f553d7fd61375b5e446"
+  },
+  "publicSubmission": {
+    "status": "complete",
+    "complete": true,
+    "missing": [],
+    "items": [
+      {
+        "name": "repoUrl",
+        "value": "https://github.com/Oxygen56/cspr-guardian",
+        "complete": true
+      },
+      {
+        "name": "demoUrl",
+        "value": "https://oxygen56.github.io/cspr-guardian/",
+        "complete": true
+      },
+      {
+        "name": "videoUrl",
+        "value": "https://oxygen56.github.io/cspr-guardian/walkthrough.html",
+        "complete": true
+      }
+    ]
+  },
+  "finalSeal": {
+    "status": "ready_for_highest_prize_submission",
+    "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
+    "deployHash": "7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a"
+  },
+  "remainingGates": [],
+  "gates": [
+    {
+      "name": "fund_testnet_key",
+      "complete": true,
+      "detail": "Prepared Casper testnet key is funded and ready to anchor.",
+      "evidence": {
+        "accountStatus": "funded",
+        "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+        "requiredMotes": "2600000000",
+        "balanceMotes": "4900000000"
+      }
+    },
+    {
+      "name": "publish_public_repo",
+      "complete": true,
+      "detail": "Public repository URL is configured."
+    },
+    {
+      "name": "publish_hosted_demo",
+      "complete": true,
+      "detail": "Hosted demo URL is configured."
+    },
+    {
+      "name": "publish_demo_video",
+      "complete": true,
+      "detail": "Demo video URL is configured."
+    },
+    {
+      "name": "real_casper_receipt_deploy",
+      "complete": true,
+      "readyToComplete": false,
+      "detail": "Final seal contains a public CSPR.live deploy URL.",
+      "evidence": {
+        "sealStatus": "ready_for_highest_prize_submission",
+        "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
+        "deployHash": "7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a"
+      }
+    }
+  ],
+  "commands": {
+    "faucetHelper": "npm run fund:testnet",
+    "waitForFunding": "npm run wait:testnet",
+    "afterFunding": [
+      "npm run check:testnet",
+      "npm run preflight:testnet",
+      "npm run verify:preflight",
+      "npm run seal:submission",
+      "npm run audit:submission"
+    ],
+    "afterPublicLinks": [
+      "SUBMISSION_REPO_URL=<public repo> SUBMISSION_DEMO_URL=<hosted demo> SUBMISSION_VIDEO_URL=<demo video> npm run export:buidl",
+      "npm run export:submission",
+      "npm run audit:submission"
+    ],
+    "finalVerification": [
+      "npm run test",
+      "npm run check:ci",
+      "npm run verify:evidence",
+      "npm run verify:preflight",
+      "npm run verify:x402-preflight"
+    ]
+  },
+  "nextAction": "Submit the final pack with the public repo, hosted demo, video, and Casper explorer URL."
+}

@@ -1,0 +1,250 @@
+{
+  "version": "0.1",
+  "generatedAt": "2026-07-02T12:38:41.325Z",
+  "project": "CSPR Guardian",
+  "assetId": "invoice-usdc-7d",
+  "requestedAmountUsd": 250000,
+  "assertions": [
+    {
+      "id": "mcp-tool-discovery",
+      "status": "pass",
+      "evidence": "7 tools exposed, including four x402-Casper paid tools"
+    },
+    {
+      "id": "payment-required",
+      "status": "pass",
+      "evidence": "Risk oracle returns HTTP 402 plus PAYMENT-REQUIRED before payment"
+    },
+    {
+      "id": "signed-payment",
+      "status": "pass",
+      "evidence": "Ed25519 signed authorization unlocks the paid oracle"
+    },
+    {
+      "id": "nonce-replay-protection",
+      "status": "pass",
+      "evidence": "Reusing the same signed payment proof is rejected"
+    },
+    {
+      "id": "agentic-rwa-run",
+      "status": "pass",
+      "evidence": "Agent buys four signals, decides under policy, and records provider revenue"
+    },
+    {
+      "id": "independent-verifier",
+      "status": "pass",
+      "evidence": "34/34 checks passed"
+    },
+    {
+      "id": "real-deploy-preflight",
+      "status": "pass",
+      "evidence": "11/11 real deploy preflight checks passed"
+    },
+    {
+      "id": "x402-settlement-preflight",
+      "status": "pass",
+      "evidence": "28/28 signed x402 settlement transfer checks passed"
+    },
+    {
+      "id": "casper-final-gate",
+      "status": "pass",
+      "evidence": "Real CSPR.live deploy evidence is present"
+    }
+  ],
+  "mcp": {
+    "endpoint": "/mcp/tools",
+    "toolCount": 7,
+    "paidTools": [
+      {
+        "name": "rwa.risk_score",
+        "price": "0.25 CSPR",
+        "payment": "x402-casper"
+      },
+      {
+        "name": "rwa.kyb_screen",
+        "price": "0.10 CSPR",
+        "payment": "x402-casper"
+      },
+      {
+        "name": "rwa.liquidity_depth",
+        "price": "0.15 CSPR",
+        "payment": "x402-casper"
+      },
+      {
+        "name": "rwa.covenant_monitor",
+        "price": "0.12 CSPR",
+        "payment": "x402-casper"
+      }
+    ]
+  },
+  "x402Flow": {
+    "beforePayment": {
+      "status": 402,
+      "paymentRequiredHeaderPresent": true,
+      "requirement": {
+        "x402Version": 1,
+        "error": "Payment required",
+        "accepts": [
+          {
+            "scheme": "exact-casper-receipt-v1",
+            "network": "casper-test",
+            "asset": "CSPR",
+            "amount": "0.25",
+            "payTo": "demo-casper-treasury",
+            "resource": "/api/oracle/rwa-risk?assetId=invoice-usdc-7d",
+            "description": "Risk scoring for USDC invoice financing pool",
+            "extra": {
+              "tool": "rwa.risk_score",
+              "assetId": "invoice-usdc-7d",
+              "nonce": "ff21a8a5-8f18-4059-acf9-fd3007bf7a12",
+              "expiresAt": "2026-07-02T12:43:39.030Z"
+            }
+          }
+        ]
+      }
+    },
+    "signedAuthorization": {
+      "tool": "rwa.risk_score",
+      "assetId": "invoice-usdc-7d",
+      "agentId": "judge-proof-agent",
+      "amount": "0.25",
+      "network": "casper-test",
+      "nonce": "ff21a8a5-8f18-4059-acf9-fd3007bf7a12",
+      "authorizationHash": "bc87d8857f7376b8def9dd0a75f8aa29a1d8ef653c117e0ed7fc178e7a9ef5d2",
+      "publicKeyFingerprint": "6b6cd7d5265cd4f340d68d0c",
+      "signature": "USxkJpwBZ-fnynX1Kr_GwZjgun5QWeiqwrIrDSTXkzCKM1jzE25xog6HQyNzMjk_5G-qFBOG4au1oog6e2KEBw"
+    },
+    "settlement": {
+      "status": "settled",
+      "txHash": "mock-casper-pay-867574cc06a405062f3458d8c17acef88e6f35e38df3a88d",
+      "amount": "0.25",
+      "currency": "CSPR"
+    },
+    "replayAttempt": {
+      "status": 402,
+      "error": "Payment nonce already used"
+    }
+  },
+  "scenario": {
+    "runId": "run-1e288ff3-5260-45f3-bd60-f018cf4a4216",
+    "decision": "approve",
+    "approvedAmountUsd": 207452,
+    "providerRevenue": "0.62",
+    "paidTools": [
+      "rwa.risk_score",
+      "rwa.kyb_screen",
+      "rwa.liquidity_depth",
+      "rwa.covenant_monitor"
+    ],
+    "receiptHash": "119f5f133635e35ca2b9d28d527c8fb4b1ef8b92cacc0bce6e1e8b1ff8ef7d1c",
+    "anchorMode": "mock",
+    "deployHash": "mock-casper-receipt-119f5f133635e35ca2b9d28d527c8fb4b1ef8b92cacc0bce",
+    "explorerUrl": null
+  },
+  "evidenceVerification": {
+    "status": "verified",
+    "summary": {
+      "passed": 34,
+      "total": 34
+    },
+    "failedChecks": [],
+    "signatureChecks": 4,
+    "hashChecks": 17,
+    "evidenceHash": "dd08c70eb8b809a2d96f90d1409f761ac37fb0baaedda7ab683424259409168a"
+  },
+  "prizeReadiness": {
+    "status": "highest-prize-ready",
+    "score": 100,
+    "maxScore": 100,
+    "highestPrizeGate": true,
+    "criteria": [
+      {
+        "id": "x402-paid-tools",
+        "label": "x402 paid tools",
+        "weight": 20,
+        "status": "pass",
+        "value": "4/4 signed proofs",
+        "evidence": "Four paid CSPR tools with signed authorizations"
+      },
+      {
+        "id": "mcp-tool-discovery",
+        "label": "MCP tool discovery",
+        "weight": 15,
+        "status": "pass",
+        "value": "7 discoverable tools",
+        "evidence": "/mcp/tools exposes paid intelligence and receipt tools"
+      },
+      {
+        "id": "agentic-rwa-workflow",
+        "label": "Agentic RWA workflow",
+        "weight": 20,
+        "status": "pass",
+        "value": "0.62 CSPR/run",
+        "evidence": "Risk, KYB, liquidity, covenant, policy decision, provider revenue"
+      },
+      {
+        "id": "independent-verifier",
+        "label": "Independent verifier",
+        "weight": 15,
+        "status": "pass",
+        "value": "34/34",
+        "evidence": "Signatures, hashes, receipt, and revenue recompute"
+      },
+      {
+        "id": "casper-receipt",
+        "label": "Casper receipt",
+        "weight": 20,
+        "status": "pass",
+        "value": "real testnet deploy",
+        "evidence": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a"
+      },
+      {
+        "id": "submission-assets",
+        "label": "Submission assets",
+        "weight": 10,
+        "status": "pass",
+        "value": "screenshots ready",
+        "evidence": "Dashboard screenshot, verifier screenshot, copy-ready submission notes"
+      }
+    ],
+    "blockers": [],
+    "currentEvidence": {
+      "runId": "run-1e288ff3-5260-45f3-bd60-f018cf4a4216",
+      "receiptHash": "23fd7a0e66756456960cc2522f2a5dbc0a3ae09b6d1b0ba4e285550e50d4fe16",
+      "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
+      "anchorMode": "real",
+      "reportHashes": {
+        "risk": "81d06f2499c1f01b1fba7f6aac0ab04fe5148aedf206d96ea7e1ce6cb8cc2880",
+        "kyb": "3c0701ddb9902676acf1d452262722dc5f9e2647a9c91d7170fef7eebc4a00fd",
+        "liquidity": "6d25b444e94b8c58497524c0f642433bdb7ebf923257496d05adedd869538fe3",
+        "covenant": "8267de9604c0ee1dc20389da7a2503c8a7c3358072738d77ccaf66e11f6380a1"
+      }
+    }
+  },
+  "testnet": {
+    "rpcStatus": "ok",
+    "chain": "casper-test",
+    "accountStatus": "funded",
+    "readyForAnchor": true,
+    "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+    "faucetUrl": "https://testnet.cspr.live/tools/faucet",
+    "preflightVerification": {
+      "status": "verified",
+      "sourceFile": "outputs/casper-testnet-preflight.json",
+      "summary": {
+        "passed": 11,
+        "total": 11
+      },
+      "failedChecks": []
+    },
+    "x402SettlementPreflight": {
+      "status": "verified",
+      "sourceFile": "outputs/casper-x402-settlement-preflight.json",
+      "summary": {
+        "passed": 28,
+        "total": 28
+      },
+      "failedChecks": []
+    }
+  }
+}

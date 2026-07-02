@@ -1,0 +1,88 @@
+{
+  "status": "ready_for_submission",
+  "generatedAt": "2026-07-01T17:34:53.232Z",
+  "project": "CSPR Guardian",
+  "readiness": {
+    "rpcUrl": "https://node.testnet.casper.network/rpc",
+    "faucetUrl": "https://testnet.cspr.live/tools/faucet",
+    "keyFile": "local testnet key file (not published)",
+    "requiredMotes": "2600000000",
+    "rpcStatus": "ok",
+    "accountStatus": "funded",
+    "readyForAnchor": true,
+    "apiVersion": "2.0.0",
+    "chain": "casper-test",
+    "latestBlock": 8363445,
+    "publicKeyHex": "011255a703e9f2855746cf9443e898047320a813975ac9756fff41777ab47f07c2",
+    "balanceMotes": "5000000000"
+  },
+  "anchor": {
+    "mode": "real",
+    "status": "submitted",
+    "deployHash": "7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
+    "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
+    "memo": "633145303394134",
+    "memoSource": "23fd7a0e66756",
+    "memoBits": 52,
+    "memoDerivation": "uint53(first_13_hex_chars(receiptHash))",
+    "receiptHash": "23fd7a0e66756456960cc2522f2a5dbc0a3ae09b6d1b0ba4e285550e50d4fe16",
+    "tools": [
+      "rwa.risk_score",
+      "rwa.kyb_screen",
+      "rwa.liquidity_depth",
+      "rwa.covenant_monitor"
+    ]
+  },
+  "deploy": {
+    "status": "found",
+    "transactionType": "transaction_v1",
+    "deployHash": "7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
+    "transactionHash": "7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
+    "rpcUrl": "https://node.testnet.casper.network/rpc",
+    "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
+    "apiVersion": "2.0.0",
+    "waitedMs": 1441
+  },
+  "evidence": {
+    "evidenceHash": "b4e20e6ed039a626ee81aba9060d6452cd0517aec62e4f83f723013c1ba22179",
+    "verificationStatus": "verified",
+    "checksPassed": 34,
+    "checksTotal": 34
+  },
+  "providerRevenue": {
+    "totalCSPR": "0.62",
+    "providers": [
+      {
+        "tool": "rwa.risk_score",
+        "amount": "0.25",
+        "currency": "CSPR",
+        "txHash": "mock-casper-pay-565486e7a1ac1c6397ee2a8acc6902b65b3eb4285c81762d"
+      },
+      {
+        "tool": "rwa.kyb_screen",
+        "amount": "0.10",
+        "currency": "CSPR",
+        "txHash": "mock-casper-pay-325db8923af40b2b784d3a76a5acab6e71966a2150f35333"
+      },
+      {
+        "tool": "rwa.liquidity_depth",
+        "amount": "0.15",
+        "currency": "CSPR",
+        "txHash": "mock-casper-pay-31b5c65553e161a956e3d3118104307514fdbe459dc4cd58"
+      },
+      {
+        "tool": "rwa.covenant_monitor",
+        "amount": "0.12",
+        "currency": "CSPR",
+        "txHash": "mock-casper-pay-5abe03b51cb566dc9a33b1296bb73479cc6d89c4889098dc"
+      }
+    ]
+  },
+  "decision": {
+    "action": "approve",
+    "riskTier": "A",
+    "approvedAmountUsd": 207452,
+    "humanReviewRequired": false,
+    "rationale": "Risk, KYB, liquidity, and covenant policies pass, so the agent can autonomously approve a capped allocation."
+  }
+}
