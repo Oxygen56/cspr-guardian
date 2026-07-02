@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-02T16:30:34.148Z",
+  "generatedAt": "2026-07-02T17:59:18.722Z",
   "project": {
     "name": "CSPR Guardian",
     "tagline": "Casper payment and audit receipts for autonomous RWA treasury agents.",
@@ -156,6 +156,7 @@
     "preflight": "casper-testnet-preflight.md",
     "x402SettlementBatch": "casper-x402-settlement-batch.md",
     "architecture": "architecture.md",
+    "judgeFaq": "judge-faq.md",
     "screenshots": [
       "cspr-guardian-dashboard.png",
       "cspr-guardian-prize-readiness.png",

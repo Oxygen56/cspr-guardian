@@ -15,6 +15,7 @@ signals a Casper Agentic Buildathon judge can verify in minutes.
 | x402 settlement preflight | `28/28` signed transfer checks passed |
 | x402 settlement anchors | 4 real Casper testnet settlement-anchor transactions |
 | Architecture map | One-screen trust-boundary proof map |
+| Reality boundary FAQ | Clear testnet prototype boundary and production requirements |
 | Paid tools | 4 RWA intelligence tools |
 | Repeatable scenarios | 3 RWA assets with different policy outcomes |
 | Provider revenue | `0.62 CSPR` per full run |
@@ -30,7 +31,7 @@ signals a Casper Agentic Buildathon judge can verify in minutes.
 | Agentic AI workflow | The agent discovers tools, pays for intelligence, gathers RWA signals, applies policy, decides, records revenue, and exports proof. | Dashboard, walkthrough, evidence bundle, judge proof pack |
 | Repeatability | The same paid RWA intelligence stack handles treasury, invoice-finance, and trade-credit scenarios. | `casper-scenario-matrix.md`, `casper-scenario-matrix.json` |
 | Innovation | The project is not a chatbot or isolated endpoint; it demonstrates a two-sided paid intelligence market for autonomous treasury agents. | Competitive positioning brief and provider ledger |
-| Usability for judges | The public site exposes a 64-second walkthrough, architecture map, proof room, scorecard, final audit, manifest, and copy-ready BUIDL fields. | `architecture.html`, `judge-scorecard.html`, `proof-room.html`, `proof-manifest.md` |
+| Usability for judges | The public site exposes a 64-second walkthrough, architecture map, reality boundary FAQ, proof room, scorecard, final audit, manifest, and copy-ready BUIDL fields. | `architecture.html`, `judge-faq.html`, `judge-scorecard.html`, `proof-room.html`, `proof-manifest.md` |
 
 ## Differentiation Against Visible Categories
 
@@ -51,13 +52,15 @@ signals a Casper Agentic Buildathon judge can verify in minutes.
 5. Check the SHA-256 proof manifest.
 6. Open the architecture and threat model.
 7. Open the x402 settlement batch.
-8. Open the repeatable scenario matrix.
+8. Open the reality boundary FAQ.
+9. Open the repeatable scenario matrix.
 
 ## Public Links
 
 - Judge demo: https://oxygen56.github.io/cspr-guardian/
 - Judge scorecard: https://oxygen56.github.io/cspr-guardian/judge-scorecard.html
 - Architecture map: https://oxygen56.github.io/cspr-guardian/architecture.html
+- Reality boundary and judge FAQ: https://oxygen56.github.io/cspr-guardian/judge-faq.html
 - Proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
 - Proof manifest: https://oxygen56.github.io/cspr-guardian/proof/proof-manifest.md
 - Scenario matrix: https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md

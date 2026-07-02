@@ -9,6 +9,12 @@ Public page:
 https://oxygen56.github.io/cspr-guardian/architecture.html
 ```
 
+Reality boundary:
+
+```text
+https://oxygen56.github.io/cspr-guardian/judge-faq.html
+```
+
 ## System Map
 
 ```text
@@ -62,3 +68,5 @@ artifact:
 3. Open `proof/casper-scenario-matrix.md` for repeatability.
 4. Open `proof/casper-submission-audit.md` for final audit status.
 5. Open the CSPR.live transaction for the final receipt.
+6. Open `judge-faq.html` to confirm what is real, what is testnet prototype
+   scope, and what production work remains.

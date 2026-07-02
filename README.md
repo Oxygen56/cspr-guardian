@@ -15,6 +15,8 @@ Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
 
 Architecture map: https://oxygen56.github.io/cspr-guardian/architecture.html
 
+Reality boundary and judge FAQ: https://oxygen56.github.io/cspr-guardian/judge-faq.html
+
 Public proof manifest: https://oxygen56.github.io/cspr-guardian/proof/proof-manifest.md
 
 Scenario matrix: https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md
@@ -50,8 +52,25 @@ and `ready_for_highest_prize_submission` audit status.
   execution, Casper integration, agent workflow, innovation, and judge UX.
 - It gives judges a one-screen architecture and threat model showing every
   trust boundary and the artifact that verifies it.
+- It gives judges a reality boundary and FAQ that separates real testnet
+  evidence, reproducible sample provider data, and production requirements.
 - It proves repeatability across three RWA asset types with distinct policy
   outcomes, not only one invoice-finance happy path.
+
+## Reality Boundary
+
+CSPR Guardian is a Casper testnet buildathon prototype, not a mainnet custody
+or investment product. The public submission includes real, verifiable testnet
+evidence: one final CSPR.live receipt, four x402 settlement-anchor
+transactions, signed payment proofs, replay rejection, independent verifier
+output, leak scans, and a SHA-256 proof manifest.
+
+The RWA intelligence providers use deterministic sample data in this repo so
+judges can reproduce the workflow and verify the evidence. Production use would
+require licensed data providers, custody controls, compliance review, provider
+settlement policy, monitoring, and incident response.
+
+Judge FAQ: https://oxygen56.github.io/cspr-guardian/judge-faq.html
 
 ## Run
 

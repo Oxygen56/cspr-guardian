@@ -54,11 +54,14 @@ await fs.writeFile(path.join(PROOF_DIR, "judge-scorecard.md"), judgeScorecard);
 const architecture = await fs.readFile(path.join(PROJECT_DIR, "submission/architecture.md"), "utf8");
 await fs.writeFile(path.join(PROOF_DIR, "architecture.md"), architecture);
 
+const judgeFaq = await fs.readFile(path.join(PROJECT_DIR, "submission/judge-faq.md"), "utf8");
+await fs.writeFile(path.join(PROOF_DIR, "judge-faq.md"), judgeFaq);
+
 console.log(
   JSON.stringify(
     {
       status: "proof-room-published",
-      files: PROOF_FILES.length + 3,
+      files: PROOF_FILES.length + 4,
       proofDir: "docs/proof"
     },
     null,

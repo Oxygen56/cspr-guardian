@@ -1,6 +1,6 @@
 # Casper Scenario Matrix
 
-Generated: 2026-07-02T16:30:31.620Z
+Generated: 2026-07-02T17:59:16.974Z
 
 Status: repeatable_rwa_policy_matrix_ready
 

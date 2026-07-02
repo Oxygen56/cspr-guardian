@@ -20,6 +20,8 @@ Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 
 Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
 
+Reality boundary and judge FAQ: https://oxygen56.github.io/cspr-guardian/judge-faq.html
+
 Casper receipt:
 https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a
 
@@ -49,7 +51,7 @@ an audit trail that can be inspected after the demo.
 | Innovation and originality | End-to-end paid RWA intelligence market, not a simple API wrapper or chatbot |
 | AI agent use | The agent discovers tools, pays, consumes paid data, decides under policy, and exports proof |
 | Casper integration | x402-style Casper payments, Casper testnet public key, deploy preflight, real transaction, receipt hash, and CSPR.live explorer URL |
-| User and judge experience | Hosted demo, 64-second walkthrough, architecture map, proof screenshots, copy-ready BUIDL fields, downloadable JSON artifacts |
+| User and judge experience | Hosted demo, 64-second walkthrough, architecture map, reality boundary FAQ, proof screenshots, copy-ready BUIDL fields, downloadable JSON artifacts |
 | Fast rubric review | One-page scorecard and trust-boundary map show technical execution, Casper integration, agent workflow, innovation, and judge UX |
 
 ## Evidence Table
@@ -77,6 +79,7 @@ an audit trail that can be inspected after the demo.
 | Artifact integrity | Every public proof-room Markdown/JSON artifact has a published SHA-256 hash | `docs/proof/proof-manifest.md`, `npm run proof:manifest` |
 | Competitive differentiation | Visible buildathon categories are addressed without unsupported claims about other teams | `docs/proof/competitive-positioning.md` |
 | Architecture clarity | Payment, replay, settlement, policy, verifier, Casper anchor, and secret-handling boundaries are mapped to proof artifacts | `docs/architecture.html`, `docs/proof/architecture.md` |
+| Reality boundary | Testnet prototype scope, reproducible provider data, public evidence, and production requirements are explicit | `docs/judge-faq.html`, `docs/proof/judge-faq.md` |
 | Submission auditability | Final pack, BUIDL page, seal, leak scan, source zip exclusions, and self-reference checks are verified before upload | Submission Audit panel, `casper-submission-audit.md`, `npm run audit:submission` |
 | Highest-prize unlock gate | Faucet funding, wallet/reCAPTCHA requirement, public links, and post-funding commands are consolidated | `submission/casper-highest-prize-unlock.md`, `npm run unlock:highest-prize` |
 | Hosted demo readiness | Docker, Render blueprint, health endpoint, and public-link export path are prepared | `casper-public-demo-handoff.md`, `npm run check:public-demo`, `/api/health` |
@@ -120,6 +123,8 @@ an audit trail that can be inspected after the demo.
 - `docs/judge-scorecard.html`: one-page rubric scorecard for judges.
 - `docs/architecture.html`: one-screen architecture and trust-boundary map.
 - `docs/proof/architecture.md`: hashed Markdown architecture proof.
+- `docs/judge-faq.html`: reality boundary and judge FAQ.
+- `docs/proof/judge-faq.md`: hashed Markdown reality boundary proof.
 - `docs/proof/judge-scorecard.md`: Markdown scorecard included in the proof manifest.
 - `docs/proof/casper-scenario-matrix.md`: repeatable RWA scenario matrix.
 - `docs/proof/casper-scenario-matrix.json`: machine-readable scenario matrix.
@@ -143,9 +148,10 @@ an audit trail that can be inspected after the demo.
 5. Show Scenario Matrix: three RWA assets, distinct policy outcomes, same paid tools.
 6. Show Judge Proof Pack: 402 challenge, signed payment, replay rejected, final gate.
 7. Show Provider Ledger: `0.62 CSPR` revenue across four paid tools.
-8. Show Evidence Verification: `34/34` recomputed checks.
-9. Show Submission Audit: final submission checks passing.
-9. Close with the repeatable model: any RWA intelligence provider can expose a
+8. Show Reality Boundary: testnet scope, reproducible sample data, and production requirements.
+9. Show Evidence Verification: `34/34` recomputed checks.
+10. Show Submission Audit: final submission checks passing.
+11. Close with the repeatable model: any RWA intelligence provider can expose a
    paid MCP tool, and any autonomous treasury can buy intelligence with an
    auditable Casper receipt.
 

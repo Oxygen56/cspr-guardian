@@ -8,6 +8,7 @@ Public links already prepared:
 - Hosted judge demo: https://oxygen56.github.io/cspr-guardian/
 - Judge scorecard: https://oxygen56.github.io/cspr-guardian/judge-scorecard.html
 - Architecture map: https://oxygen56.github.io/cspr-guardian/architecture.html
+- Reality boundary and judge FAQ: https://oxygen56.github.io/cspr-guardian/judge-faq.html
 - Walkthrough video: https://oxygen56.github.io/cspr-guardian/walkthrough.html
 - Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
 - Competitive positioning:
@@ -39,9 +40,11 @@ Public links already prepared:
 | `casper-submission-audit.json` | Machine-readable external submission audit |
 | `docs/judge-scorecard.html` | One-page judge scoring matrix |
 | `docs/architecture.html` | One-screen architecture and trust-boundary map |
+| `docs/judge-faq.html` | Reality boundary and judge FAQ for what is real, testnet scope, and production requirements |
 | `docs/proof-room.html` | Public proof room linking final audit, proof pack, seal, preflight, BUIDL, and CI artifacts |
 | `docs/proof/proof-manifest.md` | SHA-256 manifest for all public proof-room artifacts |
 | `docs/proof/architecture.md` | Markdown architecture and threat model included in the public proof manifest |
+| `docs/proof/judge-faq.md` | Markdown reality boundary and judge FAQ included in the public proof manifest |
 | `docs/proof/judge-scorecard.md` | Markdown judge scorecard included in the public proof manifest |
 | `docs/proof/competitive-positioning.md` | Public competitive positioning brief |
 | `docs/proof/*` | Public Markdown and JSON proof artifacts for browser-based judge review |
@@ -54,6 +57,7 @@ Public links already prepared:
 | `submission/dorahacks-draft.md` | Copy-ready project narrative |
 | `submission/judge-scorecard.md` | Scorecard source for the public proof artifact |
 | `submission/architecture.md` | Architecture and threat-model source for the public proof artifact |
+| `submission/judge-faq.md` | Reality boundary and judge FAQ source for the public proof artifact |
 | `submission/competitive-positioning.md` | Competitive positioning source for the public proof artifact |
 | `submission/demo-video-script.md` | 64-second final walkthrough script |
 | `submission/judge-evidence-map.md` | Prize-signal-to-artifact walkthrough |
