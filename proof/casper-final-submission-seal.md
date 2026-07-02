@@ -1,11 +1,11 @@
 # Casper Final Submission Seal
 
-Status: ready_for_highest_prize_submission
+Status: ready_for_final_review
 
-Prize readiness:
+Review readiness:
 
 ```text
-100/100 (highest-prize-ready)
+100/100 (final-review-ready)
 ```
 
 Explorer:

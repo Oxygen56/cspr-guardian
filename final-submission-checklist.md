@@ -5,9 +5,9 @@ already true for the submitted CSPR Guardian build.
 
 ## Final Status
 
-- Prize readiness: `100/100`.
+- Review readiness: `100/100`.
 - Final gate: cleared.
-- Submission audit: `ready_for_highest_prize_submission`.
+- Submission audit: `ready_for_final_review`.
 - Submission audit checks: final checks passed, `0` blocked, `0` failed.
 - Evidence verification: `34/34` checks passed.
 - Testnet preflight: `11/11` checks passed.
@@ -61,9 +61,9 @@ already true for the submitted CSPR Guardian build.
 - `npm run export:submission` output producing a final submission directory and
   zip with `manifest.json` SHA-256 hashes.
 - `npm run seal:submission` output producing `casper-final-submission-seal.json`
-  and `.md` with `ready_for_highest_prize_submission`.
+  and `.md` with `ready_for_final_review`.
 - `npm run audit:submission` output producing `casper-submission-audit.json` and
-  `.md` with `ready_for_highest_prize_submission`.
+  `.md` with `ready_for_final_review`.
 - `npm run check:public-demo` output producing host-ready public demo handoff.
 - `npm run check:ci` output producing CI readiness artifacts.
 - `npm run scenario:matrix` output proving repeatable policy outcomes across
@@ -73,14 +73,14 @@ already true for the submitted CSPR Guardian build.
   verification, Casper anchoring, and secret handling.
 - `docs/judge-faq.html` and `docs/proof/judge-faq.md` showing what is real,
   what is testnet prototype scope, and what production work remains.
-- Product, preflight, judge proof, prize readiness, and verifier screenshots
+- Product, preflight, judge proof, review readiness, and verifier screenshots
   from `submission/assets/`.
 - Browser-accessible proof artifacts under `docs/proof/`, linked from
   `docs/proof-room.html`.
 
 ## 64-Second Judge Path
 
-1. Start with Prize Readiness: `100/100`, final gate cleared, blockers `0`.
+1. Start with Review Readiness: `100/100`, final gate cleared, blockers `0`.
 2. Open the Judge Scorecard.
 3. Open the real CSPR.live transaction.
 4. Show the Architecture Map: trust boundaries and matching proof artifacts.

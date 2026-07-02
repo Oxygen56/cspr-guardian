@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-02T17:59:18.715Z",
-  "status": "highest-prize-ready",
+  "generatedAt": "2026-07-02T20:25:51.416Z",
+  "status": "final-review-ready",
   "score": 100,
   "maxScore": 100,
-  "highestPrizeGate": true,
+  "finalReviewGate": true,
   "criteria": [
     {
       "id": "x402-paid-tools",
@@ -64,13 +64,13 @@
     "faucetUrl": "https://testnet.cspr.live/tools/faucet"
   },
   "currentEvidence": {
-    "runId": "run-161d956c-efb8-41c8-84bf-86408f0f7219",
+    "runId": "run-780061ca-65b8-4613-9920-2f0f4930c7a1",
     "receiptHash": "23fd7a0e66756456960cc2522f2a5dbc0a3ae09b6d1b0ba4e285550e50d4fe16",
     "explorerUrl": "https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a",
     "anchorMode": "real",
     "reportHashes": {
       "risk": "81d06f2499c1f01b1fba7f6aac0ab04fe5148aedf206d96ea7e1ce6cb8cc2880",
-      "kyb": "ff87066583ae7c8f43df2cd8e557cb1ecdefaeb16d83c9425fea2897ef27e3f5",
+      "kyb": "b078a189b695ee6c1b6dbb3668fcb04326396cf34f001d99bed8ad29d205f3e5",
       "liquidity": "6d25b444e94b8c58497524c0f642433bdb7ebf923257496d05adedd869538fe3",
       "covenant": "8267de9604c0ee1dc20389da7a2503c8a7c3358072738d77ccaf66e11f6380a1"
     }

@@ -1,6 +1,6 @@
 # Casper CI Readiness
 
-Generated: 2026-07-02T17:59:59.523Z
+Generated: 2026-07-02T20:26:21.101Z
 
 Status: ci_ready
 
@@ -23,5 +23,5 @@ Missing public links:
 | preflight_verifier | pass | Committed signed Casper preflight evidence verifies without private key material. |
 | x402_settlement_preflight_verifier | pass | Committed signed x402 settlement transfer preflight verifies without private key material. |
 | x402_settlement_batch_verifier | pass | Committed real x402 settlement-anchor transactions verify without private key material. |
-| highest_prize_unlock_report | pass | Highest-prize unlock report captures funding, public-link, and final-seal gates. |
+| final_review_unlock_report | pass | Final review unlock report captures funding, public-link, and final-seal gates. |
 | public_demo_readiness | pass | Docker, Render, health endpoint, and public-demo handoff are ready. |
