@@ -1,6 +1,6 @@
 # CSPR Guardian Public Proof Manifest
 
-Generated: 2026-07-02T20:55:19.664Z
+Generated: 2026-07-02T21:27:43.324Z
 
 Status: public-proof-room-ready
 
@@ -16,25 +16,25 @@ Casper receipt: https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c
 | --- | --- | --- | ---: | --- |
 | `proof/architecture.md` | architecture and threat model | markdown | 3298 | `b6f44b58e1887643bc99e290740abad873196cb5ac1a453a247b756ff867cac3` |
 | `proof/browser-verifier.md` | browser proof verifier | markdown | 1622 | `8910c7af1ee9a54b51ddfb29aee3e2926cd07cb2f38947024b8d6ebad139c8f7` |
-| `proof/casper-buidl-submission.json` | copy-ready BUIDL fields | json | 5130 | `bc36d2d4618029d83abb5b05caeff608d5f81444c2bee842a05cac5324260f21` |
-| `proof/casper-buidl-submission.md` | copy-ready BUIDL fields | markdown | 6580 | `48e806a732df468ac8f7b6719d96be269d63eb3f0fcf6fa3c6cfbe73b23bf74b` |
-| `proof/casper-ci-readiness.json` | CI readiness | json | 1514 | `e27efe0d24e3e16bca6661b770a124308c0e73dfa2f7051ed63f637c720478b8` |
-| `proof/casper-ci-readiness.md` | CI readiness | markdown | 1021 | `63d0692315a057fc13cdddd4885770cf6d3c58b16ba78470781ca570c557e137` |
-| `proof/casper-final-review-unlock.json` | final review unlock report | json | 3810 | `6fa58ca686f158506e515507b76f30a7983e2857eca3ab5ac1b29a814a3237f4` |
-| `proof/casper-final-review-unlock.md` | final review unlock report | markdown | 1610 | `c99a1f3231301446ecb6c3da7b46810d27c8d195d5dd489cf9c5f2e88551a1e3` |
+| `proof/casper-buidl-submission.json` | copy-ready BUIDL fields | json | 5130 | `6c3aaaf21690dc35c21039ce2b00981585bbc6afd6f77c54714a79d5baf8682f` |
+| `proof/casper-buidl-submission.md` | copy-ready BUIDL fields | markdown | 6580 | `43431667e3f1611e82df882ab12f110b037e5330b527c895930bc9dc5b647a8f` |
+| `proof/casper-ci-readiness.json` | CI readiness | json | 1514 | `fc48c22988cebc4077f27d5cf15cdca7dcec0219ff8a0a6d58430ee932f62a58` |
+| `proof/casper-ci-readiness.md` | CI readiness | markdown | 1021 | `c216f348436d970976c2da1607a85c7f6715f5bbcd4d74d686d663c941c28362` |
+| `proof/casper-final-review-unlock.json` | final review unlock report | json | 3810 | `7e48a9255e2c8e3ad9eab4b7b2893f31a37dfd3f03f23eb0cd21370fd37ee942` |
+| `proof/casper-final-review-unlock.md` | final review unlock report | markdown | 1610 | `2e2464d9bb802e23040dfbdf74782aea70d794d0e4385378e339bf352779ca6c` |
 | `proof/casper-final-submission-seal.json` | final submission seal | json | 1883 | `bf00874c91f0bfe3c923705d9abaf7a6ef1096c968ce6a4b3603cf234166685f` |
 | `proof/casper-final-submission-seal.md` | final submission seal | markdown | 559 | `5d5f0b87e30d2a9bdef69e62b5836d2dc9e5354ed45a0a8ebba6c48efc89f03d` |
 | `proof/casper-final-testnet-evidence.json` | real Casper testnet receipt evidence | json | 3067 | `83bf3d1945fb0099f956e50972247d178d1a93b4ace0b609956a1877d99fc26a` |
 | `proof/casper-final-testnet-evidence.md` | real Casper testnet receipt evidence | markdown | 651 | `e7d2d8f6481e488f8fd42cfc479ab90015e079e6f3131fea4adc5ba82eb3b1bd` |
 | `proof/casper-judge-proof-pack.json` | judge proof pack | json | 8024 | `21cfc6638014ee0095fb048553de72b5ed431ba27e24eb51c274c7ae03789bca` |
 | `proof/casper-judge-proof-pack.md` | judge proof pack | markdown | 3158 | `85f6cca0af31652dab5b10172a5fcefa7f3f1fb20951b672a643a907fdb6db0d` |
-| `proof/casper-public-demo-handoff.md` | public demo readiness | markdown | 2040 | `714301615a49c6eda9f3685086ea7d748b8ade64b95f48a4c60bd2851e1584e3` |
-| `proof/casper-public-demo-readiness.json` | public demo readiness | json | 2857 | `ae6a57d8143ea9413df6d1cae62eacd6c0b3acfe559361dc5b38b7cac0d5d026` |
-| `proof/casper-review-readiness.json` | 100/100 review readiness scorecard | json | 2625 | `3e43ee582e22f53caa0c0bcdb56383a672dc8f72c2b35642d9b615a5de706c12` |
+| `proof/casper-public-demo-handoff.md` | public demo readiness | markdown | 2040 | `53cb36a4da198c9186a0e318d9fed779834d9a66bae3f95f4d7526a9860dec5b` |
+| `proof/casper-public-demo-readiness.json` | public demo readiness | json | 2857 | `9680903292885dc090d329ec0d5807cd51afd3b2b2e538952bd7efbb84ccb7de` |
+| `proof/casper-review-readiness.json` | 100/100 review readiness scorecard | json | 2625 | `6df76aa82de3c741473803f15f5cd48fd326f15260ceb2124c6a354be0949297` |
 | `proof/casper-scenario-matrix.json` | repeatable RWA scenario matrix | json | 5206 | `52051e65b5a0b78291b1820df5d0f7b138ea9c05543c2b8e98ce1dd2f4c6c672` |
 | `proof/casper-scenario-matrix.md` | repeatable RWA scenario matrix | markdown | 2472 | `5ebed0bfc8788266803de7659c980e32c6b99920d85149ef7af2674b535ecaa9` |
-| `proof/casper-submission-audit.json` | final submission audit | json | 6644 | `9d32e1625c8ab12a1ac41db845d54a059809bfa450add1e455270db776d056fa` |
-| `proof/casper-submission-audit.md` | final submission audit | markdown | 2892 | `29ca4428fd53dcd552110679407743fb8e987e8baee565060edba2e3ab8c54aa` |
+| `proof/casper-submission-audit.json` | final submission audit | json | 6644 | `52118f579d9ce090f7c09f6d196a2881cf4ac52b3ffbc6dc0350f8de5a264855` |
+| `proof/casper-submission-audit.md` | final submission audit | markdown | 2892 | `19dfef36b2de660d657525ce5a1b10dec0e797a2489f4505761377a3fbbda460` |
 | `proof/casper-testnet-preflight.json` | signed Casper deploy preflight | json | 1441 | `b54eedbb0288062dd4a107a9c586be0d4fda8c246704e20e8b3b352888d970de` |
 | `proof/casper-testnet-preflight.md` | signed Casper deploy preflight | markdown | 552 | `61d14f7f501931aacc783a1f4e4799d3610d537c8cbae64a2d568684c2219a4d` |
 | `proof/casper-x402-settlement-batch.json` | real x402 settlement transactions | json | 10059 | `dffe22c24fd45e0e824fd509e33166fab978645a0627b156e833279e356322f5` |
