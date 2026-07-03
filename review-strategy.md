@@ -42,6 +42,9 @@ The strongest review version demonstrates these things in one tight flow:
 - Public proof room includes SHA-256 hashes for every proof artifact.
 - Competitive positioning brief maps visible buildathon categories to CSPR
   Guardian's complete Casper-native evidence loop.
+- Final-review advantage brief frames the stronger claim against sharp
+  single-thesis projects: CSPR Guardian verifies the full
+  money-data-decision-receipt chain.
 - Judge scorecard gives reviewers a one-page route through the rubric,
   final receipt, proof room, manifest, and competitive brief.
 - Architecture and threat model gives reviewers a one-screen map from payment,
@@ -56,13 +59,14 @@ The strongest review version demonstrates these things in one tight flow:
 
 ## Competitive Benchmark
 
-Publicly visible Casper Agentic Buildathon signals include spend guard,
-multi-agent economy, governance sentinel, and RWA escrow cockpit projects. CSPR
-Guardian should be positioned above generic agent demos by emphasizing one
-reviewable loop: paid MCP discovery, x402-style Casper authorization, four RWA
-intelligence purchases, replay protection, provider revenue, policy-bounded
-allocation, independent verification, clear prototype boundaries, and a real
-Casper receipt.
+Publicly visible Casper Agentic Buildathon signals include oracle/data-feed,
+AI-output coverage, toolkit/MCP, spend guard, multi-agent economy, governance
+sentinel, and RWA escrow cockpit projects. CSPR Guardian should be positioned
+above generic agent demos and competitive with sharper single-thesis projects by
+emphasizing one reviewable loop: paid MCP discovery, x402-style Casper
+authorization, four RWA intelligence purchases, replay protection, provider
+revenue, policy-bounded allocation, independent verification, clear prototype
+boundaries, and a real Casper receipt.
 
 ## What Still Raises The Ceiling
 

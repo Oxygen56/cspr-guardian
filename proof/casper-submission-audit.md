@@ -1,6 +1,6 @@
 # Casper Submission Audit
 
-Generated: 2026-07-02T21:25:26.401Z
+Generated: 2026-07-03T17:56:37.125Z
 
 Status: ready_for_final_review
 
@@ -38,7 +38,7 @@ Checks: 15/15 passed, 0 blocked, 0 failed.
 | final_seal_present | pass | Final seal is ready_for_final_review; package hash source is seal. |
 | final_review_unlock_present | pass | Final review unlock report is ready_for_final_review with 0 remaining gate(s). |
 | final_review_gate | pass | Real Casper testnet receipt evidence is ready for final review submission. |
-| private_key_leak_scan | pass | 76 text artifacts scanned with no private key material. |
+| private_key_leak_scan | pass | 77 text artifacts scanned with no private key material. |
 | source_zip_exclusions | pass | Source archive excludes node_modules, .local, and .env. |
 | final_pack_no_self_reference | pass | Final pack does not include external seal or audit files that would self-reference the zip. |
 
@@ -50,7 +50,7 @@ Checks: 15/15 passed, 0 blocked, 0 failed.
 ## Integrity Files
 
 - Submission pack: `outputs/cspr-guardian-final-submission.zip`
-- Submission pack SHA-256: `e20deba3116a44fe6244bc1f12eda13c7a273897d0e27fce9e435e36229db343`
+- Submission pack SHA-256: `8fc793a1823f70e4515575ce435b538159cdc53cecddcc838fa61d06d335eaa0`
 - Source archive: `outputs/cspr-guardian-prototype.zip`
 - Final seal: `casper-final-submission-seal.json`
 - Seal markdown: `casper-final-submission-seal.md`

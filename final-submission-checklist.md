@@ -25,6 +25,8 @@ already true for the submitted CSPR Guardian build.
 - Walkthrough video: `https://oxygen56.github.io/cspr-guardian/walkthrough.html`.
 - Judge proof room: `https://oxygen56.github.io/cspr-guardian/proof-room.html`.
 - Judge scorecard: `https://oxygen56.github.io/cspr-guardian/judge-scorecard.html`.
+- Final-review advantage:
+  `https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md`.
 - Architecture map: `https://oxygen56.github.io/cspr-guardian/architecture.html`.
 - Reality boundary and judge FAQ: `https://oxygen56.github.io/cspr-guardian/judge-faq.html`.
 - Scenario matrix:
@@ -77,6 +79,8 @@ already true for the submitted CSPR Guardian build.
   from `submission/assets/`.
 - Browser-accessible proof artifacts under `docs/proof/`, linked from
   `docs/proof-room.html`.
+- Final-review advantage brief showing why the complete
+  money-data-decision-receipt loop is stronger than a single primitive demo.
 
 ## 64-Second Judge Path
 
@@ -92,10 +96,11 @@ already true for the submitted CSPR Guardian build.
    paid tool stack.
 8. Show the Judge Proof Pack: MCP discovery, HTTP 402, signed payment, replay
    rejected, and final gate.
-9. Show the Provider Ledger: `0.62 CSPR` revenue across four paid tools.
-10. Show Evidence Verification: `34/34` recomputed checks.
-11. Show Submission Audit: final submission checks.
-12. Close with the repeatable model: any RWA intelligence provider can expose a
+9. Show the Final-Review Advantage brief: complete loop versus single primitive.
+10. Show the Provider Ledger: `0.62 CSPR` revenue across four paid tools.
+11. Show Evidence Verification: `34/34` recomputed checks.
+12. Show Submission Audit: final submission checks.
+13. Close with the repeatable model: any RWA intelligence provider can expose a
    paid MCP tool, and any autonomous treasury can buy intelligence with an
    auditable Casper receipt.
 

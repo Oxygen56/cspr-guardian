@@ -1,26 +1,35 @@
 # Competitive Positioning
 
-Snapshot date: 2026-07-02.
+Snapshot date: 2026-07-04.
 
 This is a judge-facing positioning brief for CSPR Guardian. It should be used
 as a comparison frame, not as a claim that other submissions are weak or
 incomplete. The safest review argument is that CSPR Guardian demonstrates a
 complete, verifiable Casper-native agent economy in one review path.
 
-## Public Benchmark
-
-Public DoraHacks and search results for the Casper Agentic Buildathon show a
-broad field of agent projects, including:
-
-| Public project signal | Visible category | CSPR Guardian positioning |
-| --- | --- | --- |
-| AgentSpendGuard | Agent spending or payment guard | CSPR Guardian goes beyond guarding spend: it executes paid intelligence calls, records provider revenue, rejects replayed authorizations, and publishes a Casper receipt. |
-| Multitude | Crew of autonomous AI agents for the Casper economy | CSPR Guardian focuses the agent economy on one high-value workflow: paid RWA intelligence, policy-bounded allocation, and verifiable audit evidence. |
-| Casper Sentinel | AI-powered governance platform | CSPR Guardian targets treasury decision provenance: what data was bought, what policy was applied, what decision was made, and what receipt anchors it. |
-| ProofPay Agent | Agentic RWA milestone escrow cockpit | CSPR Guardian complements RWA payment/escrow themes with paid risk, KYB, liquidity, covenant intelligence, and independently recomputable evidence. |
+Detailed advantage brief:
+https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
 
 Official buildathon BUIDL list:
 https://dorahacks.io/hackathon/casper-agentic-buildathon/buidl
+
+## Public Benchmark Frame
+
+Public DoraHacks/search-visible projects show several strong categories:
+oracle-style real-world data feeds, AI-output coverage or attestation layers,
+MCP/toolkit infrastructure, RWA escrow/settlement flows, governance/sentinel
+agents, and x402 payment routers. These are valid and valuable directions.
+CSPR Guardian's position is different: it combines those primitives into the
+reviewable commercial loop an autonomous treasury agent actually needs.
+
+| Visible category | Typical strength | CSPR Guardian positioning |
+| --- | --- | --- |
+| Real-world oracle | Attest or sell data. | Buys four paid intelligence products and proves how they affected a capital decision. |
+| AI output coverage | Verify or back an AI result. | Verifies the whole pre-decision chain: payment, report, policy, revenue, receipt, and manifest. |
+| MCP or agent toolkit | Expose Casper tools to agents. | Uses MCP-style discovery inside a concrete RWA treasury workflow. |
+| RWA escrow or settlement | Settle value after a condition. | Models the diligence before allocation: risk, KYB, liquidity, covenant, and policy cap. |
+| Governance/sentinel agent | Produce auditable resolutions. | Produces treasury decision provenance: what was bought, what policy ran, and what receipt anchors it. |
+| x402 payment demo | Pay for an endpoint. | Turns payment into a two-sided agent market with replay safety, provider revenue, settlement anchors, and evidence verification. |
 
 ## Strong Review Claim
 
@@ -43,7 +52,7 @@ It combines the buildathon primitives into a single complete loop:
 
 ## Why This Should Stand Out
 
-- Casper is not decorative. The final submission has a public CSPR.live receipt
+- Casper is not decorative. The final submission has a public CSPR.live receipt,
   Casper-specific signed deploy preflight artifacts, and four public x402
   settlement-anchor transactions.
 - The agent workflow is end to end. It discovers tools, pays, consumes data,
