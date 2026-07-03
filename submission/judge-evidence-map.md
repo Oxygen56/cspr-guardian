@@ -81,7 +81,7 @@ an audit trail that can be inspected after the demo.
 | Browser-accessible proof | Final audit, proof pack, seal, preflight, BUIDL, CI, and public demo artifacts are linked from one page | `docs/proof-room.html`, `docs/proof/*` |
 | Artifact integrity | Every public proof-room Markdown/JSON artifact has a published SHA-256 hash | `docs/proof/proof-manifest.md`, `npm run proof:manifest` |
 | Browser verification | Judges can recompute public proof artifact SHA-256 hashes without cloning or running local commands | `docs/verifier.html`, `docs/proof/browser-verifier.md` |
-| Competitive differentiation | Visible buildathon categories are addressed without unsupported claims about other teams | `docs/proof/competitive-positioning.md`, `docs/proof/final-review-advantage.md` |
+| Competitive differentiation | Visible buildathon categories are addressed without unsupported claims about other teams | `docs/proof/competitive-positioning.md`, `docs/proof/category-leadership.md`, `docs/proof/final-review-advantage.md` |
 | Architecture clarity | Payment, replay, settlement, policy, verifier, Casper anchor, and secret-handling boundaries are mapped to proof artifacts | `docs/architecture.html`, `docs/proof/architecture.md` |
 | Reality boundary | Testnet prototype scope, reproducible provider data, public evidence, and production requirements are explicit | `docs/judge-faq.html`, `docs/proof/judge-faq.md` |
 | Submission auditability | Final pack, BUIDL page, seal, leak scan, source zip exclusions, and self-reference checks are verified before upload | Submission Audit panel, `casper-submission-audit.md`, `npm run audit:submission` |
@@ -139,6 +139,8 @@ an audit trail that can be inspected after the demo.
 - `docs/proof/proof-manifest.md`: SHA-256 manifest for all public proof-room
   artifacts.
 - `docs/proof/competitive-positioning.md`: public judge-facing benchmark brief.
+- `docs/proof/category-leadership.md`: five-point category leadership case for
+  sharper single-thesis comparisons.
 - `docs/proof/final-review-advantage.md`: category-level brief showing why
   the complete money-data-decision-receipt loop is stronger than a single
   primitive demo.

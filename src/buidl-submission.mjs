@@ -82,6 +82,7 @@ export async function generateBuidlSubmissionPage({ outputDir } = {}) {
       judgeDecision: "judge-decision.md",
       architecture: "architecture.md",
       browserVerifier: "browser-verifier.md",
+      categoryLeadership: "category-leadership.md",
       finalReviewAdvantage: "final-review-advantage.md",
       judgeFaq: "judge-faq.md",
       screenshots: [
@@ -208,6 +209,10 @@ https://oxygen56.github.io/cspr-guardian/proof-room.html
 The judge decision brief is the fastest final-review entry point:
 https://oxygen56.github.io/cspr-guardian/judge-decision.html
 
+The category-leadership brief compresses the competitive case into five
+judge-verifiable scoring reasons:
+https://oxygen56.github.io/cspr-guardian/proof/category-leadership.md
+
 The final-review advantage brief explains why the complete
 money-data-decision-receipt chain is stronger than a single primitive demo:
 https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
@@ -220,7 +225,7 @@ https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
 | Innovation and originality | Paid RWA intelligence market with autonomous buyers, paid providers, replay-safe payment proofs, and verifiable allocation evidence |
 | AI agent use | Agent discovers tools, pays, consumes risk/KYB/liquidity/covenant data, decides under policy, and exports proof |
 | Casper integration | x402-style Casper payments, testnet account, settlement anchors, receipt hash, deploy evidence, and explorer URLs |
-| Judge experience | Hosted demo, 64-second walkthrough, judge decision brief, final-review advantage brief, one-screen architecture map, browser proof verifier, reality boundary FAQ, screenshots, proof pack, audit output, and copy-ready links |
+| Judge experience | Hosted demo, 64-second walkthrough, judge decision brief, category-leadership brief, final-review advantage brief, one-screen architecture map, browser proof verifier, reality boundary FAQ, screenshots, proof pack, audit output, and copy-ready links |
 
 ## Readiness
 
@@ -287,6 +292,7 @@ ${paidTools}
 - Preflight proof: \`${page.artifacts.preflight}\`
 - x402 settlement batch: \`${page.artifacts.x402SettlementBatch}\`
 - Judge decision brief: \`${page.artifacts.judgeDecision}\`
+- Category leadership: \`${page.artifacts.categoryLeadership}\`
 - Final-review advantage: \`${page.artifacts.finalReviewAdvantage}\`
 - Architecture and threat model: \`${page.artifacts.architecture}\`
 - Browser proof verifier: \`${page.artifacts.browserVerifier}\`

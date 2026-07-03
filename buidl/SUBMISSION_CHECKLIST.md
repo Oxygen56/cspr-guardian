@@ -20,6 +20,8 @@
 - [x] Private keys, local key files, and secrets are excluded from public
   artifacts.
 - [x] Competitive positioning avoids unsupported claims about other teams.
+- [x] Category leadership brief gives five judge-verifiable scoring reasons
+  against sharper single-thesis project categories.
 - [x] Final-review advantage brief explains the stronger complete-loop thesis.
 - [x] Copy-ready DoraHacks description is available in
   `submission/dorahacks-page-update.md`.

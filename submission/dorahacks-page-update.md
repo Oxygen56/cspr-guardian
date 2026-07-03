@@ -24,7 +24,7 @@ https://oxygen56.github.io/cspr-guardian/judge-decision.html
 Final proof:
 
 - Review readiness: 100/100, final review gate cleared.
-- Browser proof verifier: 32/32 public artifacts verified, 0 failed.
+- Browser proof verifier: 33/33 public artifacts verified, 0 failed.
 - Evidence verifier: 34/34 checks passing.
 - Submission audit: 15/15 checks passing, 0 blocked, 0 failed.
 - Unit tests: 25/25 passing.
@@ -44,6 +44,8 @@ What it demonstrates:
   a decision hash, and a receipt hash.
 - A browser-native proof verifier that recomputes SHA-256 hashes for the public
   proof manifest without requiring a repo clone.
+- A category-leadership brief showing why the full
+  money-data-decision-receipt loop is stronger than a single primitive demo.
 - A reality boundary that separates real Casper testnet evidence, reproducible
   sample provider data, and production requirements.
 
@@ -57,6 +59,7 @@ Links:
 - Judge scorecard: https://oxygen56.github.io/cspr-guardian/judge-scorecard.html
 - Architecture map: https://oxygen56.github.io/cspr-guardian/architecture.html
 - Reality boundary and FAQ: https://oxygen56.github.io/cspr-guardian/judge-faq.html
+- Category leadership: https://oxygen56.github.io/cspr-guardian/proof/category-leadership.md
 - Final-review advantage: https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
 - x402 settlement batch: https://oxygen56.github.io/cspr-guardian/proof/casper-x402-settlement-batch.md
 - Scenario matrix: https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md

@@ -29,6 +29,8 @@ x402 settlement batch: https://oxygen56.github.io/cspr-guardian/proof/casper-x40
 
 Competitive positioning: https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md
 
+Category leadership: https://oxygen56.github.io/cspr-guardian/proof/category-leadership.md
+
 Final-review advantage: https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
 
 Funding handoff: https://oxygen56.github.io/cspr-guardian/funding.html
@@ -54,6 +56,8 @@ and `ready_for_final_review` public audit status.
   settlement-anchor transactions, and a real CSPR.live receipt.
 - It includes a concise competitive positioning brief that frames visible
   buildathon categories without relying on unsupported claims about other teams.
+- It includes a category-leadership brief that turns sharper single-thesis
+  comparisons into five judge-verifiable scoring reasons.
 - It includes a final-review advantage brief that explains why the complete
   money-data-decision-receipt loop is stronger than a single primitive demo.
 - It gives judges a one-page scorecard that maps the project to technical

@@ -43,6 +43,8 @@ Final proof:
   `https://oxygen56.github.io/cspr-guardian/verifier.html`.
 - Competitive positioning:
   `https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md`.
+- Category leadership:
+  `https://oxygen56.github.io/cspr-guardian/proof/category-leadership.md`.
 - Final-review advantage:
   `https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md`.
 - Repeatable scenario matrix:
@@ -92,6 +94,10 @@ signals into one verifiable workflow that minimizes reviewer trust cost:
   receipts, and provider revenue.
 - It links business value to Casper: every RWA allocation can be audited by a
   human, DAO, or compliance reviewer.
+- It covers sharper single-thesis categories without copying them: agent
+  payment rails, AI output verification, MCP tooling, RWA diligence, oracle
+  data, settlement evidence, and decision provenance are all present in one
+  proof path.
 - It includes a public Casper testnet receipt, public demo, public source repo,
   walkthrough video, proof pack, screenshots, and final audit output.
 
@@ -138,5 +144,7 @@ signals into one verifiable workflow that minimizes reviewer trust cost:
    prototype scope, and what production work remains.
 11. Open the Final-Review Advantage brief to show why the complete
     money-data-decision-receipt loop is stronger than a single primitive demo.
-12. Inspect Evidence Verification for `34/34` recomputed checks.
-13. Inspect Submission Audit for final submission checks.
+12. Open the Category Leadership brief for the five-point competitive scoring
+    case.
+13. Inspect Evidence Verification for `34/34` recomputed checks.
+14. Inspect Submission Audit for final submission checks.

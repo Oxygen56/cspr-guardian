@@ -35,6 +35,20 @@ case the submission can make for a strong review.
 | Is it judge-friendly? | Decision page, scorecard, advantage brief, proof room, FAQ, manifest, 64-second walkthrough |
 | Is it honest? | Reality boundary explicitly separates testnet prototype scope from production requirements |
 
+## Five Reasons This Should Score Strongly
+
+1. Complete commercial loop: paid discovery, x402 payment, signed
+   authorization, intelligence purchase, policy decision, provider revenue,
+   Casper receipt, and recomputable proof.
+2. Casper is central: settlement anchors, final CSPR.live receipt, signed
+   deploy preflight, explorer evidence, and payment semantics.
+3. Stronger than one-primitive entries: it composes agent rails, AI coverage,
+   MCP tooling, oracle data, RWA diligence, and governance-style provenance.
+4. Low judge trust cost: browser verifier, proof room, SHA-256 manifest,
+   settlement batch, scorecard, FAQ, and short walkthrough.
+5. Explicit reality boundary: real testnet evidence is separated from
+   deterministic sample data and production work.
+
 ## Ninety-Second Review Path
 
 1. Open the judge decision page.
@@ -44,6 +58,8 @@ case the submission can make for a strong review.
 5. Open the scorecard and proof room for the full rubric mapping.
 6. Open the FAQ to verify the prototype boundary.
 7. Open the final-review advantage brief to see the category-level comparison.
+8. Open the category-leadership brief for the shortest competitive scoring
+   argument.
 
 ## Competitive Edge
 
@@ -64,6 +80,9 @@ receipt projects. CSPR Guardian's edge is the complete loop:
 
 Advantage brief:
 https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
+
+Category leadership:
+https://oxygen56.github.io/cspr-guardian/proof/category-leadership.md
 
 ## Boundaries
 

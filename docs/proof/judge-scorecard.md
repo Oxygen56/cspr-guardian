@@ -22,6 +22,7 @@ signals a Casper Agentic Buildathon judge can verify in minutes.
 | Provider revenue | `0.62 CSPR` per full run |
 | Public proof artifacts | SHA-256 manifest in the public proof room |
 | Casper receipt | Real CSPR.live testnet transaction |
+| Category leadership | Five-point scoring case against sharper single-thesis project categories |
 | Final-review advantage | Category-level brief explaining why the complete loop is stronger than a single primitive demo |
 
 ## Rubric Matrix
@@ -33,7 +34,7 @@ signals a Casper Agentic Buildathon judge can verify in minutes.
 | Agentic AI workflow | The agent discovers tools, pays for intelligence, gathers RWA signals, applies policy, decides, records revenue, and exports proof. | Dashboard, walkthrough, evidence bundle, judge proof pack |
 | Repeatability | The same paid RWA intelligence stack handles treasury, invoice-finance, and trade-credit scenarios. | `casper-scenario-matrix.md`, `casper-scenario-matrix.json` |
 | Innovation | The project is not a chatbot or isolated endpoint; it demonstrates a two-sided paid intelligence market for autonomous treasury agents. | Competitive positioning brief and provider ledger |
-| Usability for judges | The public site exposes a 64-second walkthrough, architecture map, browser verifier, advantage brief, reality boundary FAQ, proof room, scorecard, final audit, manifest, and copy-ready BUIDL fields. | `architecture.html`, `verifier.html`, `judge-faq.html`, `judge-scorecard.html`, `proof-room.html`, `proof-manifest.md`, `final-review-advantage.md` |
+| Usability for judges | The public site exposes a 64-second walkthrough, architecture map, browser verifier, category leadership brief, advantage brief, reality boundary FAQ, proof room, scorecard, final audit, manifest, and copy-ready BUIDL fields. | `architecture.html`, `verifier.html`, `judge-faq.html`, `judge-scorecard.html`, `proof-room.html`, `proof-manifest.md`, `category-leadership.md`, `final-review-advantage.md` |
 
 ## Differentiation Against Visible Categories
 
@@ -72,5 +73,6 @@ signals a Casper Agentic Buildathon judge can verify in minutes.
 - Scenario matrix: https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md
 - x402 settlement batch: https://oxygen56.github.io/cspr-guardian/proof/casper-x402-settlement-batch.md
 - Competitive positioning: https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md
+- Category leadership: https://oxygen56.github.io/cspr-guardian/proof/category-leadership.md
 - Final-review advantage: https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
 - Casper receipt: https://testnet.cspr.live/transaction/7982fc56043fe482643d49478c0ecaf696f1e7db979021a23ae6a4841516cb5a

@@ -80,7 +80,7 @@ npm test
 - Tests: `25/25` passing.
 - Evidence verifier: `34/34` checks passing.
 - Submission audit: `15/15` checks passing, `0` blocked, `0` failed.
-- Browser verifier: `32/32` public proof artifacts verified, `0` failed.
+- Browser verifier: `33/33` public proof artifacts verified, `0` failed.
 - x402 settlement anchors: four Casper testnet transactions tied to signed
   x402 authorizations.
 - Final CSPR.live receipt:
@@ -109,6 +109,9 @@ settlement anchors, final receipt, and browser-recomputable proof.
 
 Final-review advantage:
 https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
+
+Category leadership:
+https://oxygen56.github.io/cspr-guardian/proof/category-leadership.md
 
 ## Scope Boundary
 

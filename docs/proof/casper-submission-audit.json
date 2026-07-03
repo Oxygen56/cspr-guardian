@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-03T18:05:56.844Z",
+  "generatedAt": "2026-07-03T18:29:30.271Z",
   "project": "CSPR Guardian",
   "status": "ready_for_final_review",
   "summary": {
@@ -23,8 +23,8 @@
     "submissionPackZip": {
       "exists": true,
       "path": "outputs/cspr-guardian-final-submission.zip",
-      "bytes": 2883439,
-      "sha256": "38676f553a043aa78f0f689333f27e86a0af401b3db92f75500d8198c18c7a3d"
+      "bytes": 2887279,
+      "sha256": "e9c2387895b30b11b9271a314b066869350111f87ffecd62cbe9552a79cfee87"
     },
     "sourceZip": {
       "exists": true,
@@ -83,10 +83,10 @@
       "name": "submission_pack_present",
       "detail": "Final pack status is ready; missing required files: 0.",
       "packStatus": "ready",
-      "files": 49,
+      "files": 50,
       "missingRequired": 0,
       "zipPath": "outputs/cspr-guardian-final-submission.zip",
-      "zipSha256": "38676f553a043aa78f0f689333f27e86a0af401b3db92f75500d8198c18c7a3d",
+      "zipSha256": "e9c2387895b30b11b9271a314b066869350111f87ffecd62cbe9552a79cfee87",
       "status": "pass",
       "ok": true
     },
@@ -184,8 +184,8 @@
     },
     {
       "name": "private_key_leak_scan",
-      "detail": "77 text artifacts scanned with no private key material.",
-      "filesScanned": 77,
+      "detail": "78 text artifacts scanned with no private key material.",
+      "filesScanned": 78,
       "matches": [],
       "status": "pass",
       "ok": true
@@ -203,7 +203,7 @@
       "name": "final_pack_no_self_reference",
       "detail": "Final pack does not include external seal or audit files that would self-reference the zip.",
       "finalPackPath": "outputs/cspr-guardian-final-submission.zip",
-      "entries": 55,
+      "entries": 56,
       "selfReferences": [],
       "status": "pass",
       "ok": true
