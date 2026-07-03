@@ -2,10 +2,11 @@
 
 Snapshot date: 2026-07-03.
 
-This page is the final reviewer-facing decision brief for CSPR Guardian. It
-compresses the proof room, scorecard, architecture, verifier, competitive
-positioning, and final-review advantage brief into one page a judge can inspect
-before scoring the BUIDL.
+This page is the final reviewer-facing decision brief for CSPR Guardian. The
+product thesis is simple: buy the data, decide under policy, prove it on
+Casper. The page compresses the proof room, scorecard, architecture, verifier,
+competitive positioning, and final-review advantage brief into one page a judge
+can inspect before scoring the BUIDL.
 
 Public page:
 
@@ -15,11 +16,11 @@ https://oxygen56.github.io/cspr-guardian/judge-decision.html
 
 ## Recommended Judging Decision
 
-CSPR Guardian should be reviewed as a strong final-review candidate because it shows a
-complete Casper-native agent economy, not only a UI or a single API endpoint.
-The project demonstrates discovery, paid access, replay-safe authorization,
-paid RWA intelligence, policy-bounded decisioning, provider revenue, public
-settlement anchors, final receipt anchoring, and independent verification.
+CSPR Guardian should be reviewed as a strong final-review candidate because it
+solves a concrete review problem: autonomous treasury agents should not allocate
+capital from private logs or unverifiable screenshots. The project shows which
+paid RWA intelligence was bought, which policy decision was made, who earned
+provider revenue, and which Casper receipt anchors the evidence.
 
 This is not a guarantee of judging outcome. It is the strongest evidence-backed
 case the submission can make for a strong review.
@@ -37,9 +38,8 @@ case the submission can make for a strong review.
 
 ## Five Reasons This Should Score Strongly
 
-1. Complete commercial loop: paid discovery, x402 payment, signed
-   authorization, intelligence purchase, policy decision, provider revenue,
-   Casper receipt, and recomputable proof.
+1. Complete commercial loop: buy paid data, decide under policy, record
+   provider revenue, anchor a Casper receipt, and recompute proof.
 2. Casper is central: settlement anchors, final CSPR.live receipt, signed
    deploy preflight, explorer evidence, and payment semantics.
 3. Stronger than one-primitive entries: it composes agent rails, AI coverage,
@@ -96,5 +96,6 @@ response, and mainnet settlement policy.
 ## Decision Summary
 
 If a judge prioritizes complete, verifiable, Casper-native agent workflows, CSPR
-Guardian should be easy to score strongly: the path from paid tool discovery
-to final public receipt is visible, repeatable, and independently checkable.
+Guardian should be easy to score strongly: the path from paid data to policy
+decision to final public receipt is visible, repeatable, and independently
+checkable.

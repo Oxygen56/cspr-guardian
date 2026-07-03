@@ -1,9 +1,11 @@
 # CSPR Guardian
 
-CSPR Guardian is a Casper Agentic Buildathon project built for final review:
-an autonomous RWA allocation agent that discovers paid MCP tools, signs and
-settles x402-style Casper payment proofs, calls risk and KYB oracles, makes a
-policy decision, and anchors an audit receipt to Casper.
+CSPR Guardian is the audit trail for autonomous RWA treasury agents. Before an
+agent allocates capital, it must prove which paid risk, KYB, liquidity, and
+covenant data it bought, why the policy decision was made, who earned provider
+revenue, and which Casper receipt anchors the evidence.
+
+In one line: **buy the data, decide under policy, prove it on Casper.**
 
 Public judge demo: https://oxygen56.github.io/cspr-guardian/
 
@@ -43,8 +45,10 @@ and `ready_for_final_review` public audit status.
 
 ## Why This Is Judge-Ready
 
+- It is easy to understand: a treasury agent buys paid RWA intelligence, makes
+  a bounded allocation decision, and publishes proof that reviewers can verify.
 - It is agentic beyond a chat UI: the agent discovers tools, handles payment,
-  calls paid services, decides, and writes audit proof.
+  calls paid services, decides, records provider revenue, and writes audit proof.
 - It uses the buildathon primitives together: MCP-style tool discovery, x402
   payment flow, Casper network receipt, AI-agent workflow, DeFi/RWA use case.
 - It creates a two-sided agent economy: paid risk data providers can expose

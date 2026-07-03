@@ -154,18 +154,18 @@ function renderHtml({ fps, durationSeconds, assets }) {
       {
         start: 0,
         end: 8,
-        kicker: "FINAL REVIEW STATUS",
+        kicker: "PRODUCT THESIS",
         title: "CSPR Guardian",
-        subtitle: "Autonomous RWA treasury agents with paid risk intelligence and Casper receipts.",
-        metrics: [["Review readiness", "100/100"], ["Final review gate", "cleared"], ["Blockers", "0"]],
-        bullets: ["Real Casper testnet receipt is published", "Independent verifier passes 34/34 checks", "Judge proof pack passes 10/10 assertions"]
+        subtitle: "The audit trail for autonomous RWA treasury agents: buy paid intelligence, decide under policy, prove it on Casper.",
+        metrics: [["Loop", "buy"], ["Policy", "decide"], ["Proof", "Casper"]],
+        bullets: ["Shows which paid data the agent bought", "Shows why the allocation decision passed", "Shows which public Casper receipt anchors the evidence"]
       },
       {
         start: 8,
         end: 18,
         kicker: "FINAL REVIEW EVIDENCE",
         title: "Start with the proof",
-        subtitle: "The scorecard is already final: 100/100 with a real CSPR.live transaction.",
+        subtitle: "The proof path is public: 100/100 review readiness with a real CSPR.live transaction.",
         image: "review",
         bullets: ["Casper receipt: real testnet deploy", "Final gate: cleared", "Submission assets: ready"]
       },
@@ -210,7 +210,7 @@ function renderHtml({ fps, durationSeconds, assets }) {
         end: 64,
         kicker: "CASPER AGENTIC BUILDATHON",
         title: "CSPR Guardian is final-review ready",
-        subtitle: "A verifiable agent economy workflow: discover paid tools, pay with signed proofs, make an RWA decision, anchor evidence on Casper.",
+        subtitle: "A verifiable RWA treasury workflow: buy the data, decide under policy, anchor evidence on Casper.",
         metrics: [["Status", "ready"], ["Gate", "cleared"], ["Score", "100/100"]],
         bullets: ["x402-style payments", "MCP-style discovery", "Real Casper testnet receipt"]
       }

@@ -68,6 +68,14 @@ h2 {
   font-size: 18px;
 }
 
+.product-line {
+  max-width: 680px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.45;
+}
+
 .primary-button {
   border: 0;
   border-radius: 8px;
@@ -121,12 +129,47 @@ h2 {
   margin: 14px 0 18px;
 }
 
+.plain-flow {
+  display: grid;
+  grid-template-columns: 1.35fr repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
 .metric,
-.panel {
+.panel,
+.plain-flow article {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 18px 46px rgba(30, 44, 58, 0.08);
+}
+
+.plain-flow article {
+  min-height: 136px;
+  padding: 16px;
+}
+
+.plain-flow span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.plain-flow strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.plain-flow p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .metric {
@@ -850,6 +893,7 @@ pre {
   .topbar,
   .workspace,
   .workspace.lower,
+  .plain-flow,
   .status-grid {
     grid-template-columns: 1fr;
   }

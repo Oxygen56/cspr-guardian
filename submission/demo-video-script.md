@@ -2,13 +2,14 @@
 
 ## 0-8s
 
-Open with the final review state: CSPR Guardian is `100/100`,
-final-review-ready, and has zero blockers.
+Open with the product thesis: autonomous RWA treasury agents need an audit
+trail before they allocate capital. CSPR Guardian's loop is: buy the data,
+decide under policy, prove it on Casper.
 
 ## 8-18s
 
 Show the Review Readiness evidence and the published CSPR.live testnet
-transaction. The Casper receipt gate is cleared with a real deploy URL.
+transaction. Then show `100/100` review readiness and zero blockers.
 
 ## 18-28s
 

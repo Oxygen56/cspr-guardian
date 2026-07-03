@@ -32,9 +32,10 @@ export async function generateBuidlSubmissionPage({ outputDir } = {}) {
     generatedAt: new Date().toISOString(),
     project: {
       name: "CSPR Guardian",
-      tagline: "Casper payment and audit receipts for autonomous RWA treasury agents.",
+      tagline:
+        "Audit trail for autonomous RWA treasury agents: buy paid intelligence, decide under policy, prove it on Casper.",
       oneLiner:
-        "CSPR Guardian lets an agent discover paid RWA intelligence tools, pay through x402-style Casper proofs, make a constrained allocation decision, and export a verifiable receipt.",
+        "CSPR Guardian shows how an autonomous treasury agent buys paid RWA intelligence, makes a bounded allocation decision, records provider revenue, and anchors evidence on Casper.",
       categories: ["Casper", "AI agents", "x402", "MCP", "RWA", "DeFi", "auditability"]
     },
     submissionFields,
@@ -182,10 +183,16 @@ ${page.submissionFields.casperExplorerUrl}
 
 ${page.project.oneLiner}
 
-CSPR Guardian demonstrates a Casper-native agent economy. An autonomous RWA
-treasury agent discovers paid MCP-style tools, receives x402-style payment
-requirements, signs Ed25519 payment authorizations with nonce replay protection,
-buys risk/KYB/liquidity/covenant intelligence, makes a constrained allocation
+The product is simple: buy the data, decide under policy, prove it on Casper.
+Autonomous treasury agents should not allocate capital from private logs,
+unpaid data, or screenshots disconnected from the final decision. CSPR Guardian
+shows which risk, KYB, liquidity, and covenant intelligence was bought, which
+policy decision was made, who earned provider revenue, and which Casper receipt
+anchors the evidence.
+
+Under the hood, the agent discovers paid MCP-style tools, receives x402-style
+payment requirements, signs Ed25519 payment authorizations with nonce replay
+protection, buys four RWA intelligence products, makes a constrained allocation
 decision, records provider revenue, and exports tamper-evident evidence.
 
 The key Casper angle is provenance: each run produces payment hashes, report

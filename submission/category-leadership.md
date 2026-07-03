@@ -7,12 +7,15 @@ above sharper single-thesis projects in the Casper Agentic Buildathon review.
 It does not claim a judging outcome. It explains the category-level difference
 that a reviewer can verify from public artifacts.
 
+Plain thesis: CSPR Guardian is the audit trail for autonomous RWA treasury
+agents. It lets a reviewer follow one loop: buy the data, decide under policy,
+prove it on Casper.
+
 ## Five Reasons This Should Score Strongly
 
-1. **It is a complete commercial agent loop.** The agent discovers paid tools,
-   receives payment requirements, signs replay-safe authorizations, buys four
-   RWA intelligence products, decides under policy, records provider revenue,
-   and anchors evidence on Casper.
+1. **It is a complete commercial agent loop.** The agent buys four RWA
+   intelligence products, decides under policy, records provider revenue, and
+   anchors evidence on Casper.
 2. **It turns Casper into the trust layer, not a logo.** Casper appears in
    payment authorization semantics, settlement-anchor transactions, signed
    deploy preflight, final receipt anchoring, explorer links, and public proof

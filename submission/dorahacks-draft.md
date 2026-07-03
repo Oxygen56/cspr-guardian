@@ -2,17 +2,16 @@
 
 ## One-Liner
 
-CSPR Guardian turns Casper into the payment and audit layer for autonomous RWA
-treasury agents.
+CSPR Guardian is the audit trail for autonomous RWA treasury agents: buy paid
+intelligence, decide under policy, prove it on Casper.
 
 ## 30-Second Judge Summary
 
 CSPR Guardian is built to be judged as a complete Casper agent economy demo,
-not as a standalone chatbot or a single paid endpoint. An autonomous treasury
-agent discovers paid MCP-style tools, receives x402-style payment requirements,
-signs replay-safe Ed25519 authorizations, buys four RWA intelligence products,
-makes a constrained allocation decision, records provider revenue, and anchors
-the final evidence trail to a real Casper testnet transaction.
+not as a standalone chatbot or a single paid endpoint. The product is simple:
+an autonomous treasury agent buys paid RWA intelligence, decides under a
+bounded allocation policy, records provider revenue, and anchors the evidence
+trail to a real Casper testnet transaction.
 
 Final proof:
 
@@ -56,9 +55,10 @@ Final proof:
 
 ## Problem
 
-Autonomous agents can source DeFi/RWA opportunities, but they lack a reliable
-way to pay specialized services, prove which data they used, and leave an
-auditable record for humans and DAOs.
+Autonomous agents can source DeFi/RWA opportunities, but they cannot safely
+allocate capital from private logs or unverifiable screenshots. A reviewer,
+DAO, allocator, or auditor needs to know what paid data was used, why the
+policy decision passed, and which public receipt anchors the evidence.
 
 ## Solution
 

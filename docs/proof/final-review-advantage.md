@@ -3,17 +3,15 @@
 Snapshot date: 2026-07-04.
 
 This brief explains the strongest judge-facing case for CSPR Guardian without
-claiming anything about the final judging outcome. The core argument is simple:
-CSPR Guardian is not a single primitive demo. It is a complete, verifiable
-Casper-native agent economy loop that lets reviewers trace money, data,
-decision, revenue, and evidence from start to finish.
+claiming anything about the final judging outcome. The core product is simple:
+autonomous RWA treasury agents need an audit trail before they allocate capital.
+CSPR Guardian lets reviewers trace paid data, policy decision, provider revenue,
+and Casper evidence from start to finish.
 
 ## One-Line Thesis
 
-CSPR Guardian turns Casper into the payment and evidence layer for autonomous
-RWA treasury agents: the agent buys specialized intelligence, makes a constrained
-allocation decision, records provider revenue, anchors the final receipt, and
-publishes proof that can be recomputed.
+CSPR Guardian turns Casper into the evidence layer for autonomous RWA treasury
+agents: buy the data, decide under policy, prove it on Casper.
 
 Category leadership brief:
 https://oxygen56.github.io/cspr-guardian/proof/category-leadership.md

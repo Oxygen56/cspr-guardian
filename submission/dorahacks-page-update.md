@@ -5,18 +5,17 @@ edited.
 
 ## Short Description
 
-Autonomous RWA treasury agents need auditable paid risk intelligence,
-replay-safe payments, and Casper-anchored evidence before they can safely
-allocate capital.
+CSPR Guardian is the audit trail for autonomous RWA treasury agents: buy paid
+risk intelligence, decide under policy, and prove the evidence on Casper.
 
 ## Details
 
-CSPR Guardian is a Casper-native agentic RWA treasury workflow. It shows how an
-autonomous treasury agent discovers paid MCP-style tools, receives x402-style
-payment requirements, signs replay-safe Casper payment authorizations, buys
-risk, KYB, liquidity, and covenant intelligence, makes a constrained allocation
-decision, records provider revenue, and anchors the final decision evidence on
-Casper testnet.
+CSPR Guardian makes autonomous RWA treasury decisions easier to trust. Before
+an agent allocates capital, it proves which paid data it bought, how the policy
+decision was made, who earned provider revenue, and which Casper receipt
+anchors the evidence.
+
+In one line: buy the data, decide under policy, prove it on Casper.
 
 Reviewer start point:
 https://oxygen56.github.io/cspr-guardian/judge-decision.html
@@ -35,6 +34,7 @@ Final proof:
 
 What it demonstrates:
 
+- A simple treasury audit workflow: paid data -> policy decision -> Casper proof.
 - Paid MCP-style tool discovery and x402-style settlement semantics.
 - Ed25519 signed payment authorizations with nonce replay protection.
 - Four paid RWA intelligence products: risk, KYB/sanctions, liquidity depth,
