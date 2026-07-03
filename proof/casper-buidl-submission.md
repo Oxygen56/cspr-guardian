@@ -1,6 +1,6 @@
 # CSPR Guardian BUIDL Submission
 
-Generated: 2026-07-03T18:05:40.204Z
+Generated: 2026-07-03T18:29:29.951Z
 
 ## Copy-Paste Fields
 
@@ -83,6 +83,10 @@ https://oxygen56.github.io/cspr-guardian/proof-room.html
 The judge decision brief is the fastest final-review entry point:
 https://oxygen56.github.io/cspr-guardian/judge-decision.html
 
+The category-leadership brief compresses the competitive case into five
+judge-verifiable scoring reasons:
+https://oxygen56.github.io/cspr-guardian/proof/category-leadership.md
+
 The final-review advantage brief explains why the complete
 money-data-decision-receipt chain is stronger than a single primitive demo:
 https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
@@ -95,7 +99,7 @@ https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
 | Innovation and originality | Paid RWA intelligence market with autonomous buyers, paid providers, replay-safe payment proofs, and verifiable allocation evidence |
 | AI agent use | Agent discovers tools, pays, consumes risk/KYB/liquidity/covenant data, decides under policy, and exports proof |
 | Casper integration | x402-style Casper payments, testnet account, settlement anchors, receipt hash, deploy evidence, and explorer URLs |
-| Judge experience | Hosted demo, 64-second walkthrough, judge decision brief, final-review advantage brief, one-screen architecture map, browser proof verifier, reality boundary FAQ, screenshots, proof pack, audit output, and copy-ready links |
+| Judge experience | Hosted demo, 64-second walkthrough, judge decision brief, category-leadership brief, final-review advantage brief, one-screen architecture map, browser proof verifier, reality boundary FAQ, screenshots, proof pack, audit output, and copy-ready links |
 
 ## Readiness
 
@@ -166,6 +170,7 @@ Preflight checks: 11/11
 - Preflight proof: `casper-testnet-preflight.md`
 - x402 settlement batch: `casper-x402-settlement-batch.md`
 - Judge decision brief: `judge-decision.md`
+- Category leadership: `category-leadership.md`
 - Final-review advantage: `final-review-advantage.md`
 - Architecture and threat model: `architecture.md`
 - Browser proof verifier: `browser-verifier.md`

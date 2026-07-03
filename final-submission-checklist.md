@@ -25,6 +25,8 @@ already true for the submitted CSPR Guardian build.
 - Walkthrough video: `https://oxygen56.github.io/cspr-guardian/walkthrough.html`.
 - Judge proof room: `https://oxygen56.github.io/cspr-guardian/proof-room.html`.
 - Judge scorecard: `https://oxygen56.github.io/cspr-guardian/judge-scorecard.html`.
+- Category leadership:
+  `https://oxygen56.github.io/cspr-guardian/proof/category-leadership.md`.
 - Final-review advantage:
   `https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md`.
 - Architecture map: `https://oxygen56.github.io/cspr-guardian/architecture.html`.
@@ -79,6 +81,9 @@ already true for the submitted CSPR Guardian build.
   from `submission/assets/`.
 - Browser-accessible proof artifacts under `docs/proof/`, linked from
   `docs/proof-room.html`.
+- Category leadership brief showing the five strongest judge-verifiable
+  reasons the project should score strongly against sharper single-thesis
+  categories.
 - Final-review advantage brief showing why the complete
   money-data-decision-receipt loop is stronger than a single primitive demo.
 
@@ -96,11 +101,12 @@ already true for the submitted CSPR Guardian build.
    paid tool stack.
 8. Show the Judge Proof Pack: MCP discovery, HTTP 402, signed payment, replay
    rejected, and final gate.
-9. Show the Final-Review Advantage brief: complete loop versus single primitive.
-10. Show the Provider Ledger: `0.62 CSPR` revenue across four paid tools.
-11. Show Evidence Verification: `34/34` recomputed checks.
-12. Show Submission Audit: final submission checks.
-13. Close with the repeatable model: any RWA intelligence provider can expose a
+9. Show the Category Leadership brief: five judge-verifiable scoring reasons.
+10. Show the Final-Review Advantage brief: complete loop versus single primitive.
+11. Show the Provider Ledger: `0.62 CSPR` revenue across four paid tools.
+12. Show Evidence Verification: `34/34` recomputed checks.
+13. Show Submission Audit: final submission checks.
+14. Close with the repeatable model: any RWA intelligence provider can expose a
    paid MCP tool, and any autonomous treasury can buy intelligence with an
    auditable Casper receipt.
 

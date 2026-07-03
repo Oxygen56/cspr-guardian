@@ -10,20 +10,25 @@ complete, verifiable Casper-native agent economy in one review path.
 Detailed advantage brief:
 https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
 
+Category leadership brief:
+https://oxygen56.github.io/cspr-guardian/proof/category-leadership.md
+
 Official buildathon BUIDL list:
 https://dorahacks.io/hackathon/casper-agentic-buildathon/buidl
 
 ## Public Benchmark Frame
 
 Public DoraHacks/search-visible projects show several strong categories:
-oracle-style real-world data feeds, AI-output coverage or attestation layers,
-MCP/toolkit infrastructure, RWA escrow/settlement flows, governance/sentinel
-agents, and x402 payment routers. These are valid and valuable directions.
-CSPR Guardian's position is different: it combines those primitives into the
-reviewable commercial loop an autonomous treasury agent actually needs.
+agent identity/messaging/payment rails, oracle-style real-world data feeds,
+AI-output coverage or attestation layers, MCP/toolkit infrastructure, RWA
+escrow/settlement flows, governance/sentinel agents, and x402 payment routers.
+These are valid and valuable directions. CSPR Guardian's position is different:
+it combines those primitives into the reviewable commercial loop an autonomous
+treasury agent actually needs.
 
 | Visible category | Typical strength | CSPR Guardian positioning |
 | --- | --- | --- |
+| Agent identity, messaging, and payment rails | Let agents address each other and pay. | Uses payment rails inside a treasury diligence loop with signed authorizations, paid providers, revenue accounting, and receipt evidence. |
 | Real-world oracle | Attest or sell data. | Buys four paid intelligence products and proves how they affected a capital decision. |
 | AI output coverage | Verify or back an AI result. | Verifies the whole pre-decision chain: payment, report, policy, revenue, receipt, and manifest. |
 | MCP or agent toolkit | Expose Casper tools to agents. | Uses MCP-style discovery inside a concrete RWA treasury workflow. |
@@ -49,6 +54,8 @@ It combines the buildathon primitives into a single complete loop:
 11. Browser proof verifier that recomputes public artifact SHA-256 hashes.
 12. Reality boundary FAQ that separates real testnet evidence from prototype scope.
 13. Public proof room with SHA-256 hashes for every proof artifact.
+14. Category-leadership brief that reduces the competitive comparison to a
+    judge-verifiable five-point scoring argument.
 
 ## Why This Should Stand Out
 
