@@ -51,6 +51,12 @@ const competitiveBrief = await fs.readFile(
 );
 await fs.writeFile(path.join(PROOF_DIR, "competitive-positioning.md"), competitiveBrief);
 
+const finalReviewAdvantage = await fs.readFile(
+  path.join(PROJECT_DIR, "submission/final-review-advantage.md"),
+  "utf8"
+);
+await fs.writeFile(path.join(PROOF_DIR, "final-review-advantage.md"), finalReviewAdvantage);
+
 const judgeScorecard = await fs.readFile(path.join(PROJECT_DIR, "submission/judge-scorecard.md"), "utf8");
 await fs.writeFile(path.join(PROOF_DIR, "judge-scorecard.md"), judgeScorecard);
 
@@ -70,7 +76,7 @@ console.log(
   JSON.stringify(
     {
       status: "proof-room-published",
-      files: PROOF_FILES.length + 6,
+      files: PROOF_FILES.length + 7,
       proofDir: "docs/proof"
     },
     null,

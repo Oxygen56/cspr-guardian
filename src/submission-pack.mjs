@@ -142,6 +142,7 @@ function submissionFiles({ projectDir, outputDir }) {
     projectFile("submission/judge-faq.md", "writeup/judge-faq.md"),
     projectFile("submission/judge-scorecard.md", "writeup/judge-scorecard.md"),
     projectFile("submission/competitive-positioning.md", "writeup/competitive-positioning.md"),
+    projectFile("submission/final-review-advantage.md", "writeup/final-review-advantage.md"),
     projectFile("submission/dorahacks-draft.md", "writeup/dorahacks-draft.md"),
     projectFile("submission/demo-video-script.md", "writeup/demo-video-script.md"),
     projectFile("docs/final-submission-checklist.md", "writeup/final-submission-checklist.md")

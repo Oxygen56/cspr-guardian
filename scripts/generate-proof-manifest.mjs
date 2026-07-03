@@ -116,6 +116,7 @@ function roleFor(fileName) {
   if (fileName.includes("judge-decision")) return "judge decision brief";
   if (fileName.includes("judge-scorecard")) return "judge scorecard";
   if (fileName.includes("competitive-positioning")) return "competitive positioning brief";
+  if (fileName.includes("final-review-advantage")) return "final review advantage brief";
   if (fileName.includes("final-review-unlock")) return "final review unlock report";
   return "public proof artifact";
 }

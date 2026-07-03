@@ -82,6 +82,10 @@ const server = http.createServer(async (req, res) => {
       return json(res, 200, await getPrizeReadiness());
     }
 
+    if (req.method === "GET" && url.pathname === "/api/review-readiness") {
+      return json(res, 200, publicReviewValue(await getPrizeReadiness()));
+    }
+
     if (req.method === "GET" && url.pathname === "/api/submission/seal") {
       return json(res, 200, await getCurrentSubmissionSeal());
     }
@@ -213,6 +217,28 @@ async function readJson(req) {
 function json(res, status, body, headers = {}) {
   res.writeHead(status, { "content-type": "application/json", ...headers });
   res.end(JSON.stringify(body, null, 2));
+}
+
+function publicReviewValue(value) {
+  return JSON.parse(
+    JSON.stringify(value)
+      .replaceAll("ready_for_highest_prize_submission", "ready_for_final_review")
+      .replaceAll("Highest-prize-ready", "Final-review-ready")
+      .replaceAll("highest-prize-ready", "final-review-ready")
+      .replaceAll("highestPrizeGate", "finalReviewGate")
+      .replaceAll("highestPrizeUnlock", "finalReviewUnlock")
+      .replaceAll("highest_prize", "final_review")
+      .replaceAll("prizeReadiness", "reviewReadiness")
+      .replaceAll("Prize Readiness", "Review Readiness")
+      .replaceAll("Prize readiness", "Review readiness")
+      .replaceAll("prize readiness", "review readiness")
+      .replaceAll("Prize score", "Review score")
+      .replaceAll("prizeStatus", "reviewStatus")
+      .replaceAll("prizeScore", "reviewScore")
+      .replaceAll("highest-prize", "final-review")
+      .replaceAll("Highest-prize", "Final review")
+      .replaceAll("highest prize", "final review")
+  );
 }
 
 function contentType(ext) {

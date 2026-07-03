@@ -43,6 +43,8 @@ Final proof:
   `https://oxygen56.github.io/cspr-guardian/verifier.html`.
 - Competitive positioning:
   `https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md`.
+- Final-review advantage:
+  `https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md`.
 - Repeatable scenario matrix:
   `https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md`.
 - x402 settlement batch:
@@ -134,5 +136,7 @@ signals into one verifiable workflow that minimizes reviewer trust cost:
 9. Run the Browser Proof Verifier to recompute the public proof manifest hashes.
 10. Open the Reality Boundary FAQ to show what is real, what is testnet
    prototype scope, and what production work remains.
-11. Inspect Evidence Verification for `34/34` recomputed checks.
-12. Inspect Submission Audit for final submission checks.
+11. Open the Final-Review Advantage brief to show why the complete
+    money-data-decision-receipt loop is stronger than a single primitive demo.
+12. Inspect Evidence Verification for `34/34` recomputed checks.
+13. Inspect Submission Audit for final submission checks.

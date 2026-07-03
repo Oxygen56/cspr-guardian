@@ -3,8 +3,9 @@
 Snapshot date: 2026-07-03.
 
 This page is the final reviewer-facing decision brief for CSPR Guardian. It
-compresses the proof room, scorecard, architecture, verifier, and competitive
-positioning into one page a judge can inspect before scoring the BUIDL.
+compresses the proof room, scorecard, architecture, verifier, competitive
+positioning, and final-review advantage brief into one page a judge can inspect
+before scoring the BUIDL.
 
 Public page:
 
@@ -31,7 +32,7 @@ case the submission can make for a strong review.
 | Is Casper central? | x402-style Casper payments, four settlement anchors, final CSPR.live receipt |
 | Is it agentic? | Agent discovers tools, receives 402 requirements, signs, pays, consumes data, decides, exports proof |
 | Is it more than a mock? | Real testnet receipt, real settlement-anchor transactions, signed preflight, browser verifier |
-| Is it judge-friendly? | Decision page, scorecard, proof room, FAQ, manifest, 64-second walkthrough |
+| Is it judge-friendly? | Decision page, scorecard, advantage brief, proof room, FAQ, manifest, 64-second walkthrough |
 | Is it honest? | Reality boundary explicitly separates testnet prototype scope from production requirements |
 
 ## Ninety-Second Review Path
@@ -42,6 +43,7 @@ case the submission can make for a strong review.
 4. Open the x402 settlement batch and confirm four public settlement anchors.
 5. Open the scorecard and proof room for the full rubric mapping.
 6. Open the FAQ to verify the prototype boundary.
+7. Open the final-review advantage brief to see the category-level comparison.
 
 ## Competitive Edge
 
@@ -57,6 +59,11 @@ receipt projects. CSPR Guardian's edge is the complete loop:
 - It anchors the RWA decision path in Casper-specific agent-economy primitives:
   machine-to-machine payment, MCP access, predictable audit receipts, and
   verifiable AI outputs.
+- It competes against sharper single-thesis projects by showing the entire
+  money-data-decision-receipt chain, not only one impressive primitive.
+
+Advantage brief:
+https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
 
 ## Boundaries
 

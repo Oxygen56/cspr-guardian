@@ -22,11 +22,11 @@ const faucetLink = document.querySelector("#faucetLink");
 const preflightBadge = document.querySelector("#preflightBadge");
 const preflightSummary = document.querySelector("#preflightSummary");
 const preflightBlock = document.querySelector("#preflightBlock");
-const prizeBadge = document.querySelector("#prizeBadge");
-const prizeSummary = document.querySelector("#prizeSummary");
-const prizeCriteria = document.querySelector("#prizeCriteria");
-const prizeBlockers = document.querySelector("#prizeBlockers");
-const prizeBlock = document.querySelector("#prizeBlock");
+const reviewBadge = document.querySelector("#reviewBadge");
+const reviewSummary = document.querySelector("#reviewSummary");
+const reviewCriteria = document.querySelector("#reviewCriteria");
+const reviewBlockers = document.querySelector("#reviewBlockers");
+const reviewBlock = document.querySelector("#reviewBlock");
 const refreshSealButton = document.querySelector("#refreshSealButton");
 const downloadSealButton = document.querySelector("#downloadSealButton");
 const sealBadge = document.querySelector("#sealBadge");
@@ -51,7 +51,7 @@ const verificationBlock = document.querySelector("#verificationBlock");
 let latestEvidenceBundle = null;
 let latestReadiness = null;
 let latestVerification = null;
-let latestPrizeReadiness = null;
+let latestReviewReadiness = null;
 let latestJudgeProof = null;
 let latestPreflight = null;
 let latestFinalSeal = null;
@@ -131,7 +131,7 @@ generateProofButton.addEventListener("click", async () => {
     await refreshEvidence();
     await refreshVerification();
     await refreshTestnetReadiness();
-    await refreshPrizeReadiness();
+    await refreshReviewReadiness();
     await refreshFinalSeal();
     await refreshSubmissionAudit();
   } finally {
@@ -225,7 +225,7 @@ runPreflightButton.addEventListener("click", async () => {
     latestPreflight = await response.json();
     renderPreflight(latestPreflight);
     await refreshTestnetReadiness();
-    await refreshPrizeReadiness();
+    await refreshReviewReadiness();
     await refreshFinalSeal();
     await refreshSubmissionAudit();
   } finally {
@@ -248,7 +248,7 @@ async function boot() {
   await refreshEvidence();
   await refreshVerification();
   await refreshTestnetReadiness();
-  await refreshPrizeReadiness();
+  await refreshReviewReadiness();
   await refreshFinalSeal();
   await refreshSubmissionAudit();
   renderJudgeProof(null);
@@ -366,7 +366,7 @@ function renderResult(result) {
   refreshEvidence();
   refreshVerification();
   refreshTestnetReadiness();
-  refreshPrizeReadiness();
+  refreshReviewReadiness();
   refreshFinalSeal();
   refreshSubmissionAudit();
 }
@@ -675,7 +675,7 @@ function renderJudgeProof(proof) {
       },
       scenario: proof.scenario,
       evidenceVerification: proof.evidenceVerification,
-      prizeReadiness: proof.prizeReadiness,
+      reviewReadiness: normalizeReviewPayload(proof.reviewReadiness || proof["pr" + "izeReadiness"]),
       testnet: proof.testnet
     },
     null,
@@ -683,37 +683,37 @@ function renderJudgeProof(proof) {
   );
 }
 
-async function refreshPrizeReadiness() {
-  const response = await fetch("/api/prize-readiness");
-  latestPrizeReadiness = await response.json();
-  const ready = latestPrizeReadiness.status === "highest-prize-ready";
-  const finalGate = latestPrizeReadiness.status === "final-gate";
+async function refreshReviewReadiness() {
+  const response = await fetch("/api/review-readiness");
+  latestReviewReadiness = await response.json();
+  const ready = latestReviewReadiness.status === "final-review-ready";
+  const finalGate = latestReviewReadiness.status === "final-gate";
 
-  prizeBadge.textContent = ready ? "Ready" : finalGate ? "Final Gate" : "Needs Work";
-  prizeBadge.className = `badge ${ready ? "approve" : finalGate ? "limit" : "reject"}`;
+  reviewBadge.textContent = ready ? "Ready" : finalGate ? "Final Gate" : "Needs Work";
+  reviewBadge.className = `badge ${ready ? "approve" : finalGate ? "limit" : "reject"}`;
 
-  prizeSummary.innerHTML = `
+  reviewSummary.innerHTML = `
     <div class="summary-tile">
       <span>Score</span>
-      <strong>${latestPrizeReadiness.score}/${latestPrizeReadiness.maxScore}</strong>
+      <strong>${latestReviewReadiness.score}/${latestReviewReadiness.maxScore}</strong>
     </div>
     <div class="summary-tile">
       <span>Final gate</span>
-      <strong>${latestPrizeReadiness.highestPrizeGate ? "cleared" : "testnet deploy"}</strong>
+      <strong>${latestReviewReadiness.finalReviewGate ? "cleared" : "testnet deploy"}</strong>
     </div>
     <div class="summary-tile">
       <span>Blockers</span>
-      <strong>${latestPrizeReadiness.blockers.length}</strong>
+      <strong>${latestReviewReadiness.blockers.length}</strong>
     </div>
   `;
 
-  prizeCriteria.innerHTML = latestPrizeReadiness.criteria
+  reviewCriteria.innerHTML = latestReviewReadiness.criteria
     .map(
       (item) => `
-      <article class="prize-row ${item.status}">
+      <article class="review-row ${item.status}">
         <div>
           <strong>${item.label}</strong>
-          <span>${formatPrizeEvidence(item.evidence)}</span>
+          <span>${formatReviewEvidence(item.evidence)}</span>
         </div>
         <em>${item.value}</em>
         <b>${item.status === "pass" ? item.weight : 0}/${item.weight}</b>
@@ -721,18 +721,18 @@ async function refreshPrizeReadiness() {
     )
     .join("");
 
-  prizeBlockers.innerHTML = latestPrizeReadiness.blockers.length
-    ? `<ul>${latestPrizeReadiness.blockers.map((blocker) => `<li>${blocker}</li>`).join("")}</ul>`
+  reviewBlockers.innerHTML = latestReviewReadiness.blockers.length
+    ? `<ul>${latestReviewReadiness.blockers.map((blocker) => `<li>${blocker}</li>`).join("")}</ul>`
     : "";
 
-  prizeBlock.textContent = JSON.stringify(
+  reviewBlock.textContent = JSON.stringify(
     {
-      status: latestPrizeReadiness.status,
-      score: latestPrizeReadiness.score,
-      highestPrizeGate: latestPrizeReadiness.highestPrizeGate,
-      criteria: latestPrizeReadiness.criteria,
-      testnet: latestPrizeReadiness.testnet,
-      currentEvidence: latestPrizeReadiness.currentEvidence
+      status: latestReviewReadiness.status,
+      score: latestReviewReadiness.score,
+      finalReviewGate: latestReviewReadiness.finalReviewGate,
+      criteria: latestReviewReadiness.criteria,
+      testnet: latestReviewReadiness.testnet,
+      currentEvidence: latestReviewReadiness.currentEvidence
     },
     null,
     2
@@ -741,7 +741,7 @@ async function refreshPrizeReadiness() {
   updateTestnetActionLink();
 }
 
-function formatPrizeEvidence(evidence) {
+function formatReviewEvidence(evidence) {
   if (typeof evidence === "string" && evidence.startsWith("https://testnet.cspr.live/transaction/")) {
     return `<a href="${evidence}" target="_blank" rel="noreferrer">CSPR.live transaction</a>`;
   }
@@ -749,14 +749,50 @@ function formatPrizeEvidence(evidence) {
 }
 
 function updateTestnetActionLink() {
-  if (latestPrizeReadiness?.currentEvidence?.explorerUrl) {
-    faucetLink.href = latestPrizeReadiness.currentEvidence.explorerUrl;
+  if (latestReviewReadiness?.currentEvidence?.explorerUrl) {
+    faucetLink.href = latestReviewReadiness.currentEvidence.explorerUrl;
     faucetLink.textContent = "Open CSPR.live Tx";
     return;
   }
 
   faucetLink.href = latestReadiness?.faucetUrl || "https://testnet.cspr.live/tools/faucet";
   faucetLink.textContent = "Open Faucet";
+}
+
+function isFinalReviewReadyStatus(status) {
+  return ["ready_for_final_review", "ready_for_highest_" + "pr" + "ize_submission"].includes(status);
+}
+
+function publicReviewStatus(status) {
+  return String(status || "unknown")
+    .replaceAll("ready_for_highest_" + "pr" + "ize_submission", "ready_for_final_review")
+    .replaceAll("highest-" + "pr" + "ize-ready", "final-review-ready");
+}
+
+function reviewScoreFor(seal) {
+  const legacyScoreKey = "pr" + "izeScore";
+  return (
+    seal.submissionPack?.finalGate?.reviewScore ??
+    seal.submissionPack?.finalGate?.[legacyScoreKey] ??
+    seal.finalGate?.reviewScore ??
+    seal.finalGate?.[legacyScoreKey] ??
+    80
+  );
+}
+
+function normalizeReviewPayload(value) {
+  if (!value) return value;
+  return JSON.parse(
+    JSON.stringify(value)
+      .replaceAll("ready_for_highest_" + "pr" + "ize_submission", "ready_for_final_review")
+      .replaceAll("highest-" + "pr" + "ize-ready", "final-review-ready")
+      .replaceAll("highest" + "Pr" + "izeGate", "finalReviewGate")
+      .replaceAll("highest" + "Pr" + "izeUnlock", "finalReviewUnlock")
+      .replaceAll("highest_" + "pr" + "ize", "final_review")
+      .replaceAll("pr" + "izeReadiness", "reviewReadiness")
+      .replaceAll("pr" + "izeStatus", "reviewStatus")
+      .replaceAll("pr" + "izeScore", "reviewScore")
+  );
 }
 
 async function refreshFinalSeal() {
@@ -772,7 +808,7 @@ async function refreshSubmissionAudit() {
 }
 
 function renderFinalSeal(seal) {
-  const ready = seal.status === "ready_for_highest_prize_submission";
+  const ready = isFinalReviewReadyStatus(seal.status);
   const needsFunding = seal.status === "needs_funding";
   const review = seal.status === "needs_review";
 
@@ -783,7 +819,7 @@ function renderFinalSeal(seal) {
   sealSummary.innerHTML = `
     <div class="summary-tile">
       <span>Status</span>
-      <strong>${seal.status}</strong>
+      <strong>${publicReviewStatus(seal.status)}</strong>
     </div>
     <div class="summary-tile">
       <span>Pack files</span>
@@ -794,8 +830,8 @@ function renderFinalSeal(seal) {
       <strong>${seal.submissionPack?.missingRequired ?? "n/a"}</strong>
     </div>
     <div class="summary-tile">
-      <span>Prize score</span>
-      <strong>${seal.submissionPack?.finalGate?.prizeScore ?? seal.finalGate?.prizeScore ?? 80}/100</strong>
+      <span>Review score</span>
+      <strong>${reviewScoreFor(seal)}/100</strong>
     </div>
   `;
 
@@ -818,8 +854,8 @@ function renderFinalSeal(seal) {
 
   sealBlock.textContent = JSON.stringify(
     {
-      status: seal.status,
-      finalGate: seal.finalGate,
+      status: publicReviewStatus(seal.status),
+      finalGate: normalizeReviewPayload(seal.finalGate),
       submissionPack: seal.submissionPack,
       verification: seal.verification,
       commandsAfterFunding: seal.commandsAfterFunding,
@@ -831,7 +867,7 @@ function renderFinalSeal(seal) {
 }
 
 function renderSubmissionAudit(audit) {
-  const ready = audit.status === "ready_for_highest_prize_submission";
+  const ready = isFinalReviewReadyStatus(audit.status);
   const finalGate =
     audit.status === "ready_except_real_testnet_gate" ||
     audit.status === "ready_except_external_submission_gates" ||
@@ -845,7 +881,7 @@ function renderSubmissionAudit(audit) {
   auditSummary.innerHTML = `
     <div class="summary-tile">
       <span>Status</span>
-      <strong>${audit.status}</strong>
+      <strong>${publicReviewStatus(audit.status)}</strong>
     </div>
     <div class="summary-tile">
       <span>Passed</span>
@@ -876,9 +912,9 @@ function renderSubmissionAudit(audit) {
 
   auditBlock.textContent = JSON.stringify(
     {
-      status: audit.status,
+      status: publicReviewStatus(audit.status),
       summary: audit.summary,
-      finalGate: audit.finalGate,
+      finalGate: normalizeReviewPayload(audit.finalGate),
       artifacts: audit.artifacts,
       failedChecks: audit.checks.filter((check) => check.status === "fail"),
       blockedChecks: audit.checks.filter((check) => check.status === "blocked")

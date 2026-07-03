@@ -15,6 +15,8 @@ Public links already prepared:
 - Judge proof room: https://oxygen56.github.io/cspr-guardian/proof-room.html
 - Competitive positioning:
   https://oxygen56.github.io/cspr-guardian/proof/competitive-positioning.md
+- Final-review advantage:
+  https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
 
 | Asset | Purpose |
 | --- | --- |
@@ -53,6 +55,7 @@ Public links already prepared:
 | `docs/proof/judge-faq.md` | Markdown reality boundary and judge FAQ included in the public proof manifest |
 | `docs/proof/judge-scorecard.md` | Markdown judge scorecard included in the public proof manifest |
 | `docs/proof/competitive-positioning.md` | Public competitive positioning brief |
+| `docs/proof/final-review-advantage.md` | Category-level advantage brief for sharper public competitors |
 | `docs/proof/*` | Public Markdown and JSON proof artifacts for browser-based judge review |
 | `casper-public-demo-handoff.md` | Public hosting handoff for Render/Docker, health check, and final BUIDL link export |
 | `casper-public-demo-readiness.json` | Machine-readable public demo hosting readiness |
@@ -68,6 +71,7 @@ Public links already prepared:
 | `submission/browser-verifier.md` | Browser verifier source for the public proof artifact |
 | `submission/judge-faq.md` | Reality boundary and judge FAQ source for the public proof artifact |
 | `submission/competitive-positioning.md` | Competitive positioning source for the public proof artifact |
+| `submission/final-review-advantage.md` | Final-review advantage source for the public proof artifact |
 | `submission/demo-video-script.md` | 64-second final walkthrough script |
 | `submission/judge-evidence-map.md` | Review-signal-to-artifact walkthrough |
 

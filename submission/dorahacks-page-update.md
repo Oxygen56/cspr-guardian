@@ -57,6 +57,7 @@ Links:
 - Judge scorecard: https://oxygen56.github.io/cspr-guardian/judge-scorecard.html
 - Architecture map: https://oxygen56.github.io/cspr-guardian/architecture.html
 - Reality boundary and FAQ: https://oxygen56.github.io/cspr-guardian/judge-faq.html
+- Final-review advantage: https://oxygen56.github.io/cspr-guardian/proof/final-review-advantage.md
 - x402 settlement batch: https://oxygen56.github.io/cspr-guardian/proof/casper-x402-settlement-batch.md
 - Scenario matrix: https://oxygen56.github.io/cspr-guardian/proof/casper-scenario-matrix.md
 - Repository: https://github.com/Oxygen56/cspr-guardian

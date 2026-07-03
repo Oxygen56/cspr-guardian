@@ -59,6 +59,9 @@ is that CSPR Guardian minimizes judge trust cost:
   `final-review` and `review-readiness` terminology.
 - Published a browser verifier path that recomputes the 31-artifact public
   proof manifest from GitHub Pages.
+- Added a final-review advantage brief that positions CSPR Guardian against
+  sharper single-thesis project categories by emphasizing the complete
+  money-data-decision-receipt chain.
 - Confirmed public materials do not use outcome language; the external
   claim is evidence strength, not an outcome guarantee.
 
