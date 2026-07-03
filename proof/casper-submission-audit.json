@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-03T17:56:37.125Z",
+  "generatedAt": "2026-07-03T18:05:56.844Z",
   "project": "CSPR Guardian",
   "status": "ready_for_final_review",
   "summary": {
@@ -23,8 +23,8 @@
     "submissionPackZip": {
       "exists": true,
       "path": "outputs/cspr-guardian-final-submission.zip",
-      "bytes": 2883440,
-      "sha256": "8fc793a1823f70e4515575ce435b538159cdc53cecddcc838fa61d06d335eaa0"
+      "bytes": 2883439,
+      "sha256": "38676f553a043aa78f0f689333f27e86a0af401b3db92f75500d8198c18c7a3d"
     },
     "sourceZip": {
       "exists": true,
@@ -86,7 +86,7 @@
       "files": 49,
       "missingRequired": 0,
       "zipPath": "outputs/cspr-guardian-final-submission.zip",
-      "zipSha256": "8fc793a1823f70e4515575ce435b538159cdc53cecddcc838fa61d06d335eaa0",
+      "zipSha256": "38676f553a043aa78f0f689333f27e86a0af401b3db92f75500d8198c18c7a3d",
       "status": "pass",
       "ok": true
     },
