@@ -32,8 +32,8 @@ verifiable Casper-native agent economy:
 - Unit tests: `25/25`.
 - CI readiness: `7/7`.
 - x402 settlement preflight: `28/28`.
-- Browser proof verifier: `31/31` public artifacts verified, `0` failed.
-- Public proof artifacts: `31`, including the judge-decision brief,
+- Browser proof verifier: `32/32` public artifacts verified, `0` failed.
+- Public proof artifacts: `32`, including the judge-decision brief,
   final-review unlock report, review-readiness snapshot, proof manifest,
   x402 settlement artifacts, and final submission audit.
 - Final Casper receipt:
@@ -57,7 +57,7 @@ is that CSPR Guardian minimizes judge trust cost:
   path, proof chain, Casper fit, verification path, and scope boundary.
 - Renamed public-facing readiness artifacts from old internal naming to
   `final-review` and `review-readiness` terminology.
-- Published a browser verifier path that recomputes the 31-artifact public
+- Published a browser verifier path that recomputes the 32-artifact public
   proof manifest from GitHub Pages.
 - Added a final-review advantage brief that positions CSPR Guardian against
   sharper single-thesis project categories by emphasizing the complete

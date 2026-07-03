@@ -40,7 +40,7 @@ publishes a high-density proof path:
 - 25/25 unit tests.
 - 34/34 evidence-verifier checks.
 - 15/15 final submission audit checks.
-- 31 public proof artifacts with SHA-256 hashes.
+- 32 public proof artifacts with SHA-256 hashes.
 - Browser proof verifier that recomputes the public proof manifest.
 - Four Casper testnet settlement-anchor transactions tied to x402 tool
   payments.

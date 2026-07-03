@@ -80,7 +80,7 @@ npm test
 - Tests: `25/25` passing.
 - Evidence verifier: `34/34` checks passing.
 - Submission audit: `15/15` checks passing, `0` blocked, `0` failed.
-- Browser verifier: `31/31` public proof artifacts verified, `0` failed.
+- Browser verifier: `32/32` public proof artifacts verified, `0` failed.
 - x402 settlement anchors: four Casper testnet transactions tied to signed
   x402 authorizations.
 - Final CSPR.live receipt:

@@ -24,7 +24,7 @@ https://oxygen56.github.io/cspr-guardian/judge-decision.html
 Final proof:
 
 - Review readiness: 100/100, final review gate cleared.
-- Browser proof verifier: 31/31 public artifacts verified, 0 failed.
+- Browser proof verifier: 32/32 public artifacts verified, 0 failed.
 - Evidence verifier: 34/34 checks passing.
 - Submission audit: 15/15 checks passing, 0 blocked, 0 failed.
 - Unit tests: 25/25 passing.
