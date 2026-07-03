@@ -1,10 +1,10 @@
 {
   "version": "0.1",
-  "generatedAt": "2026-07-03T18:29:29.951Z",
+  "generatedAt": "2026-07-03T19:21:51.212Z",
   "project": {
     "name": "CSPR Guardian",
-    "tagline": "Casper payment and audit receipts for autonomous RWA treasury agents.",
-    "oneLiner": "CSPR Guardian lets an agent discover paid RWA intelligence tools, pay through x402-style Casper proofs, make a constrained allocation decision, and export a verifiable receipt.",
+    "tagline": "Audit trail for autonomous RWA treasury agents: buy paid intelligence, decide under policy, prove it on Casper.",
+    "oneLiner": "CSPR Guardian shows how an autonomous treasury agent buys paid RWA intelligence, makes a bounded allocation decision, records provider revenue, and anchors evidence on Casper.",
     "categories": [
       "Casper",
       "AI agents",
@@ -16,7 +16,7 @@
     ]
   },
   "submissionFields": {
-    "shortDescription": "Review-ready RWA agent where autonomous treasuries buy paid x402/MCP risk tools and anchor verifiable decision evidence to Casper.",
+    "shortDescription": "Audit trail for autonomous RWA treasuries: buy paid x402/MCP intelligence, decide under policy, and prove the evidence on Casper.",
     "repoUrl": "https://github.com/Oxygen56/cspr-guardian",
     "demoUrl": "https://oxygen56.github.io/cspr-guardian/",
     "videoUrl": "https://oxygen56.github.io/cspr-guardian/walkthrough.html",

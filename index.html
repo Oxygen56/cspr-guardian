@@ -192,8 +192,15 @@
         gap: 12px;
       }
 
+      .plain-grid {
+        display: grid;
+        grid-template-columns: 1.2fr repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
       .rubric article,
-      .edge-item {
+      .edge-item,
+      .plain-card {
         border: 1px solid var(--line);
         border-radius: 8px;
         padding: 14px;
@@ -201,7 +208,8 @@
       }
 
       .rubric strong,
-      .edge-item strong {
+      .edge-item strong,
+      .plain-card strong {
         display: block;
         margin-bottom: 8px;
         color: var(--accent);
@@ -250,6 +258,7 @@
         .shots,
         .status,
         .rubric,
+        .plain-grid,
         .edge {
           grid-template-columns: 1fr;
         }
@@ -261,9 +270,8 @@
       <div>
         <h1>CSPR Guardian</h1>
         <p>
-          Casper payment and audit receipts for autonomous RWA treasury agents.
-          This judge demo walks through the agent flow, proof artifacts, and the
-          final Casper testnet gate.
+          The audit trail for autonomous RWA treasury agents: buy paid
+          intelligence, decide under policy, and prove the evidence on Casper.
         </p>
         <div class="actions">
           <a class="button-link primary" href="walkthrough.html">Watch 64-second proof</a>
@@ -290,6 +298,36 @@
     </header>
 
     <main>
+      <section>
+        <h2>Product In Plain Terms</h2>
+        <div class="plain-grid">
+          <div class="plain-card">
+            <strong>The problem</strong>
+            Autonomous treasury agents should not allocate capital from
+            unverifiable screenshots, unpaid data, or private server logs.
+            Reviewers need to know what the agent bought, what it decided, and
+            which public receipt anchors the evidence.
+          </div>
+          <div class="plain-card">
+            <strong>1. Buy the data</strong>
+            The agent discovers paid MCP-style RWA tools and unlocks risk, KYB,
+            liquidity, and covenant reports with signed x402-style Casper
+            payment proofs.
+          </div>
+          <div class="plain-card">
+            <strong>2. Decide under policy</strong>
+            The agent applies a deterministic allocation policy, records
+            provider revenue, and produces a decision hash from the reports it
+            actually used.
+          </div>
+          <div class="plain-card">
+            <strong>3. Prove it on Casper</strong>
+            Judges can open the CSPR.live receipt, inspect settlement anchors,
+            and run the browser verifier against the public proof manifest.
+          </div>
+        </div>
+      </section>
+
       <section class="review-summary">
         <h2>Review Strength</h2>
         <div class="rubric">
@@ -386,7 +424,7 @@
       </section>
 
       <section>
-        <h2>End-To-End Flow</h2>
+        <h2>Technical Flow</h2>
         <ol class="flow">
           <li><strong>Discover</strong>MCP-style paid RWA tools are listed before the agent calls them.</li>
           <li><strong>Pay</strong>Each oracle returns HTTP 402, then unlocks with an Ed25519 x402-Casper proof.</li>
